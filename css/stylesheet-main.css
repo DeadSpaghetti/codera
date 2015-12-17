@@ -1,0 +1,162 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500);
+
+body {
+/*background-color: #F1F2F2;*/
+background-color: #EEEEEE ;
+margin: 0;
+ display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+a:link{
+text-decoration: none;
+color: #212121;
+}
+
+a:visited{
+text-decoration: none;
+color: #212121;
+}
+
+a:active{
+text-decoration: none;
+color: #212121;
+}
+
+a:hover{
+text-decoration: none;
+color: #212121;
+}
+
+#main{
+width: 100%;
+height: 100%;
+flex: 1 0 auto;
+}
+
+#header {
+width: 100%;
+height: auto;
+background-color: #212121;
+padding-top: 1vh;
+padding-bottom: 1vh;
+}
+
+#login{
+width: 15vmin;
+height: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 1.3vw;
+color: #FFFFFF;
+float: right;
+}
+
+#login i{	
+font-size: 3.5vmin;
+display: inline;
+vertical-align: middle;	
+}
+
+#login-text{
+display: inline;
+vertical-align: middle;	
+}
+
+#login a{
+color: #FFFFFF;
+text-decoration: none;
+}
+
+#name {
+width: 100%;
+height: 15vmin;
+background-color: #7986cb;
+display: table;
+}
+
+#name-text{
+width: 50%;
+margin: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 4vw;
+text-align: center;
+display: table-cell;
+vertical-align: middle;
+}
+
+#name-text a{
+text-decoration: none;
+/*color: #1565c0;*/
+color: #FFFFFF;
+}
+
+#content{	
+border-top: 2px solid #B3B3B3;
+width: 100%;
+height: auto;
+background-color: #FFFFFF ;
+padding-bottom: 5vmin;
+}
+
+#projects{
+width: 70%;
+height: auto;
+margin: auto;	
+margin-top: 10vmin;
+}
+
+.row > td{
+padding-bottom: 10vmin;
+}
+
+.entry{
+width: 28%;
+height: auto;
+margin: auto;	
+}
+
+.icon{
+width: 17vmin;
+height: 17vmin;
+margin: auto;
+/*background-image: url('eyedropper.png');*/
+background-position: center center;
+background-repeat: no-repeat;
+background-size: contain;
+opacity: 1.0;
+}
+
+.entry:hover{
+cursor: pointer;
+opacity: 0.65;
+}
+
+.icon-name{	
+font-family: Roboto, Sans-Serif;
+font-size: 3.2vmin;
+width: 50%;
+margin: auto;
+text-align: center;
+margin-top: 2vmin;
+color: #212121;
+}
+
+#footer {
+width: 100%;
+height: 5vmin;
+background-color: #212121;
+display: table;
+}
+
+#footer-text{
+width: 50%;
+height: auto;
+margin: auto;
+font-family: Roboto, sans-serif;
+font-size: 2.5vmin;
+text-align: center;
+color: #FFFFFF ;
+display: table-cell;
+vertical-align: middle;
+}
