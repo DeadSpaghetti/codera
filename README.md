@@ -1,1 +1,3 @@
 # codera
+### To-do
+* Footer
