@@ -1,5 +1,5 @@
 # TODO - Robert
 
-- [ ] float mit table ersetzen
-- [ ] icons hinzufügen
-- [ ] footer
+- [X] float mit table ersetzen
+- [X] icons hinzufügen
+- [X] footer
