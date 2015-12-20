@@ -38,12 +38,12 @@
 						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/bullhorn.png');"> </div> <div class="icon-name">Post</div></a></td>
 					</tr>
 				</table>		
-			</div>
-			<div id="footer">
-				<div id="footer-text">
-					 	&copy; Deadlocker 2016
-				</div>			
-			</div>
+			</div>			
+		</div>
+		<div id="footer">
+			<div id="footer-text">
+				&copy; Deadlocker 2016
+			</div>			
 		</div>
 	</body>
 </html>
