@@ -11,7 +11,7 @@
 	<body>
 		<div id="main">
 			<div id="header">
-				<div ="login">
+				<div id="login">
 					   <a href="index.php"> <i class="material-icons">exit_to_app</i> <span id="login-text">Login</span></a>
 				</div>	
 				<div style="clear: both;"></div>					
