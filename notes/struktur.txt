@@ -1,0 +1,14 @@
+-name
+-icon
+
+-versionName
+-date
+-latest changes
+-description
+-requirements
+-files
+-screenshots
+-license
+
+
+-versionCode
