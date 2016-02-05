@@ -97,7 +97,12 @@
 									  <option value="JAR">YourApp.jar -  Any OS</option>
 									  <option value="EXE">Installer.exe - Windows x68</option>
 									  <option value="EXE-64">Installer.exe - Windows x64</option>								
-								</select>								
+								</select>									
+								<a href="javascript:void(null)">
+									<div class="button-download">
+										<i class="material-icons">file_download</i> <span class="button-download-text">Download</span> 
+									</div>
+								</a>
 							</td>
 						</tr>
 						<tr class="infos-row">
