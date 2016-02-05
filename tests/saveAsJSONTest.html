@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="losButton">LOS</button>
+
+    <script>
+        $(document).ready(function()
+        {
+            $('#losButton').click(function()
+            {
+                $.post('http://localhost:63342/codera/php/saveAsJSON.php',{name:"TimeKeeper",icon:"whatEver.png",versionName:"1.0.0"},function(data,error)
+                {
+                    alert(error);
+
+                });
+
+
+            });
+
+
+        });
+    </script>
+
+</body>
+</html>
