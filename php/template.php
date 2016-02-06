@@ -132,8 +132,8 @@
 		</div>
 		<div id="footer">
 			<div id="footer-text">
-				&copy; Deadlocker 2016
-			</div>			
+				&copy; Deadlocker <?php echo date("Y");?>
+			</div>		
 		</div>
 	</body>
 </html>

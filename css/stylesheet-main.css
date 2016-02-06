@@ -47,13 +47,13 @@ padding-bottom: 1vh;
 width: 15vmin;
 height: auto;
 font-family: Roboto, Sans-Serif;
-font-size: 3vmin;
+font-size: 2.5vmin;
 color: #FFFFFF;
 float: right;
 }
 
 #login i{	
-font-size: 3.5vmin;
+font-size: 3vmin;
 display: inline;
 vertical-align: middle;	
 }
@@ -87,7 +87,6 @@ vertical-align: middle;
 
 #name-text a{
 text-decoration: none;
-/*color: #1565c0;*/
 color: #FFFFFF;
 }
 
@@ -100,7 +99,7 @@ padding-bottom: 5vmin;
 }
 
 #projects{
-width: 130vmin;
+width: 70vw;
 height: auto;
 margin: auto;	
 margin-top: 10vmin;
@@ -116,9 +115,13 @@ height: auto;
 margin: auto;	
 }
 
+.entry a{
+text-align: center;
+}
+
 .icon{
-width: 17vmin;
-height: 17vmin;
+width: 16vmin;
+height: 16vmin;
 margin: auto;
 background-position: center center;
 background-repeat: no-repeat;
@@ -134,7 +137,6 @@ opacity: 0.65;
 .icon-name{	
 font-family: Roboto, Sans-Serif;
 font-size: 3.2vmin;
-width: 50%;
 margin: auto;
 text-align: center;
 margin-top: 2vmin;
