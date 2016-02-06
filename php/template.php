@@ -25,7 +25,7 @@
 				<div id="white">
 					<table id="app">
 						<tr>
-							<td id="app-icon" style="background-image: url('../css/tetris.png');">	</td>
+							<td id="app-icon" style="background-image: url('../images/icons/tetris.png');">	</td>
 							<td id="app-name">SaveMyPlayList</td>	
 						</tr>
 					</table>
@@ -92,17 +92,23 @@
 									<i class="material-icons">file_download</i> <span class="infos-icon-text">Files:</span>
 								</div>
 							</td>										
-							<td class="infos-right">								
-								 <select>
-									  <option value="JAR">YourApp.jar -  Any OS</option>
-									  <option value="EXE">Installer.exe - Windows x68</option>
-									  <option value="EXE-64">Installer.exe - Windows x64</option>								
-								</select>									
-								<a href="javascript:void(null)">
-									<div class="button-download">
-										<i class="material-icons">file_download</i> <span class="button-download-text">Download</span> 
-									</div>
-								</a>
+							<td class="infos-right">	
+								<table>
+									<tr>
+										<td>
+											 <select>
+												  <option value="JAR">YourApp.jar -  Any OS</option>
+												  <option value="EXE">Installer.exe - Windows x68</option>
+												  <option value="EXE-64">Installer.exe - Windows x64</option>								
+											</select>
+										</td>
+										<td>
+											<a id="button-download" href="javascript:void(null)">									
+												<i class="material-icons">file_download</i> <span id="button-download-text">Download</span> 									
+											</a>
+										</td>
+									</tr>
+								</table
 							</td>
 						</tr>
 						<tr class="infos-row">

@@ -22,19 +22,19 @@
 			<div id="content">				
 				<table id="projects">
 					<tr class="row">
-						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/eyedropper.png');"> </div> <div class="icon-name">ColorPicker</div></a></td>
-						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/BF4.png');"> </div> <div class="icon-name">BF4</div></a></td>
-						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/Bejeweled.png');"> </div> <div class="icon-name">Bejeweled</div></a></td>
+						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../images/icons/eyedropper.png');"> </div> <div class="icon-name">ColorPicker</div></a></td>
+						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../images/icons/BF4.png');"> </div> <div class="icon-name">BF4</div></a></td>
+						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../images/icons/Bejeweled.png');"> </div> <div class="icon-name">Bejeweled</div></a></td>
 					</tr>
 					<tr class="row">
-						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/tetris.png');"> </div> <div class="icon-name">Tetris</div></a></td>
-						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/change.png');"> </div> <div class="icon-name">ChangeLogger</div></a></td>
-						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/list.png');"> </div> <div class="icon-name">SaveMyPlaylist</div></a></td>
+						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../images/icons/tetris.png');"> </div> <div class="icon-name">Tetris</div></a></td>
+						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../images/icons/change.png');"> </div> <div class="icon-name">ChangeLogger</div></a></td>
+						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../images/icons/list.png');"> </div> <div class="icon-name">SaveMyPlaylist</div></a></td>
 					</tr>
 					<tr class="row">
-						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/2048.png');"> </div> <div class="icon-name">2048</div></a></td>
-						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/uhr.png');"> </div> <div class="icon-name">SmartTime</div></a></td>
-						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../css/bullhorn.png');"> </div> <div class="icon-name">Post</div></a></td>
+						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../images/icons/2048.png');"> </div> <div class="icon-name">2048</div></a></td>
+						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../images/icons/uhr.png');"> </div> <div class="icon-name">SmartTime</div></a></td>
+						<td class="entry"> <a href="template.php"><div class="icon" style="background-image: url('../images/icons/bullhorn.png');"> </div> <div class="icon-name">Post</div></a></td>
 					</tr>
 				</table>		
 			</div>			

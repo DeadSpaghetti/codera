@@ -1,5 +1,5 @@
 #white{
-width: 95vmin;
+width: 50vw;
 height: auto;
 margin: auto;
 background-color: #FFFFFF;
@@ -44,7 +44,7 @@ margin-bottom: 5vmin;
 }
 
 #infos{
-width: 95vmin;
+width: 95%;
 height: auto;
 margin: auto;
 font-family: Roboto, Sans-Serif;
@@ -83,45 +83,50 @@ padding-bottom: 5vmin;
 }
 
 .infos-right{
-	
-}
-
-select {   
-width: auto;
-height: 4vmin;
-padding: 0.1vmin;
-font-family: Roboto, Sans-Serif;
-font-size: 2.2vmin;
-border: 0.1vmin solid #777777;
-color: #212121;
 
 }
 
-.button-download{
+#button-download{
+display: inline-block;	
+margin-left: 3vmin;
 width: 14vmin;
 font-family: Roboto, Sans-Serif;
-font-size: 2.2vmin;
+font-size: 2.1vmin;
 padding: 0.5vmin;
 background-color: #bdbdbd;
 -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
-display: inline;
-margin-left: 3vmin;
 }
 
-.button-download:hover{
+select {   
+width: 100%;
+height: 4vmin;
+padding: 0.1vmin;
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+border: 0.2vmin solid #777777;
+color: #212121;
+}
+
+#button-download:hover{
 opacity: 0.7;
 }
 
-.button-download i{	
-font-size: 3.2vmin;
+#button-download i{	
+font-size: 2.6vmin;
 display: inline;
 color: #212121;
+vertical-align: middle;
+}
+
+#button-download-text{
+display: inline;
 vertical-align: middle;	
 }
 
-.button-download-text{
-display: inline;
-vertical-align: middle;	
+@media screen and (max-width: 1000px) {
+    #white{
+		width: 80vw;
+	}	
 }
