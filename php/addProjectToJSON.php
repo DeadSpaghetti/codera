@@ -48,14 +48,12 @@ $license = $_POST['license'];
 $versionCode = $_POST['versionCode'];
 
 $projectGUID = generateGuid();
-echo $projectGUID;
 $pathString = "../config/projects.json";
 
 $isFileThere = false;
 
 if (file_exists($pathString))
 {
-
     $isFileThere = true;
 }
 
@@ -70,7 +68,8 @@ if (file_exists($pathString))
             //save to php format array
             $array = array($fileInJSON);
         }
-        $newProjectArray = array(
+        $newProjectArray = array
+        (
             "name" => $name,
             "icon" => $icon,
             "versionName" => $versionName,
@@ -83,6 +82,7 @@ if (file_exists($pathString))
             "GUID" => $projectGUID
         );
 
+        //checks boolean value to see if file is there. If not generates it
         if($isFileThere)
             array_push($array, $newProjectArray);
         else
