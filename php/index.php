@@ -4,7 +4,7 @@
 		<title>Deadlocker</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">		>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
 		<div id="main">
