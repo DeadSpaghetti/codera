@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    $('#saveProjectButton').click(function()
+    $('#button-save').click(function()
     {
         alert("Works?");
         var name = $('#input-appName').val();
