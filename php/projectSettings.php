@@ -8,6 +8,8 @@
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-template.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-admin.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="../js/projectSettings.js"></script>
 	</head>
 	<body>
 		<div id="main">						
@@ -28,7 +30,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								<input id="input-versionName" type="text" maxlength="15" placeholder="MyApp"> </input>
+								<input id="input-appName" type="text" maxlength="15" placeholder="MyApp"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -38,7 +40,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								 <input id="input-icon" name="Icon" type="file" accept="image/png, image/jpeg"> </input>
+								 <input id="input-icon" name="Icon" type="file" accept="image/png, image/jpeg"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -48,7 +50,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								<input id="input-versionCode" type="text" maxlength="15" placeholder="10"> </input>
+								<input id="input-versionCode" type="text" maxlength="15" placeholder="10"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -58,7 +60,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								<input id="input-versionName" type="text" maxlength="15" placeholder="1.0.0 b"> </input>
+								<input id="input-versionName" type="text" maxlength="15" placeholder="1.0.0 b"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -68,7 +70,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								<input id="input-date" type="date"> </input>
+								<input id="input-date" type="date"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -150,7 +152,7 @@
 							<td class="infos-left">	</td>										
 							<td class="infos-right">
 								<a class="button" id="button-save" href="javascript:void(null)">									
-									<i class="material-icons">check</i> <span class="button-text">Save</span> 									
+									<i id="saveProjectButton" class="material-icons">check</i> <span class="button-text">Save</span>
 								</a>
 								<a class="button" id="button-discard" href="javascript:void(null)">									
 									<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
