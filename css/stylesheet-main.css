@@ -147,17 +147,55 @@ color: #212121;
 width: 100%;
 height: 5vmin;
 background-color: #212121;
-display: table;
-}
-
-#footer-text{
-width: 50%;
 height: auto;
 margin: auto;
 font-family: Roboto, sans-serif;
 font-size: 2.5vmin;
 text-align: center;
 color: #FFFFFF;
-display: table-cell;
+}
+
+#footer table{
+width: 60%;
+margin: auto;
+}
+
+#footer table td{
+width: 33%;
+vertical-align: middle;
+}
+
+#footer-left{
+font-size: 2vmin;	
+}
+
+#footer-left a{
+color: #FFFFFF;
+}
+
+#footer-right{
+width: auto;
+height: auto;
+margin: auto;
+}
+
+#footer-right i{	
+font-size: 3vmin;
+display: inline;
+vertical-align: middle;	
+color: #FFFFFF;
+}
+
+#footer-right-text{
+width: 15vmin;
+height: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 1.9vmin;
+color: #FFFFFF;
+margin-left: 0.3vmin;
+}
+
+#icon-github{
+width: 2.3vmin;	
 vertical-align: middle;
 }

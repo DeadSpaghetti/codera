@@ -1,6 +1,5 @@
 -name
 -icon
-
 -versionName
 -date
 -latest changes
@@ -9,6 +8,13 @@
 -files
 -screenshots
 -license
-
-
 -versionCode
+
+Adminpage
+==========
+
+-set name of site ("Deadlocker")
+-set color scheme (header)
+
+-button new project
+-button edit existing projects

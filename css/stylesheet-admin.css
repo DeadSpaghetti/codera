@@ -1,0 +1,30 @@
+#app-title{
+font-family: Roboto, Sans-Serif;
+font-size: 5vmin;
+margin: auto;
+text-align: center;
+color: #212121;
+}
+
+input{
+width: 75%;	
+}
+
+textarea{
+width: 75%;	
+resize: vertical;
+}
+
+input[type='file'] {
+color: transparent;
+}
+
+#button-save{
+background-color: #81c784;	
+width: 11vmin;
+}
+
+#button-discard{
+background-color: #e57373;	
+width: 11vmin;
+}

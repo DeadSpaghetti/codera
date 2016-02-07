@@ -6,17 +6,17 @@
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-template.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet-admin.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
-		<div id="main">
+		<div id="main">						
 			<?php include ("header.php"); ?>
 			<div id="content">	
 				<div id="white">
 					<table id="app">
-						<tr>
-							<td id="app-icon" style="background-image: url('../images/icons/tetris.png');">	</td>
-							<td id="app-name">SaveMyPlayList</td>	
+						<tr>							
+							<td id="app-title">New Project</td>	
 						</tr>
 					</table>
 					<div class="line"></div>			
@@ -24,11 +24,41 @@
 						<tr class="infos-row">
 							<td class="infos-left">
 								<div class="infos-icon">
+									<i class="material-icons">mode_edit</i> <span class="infos-icon-text">Name:</span>
+								</div>
+							</td>										
+							<td class="infos-right">
+								<input id="input-versionName" type="text" maxlength="15" placeholder="MyApp"> </input>
+							</td>
+						</tr>
+						<tr class="infos-row">
+							<td class="infos-left">
+								<div class="infos-icon">
+									<i class="material-icons">image</i> <span class="infos-icon-text">Icon:</span>
+								</div>
+							</td>										
+							<td class="infos-right">
+								 <input id="input-icon" name="Icon" type="file" accept="image/png, image/jpeg"> </input>
+							</td>
+						</tr>
+						<tr class="infos-row">
+							<td class="infos-left">
+								<div class="infos-icon">
+									<i class="material-icons">update</i> <span class="infos-icon-text">Versioncode:</span>
+								</div>
+							</td>										
+							<td class="infos-right">
+								<input id="input-versionCode" type="text" maxlength="15" placeholder="10"> </input>
+							</td>
+						</tr>
+						<tr class="infos-row">
+							<td class="infos-left">
+								<div class="infos-icon">
 									<i class="material-icons">update</i> <span class="infos-icon-text">Version:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								4.4.0
+								<input id="input-versionName" type="text" maxlength="15" placeholder="1.0.0 b"> </input>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -38,7 +68,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								05.02.16
+								<input id="input-date" type="date"> </input>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -48,7 +78,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								-added functionality x
+								<textarea id="input-changes" rows="10"> </textarea>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -58,11 +88,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-								sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
-								Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
-								et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-								no sea takimata sanctus est Lorem ipsum dolor sit amet.
+								<textarea id="input-description" rows="10"> </textarea>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -72,8 +98,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								Windows 8.1<br>
-								Java 1.8.0 or higher
+								<textarea id="input-requirements" rows="10"> </textarea>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -98,7 +123,7 @@
 											</a>
 										</td>
 									</tr>
-								</table>
+								</table
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -118,10 +143,20 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								Your EULA here
+								<input id="input-license" name="License" type="file" accept="text/plain"> </input>
 							</td>
 						</tr>
-						
+						<tr class="infos-row">
+							<td class="infos-left">	</td>										
+							<td class="infos-right">
+								<a class="button" id="button-save" href="javascript:void(null)">									
+									<i class="material-icons">check</i> <span class="button-text">Save</span> 									
+								</a>
+								<a class="button" id="button-discard" href="javascript:void(null)">									
+									<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
+								</a>
+							</td>
+						</tr>						
 					</table>		
 				</div>		
 			</div>

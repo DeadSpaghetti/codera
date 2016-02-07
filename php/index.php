@@ -4,21 +4,11 @@
 		<title>Deadlocker</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">		>
 	</head>
 	<body>
 		<div id="main">
-			<div id="header">
-				<div id="login">
-					   <a href="index.php"> <i class="material-icons">exit_to_app</i> <span id="login-text">Login</span></a>
-				</div>	
-				<div style="clear: both;"></div>					
-			</div>
-			<div id="name">
-				<div id="name-text">
-					<a href="index.php">Deadlocker</a>
-				</div>			
-			</div>
+			<?php include ("header.php"); ?>		
 			<div id="content">				
 				<table id="projects">
 					<tr class="row">
@@ -39,10 +29,6 @@
 				</table>		
 			</div>			
 		</div>
-		<div id="footer">
-			<div id="footer-text">
-				&copy; Deadlocker <?php echo date("Y");?>
-			</div>			
-		</div>
+		<?php include ("footer.php"); ?>		
 	</body>
 </html>
