@@ -150,7 +150,7 @@ background-color: #212121;
 height: auto;
 margin: auto;
 font-family: Roboto, sans-serif;
-font-size: 2.5vmin;
+font-size: 2vmin;
 text-align: center;
 color: #FFFFFF;
 }
@@ -165,11 +165,7 @@ width: 33%;
 vertical-align: middle;
 }
 
-#footer-left{
-font-size: 2vmin;	
-}
-
-#footer-left a{
+#footer a{
 color: #FFFFFF;
 }
 

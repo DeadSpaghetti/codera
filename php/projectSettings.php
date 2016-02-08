@@ -145,7 +145,7 @@
 								</div>
 							</td>										
 							<td class="infos-right">
-								<input id="input-license" name="License" type="file" accept="text/plain"> </input>
+								<input id="input-license" name="License" type="file" accept="text/plain">
 							</td>
 						</tr>
 						<tr class="infos-row">
