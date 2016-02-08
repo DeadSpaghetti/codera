@@ -23,8 +23,8 @@
 					<table id="infos">
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">update</i> <span class="infos-icon-text">Version:</span>
+								<div class="icon">
+									<i class="material-icons">update</i> <span class="icon-text">Version:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
@@ -33,8 +33,8 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons md-light">access_time</i> <span class="infos-icon-text">Last Update:</span>
+								<div class="icon">
+									<i class="material-icons md-light">access_time</i> <span class="icon-text">Last Update:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
@@ -43,8 +43,8 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">code</i> <span class="infos-icon-text">Latest Changes:</span>
+								<div class="icon">
+									<i class="material-icons">code</i> <span class="icon-text">Latest Changes:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
@@ -53,8 +53,8 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">description</i> <span class="infos-icon-text">Description:</span>
+								<div class="icon">
+									<i class="material-icons">description</i> <span class="icon-text">Description:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
@@ -67,8 +67,8 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">list</i> <span class="infos-icon-text">Requirements:</span>
+								<div class="icon">
+									<i class="material-icons">list</i> <span class="icon-text">Requirements:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
@@ -78,8 +78,8 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">file_download</i> <span class="infos-icon-text">Files:</span>
+								<div class="icon">
+									<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
 								</div>
 							</td>										
 							<td class="infos-right">	
@@ -103,8 +103,8 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">photo_camera</i> <span class="infos-icon-text">Screenshots:</span>
+								<div class="icon">
+									<i class="material-icons">photo_camera</i> <span class="icon-text">Screenshots:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
@@ -113,8 +113,8 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons md-light">assignment</i> <span class="infos-icon-text">License:</span>
+								<div class="icon">
+									<i class="material-icons md-light">assignment</i> <span class="icon-text">License:</span>
 								</div>
 							</td>										
 							<td class="infos-right">

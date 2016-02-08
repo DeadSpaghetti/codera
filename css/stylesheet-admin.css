@@ -15,6 +15,7 @@ width: 75%;
 resize: vertical;
 }
 
+/*only workaround*/
 input[type='file'] {
 color: transparent;
 }
@@ -27,4 +28,94 @@ width: 11vmin;
 #button-discard{
 background-color: #e57373;	
 width: 11vmin;
+}
+
+#button-login{
+background-color: #5E99F2;	
+width: 10vmin;
+margin: auto;
+vertical-align: middle;
+}
+
+#login-white{
+width: 25vw;
+height: auto;
+margin: auto;
+background-color: #FFFFFF;
+font-family: Roboto, Sans-Serif;
+-webkit-box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+-moz-box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+padding: 3vmin 6vmin 6vmin 4vmin;
+margin-top: 10%;
+}
+
+#login-container{
+width: 85%;
+margin: auto;
+}
+
+#login-table{
+width: 95%;	
+margin: auto;
+margin-top: 3vmin;
+}
+
+#login-title{
+font-size: 4vmin;
+font-weight: bold;
+text-align: center;
+margin-top: 2vmin;
+margin-bottom: 5vmin;
+}
+
+.login-input{
+width: 90%;
+margin: auto;
+background-color: #FFFFFF;
+border-radius: 0.5vmin;
+font-size: 2.2vmin;
+border: 0.2vmin solid #d9d9d9;
+-webkit-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
+-moz-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
+box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
+padding: 1vmin;
+display: block;
+}
+
+#input-password{
+margin-top: 2vmin;	
+}
+
+#login-message{
+font-size: 2.2vmin;
+color: #CC0000;
+}
+
+#login-button-container{
+text-align: right;
+vertical-align: middle;
+padding: 0;
+}
+
+#icon-warn{
+text-align: center;
+padding-right: 2vmin;
+}
+
+#icon-warn i{
+color: #CC0000;	
+font-size: 2.8vmin;
+}
+
+#icon-warn span{
+padding-left: 0;
+font-weight: normal;
+display: inline-block;
+}
+
+@media screen and (max-width: 1100px) {
+    #login-white{
+		width: 45vw;
+	}	
 }

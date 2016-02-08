@@ -73,6 +73,7 @@ width: 100%;
 height: 15vmin;
 background-color: #bdbdbd;
 display: table;
+border-bottom: 0.4vmin solid #B3B3B3;
 }
 
 #name-text{
@@ -91,7 +92,6 @@ color: #FFFFFF;
 }
 
 #content{	
-border-top: 2px solid #B3B3B3;
 width: 100%;
 height: auto;
 background-color: #EEEEEE ;
@@ -119,7 +119,7 @@ margin: auto;
 text-align: center;
 }
 
-.icon{
+.entry-icon{
 width: 16vmin;
 height: 16vmin;
 margin: auto;
@@ -141,6 +141,58 @@ margin: auto;
 text-align: center;
 margin-top: 2vmin;
 color: #212121;
+}
+
+/* Default Button */
+.button{
+display: inline-block;	
+margin-left: 3vmin;
+width: 14vmin;
+font-family: Roboto, Sans-Serif;
+font-size: 2.1vmin;
+padding: 0.5vmin;
+background-color: #bdbdbd;
+text-align: center;
+-webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+border-radius: 0.3vmin;
+}
+
+.button:hover{
+opacity: 0.7;
+}
+
+.button i{	
+font-size: 2.6vmin;
+display: inline;
+color: #212121;
+vertical-align: middle;
+}
+
+.button-text{
+display: inline;
+vertical-align: middle;	
+}
+
+/* Default Icon with Text */
+.icon{
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+font-weight: bold;
+}
+
+.icon i{	
+font-size: 3.2vmin;
+display: inline;
+color: #212121;
+vertical-align: middle;	
+}
+
+.icon-text{
+display: inline;
+vertical-align: middle;	
+padding-left: 2.2vmin;
 }
 
 #footer {

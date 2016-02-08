@@ -52,25 +52,6 @@ font-size: 2.2vmin;
 color: #212121;
 }
 
-.infos-icon{
-font-family: Roboto, Sans-Serif;
-font-size: 2.2vmin;
-font-weight: bold;
-}
-
-.infos-icon i{	
-font-size: 3.2vmin;
-display: inline;
-color: #212121;
-vertical-align: middle;	
-}
-
-.infos-icon-text{
-display: inline;
-vertical-align: middle;	
-padding-left: 2.2vmin;
-}
-
 .infos-left{
 width: 30vmin;
 padding-right: 5vmin;
@@ -86,21 +67,6 @@ padding-bottom: 5vmin;
 
 }
 
-.button{
-display: inline-block;	
-margin-left: 3vmin;
-width: 14vmin;
-font-family: Roboto, Sans-Serif;
-font-size: 2.1vmin;
-padding: 0.5vmin;
-background-color: #bdbdbd;
-text-align: center;
--webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
-border-radius: 0.3vmin;
-}
-
 select {   
 width: 100%;
 height: 4vmin;
@@ -109,22 +75,6 @@ font-family: Roboto, Sans-Serif;
 font-size: 2.2vmin;
 border: 0.2vmin solid #777777;
 color: #212121;
-}
-
-.button:hover{
-opacity: 0.7;
-}
-
-.button i{	
-font-size: 2.6vmin;
-display: inline;
-color: #212121;
-vertical-align: middle;
-}
-
-.button-text{
-display: inline;
-vertical-align: middle;	
 }
 
 @media screen and (max-width: 1000px) {
