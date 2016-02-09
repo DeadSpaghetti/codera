@@ -14,8 +14,8 @@
 				<div id="login-white">
 					<div id="login-container">
 						<div id="login-title">Admin Login</div>
-						<input class="login-input" id="input-username" type="text" maxlength="128" placeholder="Username"/>
-						<input class="login-input" id="input-password" type="password" placeholder="Password"/>		
+						<input class="input" id="input-username" type="text" maxlength="128" placeholder="Username"/>
+						<input class="input" id="input-password" type="password" placeholder="Password"/>		
 						<table id="login-table">
 							<tr>
 							<!-- only show when error START -->

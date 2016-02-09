@@ -25,58 +25,58 @@
 					<table id="infos">
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">mode_edit</i> <span class="infos-icon-text">Name:</span>
+								<div class="icon">
+									<i class="material-icons">mode_edit</i> <span class="icon-text">Name:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<input id="input-appName" type="text" maxlength="15" placeholder="MyApp"/>
+								<input class="input project" id="input-appName" type="text" maxlength="15" placeholder="MyApp"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">image</i> <span class="infos-icon-text">Icon:</span>
+								<div class="icon">
+									<i class="material-icons">image</i> <span class="icon-text">Icon:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								 <input id="input-icon" name="Icon" type="file" accept="image/png, image/jpeg"/>
+								<input id="input-icon" name="Icon" type="file" accept="image/png, image/jpeg"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">update</i> <span class="infos-icon-text">Versioncode:</span>
+								<div class="icon">
+									<i class="material-icons">update</i> <span class="icon-text">Versioncode:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<input id="input-versionCode" type="text" maxlength="15" placeholder="10"/>
+								<input class="input project" id="input-versionCode" type="text" maxlength="15" placeholder="10"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">update</i> <span class="infos-icon-text">Version:</span>
+								<div class="icon">
+									<i class="material-icons">update</i> <span class="icon-text">Version:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<input id="input-versionName" type="text" maxlength="15" placeholder="1.0.0 b"/>
+								<input class="input project" id="input-versionName" type="text" maxlength="15" placeholder="1.0.0 b"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons md-light">access_time</i> <span class="infos-icon-text">Last Update:</span>
+								<div class="icon">
+									<i class="material-icons md-light">access_time</i> <span class="icon-text">Last Update:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<input id="input-date" type="date"/>
+								<input class="input project" id="input-date" type="date"/>
 							</td>
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">code</i> <span class="infos-icon-text">Latest Changes:</span>
+								<div class="icon">
+									<i class="material-icons">code</i> <span class="icon-text">Latest Changes:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
@@ -85,8 +85,8 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">description</i> <span class="infos-icon-text">Description:</span>
+								<div class="icon">
+									<i class="material-icons">description</i> <span class="icon-text">Description:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
@@ -95,8 +95,8 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">list</i> <span class="infos-icon-text">Requirements:</span>
+								<div class="icon">
+									<i class="material-icons">list</i> <span class="icon-text">Requirements:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
@@ -105,43 +105,29 @@
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">file_download</i> <span class="infos-icon-text">Files:</span>
+								<div class="icon">
+									<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
 								</div>
 							</td>										
-							<td class="infos-right">	
-								<table>
-									<tr>
-										<td>
-											 <select>
-												  <option value="JAR">YourApp.jar -  Any OS</option>
-												  <option value="EXE">Installer.exe - Windows x68</option>
-												  <option value="EXE-64">Installer.exe - Windows x64</option>								
-											</select>
-										</td>
-										<td>
-											<a class="button" id="button-download" href="javascript:void(null)">									
-												<i class="material-icons">file_download</i> <span class="button-text">Download</span> 									
-											</a>
-										</td>
-									</tr>
-								</table
+							<td class="infos-right">									
+								<input id="input-license" name="License" type="file" accept="text/plain">								
 							</td>
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons">photo_camera</i> <span class="infos-icon-text">Screenshots:</span>
+								<div class="icon">
+									<i class="material-icons">photo_camera</i> <span class="icon-text">Screenshots:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<!-- Tabelle Previews -->
+								<!-- Tabelle Previews -->																
+								<input id="input-license" name="License" type="file" accept="text/plain">							
 							</td>
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
-								<div class="infos-icon">
-									<i class="material-icons md-light">assignment</i> <span class="infos-icon-text">License:</span>
+								<div class="icon">
+									<i class="material-icons md-light">assignment</i> <span class="icon-text">License:</span>
 								</div>
 							</td>										
 							<td class="infos-right">

@@ -6,10 +6,6 @@ text-align: center;
 color: #212121;
 }
 
-input{
-width: 75%;	
-}
-
 textarea{
 width: 75%;	
 resize: vertical;
@@ -69,9 +65,29 @@ margin-top: 2vmin;
 margin-bottom: 5vmin;
 }
 
-.login-input{
+.input{
 width: 90%;
 margin: auto;
+background-color: #FFFFFF;
+border-radius: 0.5vmin;
+font-size: 2.2vmin;
+border: 0.2vmin solid #d9d9d9;
+-webkit-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
+-moz-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
+box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
+padding: 1vmin;
+display: block;
+}
+
+.project{
+width: 75%;
+font-size: 2vmin;
+margin-left: 0;
+}
+
+textarea{
+width: 75%;
+margin-left: 0;
 background-color: #FFFFFF;
 border-radius: 0.5vmin;
 font-size: 2.2vmin;
