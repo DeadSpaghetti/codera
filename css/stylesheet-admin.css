@@ -85,6 +85,11 @@ font-size: 2vmin;
 margin-left: 0;
 }
 
+.input-simple{
+border: none;	
+box-shadow: none;
+}
+
 textarea{
 width: 75%;
 margin-left: 0;
@@ -128,6 +133,18 @@ font-size: 2.8vmin;
 padding-left: 0;
 font-weight: normal;
 display: inline-block;
+}
+
+#settings-white{
+width: 80vw;
+height: auto;
+margin: auto;
+background-color: #FFFFFF;
+-webkit-box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+-moz-box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+padding: 3vmin 6vmin 3vmin 4vmin;
+margin-top: 5vmin;
 }
 
 @media screen and (max-width: 1100px) {

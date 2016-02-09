@@ -1,0 +1,74 @@
+.tabs {	
+width: 65%;   	
+margin: auto;
+margin-top: 5vmin;
+font-family: Roboto, Sans-Serif;
+} 
+
+.tab-links{
+padding: 0;
+padding-left: 2vmin;
+}
+
+.tab-links li {
+margin-left: 0.5vmin;
+margin-right: 0.5vmin;
+float:left;
+list-style:none;
+border-radius: 1vmin 1vmin 0 0;	
+-webkit-box-shadow: 0 5px 0px #FFFFFF,
+					-4px -2px 10px rgba(194,194,194,0.5),
+					4px -2px 10px rgba(194,194,194, 0.5);
+-moz-box-shadow:		0 5px 0px #FFFFFF,
+					-4px -2px 10px rgba(194,194,194,0.5),
+					4px -2px 10px rgba(194,194,194, 0.5);
+box-shadow: 		0 5vh 0px #FFFFFF,
+					-4px -2px 10px rgba(194,194,194,0.5),
+					4px -2px 10px rgba(194,194,194, 0.5);		
+}
+ 
+.tab-links a {
+padding: 1.5vmin 2.5vmin;
+display:inline-block;
+border-radius: 1vmin 1vmin 0 0;	
+background-color: #7FB5DA;
+font-size: 2vmin;
+font-weight: bold;
+color:#212121;
+transition:all linear 0.15s;	
+text-decoration: none;					
+}
+
+.tab-links a:hover {
+background:#a7cce5;
+text-decoration:none;
+}
+ 
+li.active a, li.active a:hover {
+background:#fff;
+color:#212121;
+}
+ 
+/* Tab-Content */
+.tab-content {
+padding: 9vmin;
+border-radius: 1vmin;
+-webkit-box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+-moz-box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+background-color: #FFFFFF; 	
+}
+ 
+.tab {
+display:none;				
+}
+
+.tab.active {
+display:block;
+}
+
+@media screen and (max-width: 1000px) {
+    .tabs{
+		width: 95%;
+	}	
+}
