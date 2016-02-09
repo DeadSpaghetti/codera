@@ -16,7 +16,11 @@
 			</div>
 		</td>										
 		<td class="infos-right">
-			<input class="input project" id="input-colorScheme" type="text" maxlength="15" placeholder="10"/>
+			<select id="select-colors">
+				<option value="e57373">red - #e57373</option>
+				<option value="7986cb">indigo - #7986cb</option>
+				<option value="FFB74D">orange - #FFB74D</option>								
+			</select>
 		</td>
 	</tr>
 	<tr class="infos-row">

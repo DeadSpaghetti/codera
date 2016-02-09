@@ -86,6 +86,10 @@ border: 0.2vmin solid #777777;
 color: #212121;
 }
 
+#select-colors{
+width: 77%;
+}
+
 @media screen and (max-width: 1000px) {
     #white{
 		width: 80vw;
