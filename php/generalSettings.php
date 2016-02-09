@@ -28,6 +28,26 @@
 		<td class="infos-right">
 			<input class="input project input-simple" id="input-gridsize" type="range" min="3" max="5"/><label id="slider-label" />
 		</td>
+	</tr>
+	<tr class="infos-row">
+		<td class="infos-left">
+			<div class="icon">
+				<i class="material-icons">system_update</i> <span class="icon-text">Codera:</span>
+			</div>
+		</td>										
+		<td class="infos-right">
+			<table>
+				<tr>
+					<td id="codera-version-left">installed version:</td>
+					<td id="codera-version-right"colspan="2">1.0.0</td>
+				</tr>
+				<tr>
+					<td id="codera-version-left">newest version:</td>
+					<td id="codera-version-right">1.5.3</td>
+					<td id="codera-version-link"><a href="https://github.com/spaghettic0der/codera">Update</a></td>
+				</tr>				
+			</table>
+		</td>
 	</tr>	
 	<tr class="infos-row">
 		<td class="infos-left">	</td>										

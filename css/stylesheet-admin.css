@@ -147,6 +147,22 @@ padding: 3vmin 6vmin 3vmin 4vmin;
 margin-top: 5vmin;
 }
 
+#codera-version-left{
+font-weight: bold;
+}
+
+#codera-version-right{
+padding-left: 2vmin;
+}
+
+#codera-version-link {
+padding-left: 2vmin;
+}
+
+#codera-version-link a{
+color: #4a98d3;
+}
+
 @media screen and (max-width: 1100px) {
     #login-white{
 		width: 45vw;
