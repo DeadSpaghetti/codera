@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function generateGuid($include_braces = false)
 {
