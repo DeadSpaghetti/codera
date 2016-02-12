@@ -17,9 +17,7 @@
 		</td>										
 		<td class="infos-right">
 			<select id="select-colors">
-				<option value="e57373">red - #e57373</option>
-				<option value="7986cb">indigo - #7986cb</option>
-				<option value="FFB74D">orange - #FFB74D</option>								
+				<?php include ("printColorOptions.php") ?>
 			</select>
 		</td>
 	</tr>

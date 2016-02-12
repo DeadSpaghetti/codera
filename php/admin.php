@@ -10,8 +10,8 @@
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-tabs.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>        
-		<script src="../js/tabView.js"></script>				
-		<script src="../js/slider.js"></script>			
+		<script src="../js/admin.js"></script>
+
 	</head>
 	<body>
 		<div id="main">						
