@@ -1,3 +1,22 @@
+
+<?php
+session_start();
+if(!isset($_SESSION['loggedIn']))
+{
+	header('Location: ../login.php');
+	exit;
+}
+
+global $developerName;
+global $colorScheme;
+global $gridSize;
+global $coderaVersion;
+
+//script just changes the global variables
+include "../helper/getGeneralSettingsFromJSON.php";
+
+?>
+
 <table id="infos-small">
 	<tr class="infos-row">
 		<td class="infos-left">
@@ -6,7 +25,7 @@
 			</div>
 		</td>										
 		<td class="infos-right">
-			<input class="input project" id="input-websiteName" type="text" maxlength="15" placeholder="MyEpicDeveloperName"/>
+			<input class="input project" id="input-websiteName" type="text" maxlength="15" placeholder="<?php print $developerName ?>"/>
 		</td>
 	</tr>	
 	<tr class="infos-row">
@@ -28,7 +47,7 @@
 			</div>
 		</td>										
 		<td class="infos-right">
-			<input class="input project input-simple" id="input-gridsize" type="range" min="3" max="5"/><label id="slider-label" />
+			<input class="input project input-simple" id="input-gridsize" type="range" min="3" max="5"/><label id="slider-label" ></label>
 		</td>
 	</tr>
 	<tr class="infos-row">
@@ -41,7 +60,7 @@
 			<table>
 				<tr>
 					<td id="codera-version-left">installed version:</td>
-					<td id="codera-version-right"colspan="2">1.0.0</td>
+					<td id="codera-version-right" colspan="2"><?php print $coderaVersion ?></td>
 				</tr>
 				<tr>
 					<td id="codera-version-left">newest version:</td>

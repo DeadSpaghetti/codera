@@ -3,7 +3,6 @@
 session_start();
 if(!isset($_SESSION['loggedIn']))
 {
-    //print '<script>location.href = "login.php";</script>';
     header('Location: ../login.php');
     exit;	
 }
