@@ -1,39 +1,43 @@
 [
   {
-    "color": "yellow",
-    "hexCode": "#fff176"
+    "color": "red",
+    "hexCode": "#e57373"
+  },  
+   {
+    "color": "orange",
+    "hexCode": "#FFB74D"
   },
-  {
+   {
     "color": "amber",
     "hexCode": "#ffd54f"
   },  
   {
-    "color": "orange",
-    "hexCode": "#FFB74D"
-  },
-  {
-    "color": "red",
-    "hexCode": "#e57373"
-  },
-  {
-    "color": "indigo",
-    "hexCode": "#7986cb"
-  },
-  {
-    "color": "tail",
-    "hexCode": "#4db6ac"
+    "color": "yellow",
+    "hexCode": "#fff176"
   },
   {
     "color": "lime",
     "hexCode": "#dce775"
   },
+   {
+    "color": "light-green",
+    "hexCode": "#aed581"
+  },
   {
     "color": "green",
     "hexCode": "#81c784"
+  }, 
+  {
+    "color": "tail",
+    "hexCode": "#4db6ac"
   },
   {
-    "color": "light-green",
-    "hexCode": "#aed581"
+    "color": "blue",
+    "hexCode": "#4a98d3"
+  },
+  {
+    "color": "indigo",
+    "hexCode": "#7986cb"
   },
   {
     "color": "brown",
@@ -42,9 +46,5 @@
   {
     "color": "grey",
     "hexCode": "#bdbdbd"
-  },
-  {
-    "color": "blue",
-    "hexCode": "#4a98d3"
-  }
+  } 
 ]
