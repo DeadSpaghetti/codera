@@ -17,7 +17,7 @@
 		</td>										
 		<td class="infos-right">
 			<select id="select-colors">
-				<?php include ("printColorOptions.php") ?>
+				<?php include("printColorOptions.php") ?>
 			</select>
 		</td>
 	</tr>

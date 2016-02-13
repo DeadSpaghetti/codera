@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div id="main">
-			<?php include ("header.php"); ?>
+			<?php include("header.php"); ?>
 			<div id="content">	
 				<div id="white">
 					<table id="app">
@@ -126,6 +126,6 @@
 				</div>		
 			</div>
 		</div>
-		<?php include ("footer.php"); ?>		
+		<?php include("footer.php"); ?>
 	</body>
 </html>

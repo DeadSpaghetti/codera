@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div id="main">						
-			<?php include ("header-logout.php"); ?>
+			<?php include("../header-logout.php"); ?>
 			<div id="content">	
 				<div class="tabs">
 					<ul class="tab-links">
@@ -25,7 +25,7 @@
 					<div style="clear: both;"> </div> 		
 						<div class="tab-content">
 							<div id="tab1" class="tab active">
-								<?php include ("generalSettings.php"); ?>				
+								<?php include("generalSettings.php"); ?>
 							</div>					 
 							<div id="tab2" class="tab">
 								Projects	
@@ -34,6 +34,6 @@
 					</div>					
 				</div>				
 		</div>
-		<?php include ("footer.php"); ?>		
+		<?php include("../templates/footer.php"); ?>
 	</body>
 </html>

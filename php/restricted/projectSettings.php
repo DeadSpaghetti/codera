@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 
 <!DOCTYPE html>
 
@@ -15,7 +14,7 @@
 	</head>
 	<body>
 		<div id="main">						
-			<?php include ("header.php"); ?>
+			<?php include("../templates/header.php"); ?>
 			<div id="content">	
 				<div id="white">
 					<table id="app">
@@ -151,6 +150,6 @@
 				</div>		
 			</div>
 		</div>
-		<?php include ("footer.php"); ?>		
+		<?php include("../templates/footer.php"); ?>
 	</body>
 </html>
