@@ -2,7 +2,6 @@ $(document).ready(function()
 {
     $('#button-save').click(function()
     {
-        alert("Works?");
         var name = $('#input-appName').val();
         var icon = $('#input-icon').val();
         var versionCode = $('#input-versionCode').val();

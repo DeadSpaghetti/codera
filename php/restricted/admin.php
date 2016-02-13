@@ -20,7 +20,8 @@ if(!isset($_SESSION['loggedIn']))
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>        
 		<script src="../../js/admin.js"></script>
-
+		<script src="../../js/helper/colorConverter.js"></script>
+		<script src="../../js/generalSettings.js"></script>
 	</head>
 	<body>
 		<div id="main">						

@@ -50,7 +50,7 @@ include "../helper/getGeneralSettingsFromJSON.php";
 			</div>
 		</td>										
 		<td class="infos-right">
-			<input class="input project input-simple" id="input-gridsize" type="range" min="3" max="5"/><label id="slider-label" ></label>
+			<input class="input project input-simple" id="input-gridsize" type="range" value="<?php print $gridSize; ?>" min="3" max="5"/><label id="slider-label" ></label>
 		</td>
 	</tr>
 	<tr class="infos-row">
