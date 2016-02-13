@@ -28,7 +28,7 @@ if(!isset($_SESSION['loggedIn']))
 				<div class="tabs">
 					<ul class="tab-links">
 						<li class="active"><a href="#tab1">General Settings</a></li>
-						<li><a href="#tab2">Projects</a></li>      
+						<li><a href="#tab2">Projects</a></li>  					
 					</ul>
 					<div style="clear: both;"> </div> 		
 						<div class="tab-content">
