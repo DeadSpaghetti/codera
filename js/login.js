@@ -9,7 +9,7 @@ $(document).ready(function()
 
         if(username != "" && username != undefined && password != "" && password != undefined)
         {
-            $.post('../php/checkLogin.php',
+            $.post('../php/helper/checkLogin.php',
                 {
                     "username": username,
                     "password": password

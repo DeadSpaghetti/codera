@@ -14,7 +14,7 @@ $(document).ready(function()
         var license = $('#input-license').val();
 
 
-        $.post("../php/addProjectToJSON.php",
+        $.post("../php/helper/addProjectToJSON.php",
             {
                 "name": name,
                 "icon": icon,
