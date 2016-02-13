@@ -28,7 +28,7 @@ include "../helper/getGeneralSettingsFromJSON.php";
 			</div>
 		</td>										
 		<td class="infos-right">
-			<input class="input project" id="input-websiteName" type="text" maxlength="15" placeholder="<?php print $developerName ?>"/>
+			<input class="input project" id="input-websiteName" type="text" maxlength="15" value="<?php print $developerName ?>" placeholder="Your Dev Name"/>
 		</td>
 	</tr>	
 	<tr class="infos-row">
