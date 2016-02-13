@@ -16,6 +16,7 @@ if(!isset($_SESSION['loggedIn']))
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-tabs.css"/>
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-colorChooser.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>        
 		<script src="../../js/admin.js"></script>

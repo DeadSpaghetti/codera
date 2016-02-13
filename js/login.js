@@ -17,8 +17,8 @@ $(document).ready(function()
                 }, function (data, error)
                 {
                     if (data == "success")
-                    {
-                        location.href = "./restricted/admin.php"
+                    {						
+                        location.href = "../php/restricted/admin.php"
                     }
                     else
                     {

@@ -1,6 +1,9 @@
 
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+	session_start();
+}  
 if(!isset($_SESSION['loggedIn']))
 {
 	header('Location: ../login.php');
@@ -35,9 +38,9 @@ include "../helper/getGeneralSettingsFromJSON.php";
 			</div>
 		</td>										
 		<td class="infos-right">
-			<select id="select-colors">
-				<?php include("printColorOptions.php") ?>
-			</select>
+			<div id="color-chooser">							
+					<?php include("printColorOptions.php") ?>				
+			</div>
 		</td>
 	</tr>
 	<tr class="infos-row">

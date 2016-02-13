@@ -1,14 +1,50 @@
 [
-{
-  "color":"red",
-  "hexCode":"#e57373"
-},
-{
-  "color":"indigo",
-  "hexCode":"#7986cb"
-},
-{
-  "color":"orange",
-  "hexCode":"#FFB74D"
-}
+  {
+    "color": "yellow",
+    "hexCode": "#fff176"
+  },
+  {
+    "color": "amber",
+    "hexCode": "#ffd54f"
+  },  
+  {
+    "color": "orange",
+    "hexCode": "#FFB74D"
+  },
+  {
+    "color": "red",
+    "hexCode": "#e57373"
+  },
+  {
+    "color": "indigo",
+    "hexCode": "#7986cb"
+  },
+  {
+    "color": "tail",
+    "hexCode": "#4db6ac"
+  },
+  {
+    "color": "lime",
+    "hexCode": "#dce775"
+  },
+  {
+    "color": "green",
+    "hexCode": "#81c784"
+  },
+  {
+    "color": "light-green",
+    "hexCode": "#aed581"
+  },
+  {
+    "color": "brown",
+    "hexCode": "#8d6e63"
+  },
+  {
+    "color": "grey",
+    "hexCode": "#bdbdbd"
+  },
+  {
+    "color": "blue",
+    "hexCode": "#4a98d3"
+  }
 ]
