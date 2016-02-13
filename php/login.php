@@ -23,7 +23,7 @@
 							<!-- only show when error START -->
 								<td id="login-message">
 									<div class="icon" id="icon-warn">
-										<i class="material-icons">warning</i> <span class="icon-text"><!-- Insert Message here --> Wrong Username!</span>
+										<i class="material-icons">warning</i> <span class="icon-text">Wrong Credentials!</span>
 									</div>
 								</td>
 							<!-- END -->
@@ -38,6 +38,6 @@
 				</div>		
 			</div>
 		</div>
-		<?php include("footer.php"); ?>
+		<?php include("templates/footer.php"); ?>
 	</body>
 </html>

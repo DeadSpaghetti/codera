@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="main">
-			<?php include("restricted/header.php"); ?>
+			<?php include("templates/header.php"); ?>
 			<div id="content">				
 				<table id="projects">
 					<tr class="row">
@@ -29,6 +29,6 @@
 				</table>		
 			</div>			
 		</div>
-		<?php include("footer.php"); ?>
+		<?php include("templates/footer.php"); ?>
 	</body>
 </html>

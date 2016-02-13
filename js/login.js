@@ -1,5 +1,7 @@
 $(document).ready(function()
 {
+	document.getElementById('login-message') .style.display='none';			
+	
     $('#button-login').click(function()
     {
         var username = $('#input-username').val();
@@ -11,9 +13,15 @@ $(document).ready(function()
                 "password": password
 
             },function(data,error)
-            {
-                alert(data);
+            {     
+				if(data == "success")
+				{
+					location.href = "./restricted/admin.php"
+				}	
+				else
+				{				
+					document.getElementById('login-message') .style.display='';						
+				}
             });
-
     });
 });

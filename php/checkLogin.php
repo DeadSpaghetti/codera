@@ -18,13 +18,12 @@ if(file_exists($adminFilePath))
 
     if($adminFileArray['username'] == $username && $adminFileArray['password'] == $password)
     {
-        echo 'You are now logged in!';
+        echo 'success';
         $_SESSION['loggedIn'] = true;
     }
     else
     {
-        echo 'loginWrong';
-        //echo 'loginWrong';
+        echo 'failure';        
     }
 }
 else
@@ -41,8 +40,4 @@ else
     fclose($fileHandle);
 
     echo 'UsernameCreated!';
-
-
-
-
 }
