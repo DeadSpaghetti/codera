@@ -13,7 +13,7 @@ if(!isset($_SESSION['loggedIn']))
 global $developerName;
 global $colorScheme;
 global $gridSize;
-global $coderaVersion;
+
 
 //script just changes the global variables
 include "../helper/getGeneralSettingsFromJSON.php";
@@ -63,7 +63,7 @@ include "../helper/getGeneralSettingsFromJSON.php";
 			<table>
 				<tr>
 					<td id="codera-version-left">installed version:</td>
-					<td id="codera-version-right" colspan="2"><?php print $coderaVersion ?></td>
+					<td id="codera-version-right" colspan="2">1.0.0</td>
 				</tr>
 				<tr>
 					<td id="codera-version-left">newest version:</td>
