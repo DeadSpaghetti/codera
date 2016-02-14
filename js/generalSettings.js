@@ -13,8 +13,7 @@ $(document).ready(function()
     {
         var developerName = $('#input-websiteName').val();
         var colorScheme = $('#color-chooser div.selected').css('background-color');		
-        var gridSize = $('input[name=gridwidth]:checked').val();
-		alert(gridSize);
+        var gridSize = $('input[name=gridwidth]:checked').val();		
 
         $.post("../helper/setGeneralSettingsToJSON.php",
             {
@@ -23,8 +22,8 @@ $(document).ready(function()
                 "gridSize": gridSize
             },function(data,error)
             {
-
+				location.reload(); 
             }
-        );
+        );		
     });
 });

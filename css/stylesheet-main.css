@@ -76,17 +76,28 @@ display: table;
 border-bottom: 0.4vmin solid #B3B3B3;
 }
 
-#name-text{
+.name-text{
 width: 50%;
 margin: auto;
 font-family: Roboto, Sans-Serif;
-font-size: 8vmin;
 text-align: center;
 display: table-cell;
 vertical-align: middle;
 }
 
-#name-text a{
+#name-text-short{
+font-size: 8vmin;
+}
+
+#name-text-middle{
+font-size: 6.5vmin;
+}
+
+#name-text-long{
+font-size: 5vmin;
+}
+
+.name-text a{
 text-decoration: none;
 color: #FFFFFF;
 }
