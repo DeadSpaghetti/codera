@@ -12,14 +12,15 @@ $(document).ready(function()
     $('#button-save').click(function()
     {
         var developerName = $('#input-websiteName').val();
-        var colorScheme = $('#color-chooser div.selected').css('background-color');
-        var gridSize = $('#input-gridsize').val();
+        var colorScheme = $('#color-chooser div.selected').css('background-color');		
+        var gridSize = $('input[name=gridwidth]:checked').val();
+		alert(gridSize);
 
         $.post("../helper/setGeneralSettingsToJSON.php",
             {
                 "developerName": developerName,
                 "colorScheme": rgb2hex(colorScheme),
-                "gridSize":gridSize
+                "gridSize": gridSize
             },function(data,error)
             {
 

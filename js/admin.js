@@ -1,22 +1,5 @@
-var rangeValues =
-{
-    "3": "3",
-    "4": "4",
-    "5": "5"
-};
-
 $(document).ready(function ()
 {
-    // on page load, set the text of the label based the value of the range
-    $('#slider-label').text(rangeValues[$('#input-gridsize').val()]);
-
-    //slider
-    // setup an event handler to set the text when the range value is dragged (see event for input) or changed (see event for change)
-    $('#input-gridsize').on('input change', function ()
-    {
-        $('#slider-label').text(rangeValues[$(this).val()]);
-    });
-
     //tabView
     $('.tabs .tab-links a').on('click', function(e)
     {

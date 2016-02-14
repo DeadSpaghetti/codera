@@ -48,7 +48,18 @@ include("../helper/getGeneralSettingsFromJSON.php");
 			</div>
 		</td>										
 		<td class="infos-right">
-			<input class="input project input-simple" id="input-gridsize" type="range" value="<?php print $gridSize; ?>" min="3" max="5"/><label id="slider-label" ></label>
+			<div class="radiogroup" id="radiogroup-1">				
+				<input type="radio" name="gridwidth" id="radio-1" value="3" <?php if($gridSize == 3){echo "checked";} ?>/>
+				<label for="radio-1">3</label>
+			</div>
+			<div class="radiogroup">				
+				<input type="radio" name="gridwidth" id="radio-2" value="4" <?php if($gridSize == 4){echo "checked";} ?>/>
+				<label for="radio-2">4</label>
+			</div>
+			<div class="radiogroup">				
+				<input type="radio" name="gridwidth" id="radio-3" value="5" <?php if($gridSize == 5){echo "checked";} ?>/>
+				<label for="radio-3">5</label>
+			</div>			
 		</td>
 	</tr>
 	<tr class="infos-row">
