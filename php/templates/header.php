@@ -1,11 +1,15 @@
+<?php
+include('helper/getGeneralSettingsFromJSON.php');
+?>
+
 <div id="header">
 	<div id="login">
 		<a href="login.php"> <i class="material-icons">exit_to_app</i> <span id="login-text">Login</span></a>
 	</div>	
 	<div style="clear: both;"></div>					
 </div>
-<div id="name">
+<div id="name" style="background-color: <?php echo $colorScheme;?>;">
 	<div id="name-text">
-		<a href="index.php">Deadlocker</a>
+		<a href="index.php"><?php echo $developerName; ?></a>
 	</div>			
 </div>

@@ -5,10 +5,8 @@ var rangeValues =
     "5": "5x5"
 };
 
-
 $(document).ready(function ()
 {
-
     // on page load, set the text of the label based the value of the range
     $('#slider-label').text(rangeValues[$('#input-gridsize').val()]);
 
@@ -31,6 +29,5 @@ $(document).ready(function ()
         $(this).parent('li').addClass('active').siblings().removeClass('active');
 
         e.preventDefault();
-    });
-
+    });	
 });

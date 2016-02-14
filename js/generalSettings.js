@@ -1,6 +1,5 @@
 $(document).ready(function()
 {
-
     $('#color-chooser').click(function(event)
     {
         if(event.target.className == "ink")
@@ -10,10 +9,8 @@ $(document).ready(function()
         }
     });
 
-
     $('#button-save').click(function()
     {
-
         var developerName = $('#input-websiteName').val();
         var colorScheme = $('#color-chooser div.selected').css('background-color');
         var gridSize = $('#input-gridsize').val();
@@ -26,12 +23,7 @@ $(document).ready(function()
             },function(data,error)
             {
 
-
             }
         );
-
     });
-
-
 });
-
