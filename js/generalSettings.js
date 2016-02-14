@@ -3,8 +3,11 @@ $(document).ready(function()
 
     $('#color-chooser').click(function(event)
     {
-        $('#color-chooser div').removeClass('selected');
-        event.target.className = "ink selected";
+        if(event.target.className == "ink")
+        {
+            $('#color-chooser div').removeClass('selected');
+            event.target.className = "ink selected";
+        }
     });
 
 
