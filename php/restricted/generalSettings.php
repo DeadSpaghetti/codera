@@ -14,10 +14,8 @@ global $developerName;
 global $colorScheme;
 global $gridSize;
 
-
 //script just changes the global variables
-include "../helper/getGeneralSettingsFromJSON.php";
-
+include("../helper/getGeneralSettingsFromJSON.php");
 ?>
 
 <table id="infos-small">
@@ -28,7 +26,7 @@ include "../helper/getGeneralSettingsFromJSON.php";
 			</div>
 		</td>										
 		<td class="infos-right">
-			<input class="input project" id="input-websiteName" type="text" maxlength="15" value="<?php print $developerName ?>" placeholder="Your Dev Name"/>
+			<input class="input project" id="input-websiteName" type="text" maxlength="15" value="<?php print $developerName; ?>" placeholder="Your Dev Name"/>
 		</td>
 	</tr>	
 	<tr class="infos-row">
@@ -39,7 +37,7 @@ include "../helper/getGeneralSettingsFromJSON.php";
 		</td>										
 		<td class="infos-right">
 			<div id="color-chooser">							
-					<?php include("printColorOptions.php") ?>				
+					<?php include("printColorOptions.php"); ?>				
 			</div>
 		</td>
 	</tr>
