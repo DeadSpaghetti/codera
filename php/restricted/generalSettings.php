@@ -26,7 +26,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 			</div>
 		</td>										
 		<td class="infos-right">
-			<input class="input project" id="input-websiteName" type="text" maxlength="15" value="<?php print $developerName; ?>" placeholder="Your Dev Name"/>
+			<input class="input project" id="input-websiteName" type="text" maxlength="30" value="<?php print $developerName; ?>" placeholder="Your Dev Name"/>
 		</td>
 	</tr>	
 	<tr class="infos-row">
@@ -44,7 +44,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 	<tr class="infos-row">
 		<td class="infos-left">
 			<div class="icon">
-				<i class="material-icons">grid_on</i> <span class="icon-text">Gridsize:</span>
+				<i class="material-icons">grid_on</i> <span class="icon-text">Gridwidth:</span>
 			</div>
 		</td>										
 		<td class="infos-right">

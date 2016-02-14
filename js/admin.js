@@ -1,8 +1,8 @@
 var rangeValues =
 {
-    "3": "3x3",
-    "4": "4x4",
-    "5": "5x5"
+    "3": "3",
+    "4": "4",
+    "5": "5"
 };
 
 $(document).ready(function ()
