@@ -1,3 +1,12 @@
+<?php
+if(!isset($_SESSION))
+{
+	session_start();
+}
+
+include('helper/paths.php');
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -10,7 +19,16 @@
 	</head>
 	<body>
 		<div id="main">
-			<?php include("templates/header.php"); ?>
+			<?php 				
+				if(isset($_SESSION['loggedIn']))
+				{					
+					include($path_header_logout); 
+				}
+				else
+				{				
+					include($path_header); 
+				}
+			?>
 			<div id="content">	
 				<div id="white">
 					<table id="app">

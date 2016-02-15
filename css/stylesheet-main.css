@@ -43,7 +43,7 @@ padding-top: 1vh;
 padding-bottom: 1vh;
 }
 
-#login{
+.login{
 width: 15vmin;
 height: auto;
 font-family: Roboto, Sans-Serif;
@@ -52,18 +52,18 @@ color: #FFFFFF;
 float: right;
 }
 
-#login i{	
+.login i{	
 font-size: 3vmin;
 display: inline;
 vertical-align: middle;	
 }
 
-#login-text{
+.login-text{
 display: inline;
 vertical-align: middle;	
 }
 
-#login a{
+.login a{
 color: #FFFFFF;
 text-decoration: none;
 }

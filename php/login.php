@@ -1,3 +1,15 @@
+<?php
+if(!isset($_SESSION))
+{
+	session_start();
+}
+if(isset($_SESSION['loggedIn']))
+{
+	header('Location: restricted/admin.php');
+	exit;
+}
+?>
+
 <!DOCTYPE html>
 
 <html>
