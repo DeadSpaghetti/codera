@@ -72,6 +72,11 @@ vertical-align: middle;
 padding-bottom: 1vmin;
 }
 
+.infos-center{
+text-align: center;
+vertical-align: middle;
+}
+
 .infos-row > td{
 padding-bottom: 5vmin;
 }

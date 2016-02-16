@@ -22,15 +22,26 @@ if(!isset($_SESSION['loggedIn']))
 		</td>
 	</tr>	
 	<tr class="infos-row">
-		<td class="infos-left">
+		<td class="infos-left lesspadding">
 			<div class="icon">
 				<i class="material-icons">lock</i> <span class="icon-text">Old Password:</span>
 			</div>
 		</td>										
-		<td class="infos-right">
+		<td class="infos-right lesspadding">
 			<input class="input project" id="input-password-old" type="text" placeholder="Old Password"/>
 		</td>
 	</tr>
+	<tr class="infos-row">	
+		<td class="infos-left lesspadding"></td>
+		<td class="infos-right lesspadding">
+			<div class="icon" id="icon-warn">
+				<i class="material-icons">warning</i> <span class="icon-text">Old Password is incorrect!</span>
+			</div>
+			<div class="icon" id="icon-success">
+				<i class="material-icons">check</i> <span class="icon-text">Successfully saved.</span>
+			</div>
+		</td>
+	</tr>	
 	<tr class="infos-row">
 		<td class="infos-left lesspadding">
 			<div class="icon">

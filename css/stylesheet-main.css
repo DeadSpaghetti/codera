@@ -182,7 +182,7 @@ color: #212121;
 /* Default Button */
 .button{
 display: inline-block;	
-margin-left: 3vmin;
+margin-right: 3vmin;
 width: 14vmin;
 font-family: Roboto, Sans-Serif;
 font-size: 2.1vmin;

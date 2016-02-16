@@ -120,8 +120,9 @@ padding: 0;
 }
 
 #icon-warn{
-text-align: center;
+text-align: left;
 padding-right: 2vmin;
+color: #CC0000;
 }
 
 #icon-warn i{
@@ -130,6 +131,23 @@ font-size: 2.8vmin;
 }
 
 #icon-warn span{
+padding-left: 0;
+font-weight: normal;
+display: inline-block;
+}
+
+#icon-success{
+text-align: left;
+padding-right: 2vmin;
+color: #247A2D;
+}
+
+#icon-success i{
+color: #247A2D;	
+font-size: 2.8vmin;
+}
+
+#icon-success span{
 padding-left: 0;
 font-weight: normal;
 display: inline-block;
