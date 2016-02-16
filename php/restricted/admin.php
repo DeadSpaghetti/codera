@@ -28,9 +28,10 @@ if(!isset($_SESSION['loggedIn']))
 			<?php include("../templates/header-logout.php"); ?>
 			<div id="content">	
 				<div class="tabs">
-					<ul class="tab-links">
-						<li class="active"><a href="#tab1">General Settings</a></li>
-						<li><a href="#tab2">Projects</a></li>  					
+					<ul class="tab-links">						
+						<li class="active"><a href="#tab1">General Settings</a></li>		
+						<li><a href="#tab2">Projects</a></li> 							
+						<li><a href="#tab3">Change Login</a></li> 						
 					</ul>
 					<div style="clear: both;"> </div> 		
 						<div class="tab-content">
@@ -39,7 +40,10 @@ if(!isset($_SESSION['loggedIn']))
 							</div>					 
 							<div id="tab2" class="tab">
 								Projects	
-							</div>        
+							</div> 
+							<div id="tab3" class="tab">
+								<?php include("changeLogin.php"); ?>	
+							</div>  							
 						</div>
 					</div>					
 				</div>				

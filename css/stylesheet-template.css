@@ -68,12 +68,17 @@ font-weight: bold;
 vertical-align: middle;	
 }
 
+.infos-left.lesspadding{
+padding-bottom: 1vmin;
+}
+
 .infos-row > td{
 padding-bottom: 5vmin;
 }
 
-.infos-right{
 
+.infos-right.lesspadding{
+padding-bottom: 1vmin;
 }
 
 select {   
