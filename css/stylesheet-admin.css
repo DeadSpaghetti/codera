@@ -33,6 +33,12 @@ margin: auto;
 vertical-align: middle;
 }
 
+#button-new-project{
+background-color: #81c784;	
+width: 11vmin;
+font-size: 2.7vmin;
+}
+
 #login-white{
 width: 25vw;
 height: auto;
@@ -186,12 +192,65 @@ display: inline-block;
 text-align: center;
 margin-left: 4vmin;
 }
+
 .radiogroup label {
 display: block;
 }
 
 #radiogroup-1{
 margin: 0;
+}
+
+#overview{
+width: 80%;
+height: auto;
+margin: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+color: #212121;
+}
+
+.overview-left{
+width: 75vmin;
+padding-right: 5vmin;
+font-weight: bold;
+vertical-align: middle;	
+}
+
+.overview-center{
+text-align: center;
+vertical-align: middle;
+padding-bottom: 5vmin;
+}
+
+.overview-row > td{
+/*padding-bottom: 3vmin;*/
+}
+
+.overview-icon{
+margin: auto;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: contain;
+opacity: 1.0;
+width: 10vmin;
+height: 10vmin;
+display: inline-block;
+}
+
+.overview-appname{
+font-family: Roboto, Sans-Serif;
+font-size: 3vmin;	
+display: inline;
+vertical-align: middle;
+margin-left: 4vmin;
+}
+
+.overview-line{
+width: 100%;
+border-bottom: 0.3vmin solid black;
+margin-top: 2vmin;
+margin-bottom: 2vmin;
 }
 
 @media screen and (max-width: 1100px) {

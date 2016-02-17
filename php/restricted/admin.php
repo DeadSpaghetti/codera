@@ -40,7 +40,7 @@ if(!isset($_SESSION['loggedIn']))
 								<?php include("generalSettings.php"); ?>
 							</div>					 
 							<div id="tab2" class="tab">
-								Projects Overview
+								<?php include("projectOverview.php"); ?>
 							</div> 
 							<div id="tab3" class="tab">
 								<?php include("changeLogin.php"); ?>	
