@@ -34,6 +34,14 @@ color: #212121;
 padding-left: 10vmin;
 }
 
+#new-project{	
+font-family: Roboto, Sans-Serif;
+font-size: 5vmin;
+margin: auto;
+text-align: center;
+color: #212121;
+}
+
 .line{
 width: 100%;
 height: 0.3vmin;
@@ -80,7 +88,6 @@ vertical-align: middle;
 .infos-row > td{
 padding-bottom: 5vmin;
 }
-
 
 .infos-right.lesspadding{
 padding-bottom: 1vmin;

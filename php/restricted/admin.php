@@ -22,6 +22,7 @@ if(!isset($_SESSION['loggedIn']))
 		<script src="../../js/admin.js"></script>
 		<script src="../../js/helper/colorConverter.js"></script>
 		<script src="../../js/generalSettings.js"></script>
+		<script src="../../js/projectSettings.js"></script>
 	</head>
 	<body>
 		<div id="main">						
@@ -39,7 +40,7 @@ if(!isset($_SESSION['loggedIn']))
 								<?php include("generalSettings.php"); ?>
 							</div>					 
 							<div id="tab2" class="tab">
-								Projects	
+								Projects Overview
 							</div> 
 							<div id="tab3" class="tab">
 								<?php include("changeLogin.php"); ?>	
