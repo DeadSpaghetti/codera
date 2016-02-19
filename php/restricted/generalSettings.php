@@ -71,11 +71,11 @@ include("../helper/getGeneralSettingsFromJSON.php");
 			<table>
 				<tr>
 					<td id="codera-version-left">installed version:</td>
-					<td id="codera-version-right" colspan="2">1.0.0</td>
+					<td id="codera-version-right-onDisk" colspan="2"><?php include_once "../helper/getCurrentVersion.php"?></td>
 				</tr>
 				<tr>
 					<td id="codera-version-left">latest version:</td>
-					<td id="codera-version-right">1.5.3</td>
+					<td id="codera-version-right-onLine"></td>
 					<td id="codera-version-link"><a href="https://github.com/spaghettic0der/codera">Update</a></td>
 				</tr>				
 			</table>
