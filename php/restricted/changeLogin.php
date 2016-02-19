@@ -18,7 +18,7 @@ if(!isset($_SESSION['loggedIn']))
 			</div>
 		</td>										
 		<td class="infos-right lesspadding">
-			<input class="input project" id="input-username-old" type="text" maxlength="30" value="<?php print $developerName; ?>" placeholder="Your Dev Name"/>
+			<input class="input project" id="input-username-old" type="text" maxlength="30" placeholder="Your Login Name"/>
 		</td>
 	</tr>	
 	<tr class="infos-row">
