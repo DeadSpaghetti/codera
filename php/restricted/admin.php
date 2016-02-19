@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+require '../helper/checkLogin.php';
 if(!isset($_SESSION['loggedIn']))
 {
     header('Location: ../login.php');
@@ -23,6 +24,7 @@ if(!isset($_SESSION['loggedIn']))
 		<script src="../../js/helper/colorConverter.js"></script>
 		<script src="../../js/generalSettings.js"></script>
 		<script src="../../js/projectSettings.js"></script>
+        <script src="../../js/changeLogin.js"></script>
 	</head>
 	<body>
 		<div id="main">						
@@ -51,4 +53,5 @@ if(!isset($_SESSION['loggedIn']))
 		</div>
 		<?php include("../templates/footer.php"); ?>
 	</body>
+
 </html>

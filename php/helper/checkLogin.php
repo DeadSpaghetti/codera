@@ -1,51 +1,70 @@
 <?php
 session_start();
+define('ADMIN_FILE_PATH','../../config/admin.json');
 
-$username = $_POST['username'];
-$password = $_POST['password'];
 
-if(isset($username) && isset($password) && $username != "" && $password != "")
+function createUser($username, $password)
 {
-    $salt = file_get_contents('../../config/salt.txt');
-    $adminFilePath = '../../config/admin.json';
+    //create new user!
+    $fileHandle = fopen(ADMIN_FILE_PATH, "w");
+    $adminInfoArray = array
+    (
+        'username' => $username,
+        'password' => $password
+    );
 
-    $password = crypt($password, '$5$g3t#~34uö@$');
-    $username = crypt($username, '$5$g3t#~34uö@$');
+    fwrite($fileHandle, json_encode($adminInfoArray));
+    fclose($fileHandle);
 
+    echo 'UsernameCreated!';
+}
 
-    if (file_exists($adminFilePath))
+function checkLoginData($username,$password)
+{
+    $adminFile = file_get_contents(ADMIN_FILE_PATH);
+
+    $adminFileArray = json_decode($adminFile, true);
+
+    if ($adminFileArray['username'] == $username && $adminFileArray['password'] == $password)
     {
-        $adminFile = file_get_contents($adminFilePath);
-        //echo $adminFile;
-        $adminFileArray = json_decode($adminFile, true);
-
-        if ($adminFileArray['username'] == $username && $adminFileArray['password'] == $password)
-        {
-            echo 'success';
-            $_SESSION['loggedIn'] = true;
-        }
-        else
-        {
-            echo 'failure';
-        }
+        echo 'success';
+        $_SESSION['loggedIn'] = true;
     }
     else
     {
-        //create new user!
-        $fileHandle = fopen($adminFilePath, "w");
-        $adminInfoArray = array
-        (
-            'username' => $username,
-            'password' => $password
-        );
-
-        fwrite($fileHandle, json_encode($adminInfoArray));
-        fclose($fileHandle);
-
-        echo 'UsernameCreated!';
+        echo 'failure';
     }
 }
-else
+
+if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    echo "wrongInput";
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $forceOverride = $_POST['forceOverride'];
+
+    if (isset($username) && isset($password) && $username != "" && $password != "")
+    {
+        $password = crypt($password, '$5$g3t#~34uö@$');
+        $username = crypt($username, '$5$g3t#~34uö@$');
+
+        if (file_exists(ADMIN_FILE_PATH))
+        {
+            checkLoginData($username, $password);
+
+            //for changing the password & username
+            if($forceOverride == true && $_SESSION['loggedIn'] == true)
+            {
+                createUser($username,$password);
+            }
+        }
+        else
+        {
+            createUser($username, $password);
+        }
+
+    }
+    else
+    {
+        echo "wrongInput";
+    }
 }

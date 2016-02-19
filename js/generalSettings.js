@@ -5,7 +5,7 @@ $(document).ready(function()
         if(event.target.className == "ink")
         {
             $('#color-chooser div').removeClass('selected');
-            event.target.className = "ink selected";//
+            event.target.className = "ink selected";
         }
     });
 
