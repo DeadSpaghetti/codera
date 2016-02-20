@@ -11,7 +11,7 @@ if(!isset($_SESSION['loggedIn']))
 
 <html>
 	<head>
-		<title>Deadlocker</title>
+		<title>Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
@@ -32,19 +32,19 @@ if(!isset($_SESSION['loggedIn']))
 			<div id="content">	
 				<div class="tabs">
 					<ul class="tab-links">						
-						<li class="active"><a href="#tab1">General Settings</a></li>		
-						<li><a href="#tab2">Projects</a></li> 							
-						<li><a href="#tab3">Change Login</a></li> 						
+						<li class="active"><a href="#tabGeneralSettings">General Settings</a></li>
+						<li><a href="#tabProjectOverview">Projects</a></li>
+						<li><a href="#tabChangeLogin">Change Login</a></li>
 					</ul>
 					<div style="clear: both;"> </div> 		
 						<div class="tab-content">
-							<div id="tab1" class="tab active">
+							<div id="tabGeneralSettings" class="tab active">
 								<?php include("generalSettings.php"); ?>
 							</div>					 
-							<div id="tab2" class="tab">
+							<div id="tabProjectOverview" class="tab">
 								<?php include("projectOverview.php"); ?>
 							</div> 
-							<div id="tab3" class="tab">
+							<div id="tabChangeLogin" class="tab">
 								<?php include("changeLogin.php"); ?>	
 							</div>  							
 						</div>
