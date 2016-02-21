@@ -188,7 +188,6 @@ color: #212121;
 }
 
 .overview-left{
-width: 75vmin;
 padding-right: 5vmin;
 font-weight: bold;
 vertical-align: middle;	
@@ -228,6 +227,10 @@ width: 100%;
 border-bottom: 0.3vmin solid black;
 margin-top: 2vmin;
 margin-bottom: 2vmin;
+}
+
+.overview-right{
+width: 11vmin;
 }
 
 @media screen and (max-width: 1100px) {

@@ -53,4 +53,14 @@ width: 11vmin;
 font-size: 2.7vmin;
 }
 
+.button.edit{
+width: 3.1vmin;
+padding: 0;
+background-color: transparent;
+box-shadow: none;
+margin-right: 2vmin;
+}
 
+.button.edit i{
+font-size: 3.1vmin;
+}
