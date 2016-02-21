@@ -23,36 +23,34 @@ if(!isset($_SESSION['loggedIn']))
 global $projectArray;
 include "../helper/getProjectsFromJSON.php";
 
-
-for($i=0; $i < sizeof($projectArray); $i++)
+if($projectArray != NULL)
 {
-    $icon = urldecode($projectArray[$i]->{'icon'});
-    $name = $projectArray[$i]->{'name'};
-    echo
-    	'<tr class="overview-row">'.
-		'<td class="overview-left">'.
-			'<table>'.
-				'<tr>'.
-					'<td class="overview-icon" style="background-image: url('.$icon.');"> </td>'.
-					'<td class="overview-appname">'.$name.'</td>'.
-				'</tr>'.
-			'</table>'.
-		'</td>		'.
-		'<td class="overview-right">'.
-			'<a class="button edit" href="javascript:void(null)">'.
-				'<i class="material-icons">mode_edit</i> <span class="button-text">Edit</span>'.
-			'</a>'.
-		'</td>'.
-	'</tr>'.
-	'<tr class="overview-row">'.
-		'<td colspan="2">'.
-			'<div class="overview-line"> </div>'.
-		'</td>'.
-	'</tr>';
-
-
-
+	for($i=0; $i < sizeof($projectArray); $i++)
+	{
+		$icon = urldecode($projectArray[$i]->{'icon'});
+		$name = $projectArray[$i]->{'name'};
+		echo
+			'<tr class="overview-row">'.
+			'<td class="overview-left">'.
+				'<table>'.
+					'<tr>'.
+						'<td class="overview-icon" style="background-image: url('.$icon.');"> </td>'.
+						'<td class="overview-appname">'.$name.'</td>'.
+					'</tr>'.
+				'</table>'.
+			'</td>		'.
+			'<td class="overview-right">'.
+				'<a class="button edit" href="javascript:void(null)">'.
+					'<i class="material-icons">mode_edit</i> <span class="button-text">Edit</span>'.
+				'</a>'.
+			'</td>'.
+		'</tr>'.
+		'<tr class="overview-row">'.
+			'<td colspan="2">'.
+				'<div class="overview-line"> </div>'.
+			'</td>'.
+		'</tr>';
+	}	
 }
-
 ?>
 </table>

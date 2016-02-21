@@ -8,157 +8,176 @@ if(!isset($_SESSION['loggedIn']))
 	header('Location: ../login.php');
 	exit;
 }
+
+include('../helper/paths.php');
 ?>
 <!DOCTYPE html>
-<head>
-    <title>Codera</title>
-    <meta charset="UTF_8"/>
-    <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
-    <link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="../../js/projectSettings.js"></script>
-</head>
-<body>
-
-
-<table id="infos-small">
-	<tr class="infos-row">
-		<td colspan="2" class="infos-center">							
-			<div id="new-project">New Project</div>		
-			<div class="line"></div>
-		</td>	
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons">mode_edit</i> <span class="icon-text">Name:</span>
+<html>
+	<head>
+		<title>Codera</title>
+		<meta charset="UTF_8"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>	
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>		
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="../../js/projectSettings.js"></script>	
+	</head>
+	<body>
+		<div id="main">
+			<?php 				
+				if(isset($_SESSION['loggedIn']))
+				{					
+					include($path_header_logout); 
+				}
+				else
+				{				
+					include($path_header); 
+				}
+			?>
+		<div id="content">	
+			<div id="white">
+				<table id="infos-small">
+					<tr class="infos-row">
+						<td colspan="2" class="infos-center">							
+							<div id="new-project">New Project</div>		
+							<div class="line"></div>
+						</td>	
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">mode_edit</i> <span class="icon-text">Name:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<input class="input project" id="input-appName" type="text" maxlength="15" placeholder="MyApp"/>
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">image</i> <span class="icon-text">Icon:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<a class="button" id="button-icon" href="javascript:void(null)">									
+								<i class="material-icons">search</i> <span class="button-text">Select</span>
+							</a>
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">update</i> <span class="icon-text">Versioncode:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<input class="input project" id="input-versionCode" type="text" maxlength="15" placeholder="10"/>
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">update</i> <span class="icon-text">Version:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<input class="input project" id="input-versionName" type="text" maxlength="15" placeholder="1.0.0 b"/>
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons md-light">access_time</i> <span class="icon-text">Last Update:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<input class="input project" id="input-date" type="date"/>
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">code</i> <span class="icon-text">Latest Changes:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<textarea id="input-changes" rows="10"> </textarea>
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">description</i> <span class="icon-text">Description:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<textarea id="input-description" rows="10"> </textarea>
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">list</i> <span class="icon-text">Requirements:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<textarea id="input-requirements" rows="10"> </textarea>
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
+							</div>
+						</td>										
+						<td class="infos-right">									
+							<a class="button" id="button-executables" href="javascript:void(null)">									
+								<i class="material-icons">search</i> <span class="button-text">Select</span>
+							</a>							
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">photo_camera</i> <span class="icon-text">Screenshots:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<!-- Tabelle Previews -->																
+							<a class="button" id="button-screenshots" href="javascript:void(null)">									
+								<i class="material-icons">search</i> <span class="button-text">Select</span>
+							</a>						
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons md-light">assignment</i> <span class="icon-text">License:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<a class="button" id="button-license" href="javascript:void(null)">									
+								<i class="material-icons">search</i> <span class="button-text">Select</span>
+							</a>								
+						</td>
+					</tr>
+					<tr class="infos-row">
+						<td class="infos-left">	</td>										
+						<td class="infos-right">
+							<a class="button save" id="button-save" href="javascript:void(null)">									
+								<i class="material-icons">check</i> <span class="button-text">Save</span>
+							</a>
+							<a class="button discard" id="button-discard" href="javascript:void(null)">									
+								<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
+							</a>
+						</td>
+					</tr>						
+				</table>
 			</div>
-		</td>										
-		<td class="infos-right">
-			<input class="input project" id="input-appName" type="text" maxlength="15" placeholder="MyApp"/>
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons">image</i> <span class="icon-text">Icon:</span>
-			</div>
-		</td>										
-		<td class="infos-right">
-			<a class="button" id="button-icon" href="javascript:void(null)">									
-				<i class="material-icons">file_upload</i> <span class="button-text">Upload</span>
-			</a>
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons">update</i> <span class="icon-text">Versioncode:</span>
-			</div>
-		</td>										
-		<td class="infos-right">
-			<input class="input project" id="input-versionCode" type="text" maxlength="15" placeholder="10"/>
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons">update</i> <span class="icon-text">Version:</span>
-			</div>
-		</td>										
-		<td class="infos-right">
-			<input class="input project" id="input-versionName" type="text" maxlength="15" placeholder="1.0.0 b"/>
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons md-light">access_time</i> <span class="icon-text">Last Update:</span>
-			</div>
-		</td>										
-		<td class="infos-right">
-			<input class="input project" id="input-date" type="date"/>
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons">code</i> <span class="icon-text">Latest Changes:</span>
-			</div>
-		</td>										
-		<td class="infos-right">
-			<textarea id="input-changes" rows="10"> </textarea>
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons">description</i> <span class="icon-text">Description:</span>
-			</div>
-		</td>										
-		<td class="infos-right">
-			<textarea id="input-description" rows="10"> </textarea>
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons">list</i> <span class="icon-text">Requirements:</span>
-			</div>
-		</td>										
-		<td class="infos-right">
-			<textarea id="input-requirements" rows="10"> </textarea>
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
-			</div>
-		</td>										
-		<td class="infos-right">									
-			<a class="button" id="button-executables" href="javascript:void(null)">									
-				<i class="material-icons">file_upload</i> <span class="button-text">Upload</span>
-			</a>							
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons">photo_camera</i> <span class="icon-text">Screenshots:</span>
-			</div>
-		</td>										
-		<td class="infos-right">
-			<!-- Tabelle Previews -->																
-			<a class="button" id="button-screenshots" href="javascript:void(null)">									
-				<i class="material-icons">file_upload</i> <span class="button-text">Upload</span>
-			</a>						
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">
-			<div class="icon">
-				<i class="material-icons md-light">assignment</i> <span class="icon-text">License:</span>
-			</div>
-		</td>										
-		<td class="infos-right">
-			<a class="button" id="button-license" href="javascript:void(null)">									
-				<i class="material-icons">file_upload</i> <span class="button-text">Upload</span>
-			</a>								
-		</td>
-	</tr>
-	<tr class="infos-row">
-		<td class="infos-left">	</td>										
-		<td class="infos-right">
-			<a class="button" id="button-save" href="javascript:void(null)">									
-				<i class="material-icons">check</i> <span class="button-text">Save</span>
-			</a>
-			<a class="button" id="button-discard" href="javascript:void(null)">									
-				<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
-			</a>
-		</td>
-	</tr>						
-</table>
-</body>
+		</div>
+		<?php include("../templates/footer.php"); ?>
+	</body>
+</html>

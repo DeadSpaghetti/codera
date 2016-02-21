@@ -1,5 +1,8 @@
 $(document).ready(function()
 {
+	document.getElementById('icon-warn').style.display='none';	
+	document.getElementById('icon-success').style.display='none';	
+	
     $('#button-save-changeLogin').click(function()
     {
         var oldUsername = $('#input-username-old').val();
@@ -14,7 +17,7 @@ $(document).ready(function()
             },function(data,error)
             {
                 //correct credentials
-                if(data == 'success')
+                if (data.indexOf("success") > -1)
                 {
                     $.post("../helper/checkLogin.php",
                         {
@@ -23,15 +26,24 @@ $(document).ready(function()
                             "forceOverride": true
                         },function(data,error)
                         {
-                            location.reload();
+                            
                         })
+					document.getElementById('icon-warn').style.display = 'none';
+					document.getElementById('icon-success').style.display = '';
                 }
-            }
-
+				else
+				{
+					document.getElementById('icon-warn').style.display = '';
+				}
+			}
         )
-
-
     });
-
-
+	
+	$('#button-discard-changeLogin').click(function()
+    {
+		$('#input-username-old').val('');
+        $('#input-password-old').val('');
+        $('#input-username-new').val('');
+        $('#input-password-new').val('');
+	});
 });

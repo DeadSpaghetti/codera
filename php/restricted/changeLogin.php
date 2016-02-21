@@ -28,14 +28,14 @@ if(!isset($_SESSION['loggedIn']))
 			</div>
 		</td>										
 		<td class="infos-right lesspadding">
-			<input class="input project" id="input-password-old" type="text" placeholder="Old Password"/>
+			<input class="input project" id="input-password-old" type="password" placeholder="Old Password"/>
 		</td>
 	</tr>
 	<tr class="infos-row">	
 		<td class="infos-left lesspadding"></td>
 		<td class="infos-right lesspadding">
 			<div class="icon" id="icon-warn">
-				<i class="material-icons">warning</i> <span class="icon-text">Old Password is incorrect!</span>
+				<i class="material-icons">warning</i> <span class="icon-text">Old Credentials are incorrect!</span>
 			</div>
 			<div class="icon" id="icon-success">
 				<i class="material-icons">check</i> <span class="icon-text">Successfully saved.</span>
@@ -59,7 +59,7 @@ if(!isset($_SESSION['loggedIn']))
 			</div>
 		</td>										
 		<td class="infos-right">
-			<input class="input project" id="input-password-new" type="text" placeholder="New Password"/>
+			<input class="input project" id="input-password-new" type="password" placeholder="New Password"/>
 		</td>
 	</tr>	
 	<tr class="infos-row">
@@ -68,7 +68,7 @@ if(!isset($_SESSION['loggedIn']))
 			<a class="button save" id="button-save-changeLogin" href="javascript:void(null)">
 				<i class="material-icons">check</i> <span class="button-text">Save</span>
 			</a>
-			<a class="button discard" id="button-discard" href="javascript:void(null)">									
+			<a class="button discard" id="button-discard-changeLogin" href="javascript:void(null)">									
 				<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
 			</a>
 		</td>
