@@ -26,8 +26,7 @@ include "../helper/getProjectsFromJSON.php";
 
 for($i=0; $i < sizeof($projectArray); $i++)
 {
-    $icon = $projectArray[$i]->{'icon'};
-    $icon = "http://cdn.cultofandroid.com/wp-content/uploads/2013/10/Battlefield-Bad-Company-2-mobile-review.jpg";
+    $icon = urldecode($projectArray[$i]->{'icon'});
     $name = $projectArray[$i]->{'name'};
     echo
     	'<tr class="overview-row">'.

@@ -70,14 +70,14 @@ if (file_exists($pathString))
         $newProjectArray = array
         (
             "name" => $name,
-            "icon" => $icon,
+            "icon" => urlencode($icon),
             "versionName" => $versionName,
             "date" => $date,
             "latestChanges" => $latestChanges,
             "description" => $description,
             "requirements" => $requirements,
-            "files" => $files,
-            "screenshots" => $screenshots,
+            "files" => urlencode($files),
+            "screenshots" => urlencode($screenshots),
             "license" => $license,
             "versionCode" => $versionCode,
             "GUID" => $projectGUID

@@ -49,7 +49,7 @@ if(!isset($_SESSION['loggedIn']))
 		<td class="infos-right">
 			<a class="button" id="button-icon" href="javascript:void(null)">									
 				<i class="material-icons">file_upload</i> <span class="button-text">Upload</span>
-			</a>	
+			</a>
 		</td>
 	</tr>
 	<tr class="infos-row">
