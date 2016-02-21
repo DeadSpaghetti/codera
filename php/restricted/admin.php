@@ -14,6 +14,7 @@ if(!isset($_SESSION['loggedIn']))
 		<title>Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-tabs.css"/>

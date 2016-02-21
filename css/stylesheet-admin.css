@@ -16,29 +16,6 @@ input[type='file'] {
 color: transparent;
 }
 
-#button-save{
-background-color: #81c784;	
-width: 11vmin;
-}
-
-#button-discard{
-background-color: #e57373;	
-width: 11vmin;
-}
-
-#button-login{
-background-color: #4a98d3;
-width: 10vmin;
-margin: auto;
-vertical-align: middle;
-}
-
-#button-new-project{
-background-color: #81c784;	
-width: 11vmin;
-font-size: 2.7vmin;
-}
-
 #login-white{
 width: 25vw;
 height: auto;
@@ -175,7 +152,7 @@ margin-top: 5vmin;
 font-weight: bold;
 }
 
-#codera-version-right{
+#codera-version-right-onDisk{
 padding-left: 2vmin;
 }
 

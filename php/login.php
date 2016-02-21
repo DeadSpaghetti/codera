@@ -18,6 +18,7 @@ if(isset($_SESSION['loggedIn']))
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-admin.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../js/login.js"></script>
@@ -40,7 +41,7 @@ if(isset($_SESSION['loggedIn']))
 								</td>
 							<!-- END -->
 								<td id="login-button-container">
-									<a class="button" id="button-login" href="javascript:void(null)">									
+									<a class="button login" id="button-login" href="javascript:void(null)">									
 										<i class="material-icons">exit_to_app</i> <span class="button-text">Login</span>
 									</a>
 								</td>

@@ -65,10 +65,10 @@ if(!isset($_SESSION['loggedIn']))
 	<tr class="infos-row">
 		<td class="infos-left">	</td>										
 		<td class="infos-right">
-			<a class="button" id="button-save-changeLogin" href="javascript:void(null)">
+			<a class="button save" id="button-save-changeLogin" href="javascript:void(null)">
 				<i class="material-icons">check</i> <span class="button-text">Save</span>
 			</a>
-			<a class="button" id="button-discard" href="javascript:void(null)">									
+			<a class="button discard" id="button-discard" href="javascript:void(null)">									
 				<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
 			</a>
 		</td>

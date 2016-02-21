@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+	session_start();
+} 
 define('ADMIN_FILE_PATH','../../config/admin.json');
 
 

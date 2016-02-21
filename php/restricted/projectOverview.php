@@ -13,7 +13,7 @@ if(!isset($_SESSION['loggedIn']))
 <table id="overview">		
 	<tr class="overview-row">			
 		<td colspan="2" class="overview-center">
-			<a class="button" id="button-new-project" href="javascript:void(null)">									
+			<a class="button newProject" id="button-new-project" href="javascript:void(null)">									
 				<i class="material-icons">add</i> <span class="button-text">New</span>
 			</a>
 		</td>
