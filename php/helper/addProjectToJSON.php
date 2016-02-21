@@ -53,6 +53,7 @@ $pathString = "../../config/projects.json";
 
 $isFileThere = false;
 
+
 if (file_exists($pathString))
 {
     $isFileThere = true;
@@ -63,11 +64,8 @@ if (file_exists($pathString))
         if($isFileThere)
         {
             $configFile = file_get_contents($pathString);
-            $fileInJSON = json_decode($configFile);
-            //var_dump($fileInJSON);
+            $array = json_decode($configFile,false);
 
-            //save to php format array
-            $array = array($fileInJSON);
         }
         $newProjectArray = array
         (
@@ -76,6 +74,8 @@ if (file_exists($pathString))
             "versionName" => $versionName,
             "date" => $date,
             "latestChanges" => $latestChanges,
+            "description" => $description,
+            "requirements" => $requirements,
             "files" => $files,
             "screenshots" => $screenshots,
             "license" => $license,
@@ -85,13 +85,13 @@ if (file_exists($pathString))
 
         //checks boolean value to see if file is there. If not generates it
         if($isFileThere)
-            array_push($array, $newProjectArray);
+            array_push($array,$newProjectArray);
         else
-            $array = $newProjectArray;
+            $array[0] = $newProjectArray;
 
         //push new reg id into array
         $fileToSave = json_encode($array);
-        echo $fileToSave;
+        //echo $fileToSave;
         $file = fopen($pathString, "w");
         fwrite($file, $fileToSave);
         fclose($file);

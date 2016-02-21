@@ -24,7 +24,6 @@ if(!isset($_SESSION['loggedIn']))
 		<script src="../../js/admin.js"></script>
 		<script src="../../js/helper/colorConverter.js"></script>
 		<script src="../../js/generalSettings.js"></script>
-		<script src="../../js/projectSettings.js"></script>
         <script src="../../js/changeLogin.js"></script>
 	</head>
 	<body>

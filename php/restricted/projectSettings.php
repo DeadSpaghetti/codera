@@ -9,8 +9,20 @@ if(!isset($_SESSION['loggedIn']))
 	exit;
 }
 ?>
+<!DOCTYPE html>
+<head>
+    <title>Codera</title>
+    <meta charset="UTF_8"/>
+    <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
+    <link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="../../js/projectSettings.js"></script>
+</head>
+<body>
 
-			
+
 <table id="infos-small">
 	<tr class="infos-row">
 		<td colspan="2" class="infos-center">							
@@ -148,4 +160,5 @@ if(!isset($_SESSION['loggedIn']))
 			</a>
 		</td>
 	</tr>						
-</table>	
+</table>
+</body>

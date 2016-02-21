@@ -13,22 +13,25 @@ $(document).ready(function()
         var license = $('#input-license').val();
 
 
-        $.post("../php/helper/addProjectToJSON.php",
+        $.post("../helper/addProjectToJSON.php",
             {
                 "name": name,
                 "icon": icon,
                 "versionName": versionName,
                 "date": date,
                 "latestChanges": latestChanges,
-                "files": "virus.exe",
-                "screenshots": "timeKeep.jpg",
+                "description":description,
+                "requirements":requirements,
+                "files": "http://cdn.cultofmac.com/wp-content/uploads/2010/12/BATTLEFIELD_-BAD-COMPANY%E2%84%A2-2.jpg",
+                "screenshots": "http://cdn.cultofandroid.com/wp-content/uploads/2013/10/Battlefield-Bad-Company-2-mobile-review.jpg",
                 "license": license,
                 "versionCode": versionCode
 
             },
             function (data, status)
             {
-                alert("Data: " + data + "\nStatus: " + status);
+                location.href = "admin.php";
+                //alert("Data: " + data + "\nStatus: " + status);
             });
 
     });

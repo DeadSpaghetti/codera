@@ -45,6 +45,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $password = $_POST['password'];
     $forceOverride = $_POST['forceOverride'];
 
+    if(!isset($forceOverride) || $forceOverride == null)
+        $forceOverride = false;
+
     if (isset($username) && isset($password) && $username != "" && $password != "")
     {
         $password = crypt($password, '$5$g3t#~34uö@$');
