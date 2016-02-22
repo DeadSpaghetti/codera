@@ -16,13 +16,16 @@ include('../helper/paths.php');
 	<head>
 		<title>Codera</title>
 		<meta charset="UTF_8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Generic page styles -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>	
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>		
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="../../js/projectSettings.js"></script>	
+		<script src="../../js/projectSettings.js"></script>
+
 	</head>
 	<body>
 		<div id="main">
@@ -62,9 +65,7 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<a class="button" id="button-icon" href="javascript:void(null)">									
-								<i class="material-icons">search</i> <span class="button-text">Select</span>
-							</a>
+                            <?php include "../helper/fileupload/index.php"; ?>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -133,10 +134,16 @@ include('../helper/paths.php');
 								<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
 							</div>
 						</td>										
-						<td class="infos-right">									
-							<a class="button" id="button-executables" href="javascript:void(null)">									
-								<i class="material-icons">search</i> <span class="button-text">Select</span>
-							</a>							
+						<td class="infos-right">
+                            <select>
+                                <?php
+                                $directory = "../../files/";
+                                include "../helper/printAllFilesFromDirectoryAsOption.php"
+                                ?>
+                            </select>
+							<!--<a class="button" id="button-executables" href="javascript:void(null)">
+							<i class="material-icons">search</i> <span class="button-text">Select</span>
+							</a>-->
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -147,9 +154,15 @@ include('../helper/paths.php');
 						</td>										
 						<td class="infos-right">
 							<!-- Tabelle Previews -->																
-							<a class="button" id="button-screenshots" href="javascript:void(null)">									
+							<!--<a class="button" id="button-screenshots" href="javascript:void(null)">
 								<i class="material-icons">search</i> <span class="button-text">Select</span>
-							</a>						
+							</a>-->
+                            <select>
+                                <?php
+                                $directory = "../../images/screenshots/";
+                                include "../helper/printAllFilesFromDirectoryAsOption.php"
+                                ?>
+                            </select>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -159,9 +172,15 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<a class="button" id="button-license" href="javascript:void(null)">									
+							<!--<a class="button" id="button-license" href="javascript:void(null)">
 								<i class="material-icons">search</i> <span class="button-text">Select</span>
-							</a>								
+							</a>-->
+                            <select>
+                                <?php
+                                $directory = "../../licenses/";
+                                include "../helper/printAllFilesFromDirectoryAsOption.php"
+                                ?>
+                            </select>
 						</td>
 					</tr>
 					<tr class="infos-row">
