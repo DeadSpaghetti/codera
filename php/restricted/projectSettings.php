@@ -17,7 +17,6 @@ include('../helper/paths.php');
 		<title>Codera</title>
 		<meta charset="UTF_8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Generic page styles -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>	
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>		
@@ -65,7 +64,12 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-                            <?php include "../helper/fileupload/index.php"; ?>
+							<select>
+								<?php
+								$directory = "../../images/icons/";
+								include "../helper/printAllFilesFromDirectoryAsOption.php"
+								?>
+							</select>
 						</td>
 					</tr>
 					<tr class="infos-row">
