@@ -17,7 +17,7 @@ $(document).ready(function()
             $.post("../helper/addProjectToJSON.php",
                 {
                     "name": name,
-                    "icon": "../../images/icons/BF4.png",
+                    "icon": "BF4.png",
                     "versionName": versionName,
                     "date": date,
                     "latestChanges": latestChanges,

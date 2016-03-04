@@ -9,6 +9,8 @@ if(!isset($_SESSION['loggedIn']))
 	exit;
 }
 
+
+include('../helper/paths.php');
 ?>
 
 <table id="overview">
@@ -34,7 +36,7 @@ if($projectArray != NULL)
 			'<td class="overview-left">'.
 				'<table>'.
 					'<tr>'.
-						'<td class="overview-icon" style="background-image: url('.$icon.');"> </td>'.
+						'<td class="overview-icon" style="background-image: url('.$path_folder_icons.'/'.$icon.');"> </td>'.
 						'<td class="overview-appname">'.$name.'</td>'.
 					'</tr>'.
 				'</table>'.
