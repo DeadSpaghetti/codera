@@ -5,6 +5,10 @@ $path_index = realpath(dirname(__FILE__) . '/../index.php');
 $path_index = substr($path_index,strlen($_SERVER['DOCUMENT_ROOT'])); 
 $path_index = str_replace('\\', '/', $path_index);
 
+$path_folder_icons = realpath(dirname(__FILE__) . '/../../images/icons');
+$path_folder_icons = substr($path_folder_icons,strlen($_SERVER['DOCUMENT_ROOT'])); 
+$path_folder_icons = str_replace('\\', '/', $path_folder_icons);
+
 $path_config_generalSettings = realpath(dirname(__FILE__) . '/../../config/generalSettings.json');
 $path_config_projects = realpath(dirname(__FILE__) . '/../../config/projects.json');
 $path_helper_getGeneralSettings = realpath(dirname(__FILE__) . '/getGeneralSettingsFromJSON.php');

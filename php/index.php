@@ -26,25 +26,73 @@ include('helper/paths.php');
 				else
 				{				
 					include($path_header); 
-				}
+				}				
 			?>
 			<div id="content">				
 				<table id="projects">
-					<tr class="row">
-						<td class="entry-large"> <a href="template.php"><div class="entry-icon large" style="background-image: url('../images/icons/eyedropper.png');"> </div> <div class="icon-name">ColorPicker</div></a></td>
-						<td class="entry large"> <a href="template.php"><div class="entry-icon large" style="background-image: url('../images/icons/BF4.png');"> </div> <div class="icon-name">BF4</div></a></td>
-						<td class="entry large"> <a href="template.php"><div class="entry-icon large" style="background-image: url('../images/icons/Bejeweled.png');"> </div> <div class="icon-name">Bejeweled</div></a></td>
-					</tr>
-					<tr class="row">
-						<td class="entry large"> <a href="template.php"><div class="entry-icon large" style="background-image: url('../images/icons/tetris.png');"> </div> <div class="icon-name">Tetris</div></a></td>
-						<td class="entry large"> <a href="template.php"><div class="entry-icon large" style="background-image: url('../images/icons/change.png');"> </div> <div class="icon-name">ChangeLogger</div></a></td>
-						<td class="entry large"> <a href="template.php"><div class="entry-icon large" style="background-image: url('../images/icons/list.png');"> </div> <div class="icon-name">SaveMyPlaylist</div></a></td>
-					</tr>
-					<tr class="row">
-						<td class="entry large"> <a href="template.php"><div class="entry-icon large" style="background-image: url('../images/icons/2048.png');"> </div> <div class="icon-name">2048</div></a></td>
-						<td class="entry large"> <a href="template.php"><div class="entry-icon large" style="background-image: url('../images/icons/uhr.png');"> </div> <div class="icon-name">SmartTime</div></a></td>
-						<td class="entry large"> <a href="template.php"><div class="entry-icon large" style="background-image: url('../images/icons/bullhorn.png');"> </div> <div class="icon-name">Post</div></a></td>
-					</tr>
+					<?php
+						
+						global $projectArray;
+						include('helper/getProjectsFromJSON.php');			
+						include('helper/getGeneralSettingsFromJSON.php');						
+						
+						if($projectArray != NULL)
+						{
+							for($i=0; $i < sizeof($projectArray); $i++)
+							{
+								if(fmod($i, $gridSize) == 0)
+								{
+									echo '<tr class="row">';
+								}
+								
+								$icon = urldecode($projectArray[$i]->{'icon'});								
+								$name = $projectArray[$i]->{'name'};
+								
+								if($gridSize == 3)
+								{
+									echo	'<td class="entry large">'.
+												'<a href="template.php">'.
+													'<div class="entry-icon large" style="background-image: url('."'".$path_folder_icons.'/'.$icon."'".');"> </div>'.
+													'<div class="icon-name">'.$name.'</div>'.
+												'</a>'.										
+											'</td>';
+											
+									if(fmod($i, 3) == 2)
+									{
+										echo '</tr>';
+									}
+								}
+								else if($gridSize == 4)
+								{
+									echo	'<td class="entry medium">'.
+												'<a href="template.php">'.
+													'<div class="entry-icon medium" style="background-image: url('."'".$path_folder_icons.'/'.$icon."'".');"> </div>'.
+													'<div class="icon-name">'.$name.'</div>'.
+												'</a>'.										
+											'</td>';
+											
+									if(fmod($i, 4) == 3)
+									{
+										echo '</tr>';
+									}
+								}
+								else
+								{
+									echo	'<td class="entry small">'.
+												'<a href="template.php">'.
+													'<div class="entry-icon small" style="background-image: url('."'".$path_folder_icons.'/'.$icon."'".');"> </div>'.
+													'<div class="icon-name">'.$name.'</div>'.
+												'</a>'.										
+											'</td>';
+									
+									if(fmod($i, 5) == 4)
+									{
+										echo '</tr>';
+									}
+								}							
+							}	
+						}					
+					?>						
 				</table>		
 			</div>			
 		</div>
