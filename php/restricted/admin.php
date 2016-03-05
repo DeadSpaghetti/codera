@@ -33,9 +33,9 @@ if(!isset($_SESSION['loggedIn']))
 			<div id="content">	
 				<div class="tabs">
 					<ul class="tab-links">						
-						<li class="active"><a href="#tabGeneralSettings">General Settings</a></li>
-						<li><a href="#tabProjectOverview">Projects</a></li>
-						<li><a href="#tabChangeLogin">Change Login</a></li>
+						<li id="tabGeneralSettings-list-element" "class="active"><a href="#tabGeneralSettings">General Settings</a></li>
+						<li id="tabProjectOverview-list-element"><a href="#tabProjectOverview">Projects</a></li>
+						<li id="tabChangeLogin-list-element"><a href="#tabChangeLogin">Change Login</a></li>
 					</ul>
 					<div style="clear: both;"> </div> 		
 						<div class="tab-content">
