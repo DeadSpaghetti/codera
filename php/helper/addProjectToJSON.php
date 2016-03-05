@@ -48,7 +48,7 @@ $screenshots = $_POST['screenshots'];
 $license = $_POST['license'];
 $versionCode = $_POST['versionCode'];
 
-$projectGUID = generateGuid();
+$projectUUID = generateGuid();
 $pathString = "../../config/projects.json";
 
 $isFileThere = false;
@@ -80,7 +80,7 @@ if (file_exists($pathString))
             "screenshots" => urlencode($screenshots),
             "license" => $license,
             "versionCode" => $versionCode,
-            "GUID" => $projectGUID
+            "UUID" => $projectUUID
         );
 
         //checks boolean value to see if file is there. If not generates it

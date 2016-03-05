@@ -32,7 +32,7 @@ if($projectArray != NULL)
 		$icon = urldecode($projectArray[$i]->{'icon'});
 		$name = $projectArray[$i]->{'name'};
 		echo
-			'<tr class="overview-row">'.
+			'<tr id='; echo $projectArray[$i]->{'UUID'}; echo ' class="overview-row">'.
 			'<td class="overview-left">'.
 				'<table>'.
 					'<tr>'.
@@ -45,7 +45,7 @@ if($projectArray != NULL)
 				'<a class="button edit" href="javascript:void(null)">'.
 					'<i class="material-icons">mode_edit</i>'.
 				'</a>'.
-				'<a class="button edit" href="javascript:void(null)">'.
+				'<a';echo ' class="button edit" href="javascript:void(null)">'.
 					'<i class="material-icons">delete</i>'.
 				'</a>'.
 			'</td>'.
