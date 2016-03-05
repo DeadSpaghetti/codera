@@ -18,13 +18,15 @@ $(document).ready(function()
 
     $('#projectOverviewDelete').click(function()
     {
+        var que = confirm("Do you want to delete this project?");
+        if(que == true)
+        {
             $.post("../helper/removeProjectFromJSON.php",
-            {
-                "UUID": this.parentNode.parentNode.id
+                {
+                    "UUID": this.parentNode.parentNode.id
 
-            },function(data,error)
-            {
-            });
-
+                }, function (data, error) {
+                });
+        }
     });
 });
