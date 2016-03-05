@@ -27,6 +27,8 @@ $(document).ready(function()
 
                 }, function (data, error) {
                 });
+
+            location.reload();
         }
     });
 });
