@@ -2,6 +2,7 @@
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
+
     $UUID = $_POST['UUID'];
     global $projectArray;
     include "getProjectsFromJSON.php";
@@ -12,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             if($projectArray[$i]->{'UUID'} == $UUID)
             {
-                echo $UUID;
+
                 unset($projectArray[$i]);
                 $projectArray = array_values($projectArray);
 
