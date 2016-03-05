@@ -52,7 +52,7 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-appName" type="text" maxlength="15" placeholder="MyApp"/>
+							<input class="input project" id="input-appName" type="text" maxlength="30" placeholder="MyApp"/>
 						</td>
 					</tr>
 					<tr class="infos-row">

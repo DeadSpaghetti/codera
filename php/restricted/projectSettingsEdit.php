@@ -72,7 +72,7 @@ else
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-appName" type="text" maxlength="15" value="<?php echo $selectedProject->{'name'} ?>" placeholder="MyApp"/>
+							<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php echo $selectedProject->{'name'} ?>" placeholder="MyApp"/>
 						</td>
 					</tr>
 					<tr class="infos-row">

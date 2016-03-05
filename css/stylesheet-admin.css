@@ -233,6 +233,10 @@ margin-bottom: 2vmin;
 width: 11vmin;
 }
 
+#back-link{
+width: 13vmin;
+}
+
 @media screen and (max-width: 1100px) {
     #login-white{
 		width: 45vw;

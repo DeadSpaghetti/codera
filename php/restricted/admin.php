@@ -29,7 +29,7 @@ if(!isset($_SESSION['loggedIn']))
 	</head>
 	<body>
 		<div id="main">						
-			<?php include("../templates/header-logout.php"); ?>
+			<?php include("../templates/header-logout-back.php"); ?>
 			<div id="content">	
 				<div class="tabs">
 					<ul class="tab-links">						
