@@ -11,7 +11,9 @@ $(document).ready(function()
         input.name = 'UUID';
         input.value = this.parentNode.parentNode.id;
 
+
         form.appendChild(input);
+        document.body.appendChild(form);
         form.submit();
 
     });

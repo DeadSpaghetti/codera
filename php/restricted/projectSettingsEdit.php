@@ -82,9 +82,12 @@ else
 							</div>
 						</td>										
 						<td class="infos-right">
-							<a class="button" id="button-icon" href="javascript:void(null)">									
-								<i class="material-icons">search</i> <span class="button-text">Select</span>
-							</a>
+							<select>
+								<?php
+								$directory = "../../images/icons/";
+								include "../helper/printAllFilesFromDirectoryAsOption.php"
+								?>
+							</select>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -153,10 +156,13 @@ else
 								<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
 							</div>
 						</td>										
-						<td class="infos-right">									
-							<a class="button" id="button-executables" href="javascript:void(null)">									
-								<i class="material-icons">search</i> <span class="button-text">Select</span>
-							</a>							
+						<td class="infos-right">
+							<select>
+								<?php
+								$directory = "../../executables/";
+								include "../helper/printAllFilesFromDirectoryAsOption.php"
+								?>
+							</select>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -166,10 +172,12 @@ else
 							</div>
 						</td>										
 						<td class="infos-right">
-							<!-- Tabelle Previews -->																
-							<a class="button" id="button-screenshots" href="javascript:void(null)">									
-								<i class="material-icons">search</i> <span class="button-text">Select</span>
-							</a>						
+							<select>
+								<?php
+								$directory = "../../images/screenshots";
+								include "../helper/printAllFilesFromDirectoryAsOption.php"
+								?>
+							</select>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -179,9 +187,12 @@ else
 							</div>
 						</td>										
 						<td class="infos-right">
-							<a class="button" id="button-license" href="javascript:void(null)">									
-								<i class="material-icons">search</i> <span class="button-text">Select</span>
-							</a>								
+							<select>
+								<?php
+								$directory = "../../licenses/";
+								include "../helper/printAllFilesFromDirectoryAsOption.php"
+								?>
+							</select>
 						</td>
 					</tr>
 					<tr class="infos-row">
