@@ -33,7 +33,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $latestChanges = $selectedProject->{'latestChanges'};
             $versionCode = $selectedProject->{'versionCode'};
             $versionName = $selectedProject->{'versionName'};
-            $data = $selectedProject->{'date'};
+            $date = $selectedProject->{'date'};
+            $requirements = $selectedProject->{'requirements'};
+
             break;
         }
     }
@@ -129,7 +131,7 @@ else
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-date" value="<?php echo $selectedProject->{'date'} ?>" type="date"/>
+							<input class="input project" id="input-date" value="<?php echo $date ?>" type="date"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -139,7 +141,7 @@ else
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-changes" rows="10"><?php echo $selectedProject->{'latestChanges'} ?></textarea>
+							<textarea id="input-changes" rows="10"><?php echo $latestChanges ?></textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -159,7 +161,7 @@ else
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-requirements" rows="10"><?php echo $selectedProject->{'requirements'} ?> </textarea>
+							<textarea id="input-requirements" rows="10"><?php echo $requirements ?> </textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
