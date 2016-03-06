@@ -17,7 +17,7 @@ $versionName = "";
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
+{ 
     global $projectArray;
    $UUID = $_POST['UUID'];
 
