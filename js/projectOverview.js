@@ -25,10 +25,12 @@ $(document).ready(function()
                 {
                     "UUID": this.parentNode.parentNode.id
 
-                }, function (data, error) {
+                }, function (data, error)
+                {
+                    location.reload();
                 });
 
-            location.reload();
+
         }
     });
 });
