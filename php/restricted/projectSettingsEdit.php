@@ -10,6 +10,12 @@ if(!isset($_SESSION['loggedIn']))
 }
 
 include('../helper/paths.php');
+
+$projectName = "";
+$versionCode = "";
+$versionName = "";
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     global $projectArray;
@@ -22,13 +28,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         if($projectArray[$i]->{'UUID'} == $UUID)
         {
             $selectedProject = $projectArray[$i];
+            $projectName = $selectedProject->{'name'};
+            $icon = $selectedProject->{'icon'};
+            $latestChanges = $selectedProject->{'latestChanges'};
+            $versionCode = $selectedProject->{'versionCode'};
+            $versionName = $selectedProject->{'versionName'};
+            $data = $selectedProject->{'date'};
             break;
         }
     }
 }
 else
 {
-    header("Location: projectSettings.php");
+    //header("Location: projectSettings.php");
 }
 ?>
 <!DOCTYPE html>
@@ -61,7 +73,7 @@ else
 				<table id="infos-small">
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">							
-							<div id="new-project"><?php echo $selectedProject->{'name'} ?></div>
+							<div id="new-project"><?php echo $projectName?></div>
 							<div class="line"></div>
 						</td>	
 					</tr>
