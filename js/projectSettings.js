@@ -9,6 +9,8 @@ function saveProject()
     var description = $('#input-description').val();
     var requirements = $('#input-requirements').val();
     var license = $('#projectSettings-licenseSelector').find(":selected").text();
+    var file = $('#projectSettings-fileSelector').find(":selected").text();
+    var screenshot = $('#projectSettings-screenshotSelector').find(":selected").text();
 
 
     $.post("../helper/addProjectToJSON.php",
@@ -20,8 +22,8 @@ function saveProject()
             "latestChanges": latestChanges,
             "description":description,
             "requirements":requirements,
-            "files": "http://cdn.cultofmac.com/wp-content/uploads/2010/12/BATTLEFIELD_-BAD-COMPANY%E2%84%A2-2.jpg",
-            "screenshots": "http://cdn.cultofandroid.com/wp-content/uploads/2013/10/Battlefield-Bad-Company-2-mobile-review.jpg",
+            "files": file,
+            "screenshots": screenshot,
             "license": license,
             "versionCode": versionCode
         },

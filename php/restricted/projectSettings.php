@@ -19,6 +19,22 @@ $date = "";
 $icon = "";
 
 
+function getSelectedOption($object,$UUID)
+{
+    if(isset($UUID))
+    {
+        global $projectArray;
+        include "../helper/getProjectsFromJSON.php";
+        for ($i = 0; $i < sizeof($projectArray); $i++)
+        {
+            if ($projectArray[$i]->{'UUID'} == $UUID)
+            {
+                return $projectArray[$i]->{$object};
+            }
+        }
+    }
+}
+
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     global $projectArray;
@@ -104,6 +120,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							<select id="projectSettings-iconSelector">
 								<?php
 								$directory = "../../images/icons/";
+                                $object = 'icon';
+                                $exclude = getSelectedOption($object,$UUID);
 								include "../helper/printAllFilesFromDirectoryAsOption.php"
 								?>
 							</select>
@@ -176,9 +194,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<select>
+							<select id="projectSettings-fileSelector">
 								<?php
 								$directory = "../../executables/";
+                                $object = 'files';
+                                $exclude = getSelectedOption($object,$UUID);
 								include "../helper/printAllFilesFromDirectoryAsOption.php"
 								?>
 							</select>
@@ -191,9 +211,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<select>
+							<select id="projectSettings-screenshotSelector">
 								<?php
 								$directory = "../../images/screenshots";
+                                $object = 'screenshots';
+                                $exclude = getSelectedOption($object,$UUID);
 								include "../helper/printAllFilesFromDirectoryAsOption.php"
 								?>
 							</select>
@@ -209,6 +231,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							<select id="projectSettings-licenseSelector">
 								<?php
 								$directory = "../../licenses/";
+                                $object = 'license';
+                                $exclude = getSelectedOption($object,$UUID);
 								include "../helper/printAllFilesFromDirectoryAsOption.php"
 								?>
 							</select>
