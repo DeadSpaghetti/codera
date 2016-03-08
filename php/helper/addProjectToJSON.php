@@ -47,9 +47,11 @@ $files = $_POST['files'];
 $screenshots = $_POST['screenshots'];
 $license = $_POST['license'];
 $versionCode = $_POST['versionCode'];
+$projectUUID = $_POST['UUID'];
 
+if($projectUUID == null)
+    $projectUUID = generateGuid();
 
-$projectUUID = generateGuid();
 $pathString = "../../config/projects.json";
 
 $isFileThere = false;
@@ -78,7 +80,7 @@ if (file_exists($pathString))
             "latestChanges" => $latestChanges,
             "description" => $description,
             "requirements" => $requirements,
-            "files" => urlencode($files),
+            "files" => $files,
             "screenshots" => urlencode($screenshots),
             "license" => $license,
             "versionCode" => $versionCode,

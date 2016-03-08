@@ -1,4 +1,4 @@
-function saveProject()
+function saveProject(UUID)
 {
     var name = $('#input-appName').val();
     var icon = $('#projectSettings-iconSelector').find(":selected").text();
@@ -9,9 +9,16 @@ function saveProject()
     var description = $('#input-description').val();
     var requirements = $('#input-requirements').val();
     var license = $('#projectSettings-licenseSelector').find(":selected").text();
-    var file = $('#projectSettings-fileSelector').find(":selected").text();
-    var screenshot = $('#projectSettings-screenshotSelector').find(":selected").text();
-
+    var files = [];
+    var screenshots = [];
+    $('#projectSettings-fileSelector :selected').each(function(i,selected)
+    {
+        files.push($(selected).text());
+    });
+    $('#projectSettings-screenshotSelector').each(function(i,selected)
+    {
+        screenshots.push($(selected).text());
+    });
 
     $.post("../helper/addProjectToJSON.php",
         {
@@ -22,10 +29,11 @@ function saveProject()
             "latestChanges": latestChanges,
             "description":description,
             "requirements":requirements,
-            "files": file,
-            "screenshots": screenshot,
+            "files": files,
+            "screenshots": screenshots,
             "license": license,
-            "versionCode": versionCode
+            "versionCode": versionCode,
+            "UUID": UUID.toString().trim()
         },
         function (data, status)
         {
@@ -43,7 +51,6 @@ $(document).ready(function()
     $('#button-save').click(function()
     {
         var UUID = $('#projectSettingsUUID').text();
-        console.log(UUID);
         if(UUID != null && UUID != "")
         {
             $.post("../helper/removeProjectFromJSON.php",
@@ -52,12 +59,12 @@ $(document).ready(function()
             },function(data,error)
             {
                 console.log(data);
-                saveProject();
+                saveProject(UUID);
             });
         }
         else
         {
-            saveProject();
+            saveProject(null);
         }
 
 

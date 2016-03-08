@@ -197,7 +197,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<select id="projectSettings-fileSelector">
+							<select id="projectSettings-fileSelector" multiple class="chosen-select">
 								<?php
 								$directory = "../../executables/";
                                 $object = 'files';
@@ -214,7 +214,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<select id="projectSettings-screenshotSelector">
+							<select id="projectSettings-screenshotSelector" multiple class="chosen-select">
 								<?php
 								$directory = "../../images/screenshots";
                                 $object = 'screenshots';
