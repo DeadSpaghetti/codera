@@ -42,10 +42,10 @@ if($projectArray != NULL)
 				'</table>'.
 			'</td>		'.
 			'<td class="overview-right">'.
-				'<a class="button edit" id="projectOverviewEdit" href="javascript:void(null)">'.
+				'<a class="button edit" name="projectOverviewEdit" href="javascript:void(null)">'.
 					'<i class="material-icons">mode_edit</i>'.
 				'</a>'.
-				'<a class="button edit" id="projectOverviewDelete" href="javascript:void(null)">'.
+				'<a class="button edit" name="projectOverviewDelete" href="javascript:void(null)">'.
 					'<i class="material-icons">delete</i>'.
 				'</a>'.
 			'</td>'.

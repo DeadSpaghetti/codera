@@ -4,6 +4,7 @@ if(isset($directory) && $directory != null)
 {
     $files = scandir($directory);
     array_splice($files,0,2);   //removes . and ..
+    echo "<option id='emptyOption' selected></option>";
     for($i=0; $i < sizeof($files); $i++)
     {
         echo "<option id=".$directory.$files[$i].">$files[$i]</option>";

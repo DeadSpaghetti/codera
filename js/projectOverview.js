@@ -1,10 +1,10 @@
 $(document).ready(function()
 {
-    $('#projectOverviewEdit').click(function()
+    $('a[name=projectOverviewEdit]').click(function()
     {
         var form = document.createElement('form');
         form.method = 'POST';
-        form.action = '../restricted/projectSettingsEdit.php';
+        form.action = '../restricted/projectSettings.php';
 
         var input = document.createElement('input');
         input.type = 'text';
@@ -18,7 +18,7 @@ $(document).ready(function()
 
     });
 
-    $('#projectOverviewDelete').click(function()
+    $('a[name=projectOverviewDelete]').click(function()
     {
         var que = confirm("Do you want to delete this project?");
         if(que == true)

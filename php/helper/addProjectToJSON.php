@@ -48,6 +48,7 @@ $screenshots = $_POST['screenshots'];
 $license = $_POST['license'];
 $versionCode = $_POST['versionCode'];
 
+
 $projectUUID = generateGuid();
 $pathString = "../../config/projects.json";
 
@@ -67,6 +68,7 @@ if (file_exists($pathString))
             $array = json_decode($configFile,false);
 
         }
+
         $newProjectArray = array
         (
             "name" => $name,

@@ -24,12 +24,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             if($projectArray[$i]->{'UUID'} == $UUID)
             {
-
                 unset($projectArray[$i]);
                 $projectArray = array_values($projectArray);
 
                 $jsonString = json_encode($projectArray);
                 file_put_contents("../../config/projects.json",$jsonString);
+                echo $jsonString;
                 break;
             }
         }

@@ -10,6 +10,40 @@ if(!isset($_SESSION['loggedIn']))
 }
 
 include('../helper/paths.php');
+
+$projectName = "New Project";
+$versionCode = "";
+$versionName = "";
+$requirements = "";
+$date = "";
+$icon = "";
+
+
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+    global $projectArray;
+   $UUID = $_POST['UUID'];
+
+    include "../helper/getProjectsFromJSON.php";
+
+    for($i=0; $i < sizeof($projectArray); $i++)
+    {
+        if($projectArray[$i]->{'UUID'} == $UUID)
+        {
+            $selectedProject = $projectArray[$i];
+            $projectName = $selectedProject->{'name'};
+            $icon = $selectedProject->{'icon'};
+            $latestChanges = $selectedProject->{'latestChanges'};
+            $versionCode = $selectedProject->{'versionCode'};
+            $versionName = $selectedProject->{'versionName'};
+            $date = $selectedProject->{'date'};
+            $requirements = $selectedProject->{'requirements'};
+
+            break;
+        }
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,8 +56,7 @@ include('../helper/paths.php');
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="../../js/projectSettings.js"></script>
-		<script src="../../js/plugins/chosen/chosen.jquery.min.js"></script>
+		<script src="../../js/projectSettings.js"></script>	
 	</head>
 	<body>
 		<div id="main">
@@ -42,7 +75,12 @@ include('../helper/paths.php');
 				<table id="infos-small">
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">							
-							<div id="new-project">New Project</div>		
+							<div id="new-project"><?php echo $projectName?>
+								<div class="hidden" id="projectSettingsUUID">
+									<?php if(isset($UUID))
+											echo $UUID?>
+								</div>
+							</div>
 							<div class="line"></div>
 						</td>	
 					</tr>
@@ -53,7 +91,7 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-appName" type="text" maxlength="30" placeholder="MyApp"/>
+							<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php echo $selectedProject->{'name'} ?>" placeholder="MyApp"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -63,12 +101,12 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-                            <select>
-                                <?php
-                                $directory = "../../images/icons/";
-                                include "../helper/printAllFilesFromDirectoryAsOption.php"
-                                ?>
-                            </select>
+							<select id="projectSettings-iconSelector">
+								<?php
+								$directory = "../../images/icons/";
+								include "../helper/printAllFilesFromDirectoryAsOption.php"
+								?>
+							</select>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -78,7 +116,7 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-versionCode" type="text" maxlength="15" placeholder="10"/>
+							<input class="input project" id="input-versionCode" type="text" maxlength="15" value="<?php echo $selectedProject->{'versionCode'} ?>" placeholder="10"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -88,7 +126,7 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-versionName" type="text" maxlength="15" placeholder="1.0.0 b"/>
+							<input class="input project" id="input-versionName" type="text" maxlength="15" value="<?php echo $selectedProject->{'versionName'} ?>" placeholder="1.0.0 b"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -98,7 +136,7 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-date" type="date"/>
+							<input class="input project" id="input-date" value="<?php echo $date ?>" type="date"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -108,7 +146,7 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-changes" rows="10"> </textarea>
+							<textarea id="input-changes" rows="10"><?php echo $latestChanges ?></textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -118,7 +156,7 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-description" rows="10"> </textarea>
+							<textarea id="input-description" rows="10"> <?php echo $selectedProject->{'description'} ?></textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -128,7 +166,7 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-requirements" rows="10"> </textarea>
+							<textarea id="input-requirements" rows="10"><?php echo $requirements ?> </textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -137,13 +175,13 @@ include('../helper/paths.php');
 								<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
 							</div>
 						</td>										
-						<td class="infos-right">									
+						<td class="infos-right">
 							<select>
-                                <?php
-                                $directory = "../../executables/";
-                                include "../helper/printAllFilesFromDirectoryAsOption.php"
-                                ?>
-                            </select>
+								<?php
+								$directory = "../../executables/";
+								include "../helper/printAllFilesFromDirectoryAsOption.php"
+								?>
+							</select>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -154,11 +192,11 @@ include('../helper/paths.php');
 						</td>										
 						<td class="infos-right">
 							<select>
-                                <?php
-                                $directory = "../../images/screenshots/";
-                                include "../helper/printAllFilesFromDirectoryAsOption.php"
-                                ?>
-                            </select>
+								<?php
+								$directory = "../../images/screenshots";
+								include "../helper/printAllFilesFromDirectoryAsOption.php"
+								?>
+							</select>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -168,12 +206,12 @@ include('../helper/paths.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-                            <select>
-                                <?php
-                                $directory = "../../licenses/";
-                                include "../helper/printAllFilesFromDirectoryAsOption.php"
-                                ?>
-                            </select>
+							<select id="projectSettings-licenseSelector">
+								<?php
+								$directory = "../../licenses/";
+								include "../helper/printAllFilesFromDirectoryAsOption.php"
+								?>
+							</select>
 						</td>
 					</tr>
 					<tr class="infos-row">

@@ -252,3 +252,10 @@ margin-left: 0.3vmin;
 width: 2.3vmin;	
 vertical-align: middle;
 }
+
+.hidden
+{
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
