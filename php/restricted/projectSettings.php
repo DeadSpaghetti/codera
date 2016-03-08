@@ -35,10 +35,26 @@ function getSelectedOption($object,$UUID)
     }
 }
 
+function getSelectedOptions($object,$UUID)
+{
+    if(isset($UUID))
+    {
+        global $projectArray;
+        include "../helper/getProjectsFromJSON.php";
+        for ($i = 0; $i < sizeof($projectArray); $i++)
+        {
+            if ($projectArray[$i]->{'UUID'} == $UUID)
+            {
+                return json_decode($projectArray[$i]->{$object});
+            }
+        }
+    }
+}
+
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     global $projectArray;
-   $UUID = $_POST['UUID'];
+    $UUID = $_POST['UUID'];
 
     include "../helper/getProjectsFromJSON.php";
 
@@ -200,9 +216,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							<select id="projectSettings-fileSelector" multiple class="chosen-select">
 								<?php
 								$directory = "../../executables/";
-                                $object = 'files';
-                                $exclude = getSelectedOption($object,$UUID);
-								include "../helper/printAllFilesFromDirectoryAsOption.php"
+                                $exclude = getSelectedOptions("files",$UUID);   //is array
+								include "../helper/printAllFilesFromDirectoryAsOption.php";
 								?>
 							</select>
 						</td>
@@ -218,7 +233,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 								<?php
 								$directory = "../../images/screenshots";
                                 $object = 'screenshots';
-                                $exclude = getSelectedOption($object,$UUID);
+                                $exclude = getSelectedOptions($object,$UUID);   //array
 								include "../helper/printAllFilesFromDirectoryAsOption.php"
 								?>
 							</select>

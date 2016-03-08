@@ -81,7 +81,7 @@ if (file_exists($pathString))
             "description" => $description,
             "requirements" => $requirements,
             "files" => $files,
-            "screenshots" => urlencode($screenshots),
+            "screenshots" => $screenshots,
             "license" => $license,
             "versionCode" => $versionCode,
             "UUID" => $projectUUID

@@ -15,7 +15,7 @@ function saveProject(UUID)
     {
         files.push($(selected).text());
     });
-    $('#projectSettings-screenshotSelector').each(function(i,selected)
+    $('#projectSettings-screenshotSelector :selected').each(function(j,selected)
     {
         screenshots.push($(selected).text());
     });
@@ -29,8 +29,8 @@ function saveProject(UUID)
             "latestChanges": latestChanges,
             "description":description,
             "requirements":requirements,
-            "files": files,
-            "screenshots": screenshots,
+            "files": JSON.stringify(files),
+            "screenshots": JSON.stringify(screenshots),
             "license": license,
             "versionCode": versionCode,
             "UUID": UUID.toString().trim()
