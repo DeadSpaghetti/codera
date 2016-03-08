@@ -14,7 +14,9 @@ include('helper/paths.php');
 		<title>Deadlocker</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">			
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="../js/index.js"></script>
 	</head>
 	<body>
 		<div id="main">
@@ -47,14 +49,15 @@ include('helper/paths.php');
 								
 								$icon = urldecode($projectArray[$i]->{'icon'});								
 								$name = $projectArray[$i]->{'name'};
+								$UUID = $projectArray[$i]->{'UUID'};
 								
 								if($gridSize == 3)
 								{
 									echo	'<td class="entry large">'.
-												'<a href="template.php">'.
+												'<a id="'.$UUID.'">'.
 													'<div class="entry-icon large" style="background-image: url('."'".$path_folder_icons.'/'.$icon."'".');"> </div>'.
 													'<div class="icon-name">'.$name.'</div>'.
-												'</a>'.										
+												'</a>'.
 											'</td>';
 											
 									if(fmod($i, 3) == 2)
@@ -65,7 +68,7 @@ include('helper/paths.php');
 								else if($gridSize == 4)
 								{
 									echo	'<td class="entry medium">'.
-												'<a href="template.php">'.
+												'<a id="'.$UUID.'">'.
 													'<div class="entry-icon medium" style="background-image: url('."'".$path_folder_icons.'/'.$icon."'".');"> </div>'.
 													'<div class="icon-name">'.$name.'</div>'.
 												'</a>'.										
@@ -79,7 +82,7 @@ include('helper/paths.php');
 								else
 								{
 									echo	'<td class="entry small">'.
-												'<a href="template.php">'.
+												'<a id="'. $UUID.'">'.
 													'<div class="entry-icon small" style="background-image: url('."'".$path_folder_icons.'/'.$icon."'".');"> </div>'.
 													'<div class="icon-name">'.$name.'</div>'.
 												'</a>'.										

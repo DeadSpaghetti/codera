@@ -28,13 +28,43 @@ include('helper/paths.php');
 				{				
 					include($path_header); 
 				}
+
+			$UUID = $_GET['UUID'];
+
+			global $projectArray;
+			include "helper/getProjectsFromJSON.php";
+			for($i=0; $i < sizeof($projectArray); $i++)
+			{
+				if($projectArray[$i]->{'UUID'} == $UUID)
+				{
+					$currentProject = $projectArray[$i];
+					break;
+				}
+			}
+
+			if(isset($currentProject))
+			{
+				$projectName = $currentProject->{'name'};
+				$icon = $currentProject->{'icon'};
+				$latestChanges = $currentProject->{'latestChanges'};
+				$versionCode = $currentProject->{'versionCode'};
+				$versionName = $currentProject->{'versionName'};
+				$date = $currentProject->{'date'};
+				$requirements = $currentProject->{'requirements'};
+				$description = $currentProject->{'description'};
+				$license = $currentProject->{'license'};
+			}
+			else
+			{
+				exit;
+			}
 			?>
 			<div id="content">	
 				<div id="white">
 					<table id="app">
 						<tr>
-							<td id="app-icon" style="background-image: url('../images/icons/tetris.png');">	</td>
-							<td id="app-name">SaveMyPlayList</td>	
+							<td id="app-icon" style="background-image: url('../images/icons/<?php echo $icon ?>');">	</td>
+							<td id="app-name"><?php echo $projectName?></td>
 						</tr>
 					</table>
 					<div class="line"></div>			
@@ -46,7 +76,7 @@ include('helper/paths.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								4.4.0
+								<?php echo $versionName ?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -56,7 +86,7 @@ include('helper/paths.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								05.02.16
+								<?php echo $date?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -66,7 +96,7 @@ include('helper/paths.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								-added functionality x
+								<?php echo $latestChanges?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -76,11 +106,7 @@ include('helper/paths.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-								sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
-								Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
-								et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-								no sea takimata sanctus est Lorem ipsum dolor sit amet.
+								<?php echo $description?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -90,8 +116,7 @@ include('helper/paths.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								Windows 8.1<br>
-								Java 1.8.0 or higher
+								<?php echo $requirements ?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -136,7 +161,7 @@ include('helper/paths.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								Your EULA here
+								<?php echo $license?>
 							</td>
 						</tr>
 						
