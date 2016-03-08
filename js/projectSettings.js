@@ -35,6 +35,10 @@ function saveProject()
 
 $(document).ready(function()
 {
+    $('#projectSettings-iconSelector').chosen();
+    $('#projectSettings-licenseSelector').chosen();
+    $('#projectSettings-fileSelector').chosen();
+    $('#projectSettings-screenshotSelector').chosen();
 
     $('#button-save').click(function()
     {
