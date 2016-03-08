@@ -5,13 +5,14 @@ if(!isset($_SESSION))
 }
 
 include('helper/paths.php');
+include($path_helper_getGeneralSettings);
 ?>
 
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Deadlocker</title>
+		<title><?php echo $developerName ?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
