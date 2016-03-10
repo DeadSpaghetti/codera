@@ -101,6 +101,8 @@ if (file_exists($pathString))
         fwrite($file, $fileToSave);
         fclose($file);
 
+        include "sortProjects.php";
+
 
     }
     catch (Exception $e)
