@@ -22,17 +22,17 @@ function saveProject(UUID)
 
     $.post("../helper/addProjectToJSON.php",
         {
-            "name": name,
+            "name": name.trim(),
             "icon": icon,
-            "versionName": versionName,
+            "versionName": versionName.trim(),
             "date": date,
-            "latestChanges": latestChanges,
-            "description":description,
-            "requirements":requirements,
+            "latestChanges": latestChanges.trim(),
+            "description":description.trim(),
+            "requirements":requirements.trim(),
             "files": JSON.stringify(files),
             "screenshots": JSON.stringify(screenshots),
             "license": license,
-            "versionCode": versionCode,
+            "versionCode": versionCode.trim(),
             "UUID": UUID.toString().trim()
         },
         function (data, status)
@@ -58,7 +58,6 @@ $(document).ready(function()
                 "UUID" : UUID.toString().trim()
             },function(data,error)
             {
-                console.log(data);
                 saveProject(UUID);
             });
         }
