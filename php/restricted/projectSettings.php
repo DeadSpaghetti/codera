@@ -89,6 +89,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		<meta charset="UTF_8"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="../../js/plugins/chosen/chosen.min.css" rel="stylesheet" type="text/css">
+        <link href="../../js/plugins/pickadate/lib/compressed/themes/default.css" rel="stylesheet" type="text/css">
+        <link href="../../js/plugins/pickadate/lib/compressed/themes/default.date.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>		
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
@@ -96,6 +98,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../../js/projectSettings.js"></script>
         <script src="../../js/plugins/chosen/chosen.jquery.min.js"></script>
+        <script src="../../js/plugins/pickadate/lib/compressed/picker.js"></script>
+        <script src="../../js/plugins/pickadate/lib/compressed/picker.date.js"></script>
 
 	</head>
 	<body>
@@ -199,7 +203,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-date" value="<?php echo $date; ?>" type="date"/>
+							<input class="input project" id="input-date" value="<?php echo $date;?>" type="date"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
