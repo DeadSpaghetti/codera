@@ -14,6 +14,7 @@ include('helper/paths.php');
 		<title>Deadlocker</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-template.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
@@ -135,8 +136,8 @@ include('helper/paths.php');
 												  <option value="EXE-64">Installer.exe - Windows x64</option>								
 											</select>
 										</td>
-										<td>
-											<a class="button" id="button-download" href="javascript:void(null)">									
+										<td>										
+											<a class="button download" id="button-download" href="javascript:void(null)">									
 												<i class="material-icons">file_download</i> <span class="button-text">Download</span> 									
 											</a>
 										</td>

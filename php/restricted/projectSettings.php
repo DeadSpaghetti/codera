@@ -165,7 +165,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 						<td class="infos-right">
 							<input class="input project" id="input-versionName" type="text" maxlength="15" value="<?php echo $selectedProject->{'versionName'} ?>" placeholder="1.0.0 b"/>
 						</td>
-					</tr>
+					</tr>				
+					<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">label</i> <span class="icon-text">Status:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<div class="radiogroup" id="radiogroup-1">				
+								<input type="radio" name="gridwidth" id="radio-1" value="Alpha" <?php //if($gridSize == 3){echo "checked";} ?>/>
+								<label for="radio-1">Alpha</label>
+							</div>
+							<div class="radiogroup">				
+								<input type="radio" name="gridwidth" id="radio-2" value="Beta" <?php //if($gridSize == 4){echo "checked";} ?>/>
+								<label for="radio-2">Beta</label>
+							</div>
+							<div class="radiogroup">				
+								<input type="radio" name="gridwidth" id="radio-3" value="Final" <?php //if($gridSize == 5){echo "checked";} ?>/>
+								<label for="radio-3">Final</label>
+							</div>			
+						</td>
+					</tr>	
 					<tr class="infos-row">
 						<td class="infos-left">
 							<div class="icon">
@@ -173,7 +194,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-date" value="<?php echo $date ?>" type="date"/>
+							<input class="input project" id="input-date" value="<?php echo $date; ?>" type="date"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -183,7 +204,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-changes" rows="10"><?php echo $latestChanges ?></textarea>
+							<textarea id="input-changes" rows="10"><?php echo $latestChanges;?></textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -193,7 +214,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-description" rows="10"> <?php echo $selectedProject->{'description'} ?></textarea>
+							<textarea id="input-description" rows="10"><?php echo $selectedProject->{'description'} ?></textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -203,7 +224,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-requirements" rows="10"><?php echo $requirements ?> </textarea>
+							<textarea id="input-requirements" rows="10"><?php echo $requirements ?></textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">

@@ -11,6 +11,7 @@ function saveProject(UUID)
     var license = $('#projectSettings-licenseSelector').find(":selected").text();
     var files = [];
     var screenshots = [];
+	 
     $('#projectSettings-fileSelector :selected').each(function(i,selected)
     {
         files.push($(selected).text());

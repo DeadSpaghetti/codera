@@ -6,10 +6,7 @@ text-align: center;
 color: #212121;
 }
 
-textarea{
-width: 75%;	
-resize: vertical;
-}
+
 
 /*only workaround*/
 input[type='file'] {
@@ -73,8 +70,9 @@ border: none;
 box-shadow: none;
 }
 
-textarea{
+textarea{	
 width: 75%;
+resize: vertical;
 margin-left: 0;
 background-color: #FFFFFF;
 border-radius: 0.5vmin;
@@ -85,6 +83,7 @@ border: 0.2vmin solid #d9d9d9;
 box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
 padding: 1vmin;
 display: block;
+font-family: Roboto, Sans-Serif;
 }
 
 #input-password{
