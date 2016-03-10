@@ -48,6 +48,7 @@ $screenshots = $_POST['screenshots'];
 $license = $_POST['license'];
 $versionCode = $_POST['versionCode'];
 $projectUUID = $_POST['UUID'];
+$projectStatus = $_POST['projectStatus'];
 
 if($projectUUID == null)
     $projectUUID = generateGuid();
@@ -84,6 +85,7 @@ if (file_exists($pathString))
             "screenshots" => $screenshots,
             "license" => $license,
             "versionCode" => $versionCode,
+            "projectStatus" => $projectStatus,
             "UUID" => $projectUUID
         );
 
@@ -95,7 +97,6 @@ if (file_exists($pathString))
 
         //push new reg id into array
         $fileToSave = json_encode($array);
-        //echo $fileToSave;
         $file = fopen($pathString, "w");
         fwrite($file, $fileToSave);
         fclose($file);
@@ -104,7 +105,7 @@ if (file_exists($pathString))
     }
     catch (Exception $e)
     {
-        var_dump($e);
+        var_dump($e);   //TODO remove this from production code sometime
     }
 
 

@@ -19,6 +19,7 @@ $date = "";
 $icon = "";
 $latestChanges = "";
 $description = "";
+$projectStatus = "Final";
 $UUID = null;
 
 function getSelectedOption($object,$UUID)
@@ -73,6 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $date = $selectedProject->{'date'};
             $requirements = $selectedProject->{'requirements'};
             $description = $selectedProject->{'description'};
+            $projectStatus = $selectedProject->{'projectStatus'};
 
             break;
         }
@@ -156,7 +158,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-versionCode" type="text" maxlength="15" value="<?php echo $selectedProject->{'versionCode'} ?>" placeholder="10"/>
+							<input class="input project" id="input-versionCode" type="text" maxlength="15" value="<?php echo $versionCode;?>" placeholder="10"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -166,7 +168,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-versionName" type="text" maxlength="15" value="<?php echo $selectedProject->{'versionName'} ?>" placeholder="1.0.0 b"/>
+							<input class="input project" id="input-versionName" type="text" maxlength="15" value="<?php echo $versionName;?>" placeholder="1.0.0 b"/>
 						</td>
 					</tr>				
 					<tr class="infos-row">
@@ -177,15 +179,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 						</td>										
 						<td class="infos-right">
 							<div class="radiogroup" id="radiogroup-1">				
-								<input type="radio" name="gridwidth" id="radio-1" value="Alpha" <?php //if($gridSize == 3){echo "checked";} ?>/>
+								<input type="radio" name="projectStatus" id="radio-1" value="Alpha" <?php if($projectStatus == "Alpha"){echo "checked";}?>/>
 								<label for="radio-1">Alpha</label>
 							</div>
 							<div class="radiogroup">				
-								<input type="radio" name="gridwidth" id="radio-2" value="Beta" <?php //if($gridSize == 4){echo "checked";} ?>/>
+								<input type="radio" name="projectStatus" id="radio-2" value="Beta" <?php if($projectStatus == "Beta"){echo "checked";}?>/>
 								<label for="radio-2">Beta</label>
 							</div>
 							<div class="radiogroup">				
-								<input type="radio" name="gridwidth" id="radio-3" value="Final" <?php //if($gridSize == 5){echo "checked";} ?>/>
+								<input type="radio" name="projectStatus" id="radio-3" value="Final" <?php if($projectStatus == "Final"){echo "checked";}?>/>
 								<label for="radio-3">Final</label>
 							</div>			
 						</td>

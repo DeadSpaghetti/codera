@@ -9,8 +9,10 @@ function saveProject(UUID)
     var description = $('#input-description').val();
     var requirements = $('#input-requirements').val();
     var license = $('#projectSettings-licenseSelector').find(":selected").text();
+    var projectStatus = $('input[name=projectStatus]:checked').val();
     var files = [];
     var screenshots = [];
+
 	 
     $('#projectSettings-fileSelector :selected').each(function(i,selected)
     {
@@ -34,7 +36,8 @@ function saveProject(UUID)
             "screenshots": JSON.stringify(screenshots),
             "license": license,
             "versionCode": versionCode.trim(),
-            "UUID": UUID.toString().trim()
+            "UUID": UUID.toString().trim(),
+            "projectStatus": projectStatus
         },
         function (data, status)
         {
