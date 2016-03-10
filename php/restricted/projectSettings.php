@@ -113,7 +113,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							<div id="new-project"><?php echo $projectName?>
 								<div class="hidden" id="projectSettingsUUID">
 									<?php if(isset($UUID))
-											echo $UUID?>
+											echo $UUID;?>
 								</div>
 							</div>
 							<div class="line"></div>
@@ -214,7 +214,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-description" rows="10"><?php echo $selectedProject->{'description'} ?></textarea>
+							<textarea id="input-description" rows="10"><?php echo $selectedProject->{'description'};?></textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -224,7 +224,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-requirements" rows="10"><?php echo $requirements ?></textarea>
+							<textarea id="input-requirements" rows="10"><?php echo $requirements;?></textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
