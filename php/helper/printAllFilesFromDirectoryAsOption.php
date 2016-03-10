@@ -5,7 +5,7 @@ if(isset($directory) && $directory != null)
     $files = scandir($directory);
     array_splice($files,0,2);   //removes . and ..
     echo "<option id='emptyOption'></option>";
-    if(is_array($exclude))
+    if(isset($exclude) && is_array($exclude))
     {
         for ($i = 0; $i < sizeof($files); $i++)
         {

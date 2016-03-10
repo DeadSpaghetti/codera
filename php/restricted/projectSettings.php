@@ -17,7 +17,9 @@ $versionName = "";
 $requirements = "";
 $date = "";
 $icon = "";
-
+$latestChanges = "";
+$description = "";
+$UUID = null;
 
 function getSelectedOption($object,$UUID)
 {
@@ -70,6 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $versionName = $selectedProject->{'versionName'};
             $date = $selectedProject->{'date'};
             $requirements = $selectedProject->{'requirements'};
+            $description = $selectedProject->{'description'};
 
             break;
         }
@@ -126,7 +129,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php echo $selectedProject->{'name'} ?>" placeholder="MyApp"/>
+							<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php echo $projectName;?>" placeholder="MyApp"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -214,7 +217,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 							</div>
 						</td>										
 						<td class="infos-right">
-							<textarea id="input-description" rows="10"><?php echo $selectedProject->{'description'};?></textarea>
+							<textarea id="input-description" rows="10"><?php echo $description;?></textarea>
 						</td>
 					</tr>
 					<tr class="infos-row">
