@@ -1,13 +1,5 @@
 $(document).ready(function()
 {
-    var coderaVersionURL = "https://spaghettic0der.noip.me/codera/config/version.txt"; //TODO use gitHub url, when public
-    //gets current codera version from url
-    $.get(coderaVersionURL,function(data)
-    {
-        $('#codera-version-right-onLine').text(data.split("\n")[0]);
-    });
-
-
     $('#color-chooser').click(function(event)
     {
         if(event.target.className == "ink")
