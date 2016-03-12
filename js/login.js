@@ -1,10 +1,23 @@
 $(document).ready(function()
 {
-	document.getElementById('login-message').style.display='none';
+	document.getElementById('login-message').style.display='none';		
 	
     $('#button-login').click(function()
     {	
-        var username = $('#input-username').val();
+       login();
+    });
+	
+	$('#input-password').keyup(function(e)
+    {	
+        if(e.keyCode === 13)
+		{
+           login();
+        }       
+    });
+	
+	function login()
+	{
+		var username = $('#input-username').val();
         var password = $('#input-password').val();
 
         if(username != "" && username != undefined && password != "" && password != undefined)
@@ -26,5 +39,5 @@ $(document).ready(function()
                     }
                 });
         }
-    });
+	}
 });
