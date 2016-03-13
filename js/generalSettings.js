@@ -13,13 +13,15 @@ $(document).ready(function()
     {
         var developerName = $('#input-websiteName').val();
         var colorScheme = $('#color-chooser div.selected').css('background-color');		
-        var gridSize = $('input[name=gridwidth]:checked').val();		
+        var gridSize = $('input[name=gridwidth]:checked').val();
+        var sortOrder = "a-z"; //TODO GET FROM ELEMENT
 
         $.post("../helper/setGeneralSettingsToJSON.php",
             {
                 "developerName": developerName,
                 "colorScheme": rgb2hex(colorScheme),
-                "gridSize": gridSize
+                "gridSize": gridSize,
+                "sortOrder": sortOrder
             },function(data,error)
             {
 				location.reload(); 
