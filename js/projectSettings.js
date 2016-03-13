@@ -51,7 +51,10 @@ $(document).ready(function()
     $('#projectSettings-licenseSelector').chosen();
     $('#projectSettings-fileSelector').chosen();
     $('#projectSettings-screenshotSelector').chosen();
-    $('#input-date').pickadate();
+    $('#input-date').pickadate({
+        format: 'dd.mm.yyyy',
+        formatSubmit: 'dd.mm.yyyy'
+    });
 
     $('#button-save').click(function()
     {
