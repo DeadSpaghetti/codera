@@ -50,6 +50,7 @@ $versionCode = $_POST['versionCode'];
 $projectUUID = $_POST['UUID'];
 $projectStatus = $_POST['projectStatus'];
 
+
 if($projectUUID == null)
     $projectUUID = generateGuid();
 
@@ -101,6 +102,8 @@ if (file_exists($pathString))
         fwrite($file, $fileToSave);
         fclose($file);
 
+        global $sortOrder;
+        include "getGeneralSettingsFromJSON.php";
         include "sortProjects.php";
 
 

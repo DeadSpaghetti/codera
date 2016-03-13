@@ -9,11 +9,12 @@ if(file_exists($filename))
     $developerName = $settings->{'developerName'};
     $colorScheme = $settings->{'colorScheme'};
     $gridSize = $settings->{'gridSize'};
-
+    $sortOrder = $settings->{'sortOrder'};
 }
 else
 {
 	$developerName = "MyEpicDeveloperName";
     $colorScheme = "#bdbdbd";
-    $gridSize = "3";    
+    $gridSize = "3";
+    $sortOrder = "a-z";
 }

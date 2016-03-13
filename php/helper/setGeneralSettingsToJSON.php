@@ -1,4 +1,5 @@
 <?php
+global $sortOrder;
 
 $developerName = $_POST['developerName'];
 $colorScheme = $_POST['colorScheme'];
@@ -20,3 +21,6 @@ $jsonString = json_encode($array);
 
 fwrite($file,$jsonString);
 fclose($file);
+
+
+include "sortProjects.php";
