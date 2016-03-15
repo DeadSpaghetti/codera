@@ -45,15 +45,24 @@ include('helper/paths.php');
 
 			if(isset($currentProject))
 			{
-				$projectName = $currentProject->{'name'};
-				$icon = $currentProject->{'icon'};
-				$latestChanges = $currentProject->{'latestChanges'};
-				$versionCode = $currentProject->{'versionCode'};
-				$versionName = $currentProject->{'versionName'};
-				$date = $currentProject->{'date'};
-				$requirements = $currentProject->{'requirements'};
-				$description = $currentProject->{'description'};
-				$license = $currentProject->{'license'};
+				$url = $currentProject->{'url'};
+				if(isset($url) && $url != "" && $url != null)
+				{
+					header("Location: " . $url);
+					exit;
+				}
+				else
+				{
+					$projectName = $currentProject->{'name'};
+					$icon = $currentProject->{'icon'};
+					$latestChanges = $currentProject->{'latestChanges'};
+					$versionCode = $currentProject->{'versionCode'};
+					$versionName = $currentProject->{'versionName'};
+					$date = $currentProject->{'date'};
+					$requirements = $currentProject->{'requirements'};
+					$description = $currentProject->{'description'};
+					$license = $currentProject->{'license'};
+				}
 			}
 			else
 			{
