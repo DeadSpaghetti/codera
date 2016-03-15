@@ -12,6 +12,7 @@ if(!isset($_SESSION['loggedIn']))
 global $developerName;
 global $colorScheme;
 global $gridSize;
+global $sortOrder;
 
 //script just changes the global variables
 include("../helper/getGeneralSettingsFromJSON.php");
@@ -59,6 +60,27 @@ include("../helper/getGeneralSettingsFromJSON.php");
 				<input type="radio" name="gridwidth" id="radio-3" value="5" <?php if($gridSize == 5){echo "checked";} ?>/>
 				<label for="radio-3">5</label>
 			</div>			
+		</td>
+	</tr>
+	<tr class="infos-row">
+		<td class="infos-left">
+			<div class="icon">
+				<i class="material-icons">grid_on</i> <span class="icon-text">Project Sort Order:</span>
+			</div>
+		</td>
+		<td class="infos-right">
+			<div class="radiogroup" id="radiogroup-1">
+				<input type="radio" name="sortOrder" id="radio-sortOrder1" value="a-z" <?php if($sortOrder == "a-z"){echo "checked";} ?>/>
+				<label for="radio-sortOrder1">a-z</label>
+			</div>
+			<div class="radiogroup">
+				<input type="radio" name="sortOrder" id="radio-sortOrder2" value="z-a" <?php if($sortOrder == "z-a"){echo "checked";} ?>/>
+				<label for="radio-sortOrder2">z-a</label>
+			</div>
+			<div class="radiogroup">
+				<input type="radio" name="sortOrder" id="radio-sortOrder3" value="latestUpdate" <?php if($sortOrder == "latestUpdate"){echo "checked";} ?>/>
+				<label for="radio-sortOrder3">latestUpdate</label>
+			</div>
 		</td>
 	</tr>
 	<tr class="infos-row">

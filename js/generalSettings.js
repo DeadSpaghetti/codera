@@ -14,7 +14,7 @@ $(document).ready(function()
         var developerName = $('#input-websiteName').val();
         var colorScheme = $('#color-chooser div.selected').css('background-color');		
         var gridSize = $('input[name=gridwidth]:checked').val();
-        var sortOrder = "latestUpdate"; //TODO GET FROM ELEMENT
+        var sortOrder = $('input[name=sortOrder]:checked').val(); //TODO GET FROM ELEMENT
 
         $.post("../helper/setGeneralSettingsToJSON.php",
             {
