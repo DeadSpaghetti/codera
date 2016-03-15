@@ -3,7 +3,9 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
-
+global $colorScheme;
+global $developerName;
+global $gridSize;
 include('helper/paths.php');
 include($path_helper_getGeneralSettings);
 ?>
