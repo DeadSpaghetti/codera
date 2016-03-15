@@ -8,6 +8,8 @@
 ## File-based project format:
 *.iws
 
+/config/admin.json
+
 ## Plugin-specific files:
 
 # IntelliJ
