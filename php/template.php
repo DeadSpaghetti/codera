@@ -17,7 +17,11 @@ include('helper/paths.php');
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-template.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	</head>
+        <link href="../js/plugins/chosen/chosen.min.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="../js/plugins/chosen/chosen.jquery.min.js"></script>
+        <script src="../js/template.js"></script>
+    </head>
 	<body>
 		<div id="main">
 			<?php 				
@@ -139,10 +143,11 @@ include('helper/paths.php');
 								<table>
 									<tr>
 										<td>
-											 <select>
-												  <option value="JAR">YourApp.jar -  Any OS</option>
-												  <option value="EXE">Installer.exe - Windows x68</option>
-												  <option value="EXE-64">Installer.exe - Windows x64</option>								
+											<select id="template-fileSelector" class="chosen-select">
+                                                <?php
+                                                    $directory = "files";
+                                                    include 'helper/printAllAvailableOptions.php';
+												?>
 											</select>
 										</td>
 										<td>										
