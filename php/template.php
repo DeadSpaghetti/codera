@@ -16,11 +16,14 @@ include('helper/paths.php');
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-template.css"/>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="../js/plugins/chosen/chosen.min.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link href="../js/plugins/chosen/chosen.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../js/plugins/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="../js/plugins/chosen/chosen.jquery.min.js"></script>
         <script src="../js/template.js"></script>
+
+
     </head>
 	<body>
 		<div id="main">
@@ -145,7 +148,8 @@ include('helper/paths.php');
 										<td>
 											<select id="template-fileSelector" class="chosen-select">
                                                 <?php
-                                                    $directory = "files";
+                                                    $property = "files";
+                                                    $options = "option";
                                                     include 'helper/printAllAvailableOptions.php';
 												?>
 											</select>
@@ -167,6 +171,11 @@ include('helper/paths.php');
 							</td>										
 							<td class="infos-right">
 								<!-- Tabelle Previews -->
+                                <?php
+                                    $property = "screenshots";
+                                    $options = "image";
+                                    include "helper/printAllAvailableOptions.php";
+                                ?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -185,5 +194,6 @@ include('helper/paths.php');
 			</div>
 		</div>
 		<?php include("templates/footer.php"); ?>
+        <script src="../js/plugins/lightbox2/dist/js/lightbox.min.js"></script>
 	</body>
 </html>
