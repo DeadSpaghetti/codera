@@ -17,10 +17,10 @@ include('helper/paths.php');
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-template.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-        <link href="../js/plugins/chosen/chosen.min.css" rel="stylesheet" type="text/css"/>
-        <link href="../js/plugins/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../js/libs/chosen/chosen.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../js/libs/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="../js/plugins/chosen/chosen.jquery.min.js"></script>
+        <script src="../js/libs/chosen/chosen.jquery.min.js"></script>
         <script src="../js/template.js"></script>
 
 
@@ -194,6 +194,6 @@ include('helper/paths.php');
 			</div>
 		</div>
 		<?php include("templates/footer.php"); ?>
-        <script src="../js/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+        <script src="../js/libs/lightbox2/dist/js/lightbox.min.js"></script>
 	</body>
 </html>

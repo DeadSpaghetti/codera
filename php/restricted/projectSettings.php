@@ -88,18 +88,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		<title>Codera</title>
 		<meta charset="UTF_8"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href="../../js/plugins/chosen/chosen.min.css" rel="stylesheet" type="text/css">
-        <link href="../../js/plugins/pickadate/lib/compressed/themes/default.css" rel="stylesheet" type="text/css">
-        <link href="../../js/plugins/pickadate/lib/compressed/themes/default.date.css" rel="stylesheet" type="text/css">
+		<link href="../../js/libs/chosen/chosen.min.css" rel="stylesheet" type="text/css">
+        <link href="../../js/libs/pickadate/lib/compressed/themes/default.css" rel="stylesheet" type="text/css">
+        <link href="../../js/libs/pickadate/lib/compressed/themes/default.date.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>		
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../../js/projectSettings.js"></script>
-        <script src="../../js/plugins/chosen/chosen.jquery.min.js"></script>
-        <script src="../../js/plugins/pickadate/lib/compressed/picker.js"></script>
-        <script src="../../js/plugins/pickadate/lib/compressed/picker.date.js"></script>
+        <script src="../../js/libs/chosen/chosen.jquery.min.js"></script>
+        <script src="../../js/libs/pickadate/lib/compressed/picker.js"></script>
+        <script src="../../js/libs/pickadate/lib/compressed/picker.date.js"></script>
 
 	</head>
 	<body>
