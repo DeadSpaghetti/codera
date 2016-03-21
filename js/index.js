@@ -47,7 +47,7 @@ function makeRequestAndSetBanners(currentCanvas,color,id)
                     ctx.fillStyle = color;
                     ctx.fillRect(0.3*width, 0.75*height, 0.7*width, 0.25*height);
                     ctx.fillStyle = "#FFFFFF";
-                    ctx.fillText(status.toString().toUpperCase(),0.46*width, 0.94*height);
+                    ctx.fillText(status.toString().toUpperCase(),0.43*width, 0.94*height);
                 }
             }
         }
