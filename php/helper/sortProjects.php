@@ -28,5 +28,12 @@ elseif($sortOrder == "latestUpdate")
     });
 
 }
+elseif ($sortOrder == "latestUpdateReversed")
+{
+    usort($projectArray, function ($a, $b)
+    {
+        return (strtotime($a->date) < strtotime($b->date)) ? -1 : 1;
+    });
+}
 file_put_contents($path_config_projects,json_encode($projectArray));
 
