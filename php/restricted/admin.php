@@ -7,6 +7,7 @@ if(!isset($_SESSION['loggedIn']))
     header('Location: ../login.php');
     exit;	
 }
+include('../helper/convertHexToRGB.php');
 ?>
 
 <html>
@@ -33,9 +34,9 @@ if(!isset($_SESSION['loggedIn']))
 			<div id="content">	
 				<div class="tabs">
 					<ul class="tab-links">						
-						<li id="tabGeneralSettings-list-element" "class="active"><a href="#tabGeneralSettings">General Settings</a></li>
-						<li id="tabProjectOverview-list-element"><a href="#tabProjectOverview">Projects</a></li>
-						<li id="tabChangeLogin-list-element"><a href="#tabChangeLogin">Change Login</a></li>
+						<li id="tabGeneralSettings-list-element" class="active"><a href="#tabGeneralSettings" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">General Settings</a></li>
+						<li id="tabProjectOverview-list-element"><a href="#tabProjectOverview" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Projects</a></li>
+						<li id="tabChangeLogin-list-element"><a href="#tabChangeLogin" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Change Login</a></li>
 					</ul>
 					<div style="clear: both;"> </div> 		
 						<div class="tab-content">
