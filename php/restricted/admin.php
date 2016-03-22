@@ -8,11 +8,12 @@ if(!isset($_SESSION['loggedIn']))
     exit;	
 }
 include('../helper/convertHexToRGB.php');
+include('../helper/getGeneralSettingsFromJSON.php');				
 ?>
 
 <html>
 	<head>
-		<title>Codera</title>
+		<title><?php echo $developerName ?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>

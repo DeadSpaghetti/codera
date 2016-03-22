@@ -8,13 +8,14 @@ if(isset($_SESSION['loggedIn']))
 	header('Location: restricted/admin.php');
 	exit;
 }
+include('helper/getGeneralSettingsFromJSON.php');
 ?>
 
 <!DOCTYPE html>
 
 <html>
 	<head>
-		<title>Deadlocker</title>
+		<title><?php echo $developerName ?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-admin.css"/>
