@@ -82,12 +82,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         }
     }
 }
-
+include('../helper/getGeneralSettingsFromJSON.php');
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Codera</title>
+		<title><?php echo $developerName ?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="../../js/libs/chosen/chosen.min.css" rel="stylesheet" type="text/css">
