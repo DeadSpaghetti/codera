@@ -15,7 +15,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 
 <html>
 	<head>
-		<title><?php echo $developerName ?> on Codera</title>
+		<title><?php echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-admin.css"/>
