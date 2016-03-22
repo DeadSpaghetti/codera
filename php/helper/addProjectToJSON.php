@@ -49,6 +49,7 @@ $license = $_POST['license'];
 $versionCode = $_POST['versionCode'];
 $projectUUID = $_POST['UUID'];
 $projectStatus = $_POST['projectStatus'];
+$url = $_POST['url'];
 
 
 if($projectUUID == null)
@@ -87,6 +88,7 @@ if (file_exists($pathString))
             "license" => $license,
             "versionCode" => $versionCode,
             "projectStatus" => $projectStatus,
+            "url" => $url,
             "UUID" => $projectUUID
         );
 

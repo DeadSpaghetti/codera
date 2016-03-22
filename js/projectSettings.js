@@ -12,7 +12,7 @@ function saveProject(UUID)
     var projectStatus = $('input[name=projectStatus]:checked').val();
     var files = [];
     var screenshots = [];
-
+    var url = $('#input-url').val();
 
 	 
     $('#projectSettings-fileSelector :selected').each(function(i,selected)
@@ -38,7 +38,8 @@ function saveProject(UUID)
             "license": license,
             "versionCode": versionCode.trim(),
             "UUID": UUID.toString().trim(),
-            "projectStatus": projectStatus
+            "projectStatus": projectStatus,
+            "url": url
         },
         function (data, status)
         {
