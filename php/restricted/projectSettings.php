@@ -76,6 +76,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $requirements = $selectedProject->{'requirements'};
             $description = $selectedProject->{'description'};
             $projectStatus = $selectedProject->{'projectStatus'};
+			$url = $selectedProject->{'url'};
 
             break;
         }
@@ -134,7 +135,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 						<td colspan="2" class="infos-center">
 							<div id="toggle-container">							
 								<label class="switch-light switch-candy" onclick="">
-									<input type="checkbox" id="toggle-project-or-url">
+									<input type="checkbox" id="toggle-project-or-url" <?php if($url != "")echo "checked"?>>
 									<span>
 										<span>Project</span>
 										<span>URL</span>

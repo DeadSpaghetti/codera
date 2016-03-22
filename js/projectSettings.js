@@ -13,6 +13,7 @@ function saveProject(UUID)
     var files = [];
     var screenshots = [];
 
+
 	 
     $('#projectSettings-fileSelector :selected').each(function(i,selected)
     {
@@ -56,6 +57,11 @@ $(document).ready(function()
         formatSubmit: 'dd.mm.yyyy'
     });
 
+    var urlChecked = $('#toggle-project-or-url').is(':checked');
+    if(urlChecked)
+        toggleURL();
+
+
     $('#button-save').click(function()
     {
         var UUID = $('#projectSettingsUUID').text();
@@ -74,41 +80,45 @@ $(document).ready(function()
             saveProject(null);
         }
     });
+
+    function toggleURL()
+    {
+        //URL selected
+        var elementsToHide = document.getElementsByClassName("row-settingsNormal");
+        for (var x = 0; x < elementsToHide.length; x++)
+        {
+            elementsToHide[x].style.display="none";
+        }
+
+        var elementsToShow = document.getElementsByClassName("row-settingsURL");
+        for (var j = 0; j < elementsToShow.length; j++)
+        {
+            elementsToShow[j].style.display="";
+        }
+    }
 	
 	//Toggle-Button "Project" or "URL"
     $('#toggle-project-or-url').click(function()
     {
         if($(this).is(':checked'))
 		{
-			//URL selected						
-			
-			elementsToHide = document.getElementsByClassName("row-settingsNormal");
-			for (var i = 0; i < elementsToHide.length; i++) 
-			{
-				elementsToHide[i].style.display="none";
-			}
-			
-			elementsToShow = document.getElementsByClassName("row-settingsURL");
-			for (var i = 0; i < elementsToShow.length; i++) 
-			{
-				elementsToShow[i].style.display="";
-			}
-		} 
-		else 
+			toggleURL();
+		}
+		else
 		{
-			//Project selected		
-			
+			//Project selected
+
 			elementsToHide = document.getElementsByClassName("row-settingsURL");
-			for (var i = 0; i < elementsToHide.length; i++) 
+			for (var i = 0; i < elementsToHide.length; i++)
 			{
 				elementsToHide[i].style.display="none";
 			}
-			
+
 			elementsToShow = document.getElementsByClassName("row-settingsNormal");
-			for (var i = 0; i < elementsToShow.length; i++) 
+			for (var c = 0; c < elementsToShow.length; c++)
 			{
-				elementsToShow[i].style.display="";
+				elementsToShow[c].style.display="";
 			}
 		}
-    });	
+    });
 });
