@@ -108,13 +108,13 @@ $(document).ready(function()
 		{
 			//Project selected
 
-			elementsToHide = document.getElementsByClassName("row-settingsURL");
+            var elementsToHide = document.getElementsByClassName("row-settingsURL");
 			for (var i = 0; i < elementsToHide.length; i++)
 			{
 				elementsToHide[i].style.display="none";
 			}
 
-			elementsToShow = document.getElementsByClassName("row-settingsNormal");
+            var elementsToShow = document.getElementsByClassName("row-settingsNormal");
 			for (var c = 0; c < elementsToShow.length; c++)
 			{
 				elementsToShow[c].style.display="";
