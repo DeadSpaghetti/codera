@@ -51,6 +51,10 @@ background-image: linear-gradient(to left, #F2F2F2 0%, #333333 3%, #333333 97%, 
 margin-bottom: 5vmin;
 }
 
+.line-no-space{
+margin-bottom: 0;
+}
+
 #infos{
 width: 95%;
 height: auto;

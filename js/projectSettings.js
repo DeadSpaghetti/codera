@@ -73,8 +73,42 @@ $(document).ready(function()
         {
             saveProject(null);
         }
-
-
-
     });
+	
+	//Toggle-Button "Project" or "URL"
+    $('#toggle-project-or-url').click(function()
+    {
+        if($(this).is(':checked'))
+		{
+			//URL selected						
+			
+			elementsToHide = document.getElementsByClassName("row-settingsNormal");
+			for (var i = 0; i < elementsToHide.length; i++) 
+			{
+				elementsToHide[i].style.display="none";
+			}
+			
+			elementsToShow = document.getElementsByClassName("row-settingsURL");
+			for (var i = 0; i < elementsToShow.length; i++) 
+			{
+				elementsToShow[i].style.display="";
+			}
+		} 
+		else 
+		{
+			//Project selected		
+			
+			elementsToHide = document.getElementsByClassName("row-settingsURL");
+			for (var i = 0; i < elementsToHide.length; i++) 
+			{
+				elementsToHide[i].style.display="none";
+			}
+			
+			elementsToShow = document.getElementsByClassName("row-settingsNormal");
+			for (var i = 0; i < elementsToShow.length; i++) 
+			{
+				elementsToShow[i].style.display="";
+			}
+		}
+    });	
 });

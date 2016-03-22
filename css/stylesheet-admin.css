@@ -244,6 +244,13 @@ width: 13vmin;
 width: 80% !important;
 }
 
+#toggle-container{
+width: 25%;
+margin: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 2vmin;	
+}
+
 @media screen and (max-width: 1100px) {
     #login-white{
 		width: 45vw;
