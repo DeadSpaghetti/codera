@@ -123,7 +123,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">
 							<div class="user-headline-container">
-								<div class="user-headline">Project Access</div>
+								<div class="user-headline">Project Access Forbidden</div>
 							</div>
 						</td>	
 					</tr>
@@ -143,7 +143,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 							'<td class="infos-right">' .
 							'	<div class="toggle-container-user">	' .
 							'		<label class="switch-light switch-candy" onclick="">' .
-							'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_'.$UUID.'" checked>' .
+							'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_'.$UUID.'">' .
 							'			<span>' .
 							'				<span>No</span>' .
 							'				<span>Yes</span>' .
