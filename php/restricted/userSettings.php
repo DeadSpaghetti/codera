@@ -11,10 +11,29 @@ if(!isset($_SESSION['loggedIn']))
 
 include('../helper/paths.php');
 
-$userName = "New User";
+$username = "New User";
+$accountType = "user";
+$forbiddenProjects = "";
 
 global $developerName;
 include('../helper/getGeneralSettingsFromJSON.php');
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+	$username = $_POST['username'];
+	global $userArray;
+	include "../helper/getUsersFromJSON.php";
+
+	for($i=0; $i < sizeof($userArray); $i++)
+	{
+		if($userArray[$i]->{'username'} == $username)
+		{
+			$accountType = $userArray[$i]->{'accountType'};
+			$forbiddenProjects = $userArray[$i]->{'forbiddenProjects'};
+		}
+	}
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,7 +70,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 				<table id="infos-small">
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">							
-							<div id="new-project"><?php echo $userName?>
+							<div id="new-project"><?php echo $username?>
 							</div>
 							<div class="line line-no-space"></div>
 						</td>	
@@ -63,7 +82,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="userSettings-input-userName" type="text" maxlength="30" value="<?php echo $userName;?>" placeholder="User"/>
+							<input class="input project" id="userSettings-input-userName" type="text" maxlength="30" value="<?php if($_SERVER['REQUEST_METHOD'] == "POST") echo $userName;?>" placeholder="User"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -108,25 +127,36 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>
 						</td>	
 					</tr>
-				
-					<tr class="infos-row">
-						<td class="infos-left">
-							 <div class="user-project-name">Project 1</div>
-							
-						</td>					
-						<td class="infos-right">
-							<div class="toggle-container-user">							
-								<label class="switch-light switch-candy" onclick="">
-									<input type="checkbox" id="">
-									<span>
-										<span>No</span>
-										<span>Yes</span>
-										<a style="background-color: <?php echo $colorScheme;?>"></a>
-									</span>
-								</label>								
-							</div>
-						</td>						
-					</tr>								
+					<?php
+					global $projectArray;
+					include "../helper/getProjectsFromJSON.php";
+					for($i=0; $i < sizeof($projectArray); $i++)
+					{
+						$projectName = $projectArray[$i]->{'name'};
+						echo '<tr class="infos-row">' .
+							'<td class="infos-left">' .
+							'<div class="user-project-name">' .
+							$projectName.
+							'</div>' .
+							'</td>                                                ' .
+							'<td class="infos-right">' .
+							'	<div class="toggle-container-user">	' .
+							'		<label class="switch-light switch-candy" onclick="">' .
+							'			<input type="checkbox" id="" checked>' .
+							'			<span>' .
+							'				<span>No</span>' .
+							'				<span>Yes</span>' .
+							'				<a style="background-color:';
+						echo $colorScheme;
+						echo '"></a>' .
+							'			</span>' .
+							'</label>' .
+							'</div>' .
+							'</td>' .
+							'</tr>';
+					}
+					?>
+
 					
 					<tr class="infos-row">															
 						<td colspan="2" class="infos-center">

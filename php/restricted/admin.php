@@ -7,6 +7,8 @@ if(!isset($_SESSION['loggedIn']))
     header('Location: ../login.php');
     exit;	
 }
+global $developerName;
+global $colorScheme;
 include('../helper/convertHexToRGB.php');
 include('../helper/getGeneralSettingsFromJSON.php');				
 ?>
@@ -28,6 +30,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<script src="../../js/generalSettings.js"></script>
         <script src="../../js/changeLogin.js"></script>
 		<script src="../../js/projectOverview.js"></script>
+		<script src="../../js/userOverview.js"></script>
 	</head>
 	<body>
 		<div id="main">						
