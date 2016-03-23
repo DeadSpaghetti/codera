@@ -38,6 +38,9 @@ include('../helper/getGeneralSettingsFromJSON.php');
 						<li id="tabGeneralSettings-list-element" class="active"><a href="#tabGeneralSettings" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">General Settings</a></li>
 						<li id="tabProjectOverview-list-element"><a href="#tabProjectOverview" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Projects</a></li>
 						<li id="tabChangeLogin-list-element"><a href="#tabChangeLogin" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Change Login</a></li>
+						<li id="tabMedia-list-element"><a href="#tabMedia" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Media</a></li>
+						<li id="tabUsers-list-element"><a href="#tabUsers" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Users</a></li>
+						<li id="tabReset-list-element"><a href="#tabReset" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Reset</a></li>
 					</ul>
 					<div style="clear: both;"> </div> 		
 						<div class="tab-content">
@@ -49,7 +52,16 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div> 
 							<div id="tabChangeLogin" class="tab">
 								<?php include("changeLogin.php"); ?>	
-							</div>  							
+							</div>  
+							<div id="tabMedia" class="tab">
+								<?php include("mediaOverview.php"); ?>	
+							</div> 
+							<div id="tabUsers" class="tab">
+								<?php include("userOverview.php"); ?>	
+							</div> 
+							<div id="tabReset" class="tab">
+								<?php include("resetOverview.php"); ?>	
+							</div> 							
 						</div>
 					</div>					
 				</div>				

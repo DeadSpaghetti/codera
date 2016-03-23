@@ -68,3 +68,8 @@ font-size: 3.1vmin;
 .button.download{
 width: 14vmin;
 }
+
+.button.reset{
+width: 20vmin;
+background-color: #e57373;
+}

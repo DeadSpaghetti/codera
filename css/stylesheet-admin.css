@@ -118,6 +118,24 @@ font-weight: normal;
 display: inline-block;
 }
 
+#icon-warn2{
+text-align: center;
+padding-right: 2vmin;
+color: #CC0000;
+vertical-align: middle;
+}
+
+#icon-warn2 i{
+color: #CC0000;	
+font-size: 2.8vmin;
+}
+
+#icon-war2 span{
+padding-left: 0;
+font-weight: normal;
+display: inline-block;
+}
+
 #icon-success{
 text-align: left;
 padding-right: 2vmin;
@@ -249,6 +267,16 @@ width: 25%;
 margin: auto;
 font-family: Roboto, Sans-Serif;
 font-size: 2vmin;	
+}
+
+.hint{
+font-size: 2vmin;
+margin-top: 2vmin;
+}
+
+.hint-italic{
+font-size: 2vmin;
+font-style: italic;
 }
 
 @media screen and (max-width: 1100px) {
