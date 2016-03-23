@@ -133,6 +133,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 					for($i=0; $i < sizeof($projectArray); $i++)
 					{
 						$projectName = $projectArray[$i]->{'name'};
+						$UUID = $projectArray[$i]->{'UUID'};
 						echo '<tr class="infos-row">' .
 							'<td class="infos-left">' .
 							'<div class="user-project-name">' .
@@ -142,7 +143,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 							'<td class="infos-right">' .
 							'	<div class="toggle-container-user">	' .
 							'		<label class="switch-light switch-candy" onclick="">' .
-							'			<input type="checkbox" id="" checked>' .
+							'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_'.$UUID.'" checked>' .
 							'			<span>' .
 							'				<span>No</span>' .
 							'				<span>Yes</span>' .
