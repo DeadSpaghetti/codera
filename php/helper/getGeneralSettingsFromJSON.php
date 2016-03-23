@@ -14,7 +14,7 @@ if(file_exists($filename))
 else
 {
 	$developerName = "MyEpicDeveloperName";
-    $colorScheme = "#bdbdbd";
+    $colorScheme = "#4a98d3";
     $gridSize = "3";
     $sortOrder = "a-z";
 }
