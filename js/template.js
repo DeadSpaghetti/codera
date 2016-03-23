@@ -7,14 +7,19 @@ $(document).ready(function()
         var filename = $('#template-fileSelector').val();
 
         var form = document.createElement('form');
-        form.method = "GET";
+        form.method = "POST";
         form.action = "helper/download.php";
-        var input = document.createElement('input');
-        input.type = "text";
-        input.name = "filename";
-        input.value = filename;
+        var filenameInput = document.createElement('input');
+        filenameInput.type = "text";
+        filenameInput.name = "filename";
+        filenameInput.value = filename;
+        var UUIDInput = document.createElement('input');
+        UUIDInput.type = "text";
+        UUIDInput.name = "UUID";
+        UUIDInput.value = $('#templateUUID').text().trim();
 
-        form.appendChild(input);
+        form.appendChild(filenameInput);
+        form.appendChild(UUIDInput);
         document.body.appendChild(form);
         form.submit();
         

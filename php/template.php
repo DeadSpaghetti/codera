@@ -83,6 +83,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 						<tr>
 							<td id="app-icon" style="background-image: url('../images/icons/<?php echo $icon ?>');">	</td>
 							<td id="app-name"><?php echo $projectName?></td>
+
 						</tr>
 					</table>
 					<div class="line"></div>			
@@ -194,6 +195,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 				</div>		
 			</div>
 		</div>
+        <div id="templateUUID" class="hidden"><?php echo $UUID?></div>
 		<?php include("templates/footer.php"); ?>
         <script src="../js/libs/lightbox2/dist/js/lightbox.min.js"></script>
 	</body>
