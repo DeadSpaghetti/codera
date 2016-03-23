@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=flux
+GenericName=flux
+Comment=For flux
+Exec=xflux -l 51.3333 -g 12.3833
+Terminal=False
+Type=Application
+X-GNOME-Autostart-enabled=true
