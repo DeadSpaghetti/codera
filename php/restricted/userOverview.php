@@ -71,17 +71,18 @@ include('../helper/paths.php');
 		</td>
 	</tr>
 <?php
+global $userArray;
+include "../helper/getUsersFromJSON.php";
 
-
-/*if($projectArray != NULL)
+if($userArray != NULL)
 {
-	for($i=0; $i < sizeof($projectArray); $i++)
-	{		
-		$name = $projectArray[$i]->{'name'};
+	for($i=0; $i < sizeof($userArray); $i++)
+	{
+		$name = $userArray[$i]->{'username'};
 		if($name != "public")
-		{		
+		{
 			echo
-				'<tr id='; echo $projectArray[$i]->{'UUID'}; echo ' class="overview-row">'.
+				'<tr id='; echo $userArray[$i]->{'UUID'}; echo ' class="overview-row">'.
 				'<td class="overview-left">'.
 					'<table>'.
 						'<tr>'.
@@ -109,7 +110,7 @@ include('../helper/paths.php');
 				'</td>'.
 			'</tr>';
 		}
-	}	
-}*/
+	}
+}
 ?>
 </table>
