@@ -5,6 +5,6 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<textarea id="input-url" rows="10"><?php echo $url;?></textarea>
+		<input class="input project" id="input-url" type="text" value="<?php echo $url;?>"/>
 	</td>
 </tr>

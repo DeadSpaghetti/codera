@@ -60,7 +60,13 @@ $(document).ready(function()
 
     var urlChecked = $('#toggle-project-or-url').is(':checked');
     if(urlChecked)
+	{
         toggleURL();
+	}
+	else
+	{
+		toggleProject();
+	}
 
 
     $('#button-save').click(function()
@@ -98,6 +104,23 @@ $(document).ready(function()
         }
     }
 	
+	function toggleProject()
+    {
+		//Project selected
+		var elementsToHide = document.getElementsByClassName("row-settingsURL");
+		for (var i = 0; i < elementsToHide.length; i++)
+		{
+			elementsToHide[i].style.display="none";
+		}
+
+		var elementsToShow = document.getElementsByClassName("row-settingsNormal");
+		for (var c = 0; c < elementsToShow.length; c++)
+		{
+			elementsToShow[c].style.display="";
+		}	
+	}
+	
+	
 	//Toggle-Button "Project" or "URL"
     $('#toggle-project-or-url').click(function()
     {
@@ -106,20 +129,8 @@ $(document).ready(function()
 			toggleURL();
 		}
 		else
-		{
-			//Project selected
-
-            var elementsToHide = document.getElementsByClassName("row-settingsURL");
-			for (var i = 0; i < elementsToHide.length; i++)
-			{
-				elementsToHide[i].style.display="none";
-			}
-
-            var elementsToShow = document.getElementsByClassName("row-settingsNormal");
-			for (var c = 0; c < elementsToShow.length; c++)
-			{
-				elementsToShow[c].style.display="";
-			}
+		{			
+			toggleProject();           
 		}
     });
 });

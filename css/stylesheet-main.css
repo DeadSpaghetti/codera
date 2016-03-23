@@ -208,6 +208,7 @@ color: #212121;
 
 /* Default Icon with Text */
 .icon{
+line-height: 4.3vmin;
 font-family: Roboto, Sans-Serif;
 font-size: 2.2vmin;
 font-weight: bold;

@@ -11,7 +11,7 @@ if(!isset($_SESSION['loggedIn']))
 
 include('../helper/paths.php');
 
-$projectName = "New Project";
+$projectName = "New User";
 $versionCode = "";
 $versionName = "";
 $requirements = "";
@@ -98,11 +98,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-toggle-buttons.css"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="../../js/projectSettings.js"></script>
-        <script src="../../js/libs/chosen/chosen.jquery.min.js"></script>
-        <script src="../../js/libs/pickadate/lib/compressed/picker.js"></script>
-        <script src="../../js/libs/pickadate/lib/compressed/picker.date.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>	
 
 	</head>
 	<body>
@@ -130,21 +126,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>
 							<div class="line line-no-space"></div>
 						</td>	
-					</tr>
-					<tr class="infos-row">
-						<td colspan="2" class="infos-center">
-							<div id="toggle-container">							
-								<label class="switch-light switch-candy" onclick="">
-									<input type="checkbox" id="toggle-project-or-url" <?php if($url != "")echo "checked"?>>
-									<span>
-										<span>Project</span>
-										<span>URL</span>
-										<a style="background-color: <?php echo $colorScheme;?>"></a>
-									</span>
-								</label>								
-							</div>
-						</td>						
-					</tr>
+					</tr>					
 					<tr class="infos-row">
 						<td class="infos-left">
 							<div class="icon">
@@ -152,34 +134,73 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php echo $projectName;?>" placeholder="MyApp"/>
+							<input class="input project" id="input-userName" type="text" maxlength="30" value="<?php echo $projectName;?>" placeholder="MyApp"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
 						<td class="infos-left">
 							<div class="icon">
-								<i class="material-icons">image</i> <span class="icon-text">Icon:</span>
+								<i class="material-icons">lock</i> <span class="icon-text">Password:</span>
 							</div>
 						</td>										
 						<td class="infos-right">
-							<select id="projectSettings-iconSelector">
-								<?php
-								$directory = "../../images/icons/";
-								$object = 'icon';
-								$exclude = getSelectedOption($object,$UUID);
-								include "../helper/printAllFilesFromDirectoryAsOption.php"
-								?>
-							</select>
+							<input class="input project" id="input-userPassword" type="password" maxlength="30" placeholder="***"/>
 						</td>
 					</tr>
-						<!--settings for normal project -->					
-						<?php include('projectSettingsNormal.php');?>
-						<!--settings for url project -->	
-						<?php include('projectSettingsURL.php');?>
-						
 					<tr class="infos-row">
-						<td class="infos-left">	</td>										
+						<td class="infos-left lesspadding">
+							<div class="icon">
+								<i class="material-icons">security</i> <span class="icon-text">Is Admin:</span>
+							</div>
+						</td>					
+						<td class="infos-right lesspadding">
+							<div class="toggle-container-user">							
+								<label class="switch-light switch-candy" onclick="">
+									<input type="checkbox" id="toggle-user-is-admin">
+									<span>
+										<span>No</span>
+										<span>Yes</span>
+										<a style="background-color: <?php echo $colorScheme;?>"></a>
+									</span>
+								</label>								
+							</div>
+						</td>						
+					</tr>	
+					<tr<tr class="infos-row">
+						<td colspan="2">
+							<div class="user-line"> </div>
+						</td>
+					</tr>
+					
+					<tr class="infos-row">
+						<td colspan="2" class="infos-center">
+							<div class="user-headline-container">
+								<div class="user-headline">Project Access</div>
+							</div>
+						</td>	
+					</tr>
+				
+					<tr class="infos-row">
+						<td class="infos-left">
+							 <div class="user-project-name">Project 1</div>
+							
+						</td>					
 						<td class="infos-right">
+							<div class="toggle-container-user">							
+								<label class="switch-light switch-candy" onclick="">
+									<input type="checkbox" id="">
+									<span>
+										<span>No</span>
+										<span>Yes</span>
+										<a style="background-color: <?php echo $colorScheme;?>"></a>
+									</span>
+								</label>								
+							</div>
+						</td>						
+					</tr>								
+					
+					<tr class="infos-row">															
+						<td colspan="2" class="infos-center">
 							<a class="button save" id="button-save" href="javascript:void(null)">									
 								<i class="material-icons">check</i> <span class="button-text">Save</span>
 							</a>

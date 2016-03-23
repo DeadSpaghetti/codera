@@ -34,7 +34,10 @@ include('../helper/paths.php');
 				</tr>
 			</table>
 		</td>
-		<td class="overview-right">			
+		<td class="overview-right">	
+			<a class="button edit" name="userOverviewEdit" href="javascript:void(null)">
+				<i class="material-icons">mode_edit</i>
+			</a>
 		</td>
 	</tr>
 	<tr class="overview-row">
