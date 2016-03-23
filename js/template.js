@@ -17,15 +17,7 @@ $(document).ready(function()
         form.appendChild(input);
         document.body.appendChild(form);
         form.submit();
-
-        /*
-        $.get("../php/helper/download.php",
-            {
-                "filename": filename
-            },function(data,error)
-            {
-
-            })*/
+        
     });
 });
 
