@@ -11,77 +11,9 @@ if(!isset($_SESSION['loggedIn']))
 
 include('../helper/paths.php');
 
-$projectName = "New User";
-$versionCode = "";
-$versionName = "";
-$requirements = "";
-$date = "";
-$icon = "";
-$latestChanges = "";
-$description = "";
-$projectStatus = "Final";
-$url = "";
-$UUID = null;
+$userName = "New User";
 
-function getSelectedOption($object,$UUID)
-{
-    if(isset($UUID))
-    {
-        global $projectArray;
-        include "../helper/getProjectsFromJSON.php";
-        for ($i = 0; $i < sizeof($projectArray); $i++)
-        {
-            if ($projectArray[$i]->{'UUID'} == $UUID)
-            {
-                return $projectArray[$i]->{$object};
-            }
-        }
-    }
-}
-
-function getSelectedOptions($object,$UUID)
-{
-    if(isset($UUID))
-    {
-        global $projectArray;
-        include "../helper/getProjectsFromJSON.php";
-        for ($i = 0; $i < sizeof($projectArray); $i++)
-        {
-            if ($projectArray[$i]->{'UUID'} == $UUID)
-            {
-                return json_decode($projectArray[$i]->{$object});
-            }
-        }
-    }
-}
-
-if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
-    global $projectArray;
-    $UUID = $_POST['UUID'];
-
-    include "../helper/getProjectsFromJSON.php";
-
-    for($i=0; $i < sizeof($projectArray); $i++)
-    {
-        if($projectArray[$i]->{'UUID'} == $UUID)
-        {
-            $selectedProject = $projectArray[$i];
-            $projectName = $selectedProject->{'name'};
-            $icon = $selectedProject->{'icon'};
-            $latestChanges = $selectedProject->{'latestChanges'};
-            $versionCode = $selectedProject->{'versionCode'};
-            $versionName = $selectedProject->{'versionName'};
-            $date = $selectedProject->{'date'};
-            $requirements = $selectedProject->{'requirements'};
-            $description = $selectedProject->{'description'};
-            $projectStatus = $selectedProject->{'projectStatus'};
-			$url = $selectedProject->{'url'};
-
-            break;
-        }
-    }
-}
+global $developerName;
 include('../helper/getGeneralSettingsFromJSON.php');
 ?>
 <!DOCTYPE html>
@@ -118,11 +50,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 				<table id="infos-small">
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">							
-							<div id="new-project"><?php echo $projectName?>
-								<div class="hidden" id="projectSettingsUUID">
-									<?php if(isset($UUID))
-											echo $UUID;?>
-								</div>
+							<div id="new-project"><?php echo $userName?>
 							</div>
 							<div class="line line-no-space"></div>
 						</td>	
@@ -134,7 +62,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-userName" type="text" maxlength="30" value="<?php echo $projectName;?>" placeholder="MyApp"/>
+							<input class="input project" id="input-userName" type="text" maxlength="30" value="<?php echo $userName;?>" placeholder="User"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -144,7 +72,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-userPassword" type="password" maxlength="30" placeholder="***"/>
+							<input class="input project" id="input-userPassword" type="password" maxlength="30" placeholder="*******"/>
 						</td>
 					</tr>
 					<tr class="infos-row">

@@ -16,7 +16,7 @@ include('../helper/paths.php');
 <table id="overview">
     <tr class="overview-row">
         <td colspan="2" class="overview-center">
-            <a class="button newProject" id="button-new-project" href="projectSettings.php">
+            <a class="button newProject" id="button-new-user" href="projectSettings.php">
                 <i class="material-icons">add</i> <span class="button-text">New</span>
             </a>
         </td>

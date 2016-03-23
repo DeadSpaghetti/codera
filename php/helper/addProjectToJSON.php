@@ -34,43 +34,44 @@ function generateGuid($include_braces = false)
     }
 }
 
-
-$date = $_POST['date'];
-$name = $_POST['name'];
-$name = $_POST['name'];
-$icon = $_POST['icon']; //path to icon
-$versionName = $_POST['versionName'];
-$latestChanges = $_POST['latestChanges'];
-$description = $_POST['description'];
-$requirements = $_POST['requirements'];
-$files = $_POST['files'];
-$screenshots = $_POST['screenshots'];
-$license = $_POST['license'];
-$versionCode = $_POST['versionCode'];
-$projectUUID = $_POST['UUID'];
-$projectStatus = $_POST['projectStatus'];
-$url = $_POST['url'];
-
-
-if($projectUUID == null)
-    $projectUUID = generateGuid();
-
-$pathString = "../../config/projects.json";
-
-$isFileThere = false;
-
-
-if (file_exists($pathString))
+if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-    $isFileThere = true;
-}
+    $date = $_POST['date'];
+    $name = $_POST['name'];
+    $name = $_POST['name'];
+    $icon = $_POST['icon']; //path to icon
+    $versionName = $_POST['versionName'];
+    $latestChanges = $_POST['latestChanges'];
+    $description = $_POST['description'];
+    $requirements = $_POST['requirements'];
+    $files = $_POST['files'];
+    $screenshots = $_POST['screenshots'];
+    $license = $_POST['license'];
+    $versionCode = $_POST['versionCode'];
+    $projectUUID = $_POST['UUID'];
+    $projectStatus = $_POST['projectStatus'];
+    $url = $_POST['url'];
+
+
+    if ($projectUUID == null)
+        $projectUUID = generateGuid();
+
+    $pathString = "../../config/projects.json";
+
+    $isFileThere = false;
+
+
+    if (file_exists($pathString))
+    {
+        $isFileThere = true;
+    }
 
     try
     {
-        if($isFileThere)
+        if ($isFileThere)
         {
             $configFile = file_get_contents($pathString);
-            $array = json_decode($configFile,false);
+            $array = json_decode($configFile, false);
 
         }
 
@@ -93,8 +94,8 @@ if (file_exists($pathString))
         );
 
         //checks boolean value to see if file is there. If not generates it
-        if($isFileThere)
-            array_push($array,$newProjectArray);
+        if ($isFileThere)
+            array_push($array, $newProjectArray);
         else
             $array[0] = $newProjectArray;
 
@@ -109,12 +110,11 @@ if (file_exists($pathString))
         include "sortProjects.php";
 
 
-    }
-    catch (Exception $e)
+    } catch (Exception $e)
     {
         var_dump($e);   //TODO remove this from production code sometime
     }
-
+}
 
 
 
