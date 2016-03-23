@@ -30,7 +30,9 @@ if($_SESSION['loggedIn'] == "admin" && $_SERVER['REQUEST_METHOD'] == 'POST')
         $newUserArray = array
         (
             "username" => $username,
-            "password" => crypt($password, '$5$g3t#~34uö@$')
+            "password" => crypt($password, '$5$g3t#~34uö@$'),
+            "accountType" => $accountType,
+            "forbiddenProjects" => $forbiddenProjects
         );
 
         //checks boolean value to see if file is there. If not generates it

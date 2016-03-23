@@ -5,9 +5,19 @@ if(!isset($_SESSION))
 }
 if(isset($_SESSION['loggedIn']))
 {
-	header('Location: restricted/admin.php');
+    if($_SESSION['loggedIn'] == "admin")
+    {
+        header('Location: restricted/admin.php');
+    }
+    else
+    {
+        header('Location: index.php');
+    }
+
 	exit;
 }
+global $developerName;
+global $colorScheme;
 include('helper/getGeneralSettingsFromJSON.php');
 ?>
 

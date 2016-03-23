@@ -4,8 +4,9 @@ $(document).ready(function()
     {
         var username = $('#userSettings-input-userName').val();
         var password = $('#userSettings-input-userPassword').val();
-        var forbiddenProjects = ""; //TODO Get every project from checkbox
+        var forbiddenProjects = []; //TODO Get every project from checkbox
         var accountType = $('#toggle-user-is-admin').is(':checked');
+
         if(accountType)
         {
             accountType = "admin"
@@ -19,7 +20,7 @@ $(document).ready(function()
             {
                 "username": username,
                 "password": password,
-                "forbiddenProjects":forbiddenProjects,
+                "forbiddenProjects": JSON.stringify(forbiddenProjects),
                 "accountType": accountType
             },function (data,error)
             {
