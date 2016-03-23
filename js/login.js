@@ -9,7 +9,7 @@ $(document).ready(function()
 	
 	$('#input-password').keyup(function(e)
     {	
-        if(e.keyCode === 13)
+        if(e.keyCode === 13)    //Enter
 		{
            login();
         }       
@@ -28,10 +28,19 @@ $(document).ready(function()
                     "password": password
 
                 }, function (data, error)
-                {					
-                    if (data.indexOf("success") > -1)
-                    {							
-                        location.href = "../php/restricted/admin.php";
+                {
+                    console.log(data);
+                    if (data != "failure")
+                    {
+                        if(data == "admin")
+                        {
+                            location.href = "../php/restricted/admin.php";
+                        }
+                        else if(data == "user")
+                        {
+                            location.href = "../php/index.php";
+                        }
+
                     }
                     else
                     {
