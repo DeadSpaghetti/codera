@@ -30,7 +30,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-toggle-buttons.css"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="../../js/userSettings.js"></script>
 
 	</head>
 	<body>
@@ -62,7 +63,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-userName" type="text" maxlength="30" value="<?php echo $userName;?>" placeholder="User"/>
+							<input class="input project" id="userSettings-input-userName" type="text" maxlength="30" value="<?php echo $userName;?>" placeholder="User"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -72,7 +73,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-userPassword" type="password" maxlength="30" placeholder="*******"/>
+							<input class="input project" id="userSettings-input-userPassword" type="password" maxlength="30" placeholder="*******"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -129,10 +130,10 @@ include('../helper/getGeneralSettingsFromJSON.php');
 					
 					<tr class="infos-row">															
 						<td colspan="2" class="infos-center">
-							<a class="button save" id="button-save" href="javascript:void(null)">									
+							<a class="button save" id="userSettings-button-save" href="javascript:void(null)">									
 								<i class="material-icons">check</i> <span class="button-text">Save</span>
 							</a>
-							<a class="button discard" id="button-discard" href="javascript:void(null)">									
+							<a class="button discard" id="userSettings-button-discard" href="javascript:void(null)">									
 								<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
 							</a>
 						</td>

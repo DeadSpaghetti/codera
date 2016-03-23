@@ -4,6 +4,8 @@ if(!isset($_SESSION))
     session_start();
 }
 
+if($_SESSION['loggedIn'] == "admin" && $_SERVER['REQUEST_METHOD'] == 'POST')
+{
     $pathString = "../../config/users.json";
     $isFileThere = false;
     $username = $_POST['username'];
@@ -28,7 +30,7 @@ if(!isset($_SESSION))
         $newUserArray = array
         (
             "username" => $username,
-            "password" => crypt($password,'$5$g3t#~34uö@$')
+            "password" => crypt($password, '$5$g3t#~34uö@$')
         );
 
         //checks boolean value to see if file is there. If not generates it
@@ -47,3 +49,4 @@ if(!isset($_SESSION))
         var_dump($e);   //TODO remove this from production code sometime
     }
 
+}

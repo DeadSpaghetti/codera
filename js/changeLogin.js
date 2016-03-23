@@ -27,7 +27,7 @@ $(document).ready(function()
                         },function(data,error)
                         {
                             
-                        })
+                        });
 					document.getElementById('icon-warn').style.display = 'none';
 					document.getElementById('icon-success').style.display = '';
                 }
