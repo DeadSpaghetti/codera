@@ -2,7 +2,7 @@ $(document).ready(function()
 {
     $('#userSettings-button-save').click(function ()
     {
-        var username = $('#userSettings-input-username').val();
+        var username = $('#userSettings-input-userName').val();
         var password = $('#userSettings-input-userPassword').val();
         var forbiddenProjects = ""; //TODO Get every project from checkbox
         var accountType = $('#toggle-user-is-admin').is(':checked');
@@ -15,7 +15,7 @@ $(document).ready(function()
             accountType = "user"
         }
 
-        $.post("../php/helper/addUserToJSON.php",
+        $.post("../helper/addUserToJSON.php",
             {
                 "username": username,
                 "password": password,
