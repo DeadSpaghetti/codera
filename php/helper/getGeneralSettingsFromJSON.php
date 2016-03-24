@@ -1,5 +1,5 @@
 <?php
-include(realpath(dirname(__FILE__) . '/../helper/paths.php'));
+include (realpath(dirname(__FILE__) . '/../helper/paths.php'));
  
 $filename = $path_config_generalSettings;
 

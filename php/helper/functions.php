@@ -1,19 +1,21 @@
 <?php
-function isUserAdmin($username)
+if(!function_exists('isUserAdmin'))
 {
-    global $userArray;
-    include "getUsersFromJSON.php";
-    for($i=0; $i < sizeof($userArray); $i++)
+    function isUserAdmin($username)
     {
-        if($userArray[$i]->{'username'} == $username)
+        global $userArray;
+        include "getUsersFromJSON.php";
+        for ($i = 0; $i < sizeof($userArray); $i++)
         {
-            if($userArray[$i]->{'accountType'} == "admin")
+            if ($userArray[$i]->{'username'} == $username)
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                if ($userArray[$i]->{'accountType'} == "admin")
+                {
+                    return true;
+                } else
+                {
+                    return false;
+                }
             }
         }
     }

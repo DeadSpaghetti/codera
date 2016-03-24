@@ -3,6 +3,8 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
+include('../helper/paths.php');
+
 include_once "../helper/functions.php";
 if(!isUserAdmin($_SESSION['loggedIn']))
 {
@@ -10,7 +12,7 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 	exit;
 }
 
-include('../helper/paths.php');
+
 
 $username = "New User";
 $accountType = "user";
