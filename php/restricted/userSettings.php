@@ -4,15 +4,12 @@ if(!isset($_SESSION))
 	session_start();
 }
 include('../helper/paths.php');
-
 include_once "../helper/functions.php";
 if(!isUserAdmin($_SESSION['loggedIn']))
 {
 	header('Location: ../login.php');
 	exit;
 }
-
-
 
 $username = "New User";
 $accountType = "user";
