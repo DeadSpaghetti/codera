@@ -13,7 +13,7 @@ include($path_helper_getGeneralSettings);
 	{
 
 		echo '<div class="login">' .
-			'<a href="<?php echo $path_admin;?>" id="settings-link"> <i class="material-icons">settings</i> <span class="login-text">Settings</span></a>' .
+			'<a href="'. $path_admin .'" id="settings-link"> <i class="material-icons">settings</i> <span class="login-text">Settings</span></a>' .
 			'</div>';
 	}
 	?>
