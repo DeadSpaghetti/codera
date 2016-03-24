@@ -13,7 +13,7 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 
 $username = "New User";
 $accountType = "user";
-$forbiddenProjects = "";
+$forbiddenProjects = array();
 
 global $developerName;
 include('../helper/getGeneralSettingsFromJSON.php');
@@ -29,7 +29,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 		if($userArray[$i]->{'username'} == $username)
 		{
 			$accountType = $userArray[$i]->{'accountType'};
-			$forbiddenProjects = $userArray[$i]->{'forbiddenProjects'};
+			$forbiddenProjects = json_decode($userArray[$i]->{'forbiddenProjects'});
+		
 		}
 	}
 }
@@ -70,7 +71,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 				<table id="infos-small">
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">							
-							<div id="new-project"><?php echo $username?>
+							<div id="new-project"><?php if($_SERVER['REQUEST_METHOD'] == "POST") echo $username?>
 							</div>
 							<div class="line line-no-space"></div>
 						</td>	
@@ -82,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="userSettings-input-userName" type="text" maxlength="30" value="<?php if($_SERVER['REQUEST_METHOD'] == "POST") echo $userName;?>" placeholder="User"/>
+							<input class="input project" id="userSettings-input-userName" type="text" maxlength="30" value="<?php if($_SERVER['REQUEST_METHOD'] == "POST") echo $username;?>" placeholder="User"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
@@ -128,6 +129,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 						</td>	
 					</tr>
 					<?php
+
 					global $projectArray;
 					include "../helper/getProjectsFromJSON.php";
 					for($i=0; $i < sizeof($projectArray); $i++)
@@ -143,11 +145,22 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 							'<td class="infos-right">' .
 							'	<div class="toggle-container-user">	' .
 							'		<label class="switch-light switch-candy" onclick="">' .
-							'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_'.$UUID.'">' .
-							'			<span>' .
-							'				<span>No</span>' .
-							'				<span>Yes</span>' .
-							'				<a style="background-color:';
+							'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_'.$UUID.'" ';
+								for($j=0; $j < sizeof($forbiddenProjects); $j++)
+								{
+									if($forbiddenProjects[$j] == $UUID)
+									{
+										echo "checked";
+										break;
+									}
+								}
+
+									echo '>' .
+										'			<span>' .
+										'				<span>No</span>' .
+										'				<span>Yes</span>' .
+										'				<a style="background-color:';
+
 						echo $colorScheme;
 						echo '"></a>' .
 							'			</span>' .

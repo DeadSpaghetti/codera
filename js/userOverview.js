@@ -8,7 +8,7 @@ $(document).ready(function ()
         var input = document.createElement('input');
         input.type = "text";
         input.name = "username";
-        input.value = this.id;
+        input.value = this.id.split("_")[1];
 
         form.appendChild(input);
         document.body.appendChild(form);

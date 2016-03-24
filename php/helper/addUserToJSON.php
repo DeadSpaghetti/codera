@@ -5,7 +5,7 @@ if(!isset($_SESSION))
 }
 
 $currentUser = $_SESSION['loggedIn'];
-$canAddUser = false;
+$canAddUser = true;
 global $userArray;
 include "getUsersFromJSON.php";
 if($userArray != null)
@@ -14,7 +14,7 @@ if($userArray != null)
     {
         if ($userArray[$i]->{'username'} == $currentUser)
         {
-            $canAddUser = true;
+            $canAddUser = false;
             break;
         }
     }

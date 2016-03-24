@@ -97,7 +97,7 @@ if($userArray != NULL)
 					'</table>'.
 				'</td>'.
 				'<td class="overview-right">'.
-					'<a class="button edit" name="userOverviewEdit" href="javascript:void(null)">'.
+					'<a id="editUser_'.$name.'" class="button edit" name="userOverviewEdit" href="javascript:void(null)">'.
 						'<i class="material-icons">mode_edit</i>'.
 					'</a>'.
 					'<a class="button edit" name="userOverviewDelete" href="javascript:void(null)">'.
