@@ -5,8 +5,8 @@ if(!isset($_SESSION))
 }
 if(!isset($_SESSION['loggedIn']))
 {
-    header('Location: ../login.php');
-    exit;
+	header('Location: ../login.php');
+	exit;
 }
 
 $generalSettingsFilename = "../../config/generalSettings.json";
