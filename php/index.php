@@ -24,7 +24,6 @@ include($path_helper_getGeneralSettings);
 	<body onload="drawBanners('<?php echo $colorScheme;?>');">
 		<div id="main">
 			<?php
-				include "helper/functions.php";
 				if(isset($_SESSION['loggedIn']))
 				{					
 					include($path_header_logout); 
