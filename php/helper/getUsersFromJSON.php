@@ -6,5 +6,5 @@ if(file_exists($path_config_projects))
 }
 else
 {
-    $projectArray = NULL;
+    $userArray = NULL;
 }

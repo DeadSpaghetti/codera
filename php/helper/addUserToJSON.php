@@ -4,7 +4,24 @@ if(!isset($_SESSION))
     session_start();
 }
 
-if($_SESSION['loggedIn'] == "admin" && $_SERVER['REQUEST_METHOD'] == 'POST')
+$currentUser = $_SESSION['loggedIn'];
+$canAddUser = false;
+global $userArray;
+include "getUsersFromJSON.php";
+if($userArray != null)
+{
+    for ($i = 0; $i < sizeof($userArray); $i++)
+    {
+        if ($userArray[$i]->{'username'} == $currentUser)
+        {
+            $canAddUser = true;
+            break;
+        }
+    }
+}
+
+
+if($canAddUser = true && $_SERVER['REQUEST_METHOD'] == 'POST')
 {
     $pathString = "../../config/users.json";
     $isFileThere = false;
@@ -17,33 +34,22 @@ if($_SESSION['loggedIn'] == "admin" && $_SERVER['REQUEST_METHOD'] == 'POST')
     if($username != "admin" && $username != "public")
     {
         //check if username already exists!
-        global $userArray;
-        include "getUsersFromJSON.php";
-        for ($i = 0; $i < sizeof($userArray); $i++)
-        {
-            if ($userArray[$i]->{'username'} == $username)
-            {
-                $alreadyExists = true;
-                break;
-            }
-        }
-
         if(!$alreadyExists)
         {
             if (file_exists($pathString))
             {
                 $isFileThere = true;
             }
-            try
+
+            if ($isFileThere)
             {
-                if ($isFileThere)
-                {
-                    $configFile = file_get_contents($pathString);
-                    $array = json_decode($configFile, false);
+                $configFile = file_get_contents($pathString);
+                $array = json_decode($configFile, false);
 
-                }
+            }
 
-                $newUserArray = array
+
+            $newUserArray = array
                 (
                     "username" => $username,
                     "password" => crypt($password, '$5$g3t#~34uö@$'),
@@ -62,14 +68,10 @@ if($_SESSION['loggedIn'] == "admin" && $_SERVER['REQUEST_METHOD'] == 'POST')
                 file_put_contents($pathString, $fileToSave);
 
             }
-            catch (Exception $e)
-            {
-                var_dump($e);   //TODO remove this from production code sometime
-            }
+
 
         }
-    }
 
-    echo $returnValue;
+
 
 }

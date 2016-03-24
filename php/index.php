@@ -49,9 +49,24 @@ include($path_helper_getGeneralSettings);
 							if($userArray[$i]->{'username'} == $_SESSION['loggedIn'])
 							{
 								$forbiddenProjects = json_decode($userArray[$i]->{'forbiddenProjects'});
+								break;
 							}
 						}
 
+						//remove everything from projectArray which is forbidden
+
+							for($j=0; $j < sizeof($forbiddenProjects); $j++)
+							{
+								for($x=0; $x < sizeof($projectArray); $x++)
+								{
+									if ($projectArray[$x]->{'UUID'} == $forbiddenProjects[$j])
+									{
+										unset($projectArray[$x]);
+									}
+								}
+							}
+
+						array_values($projectArray);
 
 						if($projectArray != NULL)
 						{
@@ -60,9 +75,6 @@ include($path_helper_getGeneralSettings);
 								$icon = urldecode($projectArray[$i]->{'icon'});
 								$name = $projectArray[$i]->{'name'};
 								$UUID = $projectArray[$i]->{'UUID'};
-
-								if(!in_array($UUID,$forbiddenProjects))
-								{
 
 
 									if (fmod($i, $gridSize) == 0)
@@ -120,7 +132,7 @@ include($path_helper_getGeneralSettings);
 											echo '</tr>';
 										}
 									}
-								}
+
 							}	
 						}					
 					?>						
