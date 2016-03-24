@@ -5,6 +5,6 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<input class="input project" id="input-url" type="text" value="<?php echo $url;?>"/>
+		<input class="input project" id="input-url" type="text" value="<?php echo $url;?>" placeholder="http://www.example.com/"/>
 	</td>
 </tr>
