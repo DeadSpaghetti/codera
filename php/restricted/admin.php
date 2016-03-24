@@ -2,7 +2,8 @@
 <?php
 session_start();
 require '../helper/checkLogin.php';
-if(!isset($_SESSION['loggedIn']))
+include_once "../helper/functions.php";
+if(!isUserAdmin($_SESSION['loggedIn']))
 {
     header('Location: ../login.php');
     exit;	
