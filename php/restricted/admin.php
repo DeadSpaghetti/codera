@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <?php
-session_start();
-require '../helper/checkLogin.php';
 if(!isset($_SESSION['loggedIn']))
-{
-    header('Location: ../login.php');
-    exit;	
-}
+	session_start();
+
 global $developerName;
 global $colorScheme;
 include('../helper/convertHexToRGB.php');
-include('../helper/getGeneralSettingsFromJSON.php');				
+include('../helper/getGeneralSettingsFromJSON.php');		
 ?>
 
 <html>
@@ -34,7 +30,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 	</head>
 	<body>
 		<div id="main">						
-			<?php include("../templates/header-logout-back.php"); ?>
+			<?php include("../templates/header-logout-back.php");
+			?>
 			<div id="content">	
 				<div class="tabs">
 					<ul class="tab-links">						
@@ -57,7 +54,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 								<?php include("changeLogin.php"); ?>	
 							</div>  
 							<div id="tabMedia" class="tab">
-								<?php include("mediaOverview.php"); ?>	
+								<?php //include("mediaOverview.php"); ?>
 							</div> 
 							<div id="tabUsers" class="tab">
 								<?php include("userOverview.php"); ?>	

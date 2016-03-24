@@ -1,7 +1,10 @@
 $(document).ready(function()
 {
-	document.getElementById('icon-warn').style.display='none';	
-	document.getElementById('icon-success').style.display='none';	
+    if(document.getElementById('icon-warn') != undefined)
+    {
+        document.getElementById('icon-warn').style.display = 'none';
+        document.getElementById('icon-success').style.display = 'none';
+    }
 	
     $('#button-save-changeLogin').click(function()
     {
