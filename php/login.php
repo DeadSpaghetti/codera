@@ -3,9 +3,10 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
+include_once "helper/functions.php";
 if(isset($_SESSION['loggedIn']))
 {
-    if($_SESSION['loggedIn'] == "admin")
+    if(isUserAdmin($_SESSION['loggedIn']))
     {
         header('Location: restricted/admin.php');
     }
