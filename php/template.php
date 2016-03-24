@@ -40,6 +40,19 @@ include('helper/getGeneralSettingsFromJSON.php');
 
 			$UUID = $_GET['UUID'];
 
+			//check if user is allowed to see this
+			global $forbiddenProjects;
+			include "helper/getForbiddenProjects.php";
+			for($i=0; $i < sizeof($forbiddenProjects); $i++)
+			{
+				if($forbiddenProjects[$i] == $UUID)
+				{
+					header('HTTP/ 403 Forbidden');
+					echo '<h1>FORBIDDEN</h1>';
+					exit;
+				}
+			}
+
 			global $projectArray;
 			include "helper/getProjectsFromJSON.php";
 			for($i=0; $i < sizeof($projectArray); $i++)

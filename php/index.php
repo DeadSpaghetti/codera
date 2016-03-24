@@ -41,17 +41,8 @@ include($path_helper_getGeneralSettings);
 						include('helper/getProjectsFromJSON.php');			
 						include('helper/getGeneralSettingsFromJSON.php');						
 
-						global $userArray;
-						include "helper/getUsersFromJSON.php";
-
-						for($i=0; $i < sizeof($userArray); $i++)
-						{
-							if($userArray[$i]->{'username'} == $_SESSION['loggedIn'])
-							{
-								$forbiddenProjects = json_decode($userArray[$i]->{'forbiddenProjects'});
-								break;
-							}
-						}
+						global $forbiddenProjects;
+						include "helper/getForbiddenProjects.php";
 
 						//remove everything from projectArray which is forbidden
 
