@@ -79,7 +79,7 @@ if($userArray != NULL)
 	for($i=0; $i < sizeof($userArray); $i++)
 	{
 		$name = $userArray[$i]->{'username'};
-		if($name != "public")
+		if($name != "public" && $name != "admin")
 		{
 			echo
 				'<tr id='; echo $userArray[$i]->{'UUID'}; echo ' class="overview-row">'.

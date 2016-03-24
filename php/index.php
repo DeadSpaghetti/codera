@@ -40,71 +40,87 @@ include($path_helper_getGeneralSettings);
 						global $projectArray;
 						include('helper/getProjectsFromJSON.php');			
 						include('helper/getGeneralSettingsFromJSON.php');						
-						
+
+						global $userArray;
+						include "helper/getUsersFromJSON.php";
+
+						for($i=0; $i < sizeof($userArray); $i++)
+						{
+							if($userArray[$i]->{'username'} == $_SESSION['loggedIn'])
+							{
+								$forbiddenProjects = json_decode($userArray[$i]->{'forbiddenProjects'});
+							}
+						}
+
+
 						if($projectArray != NULL)
 						{
 							for($i=0; $i < sizeof($projectArray); $i++)
 							{
-								if(fmod($i, $gridSize) == 0)
-								{
-									echo '<tr class="row">';
-								}
-								
-								$icon = urldecode($projectArray[$i]->{'icon'});								
+								$icon = urldecode($projectArray[$i]->{'icon'});
 								$name = $projectArray[$i]->{'name'};
 								$UUID = $projectArray[$i]->{'UUID'};
-								
-								if($gridSize == 3)
+
+								if(!in_array($UUID,$forbiddenProjects))
 								{
-									echo	'<td class="entry large">'.												
-												'<a name="icon-link" id="'.$UUID.'">'.
-													'<div class="entry-icon large container">'.
-														'<div class="entry-icon" style="background-image: url('."'".$path_folder_icons.'/'.$icon."'".');"> </div>'.
-														'<canvas width="300" height="300"></canvas>'.														
-													'</div>'.
-													'<div class="icon-name">'.$name.'</div>'.
-												'</a>'.												
-											'</td>';
-											
-									if(fmod($i, 3) == 2)
+
+
+									if (fmod($i, $gridSize) == 0)
 									{
-										echo '</tr>';
+										echo '<tr class="row">';
+									}
+
+
+									if ($gridSize == 3)
+									{
+										echo '<td class="entry large">' .
+											'<a name="icon-link" id="' . $UUID . '">' .
+											'<div class="entry-icon large container">' .
+											'<div class="entry-icon" style="background-image: url(' . "'" . $path_folder_icons . '/' . $icon . "'" . ');"> </div>' .
+											'<canvas width="300" height="300"></canvas>' .
+											'</div>' .
+											'<div class="icon-name">' . $name . '</div>' .
+											'</a>' .
+											'</td>';
+
+										if (fmod($i, 3) == 2)
+										{
+											echo '</tr>';
+										}
+									} else if ($gridSize == 4)
+									{
+										echo '<td class="entry medium">' .
+											'<a name="icon-link" id="' . $UUID . '">' .
+											'<div class="entry-icon medium container">' .
+											'<div class="entry-icon" style="background-image: url(' . "'" . $path_folder_icons . '/' . $icon . "'" . ');"> </div>' .
+											'<canvas width="300" height="300"></canvas>' .
+											'</div>' .
+											'<div class="icon-name">' . $name . '</div>' .
+											'</a>' .
+											'</td>';
+
+										if (fmod($i, 4) == 3)
+										{
+											echo '</tr>';
+										}
+									} else
+									{
+										echo '<td class="entry small">' .
+											'<a name="icon-link" id="' . $UUID . '">' .
+											'<div class="entry-icon small container">' .
+											'<div class="entry-icon" style="background-image: url(' . "'" . $path_folder_icons . '/' . $icon . "'" . ');"> </div>' .
+											'<canvas width="300" height="300"></canvas>' .
+											'</div>' .
+											'<div class="icon-name">' . $name . '</div>' .
+											'</a>' .
+											'</td>';
+
+										if (fmod($i, 5) == 4)
+										{
+											echo '</tr>';
+										}
 									}
 								}
-								else if($gridSize == 4)
-								{
-									echo	'<td class="entry medium">'.												
-												'<a name="icon-link" id="'.$UUID.'">'.
-													'<div class="entry-icon medium container">'.
-														'<div class="entry-icon" style="background-image: url('."'".$path_folder_icons.'/'.$icon."'".');"> </div>'.
-														'<canvas width="300" height="300"></canvas>'.														
-													'</div>'.
-													'<div class="icon-name">'.$name.'</div>'.
-												'</a>'.												
-											'</td>';
-											
-									if(fmod($i, 4) == 3)
-									{
-										echo '</tr>';
-									}
-								}
-								else
-								{
-									echo	'<td class="entry small">'.												
-												'<a name="icon-link" id="'.$UUID.'">'.
-													'<div class="entry-icon small container">'.
-														'<div class="entry-icon" style="background-image: url('."'".$path_folder_icons.'/'.$icon."'".');"> </div>'.
-														'<canvas width="300" height="300"></canvas>'.														
-													'</div>'.
-													'<div class="icon-name">'.$name.'</div>'.
-												'</a>'.												
-											'</td>';
-									
-									if(fmod($i, 5) == 4)
-									{
-										echo '</tr>';
-									}
-								}							
 							}	
 						}					
 					?>						
