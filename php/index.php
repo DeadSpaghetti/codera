@@ -66,7 +66,7 @@ include($path_helper_getGeneralSettings);
 								}
 							}
 
-						array_values($projectArray);
+					    $projectArray = array_values($projectArray);
 
 						if($projectArray != NULL)
 						{
