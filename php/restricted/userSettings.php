@@ -105,7 +105,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 						<td class="infos-right lesspadding">
 							<div class="toggle-container-user">							
 								<label class="switch-light switch-candy" onclick="">
-									<input type="checkbox" id="toggle-user-is-admin">
+									<input type="checkbox" id="toggle-user-is-admin" <?php if($accountType == "admin") echo "checked";?>>
 									<span>
 										<span>No</span>
 										<span>Yes</span>

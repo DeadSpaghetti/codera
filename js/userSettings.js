@@ -36,7 +36,8 @@ $(document).ready(function()
                     "username": username,
                     "password": password,
                     "forbiddenProjects": JSON.stringify(forbiddenProjects),
-                    "accountType": accountType
+                    "accountType": accountType,
+                    "isEditUser": true
                 }, function (data, error)
                 {
 
