@@ -39,7 +39,6 @@ $(document).ready(function()
                     "accountType": accountType
                 }, function (data, error)
                 {
-
                     location.reload();
                 });
         /*}

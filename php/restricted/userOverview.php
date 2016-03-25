@@ -37,7 +37,7 @@ include('../helper/paths.php');
 			</table>
 		</td>
 		<td class="overview-right">	
-			<a class="button edit" id="admin" name="userOverviewEdit" href="javascript:void(null)">
+			<a class="button edit" id="editUser_admin" name="userOverviewEdit" href="javascript:void(null)">
 				<i class="material-icons">mode_edit</i>
 			</a>
 		</td>
@@ -61,7 +61,7 @@ include('../helper/paths.php');
 			</table>
 		</td>
 		<td class="overview-right">
-			<a class="button edit" id="public" name="userOverviewEdit" href="javascript:void(null)">
+			<a class="button edit" id="editUser_public" name="userOverviewEdit" href="javascript:void(null)">
 				<i class="material-icons">mode_edit</i>
 			</a>			
 		</td>
