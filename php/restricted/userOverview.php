@@ -100,7 +100,7 @@ if($userArray != NULL)
 					'<a id="editUser_'.$name.'" class="button edit" name="userOverviewEdit" href="javascript:void(null)">'.
 						'<i class="material-icons">mode_edit</i>'.
 					'</a>'.
-					'<a class="button edit" name="userOverviewDelete" href="javascript:void(null)">'.
+					'<a id="deleteUser_'.$name.'" class="button edit" name="userOverviewDelete" href="javascript:void(null)">'.
 						'<i class="material-icons">delete</i>'.
 					'</a>'.
 				'</td>'.

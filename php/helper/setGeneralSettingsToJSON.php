@@ -32,5 +32,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     fclose($file);
 
 
-    include "sortProjects.php";
+    include "sort.php";
 }

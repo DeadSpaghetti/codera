@@ -46,19 +46,19 @@ include($path_helper_getGeneralSettings);
 
 						//remove everything from projectArray which is forbidden
 
-							for($j=0; $j < sizeof($forbiddenProjects); $j++)
-							{
-								for($x=0; $x < sizeof($projectArray); $x++)
-								{
-									if ($projectArray[$x]->{'UUID'} == $forbiddenProjects[$j])
-									{
-										unset($projectArray[$x]);
-									}
-								}
-							}
 
-					    $projectArray = array_values($projectArray);
-
+					   for($x=0; $x < sizeof($projectArray); $x++)
+					   {
+						   for($j=0; $j < sizeof($forbiddenProjects); $j++)
+						   {
+							   if ($projectArray[$x]->{'UUID'} == $forbiddenProjects[$j])
+							   {
+								   unset($projectArray[$x]);
+								   $projectArray = array_values($projectArray);
+							   }
+						   }
+					   }
+					
 						if($projectArray != NULL)
 						{
 							for($i=0; $i < sizeof($projectArray); $i++)

@@ -16,8 +16,8 @@ $(document).ready(function()
     $('#userSettings-button-save').click(function ()
     {
         var username = $('#userSettings-input-userName').val();
-        if(username != "admin" && username != "public")
-        {
+        //if(username != "admin" && username != "public")
+        //{
             var password = $('#userSettings-input-userPassword').val();
             var forbiddenProjects = getForbiddenProjects();
             var accountType = $('#toggle-user-is-admin').is(':checked');
@@ -36,19 +36,16 @@ $(document).ready(function()
                     "username": username,
                     "password": password,
                     "forbiddenProjects": JSON.stringify(forbiddenProjects),
-                    "accountType": accountType,
-                    "isEditUser": true
+                    "accountType": accountType
                 }, function (data, error)
                 {
 
                     location.reload();
-                })
-        }
+                });
+        /*}
         else
         {
             alert("admin and public are reserved");
-        }
+        }*/
     });
-
-
 });

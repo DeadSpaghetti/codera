@@ -8,10 +8,9 @@ include($path_helper_getGeneralSettings);
 		<a href="<?php echo $path_logout;?>" id="logout-link"> <i class="material-icons">lock</i> <span class="login-text">Logout</span></a>
 	</div>
 	<?php
-	include realpath(dirname(__FILE__) . '/../helper/functions.php');
+	include_once realpath(dirname(__FILE__) . '/../helper/functions.php');
 	if(isUserAdmin($_SESSION['loggedIn']))
 	{
-
 		echo '<div class="login">' .
 			'<a href="'. $path_admin .'" id="settings-link"> <i class="material-icons">settings</i> <span class="login-text">Settings</span></a>' .
 			'</div>';

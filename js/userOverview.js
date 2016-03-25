@@ -14,5 +14,17 @@ $(document).ready(function ()
         document.body.appendChild(form);
         form.submit();
     });
-    
+
+
+    $('a[name=userOverviewDelete]').click(function()
+    {
+        $.post("../helper/deleteUserFromJSON.php",
+            {
+                "username":  this.id.split("_")[1]
+            },function (data,error)
+            {
+                location.reload();
+            });
+
+    });
 });

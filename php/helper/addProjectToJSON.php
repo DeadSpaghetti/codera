@@ -106,8 +106,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         fclose($file);
 
         global $sortOrder;
+        $sortType = "projects";
         include "getGeneralSettingsFromJSON.php";
-        include "sortProjects.php";
+        include "sort.php";
 
 
     } catch (Exception $e)

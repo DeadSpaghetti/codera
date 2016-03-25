@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $salt = '$5$g3t#~34uö@$';
         global $userArray;
         include "getUsersFromJSON.php";
-        for($i=0; sizeof($userArray); $i++)
+        for($i=0; $i < sizeof($userArray); $i++)
         {
             if($userArray[$i]->{'username'} == $username)
             {
@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         }
         else
         {
-            $password = crypt($postPassword,$salt);
+            $password = $postPassword;
         }
 
             //creates files
@@ -93,6 +93,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $fileToSave = json_encode($array);
             file_put_contents($pathString, $fileToSave);
 
+            $sortType = "users";
+            include "sort.php";
             }
 
 }

@@ -41,6 +41,10 @@ if(!function_exists("deleteUser"))
 
         $userArray = array_values($userArray);
         file_put_contents($pathString, json_encode($userArray));
+
+        $sortType = "users";
+        include "sort.php";
+
         return $password;
     }
 }
