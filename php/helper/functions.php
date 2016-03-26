@@ -12,7 +12,8 @@ if(!function_exists('isUserAdmin'))
                 if ($userArray[$i]->{'accountType'} == "admin")
                 {
                     return true;
-                } else
+                }
+                else
                 {
                     return false;
                 }
