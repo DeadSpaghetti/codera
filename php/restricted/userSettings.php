@@ -71,7 +71,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 				<table id="infos-small">
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">							
-							<div id="new-project"><?php if($_SERVER['REQUEST_METHOD'] == "POST") echo $username?>
+							<div id="new-user"><?php if($_SERVER['REQUEST_METHOD'] == "POST") echo $username?>
 							</div>
 							<div class="line line-no-space"></div>
 						</td>	
