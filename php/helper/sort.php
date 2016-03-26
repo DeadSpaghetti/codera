@@ -77,9 +77,9 @@ elseif ($sortOrder == "latestUpdateReversed" && $sortType == "projects")
 
 if($sortType == "projects")
 {
-    file_put_contents($path_config_projects, json_encode($array));
+    file_put_contents($path_config_projects, json_encode($array,JSON_PRETTY_PRINT));
 }
 elseif ($sortType == "users")
 {
-    file_put_contents($path_config_users,json_encode($array));
+    file_put_contents($path_config_users,json_encode($array,JSON_PRETTY_PRINT));
 }
