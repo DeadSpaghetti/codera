@@ -41,6 +41,8 @@ include($path_helper_getGeneralSettings);
 						include('helper/getProjectsFromJSON.php');			
 						include('helper/getGeneralSettingsFromJSON.php');						
 
+						if(!isset($_SESSION['loggedIn']))
+							$username = "public";
 						global $forbiddenProjects;
 						include "helper/getForbiddenProjects.php";
 

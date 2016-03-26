@@ -16,6 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $postPassword = $_POST['password'];
         $forbiddenProjects = $_POST['forbiddenProjects'];   //as json --> encoded by javascript
         $accountType = $_POST['accountType'];
+
         $salt = '$5$g3t#~34uö@$';
         $userAlreadyExists = false;
 
@@ -55,14 +56,38 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             $array = json_decode($configFile, false);
         }
 
-        $newUserArray = array
-        (
-            "username" => $username,
-            "password" => $password,
-            "accountType" => $accountType,
-            "forbiddenProjects" => $forbiddenProjects
-        );
+        if($username != "admin" && $username != "public")
+        {
+            $newUserArray = array
+            (
+                "username" => $username,
+                "password" => $password,
+                "accountType" => $accountType,
+                "forbiddenProjects" => $forbiddenProjects
+            );
+        }
+        else
+        {
+            if($username == "admin")
+            {
+                $newUserArray = array
+                (
+                    "username" => $username,
+                    "password" => $password,
+                    "accountType" => "admin",
+                );
+            }
+            elseif($username == "public")
+            {
+                $newUserArray = array
+                (
+                    "username" => $username,
+                    "forbiddenProjects" => $forbiddenProjects,
+                    "accountType" => "user"
+                );
+            }
 
+        }
         //checks boolean value to see if file is there. If not generates it
         if ($fileIsThere)
             array_push($array, $newUserArray);
