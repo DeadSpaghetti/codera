@@ -75,7 +75,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 							</div>
 							<div class="line line-no-space"></div>
 						</td>	
-					</tr>					
+					</tr>
+					<?php
+					if($username != "admin" && $username != "public")
+					{
+						echo <<<'USERNAME'
 					<tr class="infos-row">
 						<td class="infos-left">
 							<div class="icon">
@@ -83,10 +87,23 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="userSettings-input-userName" type="text" maxlength="30" value="<?php if($_SERVER['REQUEST_METHOD'] == "POST") echo $username;?>" placeholder="User"/>
-						</td>
+							<input class="input project" id="userSettings-input-userName" type="text" maxlength="30" value="
+USERNAME;
+						if ($_SERVER['REQUEST_METHOD'] == "POST")
+							echo $username;
+
+						echo <<<'REST_USERNAME'
+" placeholder="User"/></td>
 					</tr>
-					<tr class="infos-row">
+REST_USERNAME;
+					}
+					?>
+
+
+					<?php
+					if($username != "public")
+					echo <<<'PASSWORD'
+<tr class="infos-row">
 						<td class="infos-left">
 							<div class="icon">
 								<i class="material-icons">lock</i> <span class="icon-text">Password:</span>
@@ -96,6 +113,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 							<input class="input project" id="userSettings-input-userPassword" type="password" maxlength="30" placeholder="*******"/>
 						</td>
 					</tr>
+					
+PASSWORD;
+
+
+					if($username != "admin")
+					{
+						echo <<<'ISADMIN'
 					<tr class="infos-row">
 						<td class="infos-left lesspadding">
 							<div class="icon">
@@ -105,11 +129,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 						<td class="infos-right lesspadding">
 							<div class="toggle-container-user">							
 								<label class="switch-light switch-candy" onclick="">
-									<input type="checkbox" id="toggle-user-is-admin" <?php if($accountType == "admin") echo "checked";?>>
-									<span>
+									<input type="checkbox" id="toggle-user-is-admin">
+ISADMIN;
+
+
+					echo <<<'SWITCH'
+<span>
 										<span>No</span>
 										<span>Yes</span>
-										<a style="background-color: <?php echo $colorScheme;?>"></a>
+										<a style="background-color: 
+SWITCH;
+					echo $colorScheme;
+					echo <<<'REST'
+	"></a>
 									</span>
 								</label>								
 							</div>
@@ -121,45 +153,50 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 						</td>
 					</tr>
 					
-					<tr class="infos-row">
+REST;
+
+					echo <<<'LABEL'
+<tr class="infos-row">
 						<td colspan="2" class="infos-center">
 							<div class="user-headline-container">
 								<div class="user-headline">Project Access Forbidden</div>
 							</div>
 						</td>	
 					</tr>
-					<?php
+LABEL;
+
+
 
 					global $projectArray;
 					include "../helper/getProjectsFromJSON.php";
-					for($i=0; $i < sizeof($projectArray); $i++)
+					for ($i = 0; $i < sizeof($projectArray); $i++)
 					{
 						$projectName = $projectArray[$i]->{'name'};
 						$UUID = $projectArray[$i]->{'UUID'};
 						echo '<tr class="infos-row">' .
 							'<td class="infos-left">' .
 							'<div class="user-project-name">' .
-							$projectName.
+							$projectName .
 							'</div>' .
 							'</td>                                                ' .
 							'<td class="infos-right">' .
 							'	<div class="toggle-container-user">	' .
 							'		<label class="switch-light switch-candy" onclick="">' .
-							'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_'.$UUID.'" ';
-								for($j=0; $j < sizeof($forbiddenProjects); $j++)
-								{
-									if($forbiddenProjects[$j] == $UUID)
-									{
-										echo "checked";
-										break;
-									}
-								}
+							'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_' . $UUID . '" ';
+						for ($j = 0; $j < sizeof($forbiddenProjects); $j++)
+						{
+							if ($forbiddenProjects[$j] == $UUID)
+							{
+								echo "checked";
+								break;
+							}
+						}
 
-									echo '>' .
-										'			<span>' .
-										'				<span>No</span>' .
-										'				<span>Yes</span>' .
-										'				<a style="background-color:';
+						echo '>' .
+							'			<span>' .
+							'				<span>No</span>' .
+							'				<span>Yes</span>' .
+							'				<a style="background-color:';
 
 						echo $colorScheme;
 						echo '"></a>' .
@@ -169,6 +206,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 							'</td>' .
 							'</tr>';
 					}
+				}
 					?>
 
 					
