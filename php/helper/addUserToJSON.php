@@ -74,6 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 (
                     "username" => $username,
                     "password" => $password,
+                    "forbiddenProjects" => "[]",
                     "accountType" => "admin",
                 );
             }
