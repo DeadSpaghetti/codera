@@ -117,7 +117,7 @@ REST_USERNAME;
 PASSWORD;
 
 
-					if($username != "admin")
+					if($username != "admin" && $username != "public")
 					{
 						echo <<<'ISADMIN'
 					<tr class="infos-row">
@@ -133,14 +133,14 @@ PASSWORD;
 ISADMIN;
 
 
-					echo <<<'SWITCH'
+						echo <<<'SWITCH'
 <span>
 										<span>No</span>
 										<span>Yes</span>
 										<a style="background-color: 
 SWITCH;
-					echo $colorScheme;
-					echo <<<'REST'
+						echo $colorScheme;
+						echo <<<'REST'
 	"></a>
 									</span>
 								</label>								
@@ -154,8 +154,10 @@ SWITCH;
 					</tr>
 					
 REST;
-
-					echo <<<'LABEL'
+					}
+					if($username != "admin")
+					{
+						echo <<<'PROJECT_ACCESS'
 <tr class="infos-row">
 						<td colspan="2" class="infos-center">
 							<div class="user-headline-container">
@@ -163,10 +165,11 @@ REST;
 							</div>
 						</td>	
 					</tr>
-LABEL;
+PROJECT_ACCESS;
 
-
-
+					}
+					if($username != "admin")
+					{
 					global $projectArray;
 					include "../helper/getProjectsFromJSON.php";
 					for ($i = 0; $i < sizeof($projectArray); $i++)
