@@ -16,8 +16,9 @@ $(document).ready(function()
     $('#userSettings-button-save').click(function ()
     {
         var username = $('#userSettings-input-userName').val();
-        //if(username != "admin" && username != "public")
-        //{
+        if(username == "" || username == undefined || username == null)
+            username = $('#new-user').text().trim();
+
             var password = $('#userSettings-input-userPassword').val();
             var forbiddenProjects = getForbiddenProjects();
             var accountType = $('#toggle-user-is-admin').is(':checked');
@@ -41,10 +42,6 @@ $(document).ready(function()
                 {
                     location.reload();
                 });
-        /*}
-        else
-        {
-            alert("admin and public are reserved");
-        }*/
+        
     });
 });

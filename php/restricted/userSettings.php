@@ -129,8 +129,13 @@ PASSWORD;
 						<td class="infos-right lesspadding">
 							<div class="toggle-container-user">							
 								<label class="switch-light switch-candy" onclick="">
-									<input type="checkbox" id="toggle-user-is-admin">
+									<input type="checkbox" id="toggle-user-is-admin" 
 ISADMIN;
+						if($accountType == "admin") echo "checked";
+						echo <<<'ISADMINREST'
+	>
+ISADMINREST;
+
 
 
 						echo <<<'SWITCH'

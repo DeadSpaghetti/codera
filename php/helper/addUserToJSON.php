@@ -12,13 +12,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     if(isUserAdmin($_SESSION['loggedIn']))
     {
         $pathString = "../../config/users.json";
-        $isFileThere = false;
         $username = $_POST['username'];
         $postPassword = $_POST['password'];
         $forbiddenProjects = $_POST['forbiddenProjects'];   //as json --> encoded by javascript
         $accountType = $_POST['accountType'];
-        $userAlreadyExists = false;
         $salt = '$5$g3t#~34uö@$';
+        $userAlreadyExists = false;
+
         global $userArray;
         include "getUsersFromJSON.php";
         for($i=0; $i < sizeof($userArray); $i++)
@@ -44,57 +44,37 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         }
         else
         {
-            $password = $postPassword;
+            $password =  crypt($postPassword,$salt);
         }
 
-            //creates files
-            if (!$userAlreadyExists)
-            {
-                if (file_exists($pathString))
-                {
-                    $isFileThere = true;
-                }
+        $fileIsThere = false;
+        if (file_exists($pathString))
+        {
+            $fileIsThere = true;
+            $configFile = file_get_contents($pathString);
+            $array = json_decode($configFile, false);
+        }
 
-                if ($isFileThere)
-                {
-                    $configFile = file_get_contents($pathString);
-                    $array = json_decode($configFile, false);
+        $newUserArray = array
+        (
+            "username" => $username,
+            "password" => $password,
+            "accountType" => $accountType,
+            "forbiddenProjects" => $forbiddenProjects
+        );
 
-                }
-            }
+        //checks boolean value to see if file is there. If not generates it
+        if ($fileIsThere)
+            array_push($array, $newUserArray);
+        else
+            $array[0] = $newUserArray;
 
-            if($userAlreadyExists)
-            {
-                $newUserArray = array
-                (
-                    "username" => $username,
-                    "password" => $password,
-                    "accountType" => $accountType,
-                    "forbiddenProjects" => $forbiddenProjects
-                );
-            }
-            else
-            {
-                $newUserArray = array
-                (
-                    "username" => $username,
-                    "password" => crypt($password, $salt),
-                    "accountType" => $accountType,
-                    "forbiddenProjects" => $forbiddenProjects
-                );
-            }
-            //checks boolean value to see if file is there. If not generates it
-            if ($isFileThere)
-                array_push($array, $newUserArray);
-            else
-                $array[0] = $newUserArray;
+        //push new reg id into array
+        $fileToSave = json_encode($array);
+        file_put_contents($pathString, $fileToSave);
 
-            //push new reg id into array
-            $fileToSave = json_encode($array);
-            file_put_contents($pathString, $fileToSave);
-
-            $sortType = "users";
-            include "sort.php";
-            }
+        $sortType = "users";
+        include "sort.php";
+    }
 
 }
