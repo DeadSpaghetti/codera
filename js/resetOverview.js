@@ -31,7 +31,7 @@ $(document).ready(function ()
 
 function reset(type)
 {
-    $.post("../php/helper/resetHelper.php",
+    $.post("../helper/resetHelper.php",
         {
             "resetType": type
         },function (data,error)

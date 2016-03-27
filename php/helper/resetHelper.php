@@ -1,9 +1,14 @@
 <?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
+
 //what to reset 'content' || 'settings' || 'everything'
 include_once "functions.php";
 if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
 {
-    $_POST['resetType'];
+    $resetType = $_POST['resetType'];
     if(isset($resetType) && $resetType != null)
     {
         if ($resetType == "content")
