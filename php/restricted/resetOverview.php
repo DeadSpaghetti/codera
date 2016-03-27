@@ -21,7 +21,7 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 	</tr>	
 	<tr class="infos-row">
 		<td colspan="2" class="infos-center">
-			<a class="button reset" id="button-discard-changeLogin" href="javascript:void(null)">									
+			<a class="button reset" id="button-reset-content" href="javascript:void(null)">
 				<i class="material-icons">delete</i> <span class="button-text">Reset Content</span> 									
 			</a>
 			<div class="hint">All projects and uploaded files</div>
@@ -30,7 +30,7 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 	</tr>	
 	<tr class="infos-row">
 		<td colspan="2" class="infos-center">
-			<a class="button reset" id="button-discard-changeLogin" href="javascript:void(null)">									
+			<a class="button reset" id="button-reset-settings" href="javascript:void(null)">									
 				<i class="material-icons">delete</i> <span class="button-text">Reset Settings</span> 									
 			</a>
 			<div class="hint">All settings from the admin panel</div>
@@ -39,7 +39,7 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 	</tr>	
 	<tr class="infos-row">
 		<td colspan="2" class="infos-center">
-			<a class="button reset" id="button-discard-changeLogin" href="javascript:void(null)">									
+			<a class="button reset" id="button-reset-everything" href="javascript:void(null)">
 				<i class="material-icons">delete</i> <span class="button-text">Reset Everything</span> 									
 			</a>
 			<div class="hint">Just Everything</div>

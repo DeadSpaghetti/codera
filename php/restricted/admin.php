@@ -32,6 +32,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
         <script src="../../js/changeLogin.js"></script>
 		<script src="../../js/projectOverview.js"></script>
 		<script src="../../js/userOverview.js"></script>
+		<script src="../../js/resetOverview.js"></script>
 	</head>
 	<body>
 		<div id="main">						
