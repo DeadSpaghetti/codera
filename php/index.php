@@ -38,7 +38,7 @@ include($path_helper_getGeneralSettings);
 					<?php
 						
 						global $projectArray;
-						include('helper/getProjectsFromJSON.php');			
+						include('helper/getProjectsFromJSON.php');
 						include('helper/getGeneralSettingsFromJSON.php');						
 
 						if(!isset($_SESSION['loggedIn']))

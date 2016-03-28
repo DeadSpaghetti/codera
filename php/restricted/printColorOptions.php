@@ -32,10 +32,10 @@ for($i = 0; $i < sizeof($colorArray); $i++)
 {
     if($colorArray[$i]['hexCode'] == $selectedColor)
     {
-        print '<div class="ink selected" style="background-color: '.$colorArray[$i]['hexCode'].';"></div>';
+        echo '<div class="ink selected" style="background-color: '.$colorArray[$i]['hexCode'].';"></div>';
     }
     else
     {
-        print '<div class="ink" style="background-color: ' . $colorArray[$i]['hexCode'] . ';"></div>';
+        echo '<div class="ink" style="background-color: ' . $colorArray[$i]['hexCode'] . ';"></div>';
     }
 }

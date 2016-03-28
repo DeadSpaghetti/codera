@@ -1,4 +1,9 @@
 <?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
+
 include_once "../helper/functions.php";
 if(!isUserAdmin($_SESSION['loggedIn']))
 {
@@ -7,9 +12,6 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 }
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-    global $sortOrder;
-
-
     $developerName = $_POST['developerName'];
     $colorScheme = $_POST['colorScheme'];
     $gridSize = $_POST['gridSize'];
@@ -17,7 +19,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 //codera version is read only --> is only set by updater
 
     $generalSettingsFilename = "../../config/generalSettings.json";
-    $file = fopen($generalSettingsFilename, "w");
 
     $array = array(
         "developerName" => $developerName,
@@ -28,9 +29,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
     $jsonString = json_encode($array);
 
-    fwrite($file, $jsonString);
-    fclose($file);
-
-
-    include "sort.php";
+    file_put_contents($generalSettingsFilename,$jsonString);
 }

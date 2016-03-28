@@ -12,7 +12,7 @@ $(document).ready(function()
     $('#button-save').click(function()
     {
         var developerName = $('#input-websiteName').val();
-        var colorScheme = $('#color-chooser div.selected').css('background-color');		
+        var colorScheme = $('#color-chooser div.selected').css('background-color');
         var gridSize = $('input[name=gridwidth]:checked').val();
         var sortOrder = $('input[name=sortOrder]:checked').val();
 
