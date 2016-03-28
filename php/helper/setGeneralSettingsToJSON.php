@@ -30,4 +30,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $jsonString = json_encode($array);
 
     file_put_contents($generalSettingsFilename,$jsonString);
+    $sortType = "projects";
+    include "sort.php";
 }
