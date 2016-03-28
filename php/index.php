@@ -6,6 +6,7 @@ if(!isset($_SESSION))
 global $colorScheme;
 global $developerName;
 global $gridSize;
+global $sortOrder;
 include('helper/paths.php');
 include($path_helper_getGeneralSettings);
 ?>
@@ -25,13 +26,13 @@ include($path_helper_getGeneralSettings);
 		<div id="main">
 			<?php
 				if(isset($_SESSION['loggedIn']))
-				{					
-					include($path_header_logout); 
+				{
+					include($path_header_logout);
 				}
 				else
-				{				
-					include($path_header); 
-				}				
+				{
+					include($path_header);
+				}
 			?>
 			<div id="content">				
 				<table id="projects">
@@ -50,18 +51,20 @@ include($path_helper_getGeneralSettings);
 
 					if($projectArray != null)
 					{
-						for ($x = 0; $x < sizeof($projectArray); $x++)
+						if($forbiddenProjects != null)
 						{
-							for ($j = 0; $j < sizeof($forbiddenProjects); $j++)
+							for ($x = 0; $x < sizeof($projectArray); $x++)
 							{
-								if ($projectArray[$x]->{'UUID'} == $forbiddenProjects[$j])
+								for ($j = 0; $j < sizeof($forbiddenProjects); $j++)
 								{
-									unset($projectArray[$x]);
-									$projectArray = array_values($projectArray);
+									if ($projectArray[$x]->{'UUID'} == $forbiddenProjects[$j])
+									{
+										unset($projectArray[$x]);
+										$projectArray = array_values($projectArray);
+									}
 								}
 							}
 						}
-
 						if($projectArray != null)
 						{
 							for ($i = 0; $i < sizeof($projectArray); $i++)
@@ -109,7 +112,8 @@ include($path_helper_getGeneralSettings);
 									{
 										echo '</tr>';
 									}
-								} else
+								}
+								else
 								{
 									echo '<td class="entry small">' .
 										'<a name="icon-link" id="' . $UUID . '">' .

@@ -22,6 +22,10 @@ if(!function_exists('isUserAdmin'))
                 }
             }
         }
+        else
+        {
+            return false;
+        }
     }
 }
 
