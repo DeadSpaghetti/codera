@@ -59,4 +59,8 @@ if($projectArray != null)
 	}
 	echo '</table>';
 }
+else
+{
+	echo '</table>';
+}
 ?>

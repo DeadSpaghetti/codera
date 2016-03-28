@@ -131,7 +131,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 				<table id="infos-small">
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">							
-							<div id="new-project"><?php echo $projectName?>
+							<div id="new-project"><?php if(isset($projectName)) echo $projectName?>
 								<div class="hidden" id="projectSettingsUUID">
 									<?php if(isset($UUID))
 											echo $UUID;?>
@@ -144,7 +144,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 						<td colspan="2" class="infos-center">
 							<div id="toggle-container">							
 								<label class="switch-light switch-candy" onclick="">
-									<input type="checkbox" id="toggle-project-or-url" <?php if($url != "")echo "checked"?>>
+									<input type="checkbox" id="toggle-project-or-url" <?php if(isset($url) && $url != "")echo "checked"?>>
 									<span>
 										<span>Project</span>
 										<span>URL</span>
@@ -161,7 +161,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php echo $projectName;?>" placeholder="MyApp"/>
+							<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php if(isset($projectName)) echo $projectName;?>" placeholder="MyApp"/>
 						</td>
 					</tr>
 					<tr class="infos-row">
