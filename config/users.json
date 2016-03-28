@@ -12,6 +12,12 @@
         "forbiddenProjects": "[\"F454CABB-33A6-D067-5B69-A24A42B11005\"]"
     },
     {
+        "username": "nothing",
+        "password": "$5$g3t#~34u\u00f6@$ldR4iaw68pClc\/MW9oB3R5yrY83c4mrxoiyw14MEFu\/",
+        "accountType": "user",
+        "forbiddenProjects": "[\"FC3D0A58-D80D-5AA3-80CF-35BFC014C926\",\"BD9E1E87-4795-6754-48E1-34ED3FE2EF9A\",\"469E5136-416B-5E5D-F4AC-4B4A39B2C9AC\",\"DAB8F4D8-983A-DD79-A87B-B2D5F6ED92F2\",\"030A1B71-C427-BC1B-B688-5BF176BD58FC\",\"F454CABB-33A6-D067-5B69-A24A42B11005\",\"1B58FCBE-48CC-2A4E-D29A-FE5F7ACD7CD0\",\"6972071D-8A65-FC59-DDDA-13B0476F25A5\"]"
+    },
+    {
         "username": "public",
         "forbiddenProjects": "[\"5FB8A34F-3199-73FF-9252-A42BE64EF767\",\"FC3D0A58-D80D-5AA3-80CF-35BFC014C926\",\"BD9E1E87-4795-6754-48E1-34ED3FE2EF9A\"]",
         "accountType": "user"

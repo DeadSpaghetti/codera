@@ -2,7 +2,7 @@
   {
     "color": "red",
     "hexCode": "#e57373"
-  },  
+  },
    {
     "color": "orange",
     "hexCode": "#ffb74f"
@@ -10,7 +10,7 @@
    {
     "color": "amber",
     "hexCode": "#ffd54f"
-  },  
+  },
   {
     "color": "yellow",
     "hexCode": "#fff176"
@@ -26,7 +26,7 @@
   {
     "color": "green",
     "hexCode": "#81c784"
-  }, 
+  },
   {
     "color": "tail",
     "hexCode": "#4db6ac"
@@ -46,5 +46,5 @@
   {
     "color": "grey",
     "hexCode": "#bdbdbd"
-  } 
+  }
 ]
