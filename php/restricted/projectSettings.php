@@ -30,13 +30,16 @@ function getSelectedOption($object,$UUID)
     {
         global $projectArray;
         include "../helper/getProjectsFromJSON.php";
-        for ($i = 0; $i < sizeof($projectArray); $i++)
-        {
-            if ($projectArray[$i]->{'UUID'} == $UUID)
-            {
-                return $projectArray[$i]->{$object};
-            }
-        }
+		if($projectArray != null)
+		{
+			for ($i = 0; $i < sizeof($projectArray); $i++)
+			{
+				if ($projectArray[$i]->{'UUID'} == $UUID)
+				{
+					return $projectArray[$i]->{$object};
+				}
+			}
+		}
     }
 }
 
@@ -46,13 +49,16 @@ function getSelectedOptions($object,$UUID)
     {
         global $projectArray;
         include "../helper/getProjectsFromJSON.php";
-        for ($i = 0; $i < sizeof($projectArray); $i++)
-        {
-            if ($projectArray[$i]->{'UUID'} == $UUID)
-            {
-                return json_decode($projectArray[$i]->{$object});
-            }
-        }
+		if($projectArray != null)
+		{
+			for ($i = 0; $i < sizeof($projectArray); $i++)
+			{
+				if ($projectArray[$i]->{'UUID'} == $UUID)
+				{
+					return json_decode($projectArray[$i]->{$object});
+				}
+			}
+		}
     }
 }
 
@@ -60,28 +66,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
     global $projectArray;
     $UUID = $_POST['UUID'];
-
     include "../helper/getProjectsFromJSON.php";
 
-    for($i=0; $i < sizeof($projectArray); $i++)
-    {
-        if($projectArray[$i]->{'UUID'} == $UUID)
-        {
-            $selectedProject = $projectArray[$i];
-            $projectName = $selectedProject->{'name'};
-            $icon = $selectedProject->{'icon'};
-            $latestChanges = $selectedProject->{'latestChanges'};
-            $versionCode = $selectedProject->{'versionCode'};
-            $versionName = $selectedProject->{'versionName'};
-            $date = $selectedProject->{'date'};
-            $requirements = $selectedProject->{'requirements'};
-            $description = $selectedProject->{'description'};
-            $projectStatus = $selectedProject->{'projectStatus'};
-			$url = $selectedProject->{'url'};
+	if($projectArray != null)
+	{
+		for ($i = 0; $i < sizeof($projectArray); $i++)
+		{
+			if ($projectArray[$i]->{'UUID'} == $UUID)
+			{
+				$selectedProject = $projectArray[$i];
+				$projectName = $selectedProject->{'name'};
+				$icon = $selectedProject->{'icon'};
+				$latestChanges = $selectedProject->{'latestChanges'};
+				$versionCode = $selectedProject->{'versionCode'};
+				$versionName = $selectedProject->{'versionName'};
+				$date = $selectedProject->{'date'};
+				$requirements = $selectedProject->{'requirements'};
+				$description = $selectedProject->{'description'};
+				$projectStatus = $selectedProject->{'projectStatus'};
+				$url = $selectedProject->{'url'};
 
-            break;
-        }
-    }
+				break;
+			}
+		}
+	}
 }
 include('../helper/getGeneralSettingsFromJSON.php');
 ?>

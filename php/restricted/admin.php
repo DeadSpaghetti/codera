@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <?php
-session_start();
+if(!isset($_SESSION['loggedIn']))
+	session_start();
 require '../helper/checkLogin.php';
 include_once "../helper/functions.php";
 if(!isUserAdmin($_SESSION['loggedIn']))
 {
     header('Location: ../login.php');
-    exit;	
+    exit;
 }
 global $developerName;
 global $colorScheme;
@@ -16,7 +17,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 
 <html>
 	<head>
-		<title><?php echo $developerName ?> on Codera</title>
+		<title><?php echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>

@@ -26,7 +26,7 @@ include('../helper/paths.php');
 global $projectArray;
 include "../helper/getProjectsFromJSON.php";
 
-if($projectArray != NULL)
+if($projectArray != null)
 {
 	for($i=0; $i < sizeof($projectArray); $i++)
 	{
@@ -56,7 +56,7 @@ if($projectArray != NULL)
 				'<div class="overview-line"> </div>'.
 			'</td>'.
 		'</tr>';
-	}	
+	}
+	echo '</table>';
 }
 ?>
-</table>

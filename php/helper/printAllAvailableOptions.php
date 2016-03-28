@@ -4,36 +4,38 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
 {
     global $projectArray;
     include "getProjectsFromJSON.php";
-
-    for($i=0; $i < sizeof($projectArray); $i++)
+    if($projectArray != null)
     {
-        if($projectArray[$i]->{'UUID'} == $UUID)
+
+        for ($i = 0; $i < sizeof($projectArray); $i++)
         {
-            $selectedProject = $projectArray[$i];
-            $allowedFilesArray = json_decode($selectedProject->{$property});
-            if(isset($options) && $options != null)
+            if ($projectArray[$i]->{'UUID'} == $UUID)
             {
-                if ($options == "option")
+                $selectedProject = $projectArray[$i];
+                $allowedFilesArray = json_decode($selectedProject->{$property});
+                if (isset($options) && $options != null)
                 {
-                    for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
+                    if ($options == "option")
                     {
-                        echo "<option>" . $allowedFilesArray[$j] . "</option>";
-                    }
-                }
-                elseif ($options == "image")
-                {
-                    $directory = "../images/screenshots/";
-                    $width = '100px';
-                    $height = '100px';
-                    for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
+                        for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
+                        {
+                            echo "<option>" . $allowedFilesArray[$j] . "</option>";
+                        }
+                    } elseif ($options == "image")
                     {
-                        echo "<a href=" . $directory . $allowedFilesArray[$j] . " data-lightbox=" . $directory . $allowedFilesArray[$j] . ">
+                        $directory = "../images/screenshots/";
+                        $width = '100px';
+                        $height = '100px';
+                        for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
+                        {
+                            echo "<a href=" . $directory . $allowedFilesArray[$j] . " data-lightbox=" . $directory . $allowedFilesArray[$j] . ">
                     <img width=$width height=$height src=" . $directory . $allowedFilesArray[$j] . ">" .
-                            "</a>";
+                                "</a>";
+                        }
                     }
                 }
+                break;
             }
-            break;
         }
     }
 }

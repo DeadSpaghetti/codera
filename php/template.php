@@ -43,51 +43,57 @@ include('helper/getGeneralSettingsFromJSON.php');
 			//check if user is allowed to see this
 			global $forbiddenProjects;
 			include "helper/getForbiddenProjects.php";
-			for($i=0; $i < sizeof($forbiddenProjects); $i++)
+			if($forbiddenProjects != null)
 			{
-				if($forbiddenProjects[$i] == $UUID)
+				for ($i = 0; $i < sizeof($forbiddenProjects); $i++)
 				{
-					header('HTTP/ 403 Forbidden');
-					echo '<h1>FORBIDDEN</h1>';
-					exit;
+					if ($forbiddenProjects[$i] == $UUID)
+					{
+						header('HTTP/ 403 Forbidden');
+						echo '<h1 style="text-align: center">FORBIDDEN 403</h1>';
+						exit;
+					}
 				}
 			}
 
 			global $projectArray;
 			include "helper/getProjectsFromJSON.php";
-			for($i=0; $i < sizeof($projectArray); $i++)
+			if($projectArray != null)
 			{
-				if($projectArray[$i]->{'UUID'} == $UUID)
+				for ($i = 0; $i < sizeof($projectArray); $i++)
 				{
-					$currentProject = $projectArray[$i];
-					break;
+					if ($projectArray[$i]->{'UUID'} == $UUID)
+					{
+						$currentProject = $projectArray[$i];
+						break;
+					}
 				}
-			}
 
-			if(isset($currentProject))
-			{
-				$url = $currentProject->{'url'};
-				if(isset($url) && $url != "" && $url != null)
+				if (isset($currentProject))
 				{
-					header("Location: " . $url);
-					exit;
+					$url = $currentProject->{'url'};
+					if (isset($url) && $url != "" && $url != null)
+					{
+						header("Location: " . $url);
+						exit;
+					}
+					else
+					{
+						$projectName = $currentProject->{'name'};
+						$icon = $currentProject->{'icon'};
+						$latestChanges = $currentProject->{'latestChanges'};
+						$versionCode = $currentProject->{'versionCode'};
+						$versionName = $currentProject->{'versionName'};
+						$date = $currentProject->{'date'};
+						$requirements = $currentProject->{'requirements'};
+						$description = $currentProject->{'description'};
+						$license = $currentProject->{'license'};
+					}
 				}
 				else
 				{
-					$projectName = $currentProject->{'name'};
-					$icon = $currentProject->{'icon'};
-					$latestChanges = $currentProject->{'latestChanges'};
-					$versionCode = $currentProject->{'versionCode'};
-					$versionName = $currentProject->{'versionName'};
-					$date = $currentProject->{'date'};
-					$requirements = $currentProject->{'requirements'};
-					$description = $currentProject->{'description'};
-					$license = $currentProject->{'license'};
+					exit;
 				}
-			}
-			else
-			{
-				exit;
 			}
 			?>
 			<div id="content">	

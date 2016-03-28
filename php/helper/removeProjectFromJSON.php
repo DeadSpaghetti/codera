@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $UUID = $_POST['UUID'];
     global $projectArray;
     include "getProjectsFromJSON.php";
-
+    
     if($projectArray != null && $UUID != null)
     {
         for($i=0; $i < sizeof($projectArray); $i++)

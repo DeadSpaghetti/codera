@@ -75,7 +75,7 @@ include('../helper/paths.php');
 global $userArray;
 include "../helper/getUsersFromJSON.php";
 
-if($userArray != NULL)
+if($userArray != null)
 {
 	for($i=0; $i < sizeof($userArray); $i++)
 	{

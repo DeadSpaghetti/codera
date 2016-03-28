@@ -24,13 +24,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 	global $userArray;
 	include "../helper/getUsersFromJSON.php";
 
-	for($i=0; $i < sizeof($userArray); $i++)
+	if($userArray != null)
 	{
-		if($userArray[$i]->{'username'} == $username)
+		for ($i = 0; $i < sizeof($userArray); $i++)
 		{
-			$accountType = $userArray[$i]->{'accountType'};
-			$forbiddenProjects = json_decode($userArray[$i]->{'forbiddenProjects'});
-		
+			if ($userArray[$i]->{'username'} == $username)
+			{
+				$accountType = $userArray[$i]->{'accountType'};
+				$forbiddenProjects = json_decode($userArray[$i]->{'forbiddenProjects'});
+
+			}
 		}
 	}
 }
