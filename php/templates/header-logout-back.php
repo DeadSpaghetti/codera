@@ -1,4 +1,5 @@
 <?php
+global $developerName;
 include(realpath(dirname(__FILE__) . '/../helper/paths.php'));
 include($path_helper_getGeneralSettings);
 ?>
@@ -10,6 +11,12 @@ include($path_helper_getGeneralSettings);
 	<div class="login" id="back-link">
 		<a href="<?php echo $path_index;?>"> <i class="material-icons">home</i> <span class="login-text">Home</span></a>
 	</div>
+	<?php
+	echo '<div class="login">' .
+		'<a href="'. $path_account .'" id="account-link"> <i class="material-icons">account_circle</i> <span class="login-text">Account</span></a>' .
+		'</div>';
+	?>
+
 	<div style="clear: both;"></div>					
 </div>
 <div id="name" style="background-color: <?php echo $colorScheme;?>;">

@@ -15,12 +15,11 @@ include($path_helper_getGeneralSettings);
 			'<a href="'. $path_admin .'" id="settings-link"> <i class="material-icons">settings</i> <span class="login-text">Settings</span></a>' .
 			'</div>';
 	}
-	else
-	{
+
 		echo '<div class="login">' .
 			'<a href="'. $path_account .'" id="account-link"> <i class="material-icons">account_circle</i> <span class="login-text">Account</span></a>' .
 			'</div>';
-	}
+
 	?>
 	<div style="clear: both;"></div>
 
