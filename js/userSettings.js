@@ -44,4 +44,9 @@ $(document).ready(function()
                 });
 
     });
+	
+	$('#userSettings-button-discard').click(function()
+    {		
+        window.document.location.href = "../restricted/admin.php";       
+    });
 });

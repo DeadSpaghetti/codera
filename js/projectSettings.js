@@ -133,4 +133,9 @@ $(document).ready(function()
 			toggleProject();           
 		}
     });
+	
+	$('#button-discard').click(function()
+    {		
+        window.document.location.href = "../restricted/admin.php";       
+    });
 });
