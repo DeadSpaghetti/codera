@@ -20,7 +20,7 @@ $(document).ready(function()
             username = $('#new-user').text().trim();
 
             var password = $('#userSettings-input-userPassword').val();
-            var confirmPassword = $('#userSettings-input-userPassword_confirm');
+            var confirmPassword = $('#userSettings-input-userPassword_confirm').val();
         if(password == confirmPassword && password != null && password != undefined && password != "")
         {
             var forbiddenProjects = getForbiddenProjects();
@@ -46,6 +46,10 @@ $(document).ready(function()
                 {
                     location.href = "admin.php";
                 });
+        }
+        else
+        {
+            alert("Check your password!");
         }
     });
 	
