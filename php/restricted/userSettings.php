@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?php echo $developerName;?> on Codera</title>
+		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="../../js/libs/chosen/chosen.min.css" rel="stylesheet" type="text/css">
@@ -74,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 				<table id="infos-small">
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">							
-							<div id="new-user"><?php echo $username?>
+							<div id="new-user"><?php echo $username;?>
 							</div>
 							<div class="line line-no-space"></div>
 						</td>	
@@ -95,10 +95,10 @@ USERNAME;
 						if ($_SERVER['REQUEST_METHOD'] == "POST")
 							echo $username;
 
-						echo <<<'REST_USERNAME'
+						echo <<<'USERNAME'
 " placeholder="User"/></td>
 					</tr>
-REST_USERNAME;
+USERNAME;
 					}
 					?>
 
@@ -118,6 +118,20 @@ REST_USERNAME;
 					</tr>
 					
 PASSWORD;
+					echo <<<'PASSWORD_CONFIRM'
+<tr class="infos-row">
+						<td class="infos-left">
+							<div class="icon">
+								<i class="material-icons">lock</i> <span class="icon-text">Confirm Password:</span>
+							</div>
+						</td>										
+						<td class="infos-right">
+							<input class="input project" id="userSettings-input-userPassword_confirm" type="password" placeholder="*******"/>
+						</td>
+					</tr>
+					
+PASSWORD_CONFIRM;
+					
 
 
 					if($username != "admin" && $username != "public")
@@ -147,7 +161,7 @@ ISADMINREST;
 										<span>Yes</span>
 										<a style="background-color: 
 SWITCH;
-						echo $colorScheme;
+						if(isset($colorScheme)) echo $colorScheme;
 						echo <<<'REST'
 	"></a>
 									</span>

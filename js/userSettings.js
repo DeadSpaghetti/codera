@@ -20,6 +20,9 @@ $(document).ready(function()
             username = $('#new-user').text().trim();
 
             var password = $('#userSettings-input-userPassword').val();
+            var confirmPassword = $('#userSettings-input-userPassword_confirm');
+        if(password == confirmPassword && password != null && password != undefined && password != "")
+        {
             var forbiddenProjects = getForbiddenProjects();
             var accountType = $('#toggle-user-is-admin').is(':checked');
 
@@ -38,11 +41,12 @@ $(document).ready(function()
                     "password": password,
                     "forbiddenProjects": JSON.stringify(forbiddenProjects),
                     "accountType": accountType
-                }, function (data, error)
+                },
+                function (data, error)
                 {
-                   location.href = "admin.php";				  
+                    location.href = "admin.php";
                 });
-
+        }
     });
 	
 	$('#userSettings-button-discard').click(function()
