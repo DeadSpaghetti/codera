@@ -40,7 +40,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 			<div id="content">	
 				<div id="login-white">
 					<div id="login-container">
-						<div id="login-title">Admin Login</div>
+						<div id="login-title">Login</div>
 						<input class="input" id="input-username" type="text" maxlength="128" placeholder="Username"/>
 						<input class="input" id="input-password" type="password" placeholder="Password"/>		
 						<table id="login-table">

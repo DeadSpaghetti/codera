@@ -28,4 +28,8 @@ $path_admin = str_replace('\\', '/', $path_admin);
 $path_footer_github_icon = realpath(dirname(__FILE__) . '/../../images/icons/GitHub-icon.png');
 $path_footer_github_icon = substr($path_footer_github_icon,strlen($_SERVER['DOCUMENT_ROOT'])); 
 $path_footer_github_icon = str_replace('\\', '/', $path_footer_github_icon);
+
+$path_account = realpath(dirname(__FILE__) . '/../restricted/account.php');
+$path_account = substr($path_account,strlen($_SERVER['DOCUMENT_ROOT'])); 
+$path_account = str_replace('\\', '/', $path_account);
 ?>
