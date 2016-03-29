@@ -5,7 +5,6 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
-require '../helper/checkLogin.php';
 if(!isset($_SESSION['loggedIn']))
 {
     header('Location: ../login.php');
@@ -18,7 +17,7 @@ include('../helper/paths.php');
 ?>
 <html>
 	<head>
-		<title><?php echo $developerName;?> on Codera</title>
+		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
@@ -46,12 +45,12 @@ include('../helper/paths.php');
 					<table id="infos-small">
 						<tr class="infos-row">
 							<td colspan="2" class="infos-center">							
-								<div id="new-user"><?php echo $username?>
+								<div id="new-user"><?php echo $username;?>
 								</div>
 								<div class="line line-no-space"></div>
 							</td>	
 						</tr>					
-						<?php			
+						<?php
 
 						echo <<<'NEW_PASSWORD'
 							<tr class="infos-row">
@@ -65,6 +64,18 @@ include('../helper/paths.php');
 								</td>
 							</tr>					
 NEW_PASSWORD;
+						echo <<<'CONFIRM_PASSWORD'
+							<tr class="infos-row">
+								<td class="infos-left">
+									<div class="icon">
+										<i class="material-icons">lock</i> <span class="icon-text">Confirm Password:</span>
+									</div>
+								</td>										
+								<td class="infos-right">
+									<input class="input project" id="account-input-new-password_repeat" type="password" placeholder="*******"/>
+								</td>
+							</tr>					
+CONFIRM_PASSWORD;
 				
 						?>					
 						<tr class="infos-row">															

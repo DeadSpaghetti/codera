@@ -2,7 +2,6 @@
 <?php
 if(!isset($_SESSION['loggedIn']))
 	session_start();
-require '../helper/checkLogin.php';
 include_once "../helper/functions.php";
 if(!isUserAdmin($_SESSION['loggedIn']))
 {
