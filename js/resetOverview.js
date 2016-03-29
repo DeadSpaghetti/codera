@@ -36,6 +36,6 @@ function reset(type)
             "resetType": type
         },function (data,error)
         {
-            location.reload();
+			window.document.location.href = "../logout.php"; 
         });
 }
