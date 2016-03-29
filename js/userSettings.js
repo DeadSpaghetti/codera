@@ -40,7 +40,7 @@ $(document).ready(function()
                     "accountType": accountType
                 }, function (data, error)
                 {
-                    location.href = "admin.php";
+                   location.href = "admin.php";				  
                 });
 
     });

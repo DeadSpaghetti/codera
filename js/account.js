@@ -21,7 +21,7 @@ $(document).ready(function()
                     "accountType": accountType
                 }, function (data, error)
                 {
-					location.href = "../logoutAndRedirectToLogin.php";					
+					location.href = "../logoutAndRedirectToLogin.php";						
                 });
 		}
     });

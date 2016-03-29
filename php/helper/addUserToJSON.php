@@ -23,13 +23,12 @@ for($i=0; $i < sizeof($userArray); $i++)
 {
 	if($userArray[$i]->{'username'} == $username)
 	{
-		$userAlreadyExists = true;
-		$forbiddenProjects = $userArray[$i]->{'forbiddenProjects'};
+		$userAlreadyExists = true;			
 		break;
 	}
 }
 
-function addUser ()
+function addUser ($type)
 {
 	global $pathString;
 	global $username;
@@ -38,6 +37,19 @@ function addUser ()
 	global $accountType;	
 	global $userAlreadyExists;
 	$salt = '$5$g3t#~34uö@$';	
+	
+	if($type == "copyForbiddenProjects")
+	{
+		global $userArray;	
+		for($i=0; $i < sizeof($userArray); $i++)
+		{
+			if($userArray[$i]->{'username'} == $username)
+			{			
+				$forbiddenProjects = $userArray[$i]->{'forbiddenProjects'};
+				break;
+			}
+		}
+	}
 
 	if($userAlreadyExists)
 	{
@@ -114,9 +126,9 @@ function addUser ()
    
 if(isUserAdmin($_SESSION['loggedIn']))
 {
-	addUser();
+	addUser("overwriteForbiddenProjects");
 }
 else if($userAlreadyExists && $_SESSION['loggedIn'] == $username)
 {
-	addUser();
+	addUser("copyForbiddenProjects");
 }

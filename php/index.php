@@ -133,7 +133,13 @@ include($path_helper_getGeneralSettings);
 
 							}
 						}
-					}
+						else
+						{
+							echo '<td class="entry large placeholder">' .	
+								'<div class="icon-name">' . "No Projects Available" . '</div>' .							
+								'</td>';
+						}
+					}					
 					?>						
 				</table>		
 			</div>			
