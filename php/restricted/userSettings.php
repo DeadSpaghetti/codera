@@ -113,7 +113,7 @@ REST_USERNAME;
 							</div>
 						</td>										
 						<td class="infos-right">
-							<input class="input project" id="userSettings-input-userPassword" type="password" maxlength="30" placeholder="*******"/>
+							<input class="input project" id="userSettings-input-userPassword" type="password" placeholder="*******"/>
 						</td>
 					</tr>
 					
