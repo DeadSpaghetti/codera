@@ -12,30 +12,41 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	$username = $_POST['username'];
 	$postPassword = $_POST['password'];
 	$forbiddenProjects = $_POST['forbiddenProjects'];   //as json --> encoded by javascript
-	$accountType = $_POST['accountType'];	
-}
+	$accountType = $_POST['accountType'];
 
-$userAlreadyExists = false;
-	
-global $userArray;
-include "getUsersFromJSON.php";
-for($i=0; $i < sizeof($userArray); $i++)
-{
-	if($userArray[$i]->{'username'} == $username)
+
+	$userAlreadyExists = false;
+
+	global $userArray;
+	include "getUsersFromJSON.php";
+	if($userArray != null)
 	{
-		$userAlreadyExists = true;			
-		break;
+		for ($i = 0; $i < sizeof($userArray); $i++)
+		{
+			if ($userArray[$i]->{'username'} == $username)
+			{
+				$userAlreadyExists = true;
+				break;
+			}
+		}
+	}
+
+	if(isUserAdmin($_SESSION['loggedIn']))
+	{
+		addUser("overwriteForbiddenProjects",$pathString,$username,$postPassword,
+			$forbiddenProjects,$accountType,$userAlreadyExists);
+	}
+	else if($userAlreadyExists && $_SESSION['loggedIn'] == $username)
+	{
+		addUser("copyForbiddenProjects",$pathString,$username,$postPassword,
+			$forbiddenProjects,$accountType,$userAlreadyExists);
 	}
 }
 
-function addUser ($type)
+
+function addUser ($type,$pathString,$username,$postPassword,
+				  $forbiddenProjects,$accountType,$userAlreadyExists)
 {
-	global $pathString;
-	global $username;
-	global $postPassword;
-	global $forbiddenProjects;
-	global $accountType;	
-	global $userAlreadyExists;
 	$salt = '$5$g3t#~34uö@$';	
 	
 	if($type == "copyForbiddenProjects")
@@ -123,12 +134,3 @@ function addUser ($type)
 	include "sort.php";
 }
 
-   
-if(isUserAdmin($_SESSION['loggedIn']))
-{
-	addUser("overwriteForbiddenProjects");
-}
-else if($userAlreadyExists && $_SESSION['loggedIn'] == $username)
-{
-	addUser("copyForbiddenProjects");
-}
