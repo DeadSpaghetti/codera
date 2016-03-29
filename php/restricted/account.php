@@ -10,9 +10,10 @@ if(!isset($_SESSION['loggedIn']))
     header('Location: ../login.php');
     exit;	
 }
+global $developerName;
+include "../helper/getGeneralSettingsFromJSON.php";
 
 $username =  $_SESSION['loggedIn'];
-
 include('../helper/paths.php');
 ?>
 <html>
