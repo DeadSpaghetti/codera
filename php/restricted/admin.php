@@ -30,7 +30,6 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<script src="../../js/admin.js"></script>
 		<script src="../../js/helper/colorConverter.js"></script>
 		<script src="../../js/generalSettings.js"></script>
-        <script src="../../js/changeLogin.js"></script>
 		<script src="../../js/projectOverview.js"></script>
 		<script src="../../js/userOverview.js"></script>
 		<script src="../../js/resetOverview.js"></script>
@@ -42,8 +41,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 				<div class="tabs">
 					<ul class="tab-links">						
 						<li id="tabGeneralSettings-list-element" class="active"><a href="#tabGeneralSettings" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">General Settings</a></li>
-						<li id="tabProjectOverview-list-element"><a href="#tabProjectOverview" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Projects</a></li>
-						<li id="tabChangeLogin-list-element"><a href="#tabChangeLogin" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Change Login</a></li>
+						<li id="tabProjectOverview-list-element"><a href="#tabProjectOverview" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Projects</a></li>					
 						<li id="tabMedia-list-element"><a href="#tabMedia" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Media</a></li>
 						<li id="tabUsers-list-element"><a href="#tabUsers" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Users</a></li>
 						<li id="tabReset-list-element"><a href="#tabReset" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Reset</a></li>
@@ -55,10 +53,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div>					 
 							<div id="tabProjectOverview" class="tab">
 								<?php include("projectOverview.php"); ?>
-							</div> 
-							<div id="tabChangeLogin" class="tab">
-								<?php include("changeLogin.php"); ?>	
-							</div>  
+							</div> 							
 							<div id="tabMedia" class="tab">
 								<?php include("mediaOverview.php"); ?>	
 							</div> 
