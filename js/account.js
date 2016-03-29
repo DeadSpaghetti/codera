@@ -6,16 +6,10 @@ $(document).ready(function()
 		var password = $('#account-input-new-password').val();
         var passwordRepeat = $('#account-input-new-password_repeat').val();
 
-        if(password == passwordRepeat && password != null && password != "")
+        if(password == passwordRepeat && password != null && password != "" && password != undefined)
         {
             var forbiddenProjects = [];
             var accountType = "user";
-
-            if (password == "" || password == undefined || password == null) {
-
-            }
-            else
-            {
                 $.post("../helper/addUserToJSON.php",
                     {
                         "username": username,
@@ -27,7 +21,6 @@ $(document).ready(function()
                     {
                         location.href = "../logoutAndRedirectToLogin.php";
                     });
-            }
         }
         else
         {
