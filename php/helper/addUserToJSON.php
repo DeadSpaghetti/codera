@@ -4,18 +4,40 @@ if(!isset($_SESSION))
     session_start();
 }
 
-function addUser ()
+include_once "functions.php";
+
+if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$pathString = "../../config/users.json";
 	$username = $_POST['username'];
 	$postPassword = $_POST['password'];
 	$forbiddenProjects = $_POST['forbiddenProjects'];   //as json --> encoded by javascript
-	$accountType = $_POST['accountType'];
+	$accountType = $_POST['accountType'];	
+}
 
-	$salt = '$5$g3t#~34uö@$';
-  
-
+$userAlreadyExists = false;
 	
+global $userArray;
+include "getUsersFromJSON.php";
+for($i=0; $i < sizeof($userArray); $i++)
+{
+	if($userArray[$i]->{'username'} == $username)
+	{
+		$userAlreadyExists = true;
+		$forbiddenProjects = $userArray[$i]->{'forbiddenProjects'};
+		break;
+	}
+}
+
+function addUser ()
+{
+	global $pathString;
+	global $username;
+	global $postPassword;
+	global $forbiddenProjects;
+	global $accountType;	
+	global $userAlreadyExists;
+	$salt = '$5$g3t#~34uö@$';	
 
 	if($userAlreadyExists)
 	{
@@ -89,30 +111,12 @@ function addUser ()
 	include "sort.php";
 }
 
-
-if($_SERVER['REQUEST_METHOD'] == 'POST')
+   
+if(isUserAdmin($_SESSION['loggedIn']))
 {
-	$userAlreadyExists = false;
-	$username = $_POST['username'];
-	
-	global $userArray;
-        include "getUsersFromJSON.php";
-        for($i=0; $i < sizeof($userArray); $i++)
-        {
-            if($userArray[$i]->{'username'} == $username)
-            {
-                $userAlreadyExists = true;
-                break;
-            }
-        }
-
-    include_once "functions.php";
-    if(isUserAdmin($_SESSION['loggedIn']))
-    {
-		addUser();
-    }
-	else if($userAlreadyExists && $_SESSION['loggedIn'] == $username)
-	{
-		addUser();
-	}
+	addUser();
+}
+else if($userAlreadyExists && $_SESSION['loggedIn'] == $username)
+{
+	addUser();
 }
