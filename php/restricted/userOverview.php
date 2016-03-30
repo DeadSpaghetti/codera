@@ -87,7 +87,7 @@ if($userArray != null)
 				'<td class="overview-left">'.
 					'<table>'.
 						'<tr>'.
-							'<td class="user-overview-icon" style="background-image: url('.$path_folder_icons.'/'.$icon.');"> '.
+							'<td class="user-overview-icon"> '.
 								'<div class="icon">'.
 									'<i class="material-icons">account_circle</i>'.
 								'</div>	'.
