@@ -1,10 +1,13 @@
 <?php
 if(!isset($username))
 {
-    $username = $_SESSION['loggedIn'];
-    if(!isset($username) || $username == null)
+    if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == null)
     {
         $username = "public";
+    }
+    else
+    {
+        $username = $_SESSION['loggedIn'];
     }
 
 }
