@@ -29,10 +29,10 @@ include('../helper/paths.php');
 				<tr>
 					<td class="user-overview-icon"> 
 						<div class="icon">
-							<i class="material-icons">security</i>
+							<i class="material-icons">star</i>
 						</div>				
 					</td>
-					<td class="overview-appname">Admin</td>
+					<td class="user-overview-appname">Admin</td>
 				</tr>
 			</table>
 		</td>
@@ -56,7 +56,7 @@ include('../helper/paths.php');
 							<i class="material-icons">public</i>
 						</div>				
 					</td>
-					<td class="overview-appname">Public</td>
+					<td class="user-overview-appname">Public</td>
 				</tr>
 			</table>
 		</td>
@@ -82,17 +82,50 @@ if($userArray != null)
 		$name = $userArray[$i]->{'username'};
 		if($name != "public" && $name != "admin")
 		{
-			echo
+			if(isUserAdmin($name))
+			{				
+				echo
+					'<tr id='; echo $userArray[$i]->{'UUID'}; echo ' class="overview-row">'.
+					'<td class="overview-left">'.
+						'<table>'.
+							'<tr>'.
+								'<td class="user-overview-icon"> '.
+									'<div class="icon">'.
+										'<i class="material-icons">security</i>'.
+									'</div>	'.
+								'</td>'.
+								'<td class="user-overview-appname">'.$name.'</td>'.
+							'</tr>'.
+						'</table>'.
+					'</td>'.
+					'<td class="overview-right">'.
+						'<a id="editUser_'.$name.'" class="button edit" name="userOverviewEdit" href="javascript:void(null)">'.
+							'<i class="material-icons">mode_edit</i>'.
+						'</a>'.
+						'<a id="deleteUser_'.$name.'" class="button edit" name="userOverviewDelete" href="javascript:void(null)">'.
+							'<i class="material-icons">delete</i>'.
+						'</a>'.
+					'</td>'.
+				'</tr>'.
+				'<tr class="overview-row">'.
+					'<td colspan="2">'.
+						'<div class="overview-line"> </div>'.
+					'</td>'.
+				'</tr>';
+			}
+			else
+			{
+				echo
 				'<tr id='; echo $userArray[$i]->{'UUID'}; echo ' class="overview-row">'.
 				'<td class="overview-left">'.
 					'<table>'.
 						'<tr>'.
 							'<td class="user-overview-icon"> '.
 								'<div class="icon">'.
-									'<i class="material-icons">account_circle</i>'.
+									'<i class="material-icons">person</i>'.
 								'</div>	'.
 							'</td>'.
-							'<td class="overview-appname">'.$name.'</td>'.
+							'<td class="user-overview-appname">'.$name.'</td>'.
 						'</tr>'.
 					'</table>'.
 				'</td>'.
@@ -110,6 +143,7 @@ if($userArray != null)
 					'<div class="overview-line"> </div>'.
 				'</td>'.
 			'</tr>';
+			}
 		}
 	}
 }
