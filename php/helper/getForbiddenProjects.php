@@ -1,6 +1,13 @@
 <?php
 if(!isset($username))
+{
     $username = $_SESSION['loggedIn'];
+    if(!isset($username) || $username == null)
+    {
+        $username = "public";
+    }
+
+}
 
     global $userArray;
     include "getUsersFromJSON.php";
