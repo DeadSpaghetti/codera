@@ -24,14 +24,20 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-tabs.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-colorChooser.css"/>
+		<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/elfinder.min.css">
+		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/theme.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>     
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>		
 		<script src="../../js/admin.js"></script>
 		<script src="../../js/helper/colorConverter.js"></script>
 		<script src="../../js/generalSettings.js"></script>
 		<script src="../../js/projectOverview.js"></script>
+		<script src="../../js/mediaOverview.js"></script>
 		<script src="../../js/userOverview.js"></script>
 		<script src="../../js/resetOverview.js"></script>
+		<script src="../../js/libs/elFinder/js/elfinder.min.js"></script>
 	</head>
 	<body>
 		<div id="main">						
@@ -54,7 +60,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 								<?php include("projectOverview.php"); ?>
 							</div> 							
 							<div id="tabMedia" class="tab">
-								<?php include("mediaOverview.php"); ?>	
+								<div id="elfinder"></div>
 							</div> 
 							<div id="tabUsers" class="tab">
 								<?php include("userOverview.php"); ?>	
