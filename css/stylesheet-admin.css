@@ -79,6 +79,10 @@ display: block;
 font-family: Roboto, Sans-Serif;
 }
 
+#input-about-text{
+width: 90%;
+}
+
 #input-password{
 margin-top: 2vmin;	
 }

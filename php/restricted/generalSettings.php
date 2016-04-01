@@ -19,7 +19,7 @@ global $sortOrder;
 include("../helper/getGeneralSettingsFromJSON.php");
 ?>
 
-<table id="infos-small">
+<table class="infos-small">
 	<tr class="infos-row">
 		<td class="infos-left">
 			<div class="icon">

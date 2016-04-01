@@ -37,7 +37,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<script src="../../js/mediaOverview.js"></script>
 		<script src="../../js/userOverview.js"></script>
 		<script src="../../js/resetOverview.js"></script>
-		<script src="../../js/libs/elFinder/js/elfinder.min.js"></script>
+		<script src="../../js/libs/elFinder/js/elfinder.min.js"></script>	
+		
 	</head>
 	<body>
 		<div id="main">						
@@ -49,6 +50,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 						<li id="tabProjectOverview-list-element"><a href="#tabProjectOverview" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Projects</a></li>					
 						<li id="tabMedia-list-element"><a href="#tabMedia" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Media</a></li>
 						<li id="tabUsers-list-element"><a href="#tabUsers" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Users</a></li>
+						<li id="tabAbout-list-element"><a href="#tabAbout" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Aboutpage</a></li>
 						<li id="tabReset-list-element"><a href="#tabReset" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Reset</a></li>
 					</ul>
 					<div style="clear: both;"> </div> 		
@@ -64,6 +66,9 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</div> 
 							<div id="tabUsers" class="tab">
 								<?php include("userOverview.php"); ?>	
+							</div> 
+							<div id="tabAbout" class="tab">
+								<?php include("aboutOverview.php"); ?>	
 							</div> 
 							<div id="tabReset" class="tab">
 								<?php include("resetOverview.php"); ?>	

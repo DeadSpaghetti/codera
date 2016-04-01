@@ -128,7 +128,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 			?>
 		<div id="content">	
 			<div id="white">
-				<table id="infos-small">
+				<table class="infos-small">
 					<tr class="infos-row">
 						<td colspan="2" class="infos-center">							
 							<div id="new-project"><?php if(isset($projectName)) echo $projectName?>

@@ -32,4 +32,8 @@ $path_footer_github_icon = str_replace('\\', '/', $path_footer_github_icon);
 $path_account = realpath(dirname(__FILE__) . '/../restricted/account.php');
 $path_account = substr($path_account,strlen($_SERVER['DOCUMENT_ROOT'])); 
 $path_account = str_replace('\\', '/', $path_account);
+
+$path_about = realpath(dirname(__FILE__) . '/../about.php');
+$path_about = substr($path_about,strlen($_SERVER['DOCUMENT_ROOT'])); 
+$path_about = str_replace('\\', '/', $path_about);
 ?>

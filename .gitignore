@@ -26,3 +26,13 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+#elFinder tempfiles
+/images/icons/.quarantine
+/images/icons/.tmb
+/images/screenshots/.quarantine
+/images/screenshots/.tmb
+/executables/.quarantine
+/executables/.tmb
+/licenses/.quarantine
+/licenses/.tmb
