@@ -287,9 +287,18 @@ vertical-align: middle;
 }
 
 .hidden{
-visibility: hidden;
-width: 0;
-height: 0;
+display: none;
+}
+
+.chosen-container {
+font-size: 2.2vmin !important;
+line-height: 4vmin !important;
+height: 4vmin !important;
+}
+
+.chosen-container-single .chosen-single{
+line-height: 4vmin !important;
+height: 4vmin !important;
 }
 
 .lb-outerContainer{

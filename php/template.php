@@ -23,8 +23,6 @@ include('helper/getGeneralSettingsFromJSON.php');
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="../js/libs/chosen/chosen.jquery.min.js"></script>
         <script src="../js/template.js"></script>
-
-
     </head>
 	<body>
 		<div id="main">
@@ -164,7 +162,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 								</div>
 							</td>										
 							<td class="infos-right">	
-								<table>
+								<table id="template-download">
 									<tr>
 										<td>
 											<select id="template-fileSelector" class="chosen-select">
@@ -175,7 +173,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 												?>
 											</select>
 										</td>
-										<td>										
+										<td id="template-download-right">										
 											<a class="button download" id="button-download" href="javascript:void(null)">									
 												<i class="material-icons">file_download</i> <span class="button-text">Download</span> 									
 											</a>
@@ -208,14 +206,13 @@ include('helper/getGeneralSettingsFromJSON.php');
 							<td class="infos-right">
 								<?php echo $license?>
 							</td>
-						</tr>
-						
+						</tr>						
 					</table>		
 				</div>		
 			</div>
-		</div>
-        <div id="templateUUID" class="hidden"><?php echo $UUID?></div>
-		<?php include("templates/footer.php"); ?>
-        <script src="../js/libs/lightbox2/dist/js/lightbox.min.js"></script>
+			 <div id="templateUUID" class="hidden"><?php echo $UUID?></div>
+			<script src="../js/libs/lightbox2/dist/js/lightbox.min.js"></script>
+		</div>      
+		<?php include("templates/footer.php"); ?>        
 	</body>
 </html>

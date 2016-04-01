@@ -67,6 +67,8 @@ font-size: 3.1vmin;
 
 .button.download{
 width: 14vmin;
+margin-right: 0;
+margin-left: 3vmin;
 }
 
 .button.reset{
