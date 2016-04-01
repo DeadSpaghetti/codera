@@ -85,7 +85,7 @@ if($userArray != null)
 			if(isUserAdmin($name))
 			{				
 				echo
-					'<tr id='; echo $userArray[$i]->{'UUID'}; echo ' class="overview-row">'.
+					'<tr class="overview-row">'.
 					'<td class="overview-left">'.
 						'<table>'.
 							'<tr>'.
@@ -116,7 +116,7 @@ if($userArray != null)
 			else
 			{
 				echo
-				'<tr id='; echo $userArray[$i]->{'UUID'}; echo ' class="overview-row">'.
+				'<tr class="overview-row">'.
 				'<td class="overview-left">'.
 					'<table>'.
 						'<tr>'.
