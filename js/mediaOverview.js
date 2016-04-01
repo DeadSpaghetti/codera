@@ -41,7 +41,20 @@ $(document).ready(function() {
 				// display parent directory in listing as ".."
 				oldSchool : false
 			}
-		}
+		},
+		contextmenu : {
+			// navbarfolder menu
+			navbar : ['open', '|', 'copy', 'cut', 'paste', 'duplicate', '|', 'rm', '|', 'info'],
+
+			// current directory menu
+			cwd    : ['reload', 'back', '|', 'upload', 'paste', '|', 'info'],
+
+			// current directory file menu
+			files  : [
+				'getfile', '|','open', 'quicklook', '|', 'download', '|', 'copy', 'cut', 'paste', 'duplicate', '|',
+				'rm', '|', 'edit', 'rename', 'resize', '|', 'archive', 'extract', '|', 'info'
+			]
+		},
 		// , lang: 'de'                    // language (OPTIONAL)
 	});
 });
