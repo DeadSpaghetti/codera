@@ -34,7 +34,6 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 				<?php
 				$directory = "../../images/icons/";
 				$object = 'icon';
-				$exclude = "";
 				include "../helper/printAllFilesFromDirectoryAsOption.php"
 				?>
 			</select>
