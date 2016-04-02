@@ -101,9 +101,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
         //push new reg id into array
         $fileToSave = json_encode($array);
-        $file = fopen($pathString, "w");
+        file_put_contents($pathString,$fileToSave);
+        /*$file = fopen($pathString, "w");
         fwrite($file, $fileToSave);
-        fclose($file);
+        fclose($file);*/
 
         global $sortOrder;
         $sortType = "projects";
@@ -111,7 +112,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         include "sort.php";
 
 
-    } catch (Exception $e)
+    }
+    catch (Exception $e)
     {
         var_dump($e);   //TODO remove this from production code sometime
     }

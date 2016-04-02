@@ -2,7 +2,7 @@
 if(!isset($_SESSION))
 {
 	session_start();
-} 
+}
 define('USER_FILE_PATH','../../config/users.json');
 
 

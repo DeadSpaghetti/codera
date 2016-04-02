@@ -11,7 +11,6 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 }
 ?>
 
-
 <table class="infos-small">
 	<tr class="infos-row">
 		<td class="infos-left-small">

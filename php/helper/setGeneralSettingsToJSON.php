@@ -3,7 +3,6 @@ if(!isset($_SESSION))
 {
     session_start();
 }
-
 include_once "../helper/functions.php";
 if(!isUserAdmin($_SESSION['loggedIn']))
 {

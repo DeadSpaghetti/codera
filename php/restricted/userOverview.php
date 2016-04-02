@@ -9,8 +9,6 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 	header('Location: ../login.php');
 	exit;
 }
-
-
 include('../helper/paths.php');
 
 ?>

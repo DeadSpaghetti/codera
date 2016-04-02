@@ -6,7 +6,6 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
     include "getProjectsFromJSON.php";
     if($projectArray != null)
     {
-
         for ($i = 0; $i < sizeof($projectArray); $i++)
         {
             if ($projectArray[$i]->{'UUID'} == $UUID)

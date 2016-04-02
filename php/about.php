@@ -25,11 +25,11 @@ include('helper/getGeneralSettingsFromJSON.php');
 			<?php 				
 				if(isset($_SESSION['loggedIn']))
 				{					
-					include($path_header_logout); 
+					include($path_header_logout);
 				}
 				else
 				{				
-					include($path_header); 
+					include($path_header);
 				}			
 			?>
 			<div id="content">	

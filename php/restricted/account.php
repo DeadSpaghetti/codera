@@ -11,6 +11,7 @@ if(!isset($_SESSION['loggedIn']))
     exit;	
 }
 global $developerName;
+global $colorScheme;
 include "../helper/getGeneralSettingsFromJSON.php";
 
 $username =  $_SESSION['loggedIn'];

@@ -46,7 +46,7 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<input class="input project" id="input-date" value="<?php echo $date;?>" type="date"/>
+		<input class="input project" id="input-date" value="<?php if(isset($date)) echo $date;?>" type="date"/>
 	</td>
 </tr>
 <tr class="infos-row row-settingsNormal">
@@ -56,7 +56,7 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<textarea id="input-changes" rows="10"><?php echo $latestChanges;?></textarea>
+		<textarea id="input-changes" rows="10"><?php if(isset($latestChanges)) echo $latestChanges;?></textarea>
 	</td>
 </tr>
 <tr class="infos-row row-settingsNormal">

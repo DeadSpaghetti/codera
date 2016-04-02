@@ -10,8 +10,6 @@ if(!isUserAdmin($_SESSION['loggedIn']))
     exit;
 }
 
-
-
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 

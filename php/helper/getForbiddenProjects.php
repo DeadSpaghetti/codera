@@ -11,7 +11,6 @@ if(!isset($username))
     }
 
 }
-
     global $userArray;
     include "getUsersFromJSON.php";
     for ($i = 0; $i < sizeof($userArray); $i++)

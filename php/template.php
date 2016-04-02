@@ -3,7 +3,8 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
-
+global $developerName;
+global $colorScheme;
 include('helper/paths.php');
 include('helper/getGeneralSettingsFromJSON.php');	
 ?>

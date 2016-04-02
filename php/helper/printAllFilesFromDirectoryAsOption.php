@@ -11,13 +11,8 @@ if(isset($directory) && $directory != null)
         //loops through files in directory
         for ($i = 0; $i < sizeof($files); $i++)
         {
-            if(substr($files[$i],0,1) != ".")
+            if(substr($files[$i],0,1) != ".")   //removes temp files from fileExplorer
             {
-                /*for($j=0; $j < sizeof($exclude); $j++)
-                {
-                    if($files[$i] == $exclude[$j])
-                        echo "<option id=" . $directory . $files[$j] . " selected>$files[$j]</option>";
-                }*/
                 //if file is already selected by the user print it with the selected option
                 if (in_array($files[$i], $exclude))
                     echo "<option id=" . $directory . $files[$i] . " selected>$files[$i]</option>";

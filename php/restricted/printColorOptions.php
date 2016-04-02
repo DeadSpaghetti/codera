@@ -16,7 +16,6 @@ $generalSettingsFilename = "../../config/generalSettings.json";
 if(file_exists($generalSettingsFilename))
 {
     $selectedColor = json_decode(file_get_contents($generalSettingsFilename))->{'colorScheme'};
-
 }
 else
 {

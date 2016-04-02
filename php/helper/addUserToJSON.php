@@ -13,8 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	$postPassword = $_POST['password'];
 	$forbiddenProjects = $_POST['forbiddenProjects'];   //as json --> encoded by javascript
 	$accountType = $_POST['accountType'];
-
-
+	
 	$userAlreadyExists = false;
 
 	global $userArray;
