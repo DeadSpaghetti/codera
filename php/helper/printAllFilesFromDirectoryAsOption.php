@@ -11,16 +11,19 @@ if(isset($directory) && $directory != null)
         //loops through files in directory
         for ($i = 0; $i < sizeof($files); $i++)
         {
-            /*for($j=0; $j < sizeof($exclude); $j++)
+            if(substr($files[$i],0,1) != ".")
             {
-                if($files[$i] == $exclude[$j])
-                    echo "<option id=" . $directory . $files[$j] . " selected>$files[$j]</option>";
-            }*/
-            //if file is already selected by the user print it with the selected option
-            if(in_array($files[$i],$exclude))
-                echo "<option id=" . $directory . $files[$i] . " selected>$files[$i]</option>";
-            else            //otherwise print it normally
-                echo "<option id=" . $directory . $files[$i] . ">$files[$i]</option>";
+                /*for($j=0; $j < sizeof($exclude); $j++)
+                {
+                    if($files[$i] == $exclude[$j])
+                        echo "<option id=" . $directory . $files[$j] . " selected>$files[$j]</option>";
+                }*/
+                //if file is already selected by the user print it with the selected option
+                if (in_array($files[$i], $exclude))
+                    echo "<option id=" . $directory . $files[$i] . " selected>$files[$i]</option>";
+                else            //otherwise print it normally
+                    echo "<option id=" . $directory . $files[$i] . ">$files[$i]</option>";
+            }
         }
 
     }
@@ -28,13 +31,15 @@ if(isset($directory) && $directory != null)
     {
         for ($i = 0; $i < sizeof($files); $i++)
         {
-            if (isset($exclude) && $exclude == $files[$i])  //exclude is a single file
+            if(substr($files[$i],0,1) != ".")
             {
-                echo "<option id=" . $directory . $files[$i] . " selected>$files[$i]</option>";
-            }
-            else
-            {
-                echo "<option id=" . $directory . $files[$i] . ">$files[$i]</option>";
+                if (isset($exclude) && $exclude == $files[$i])  //exclude is a single file
+                {
+                    echo "<option id=" . $directory . $files[$i] . " selected>$files[$i]</option>";
+                } else
+                {
+                    echo "<option id=" . $directory . $files[$i] . ">$files[$i]</option>";
+                }
             }
         }
     }
