@@ -4,18 +4,17 @@ $(document).ready(function()
     {
         var username = $('#new-user').text().trim();
 		var password = $('#account-input-new-password').val();
+        var oldPassword = $('#account-input-old-password').val();
         var passwordRepeat = $('#account-input-new-password_repeat').val();
 
         if(password == passwordRepeat && password != null && password != "" && password != undefined)
         {
-            var forbiddenProjects = [];
-            var accountType = "user";
                 $.post("../helper/addUserToJSON.php",
                     {
                         "username": username,
+                        "oldPassword": oldPassword,
                         "password": password,
-                        "forbiddenProjects": JSON.stringify(forbiddenProjects),
-                        "accountType": accountType
+                        "source": "account"
                     },
                     function (data, error)
                     {

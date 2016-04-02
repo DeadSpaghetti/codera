@@ -8,47 +8,49 @@ include_once "functions.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
+	$salt = '$5$g3t#~34uö@$';
 	$pathString = "../../config/users.json";
 	$username = $_POST['username'];
 	$postPassword = $_POST['password'];
 	$forbiddenProjects = $_POST['forbiddenProjects'];   //as json --> encoded by javascript
 	$accountType = $_POST['accountType'];
-	
-	$userAlreadyExists = false;
+	$oldPassword = $_POST['oldPassword'];
+	$source = $_POST['source'];
 
-	global $userArray;
-	include "getUsersFromJSON.php";
-	if($userArray != null)
+	$userAlreadyExists = doesUserExist($username);
+
+	//admin is allowed to change every password --> no check needed
+	if(isUserAdmin($_SESSION['loggedIn']))
 	{
-		for ($i = 0; $i < sizeof($userArray); $i++)
+		if($source == "account")
 		{
-			if ($userArray[$i]->{'username'} == $username)
-			{
-				$userAlreadyExists = true;
-				break;
-			}
+			addUser("copyProperties",$pathString,$username,$postPassword,
+				null,null,$userAlreadyExists, $salt);
+		}
+		else
+		{
+			addUser("", $pathString, $username, $postPassword,
+				$forbiddenProjects, $accountType, $userAlreadyExists, $salt);
+		}
+	}
+	else
+	{
+		if(crypt($oldPassword,$salt) == getPassword($username))
+		{
+			addUser("copyProperties",$pathString,$username,$postPassword,
+				null,null,$userAlreadyExists, $salt);
 		}
 	}
 
-	if(isUserAdmin($_SESSION['loggedIn']))
-	{
-		addUser("overwriteForbiddenProjects",$pathString,$username,$postPassword,
-			$forbiddenProjects,$accountType,$userAlreadyExists);
-	}
-	else if($userAlreadyExists && $_SESSION['loggedIn'] == $username)
-	{
-		addUser("copyForbiddenProjects",$pathString,$username,$postPassword,
-			$forbiddenProjects,$accountType,$userAlreadyExists);
-	}
 }
 
 
 function addUser ($type,$pathString,$username,$postPassword,
-				  $forbiddenProjects,$accountType,$userAlreadyExists)
+				  $forbiddenProjects,$accountType,$userAlreadyExists,$salt)
 {
-	$salt = '$5$g3t#~34uö@$';	
+
 	
-	if($type == "copyForbiddenProjects")
+	if($type == "copyProperties")
 	{
 		global $userArray;	
 		for($i=0; $i < sizeof($userArray); $i++)
@@ -56,6 +58,7 @@ function addUser ($type,$pathString,$username,$postPassword,
 			if($userArray[$i]->{'username'} == $username)
 			{			
 				$forbiddenProjects = $userArray[$i]->{'forbiddenProjects'};
+				$accountType = $userArray[$i]->{'accountType'};
 				break;
 			}
 		}
@@ -119,13 +122,12 @@ function addUser ($type,$pathString,$username,$postPassword,
 		}
 
 	}
-	//checks boolean value to see if file is there. If not generates it
+	//checks boolean value to see if file is there. If not creates new array
 	if ($fileIsThere)
 		array_push($array, $newUserArray);
 	else
 		$array[0] = $newUserArray;
 
-	//push new reg id into array
 	$fileToSave = json_encode($array);
 	file_put_contents($pathString, $fileToSave);
 

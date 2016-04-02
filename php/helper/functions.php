@@ -56,3 +56,42 @@ if(!function_exists("deleteUser"))
         return $password;
     }
 }
+
+if(!function_exists("doesUserExist"))
+{
+    function doesUserExist($username)
+    {
+        global $userArray;
+        include "getUsersFromJSON.php";
+        if($userArray != null)
+        {
+            for ($i = 0; $i < sizeof($userArray); $i++)
+            {
+                if ($userArray[$i]->{'username'} == $username)
+                {
+                    return true;
+                }
+            }
+        }
+
+    }
+}
+
+if(!function_exists("getPassword"))
+{
+    function getPassword($username)
+    {
+        global $userArray;
+        include "getUsersFromJSON.php";
+        if($userArray != null)
+        {
+            for ($i = 0; $i < sizeof($userArray); $i++)
+            {
+                if ($userArray[$i]->{'username'} == $username)
+                {
+                    return $userArray[$i]->{'password'};
+                }
+            }
+        }
+    }
+}

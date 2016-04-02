@@ -47,13 +47,28 @@ include('../helper/paths.php');
 					<table class="infos-small">
 						<tr class="infos-row">
 							<td colspan="2" class="infos-center">							
-								<div id="new-user"><?php echo $username;?>
+								<div id="new-user"><?php if(isset($username)) echo $username;?>
 								</div>
 								<div class="line line-no-space"></div>
 							</td>	
 						</tr>					
 						<?php
-
+						include_once "../helper/functions.php";
+						if(!isUserAdmin($username))
+						{
+							echo <<<'OLD_PASSWORD'
+							<tr class="infos-row">
+								<td class="infos-left">
+									<div class="icon">
+										<i class="material-icons">lock</i> <span class="icon-text">Old Password:</span>
+									</div>
+								</td>										
+								<td class="infos-right">
+									<input class="input project" id="account-input-old-password" type="password" placeholder="*******"/>
+								</td>
+							</tr>					
+OLD_PASSWORD;
+						}
 						echo <<<'NEW_PASSWORD'
 							<tr class="infos-row">
 								<td class="infos-left">
