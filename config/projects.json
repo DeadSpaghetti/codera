@@ -28,7 +28,7 @@
         "license": "APACHE-2.0.txt",
         "versionCode": "15",
         "projectStatus": "Final",
-		"url": "",
+        "url": "",
         "UUID": "FC3D0A58-D80D-5AA3-80CF-35BFC014C926"
     },
     {
@@ -92,7 +92,7 @@
         "license": "APACHE-2.0.txt",
         "versionCode": "",
         "projectStatus": "Alpha",
-		"url": "",
+        "url": "",
         "UUID": "030A1B71-C427-BC1B-B688-5BF176BD58FC"
     },
     {
@@ -108,7 +108,7 @@
         "license": "APACHE-2.0.txt",
         "versionCode": "7000",
         "projectStatus": "Beta",
-		"url": "",
+        "url": "",
         "UUID": "F454CABB-33A6-D067-5B69-A24A42B11005"
     },
     {
@@ -124,7 +124,7 @@
         "license": "APACHE-2.0.txt",
         "versionCode": "15",
         "projectStatus": "Beta",
-		"url": "",
+        "url": "",
         "UUID": "1B58FCBE-48CC-2A4E-D29A-FE5F7ACD7CD0"
     },
     {
@@ -140,7 +140,7 @@
         "license": "APACHE-2.0.txt",
         "versionCode": "15",
         "projectStatus": "Final",
-		"url": "",
+        "url": "",
         "UUID": "6972071D-8A65-FC59-DDDA-13B0476F25A5"
     }
 ]
