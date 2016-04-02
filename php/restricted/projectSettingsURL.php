@@ -1,4 +1,3 @@
-<table id="infos-small">
 <tr class="infos-row row-settingsURL">
 	<td class="infos-left">
 		<div class="icon">
@@ -9,4 +8,3 @@
 		<input class="input project" id="input-url" type="text" value="<?php if(isset($url)) echo $url;?>" placeholder="http://www.example.com/"/>
 	</td>
 </tr>
-</table>

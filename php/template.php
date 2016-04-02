@@ -105,7 +105,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 						</tr>
 					</table>
 					<div class="line"></div>			
-					<table id="infos">
+					<table class="infos">
 						<tr class="infos-row">
 							<td class="infos-left">
 								<div class="icon">

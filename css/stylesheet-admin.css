@@ -50,6 +50,7 @@ border: 0.2vmin solid #d9d9d9;
 box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
 padding: 1vmin;
 display: block;
+font-family: Roboto, Sans-Serif;
 }
 
 .project{
