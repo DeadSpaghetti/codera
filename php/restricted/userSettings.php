@@ -22,6 +22,12 @@ include('../helper/getGeneralSettingsFromJSON.php');
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
 	$username = $_POST['username'];
+	//if you try to edit the admin user, without being admin yourself the page is gonna just stop loading
+	if($username == "admin" && $_SESSION['loggedIn'] != "admin")
+	{
+		header("Location: admin.php");
+		exit;
+	}
 	global $userArray;
 	include "../helper/getUsersFromJSON.php";
 

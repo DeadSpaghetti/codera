@@ -1,4 +1,6 @@
 <?php
+global $developerName;
+global $colorScheme;
 include(realpath(dirname(__FILE__) . '/../helper/paths.php'));
 include($path_helper_getGeneralSettings);
 ?>

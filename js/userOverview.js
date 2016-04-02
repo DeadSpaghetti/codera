@@ -2,17 +2,19 @@ $(document).ready(function ()
 {
     $('a[name=userOverviewEdit]').click(function()
     {
+        var username = this.id.split("_")[1]; //editUser_username --> username
+        //var loggedInUsername = $('#usernameDiv').text();
         var form = document.createElement('form');
         form.method = "POST";
         form.action = "userSettings.php";
         var input = document.createElement('input');
         input.type = "text";
         input.name = "username";
-        input.value = this.id.split("_")[1];
-
+        input.value = username;
         form.appendChild(input);
         document.body.appendChild(form);
         form.submit();
+
     });
 
 

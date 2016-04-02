@@ -1,4 +1,6 @@
 <?php
+global $developerName;
+global $colorScheme;
 include('helper/getGeneralSettingsFromJSON.php');
 ?>
 

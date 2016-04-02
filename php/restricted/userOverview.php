@@ -36,11 +36,19 @@ include('../helper/paths.php');
 				</tr>
 			</table>
 		</td>
-		<td class="overview-right">	
+		<?php
+		//you can only see the edit admin pencil, if you're the "super_admin"
+		if($_SESSION['loggedIn'] == "admin")
+		{
+			echo <<<'EDIT_ADMIN'
+<td class="overview-right">	
 			<a class="button edit" id="editUser_admin" name="userOverviewEdit" href="javascript:void(null)">
 				<i class="material-icons">mode_edit</i>
 			</a>
 		</td>
+EDIT_ADMIN;
+		}
+		?>
 	</tr>
 	<tr class="overview-row">
 		<td colspan="2">
@@ -83,7 +91,7 @@ if($userArray != null)
 		if($name != "public" && $name != "admin")
 		{
 			if(isUserAdmin($name))
-			{				
+			{
 				echo
 					'<tr class="overview-row">'.
 					'<td class="overview-left">'.
@@ -147,5 +155,6 @@ if($userArray != null)
 		}
 	}
 }
+//echo '<div id="usernameDiv" class="hidden">'.$_SESSION['loggedIn'].'</div>';
 ?>
 </table>
