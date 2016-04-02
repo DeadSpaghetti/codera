@@ -16,6 +16,7 @@ $accountType = "user";
 $forbiddenProjects = array();
 
 global $developerName;
+global $colorScheme;
 include('../helper/getGeneralSettingsFromJSON.php');
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -192,22 +193,22 @@ PROJECT_ACCESS;
 					}
 					if($username != "admin")
 					{
-					global $projectArray;
-					include "../helper/getProjectsFromJSON.php";
-					for ($i = 0; $i < sizeof($projectArray); $i++)
-					{
-						$projectName = $projectArray[$i]->{'name'};
-						$UUID = $projectArray[$i]->{'UUID'};
-						echo '<tr class="infos-row">' .
-							'<td class="infos-left">' .
-							'<div class="user-project-name">' .
-							$projectName .
-							'</div>' .
-							'</td>                                                ' .
-							'<td class="infos-right">' .
-							'	<div class="toggle-container-user">	' .
-							'		<label class="switch-light switch-candy" onclick="">' .
-							'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_' . $UUID . '" ';
+						global $projectArray;
+						include "../helper/getProjectsFromJSON.php";
+						for ($i = 0; $i < sizeof($projectArray); $i++)
+						{
+							$projectName = $projectArray[$i]->{'name'};
+							$UUID = $projectArray[$i]->{'UUID'};
+							echo '<tr class="infos-row">' .
+								'<td class="infos-left">' .
+								'<div class="user-project-name">' .
+								$projectName .
+								'</div>' .
+								'</td>                                                ' .
+								'<td class="infos-right">' .
+								'	<div class="toggle-container-user">	' .
+								'		<label class="switch-light switch-candy" onclick="">' .
+								'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_' . $UUID . '" ';
 						for ($j = 0; $j < sizeof($forbiddenProjects); $j++)
 						{
 							if ($forbiddenProjects[$j] == $UUID)

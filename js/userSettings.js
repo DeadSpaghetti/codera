@@ -21,7 +21,7 @@ $(document).ready(function()
 
             var password = $('#userSettings-input-userPassword').val();
             var confirmPassword = $('#userSettings-input-userPassword_confirm').val();
-        if(password == confirmPassword && password != null && password != undefined && password != "")
+        if(password == confirmPassword && password != null && password != undefined)
         {
             var forbiddenProjects = getForbiddenProjects();
             var accountType = $('#toggle-user-is-admin').is(':checked');
