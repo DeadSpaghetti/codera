@@ -37,3 +37,6 @@ fabric.properties
 /executables/.tmb
 /licenses/.quarantine
 /licenses/.tmb
+
+#Design
+/Logo/
