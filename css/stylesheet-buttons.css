@@ -47,8 +47,7 @@ margin: auto;
 vertical-align: middle;
 }
 
-.button.newProject{
-background-color: #81c784;	
+.button.newProject{	
 width: 11vmin;
 font-size: 2.7vmin;
 }
