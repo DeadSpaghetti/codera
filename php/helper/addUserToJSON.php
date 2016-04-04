@@ -16,6 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	$accountType = $_POST['accountType'];
 	$oldPassword = $_POST['oldPassword'];
 	$source = $_POST['source'];
+	$newUsername = $_POST['newUsername'];
 
 	$userAlreadyExists = doesUserExist($username);
 
@@ -25,12 +26,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		if($source == "account")
 		{
 			addUser("copyProperties",$pathString,$username,$postPassword,
-				null,null,$userAlreadyExists, $salt);
+				null,null,$userAlreadyExists, $salt, $newUsername);
 		}
 		else
 		{
 			addUser("", $pathString, $username, $postPassword,
-				$forbiddenProjects, $accountType, $userAlreadyExists, $salt);
+				$forbiddenProjects, $accountType, $userAlreadyExists, $salt, $newUsername);
 		}
 	}
 	else
@@ -38,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		if(crypt($oldPassword,$salt) == getPassword($username))
 		{
 			addUser("copyProperties",$pathString,$username,$postPassword,
-				null,null,$userAlreadyExists, $salt);
+				null,null,$userAlreadyExists, $salt, $newUsername);
 		}
 	}
 
@@ -46,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 
 function addUser ($type,$pathString,$username,$postPassword,
-				  $forbiddenProjects,$accountType,$userAlreadyExists,$salt)
+				  $forbiddenProjects,$accountType,$userAlreadyExists,$salt, $newUsername)
 {
 
 	
@@ -91,6 +92,8 @@ function addUser ($type,$pathString,$username,$postPassword,
 
 	if($username != "admin" && $username != "public")
 	{
+		if(isset($newUsername))
+			$username = $newUsername;
 		$newUserArray = array
 		(
 			"username" => $username,

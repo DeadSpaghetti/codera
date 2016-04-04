@@ -9,7 +9,7 @@
         "username": "max",
         "password": "$5$g3t#~34u\u00f6@$ldR4iaw68pClc\/MW9oB3R5yrY83c4mrxoiyw14MEFu\/",
         "accountType": "admin",
-        "forbiddenProjects": "[]"
+        "forbiddenProjects": "[\"BD9E1E87-4795-6754-48E1-34ED3FE2EF9A\",\"469E5136-416B-5E5D-F4AC-4B4A39B2C9AC\"]"
     },
     {
         "username": "nothing",

@@ -15,12 +15,12 @@ $(document).ready(function()
 {
     $('#userSettings-button-save').click(function ()
     {
-        var username = $('#userSettings-input-userName').val();
-        if(username == "" || username == undefined || username == null)
-            username = $('#new-user').text().trim();
 
-            var password = $('#userSettings-input-userPassword').val();
-            var confirmPassword = $('#userSettings-input-userPassword_confirm').val();
+        var newUsername = $('#userSettings-input-userName').val();
+        var username = $('#new-user').text().trim();
+        var password = $('#userSettings-input-userPassword').val();
+        var confirmPassword = $('#userSettings-input-userPassword_confirm').val();
+        
         if(password == confirmPassword && password != null && password != undefined)
         {
             var forbiddenProjects = getForbiddenProjects();
@@ -37,6 +37,7 @@ $(document).ready(function()
 
             $.post("../helper/addUserToJSON.php",
                 {
+                    "newUsername": newUsername,
                     "username": username,
                     "password": password,
                     "forbiddenProjects": JSON.stringify(forbiddenProjects),
@@ -44,7 +45,16 @@ $(document).ready(function()
                 },
                 function (data, error)
                 {
-                    location.href = "admin.php";
+                    if(newUsername != username)
+                    {
+                        alert("You're now logged out!");
+                        location.href = "../logoutAndRedirectToLogin.php";
+                    }
+                    else
+                    {
+                        location.href = "admin.php";
+                    }
+
                 });
         }
         else
