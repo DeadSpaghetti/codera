@@ -59,7 +59,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 					<table class="about-table">
 						<tr class="about-row">
 							<td class="about-left">
-								<div id="about-icon" style="background-image: url('<?php echo $path_folder_icons;?>/');"> Codera logo here</div>								
+								<div id="about-icon" style="background-image: url('<?php echo $path_folder_icons;?>/codera-logo-transparent.png');"></div>								
 							</td>										
 							<td class="about-right">
 								Codera is a free and open-source multi-user content management system for developers.<br> <br>
