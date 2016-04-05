@@ -210,6 +210,13 @@ background-image: linear-gradient(to left, #F2F2F2 0%, #333333 3%, #333333 97%, 
 margin-bottom: 5vmin;
 }
 
+#forbidden{
+margin: auto;
+text-align: center;
+font-family: Roboto, Sans-Serif;
+font-size: 4vmin;
+margin-top: 10vmin;
+}
 
 @media screen and (max-width: 1000px) {
     #white{

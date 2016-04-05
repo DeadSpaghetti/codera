@@ -49,7 +49,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 					if ($forbiddenProjects[$i] == $UUID)
 					{
 						header('HTTP/ 403 Forbidden');
-						echo '<h1 style="text-align: center">FORBIDDEN 403</h1>';
+						echo '<div id="forbidden">FORBIDDEN 403</div>';
 						exit;
 					}
 				}
