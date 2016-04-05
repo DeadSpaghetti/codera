@@ -44,7 +44,6 @@ function overrideUserProperties($username,$password,$forbiddenProjects,$accountT
 		{
 			if($username != "admin" && $username != "public")
 			{
-
 				if($username == "New User" && $newUsername != "admin" && $newUsername != "public")
 				{
 					$username = $newUsername;
@@ -63,7 +62,7 @@ function overrideUserProperties($username,$password,$forbiddenProjects,$accountT
 				$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
 			}
 			if(isset($password) && $password != "" && !is_null($password))
-			$userArray[$i]->{'password'} = $password;
+			$userArray[$i]->{'password'} = crypt($password,getSalt());
 
 			//saveJSONArray($userArray);
 			saveJSONToPHP($path_config_users,json_encode($userArray));
