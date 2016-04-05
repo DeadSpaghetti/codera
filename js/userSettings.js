@@ -37,15 +37,15 @@ $(document).ready(function()
 
             $.post("../helper/addUserToJSON.php",
                 {
-                    "newUsername": newUsername,
-                    "username": username,
+                    "newUsername": newUsername.toString().trim(),
+                    "username": username.toString().trim(),
                     "password": password,
                     "forbiddenProjects": JSON.stringify(forbiddenProjects),
                     "accountType": accountType
                 },
                 function (data, error)
                 {
-                    if(newUsername != username)
+                    if(newUsername != username && username.trim() != "New User")
                     {
                         alert("You're now logged out!");
                         location.href = "../logoutAndRedirectToLogin.php";

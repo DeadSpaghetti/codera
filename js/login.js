@@ -29,7 +29,7 @@ $(document).ready(function()
 
                 }, function (data, error)
                 {
-                    console.log(data);
+                    data = data.toString().trim();
                     if (data != "failure")
                     {
                         if(data == "admin")

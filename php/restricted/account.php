@@ -14,7 +14,7 @@ global $developerName;
 global $colorScheme;
 include "../helper/getGeneralSettingsFromJSON.php";
 
-$username =  $_SESSION['loggedIn'];
+$username = $_SESSION['loggedIn'];
 include('../helper/paths.php');
 ?>
 <html>

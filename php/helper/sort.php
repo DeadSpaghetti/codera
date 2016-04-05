@@ -1,6 +1,7 @@
 <?php
 //sorts the projects in the json file | or users
 include "paths.php";
+include_once "functions.php";
 
 if(!isset($sortType))
 {
@@ -81,5 +82,6 @@ if($sortType == "projects")
 }
 elseif ($sortType == "users")
 {
-    file_put_contents($path_config_users,json_encode($array,JSON_PRETTY_PRINT));
+    saveJSONToPHP($path_config_users,json_encode($array,JSON_PRETTY_PRINT));
+    //file_put_contents($path_config_users,json_encode($array,JSON_PRETTY_PRINT));
 }

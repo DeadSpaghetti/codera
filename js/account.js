@@ -9,12 +9,10 @@ $(document).ready(function()
 
         if(password == passwordRepeat && password != null && password != "" && password != undefined)
         {
-                $.post("../helper/addUserToJSON.php",
+                $.post("../helper/changeUserPassword.php",
                     {
-                        "username": username,
                         "oldPassword": oldPassword,
-                        "password": password,
-                        "source": "account"
+                        "password": password
                     },
                     function (data, error)
                     {

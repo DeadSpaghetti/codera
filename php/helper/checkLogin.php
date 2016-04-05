@@ -3,23 +3,23 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
-define('USER_FILE_PATH','../../config/users.json');
+define('USER_FILE_PATH','../../config/users.php');
 
 
 function checkLoginData($username,$password)
 {
     $returnValue = 'failure';
-    $userFile = file_get_contents(USER_FILE_PATH);
-    $userFileArray = json_decode($userFile);
+    global $userArray;
+    include "getUsersFromJSON.php";
 
-    for($i=0; $i < sizeof($userFileArray); $i++)
+    for($i=0; $i < sizeof($userArray); $i++)
     {
-        if ($userFileArray[$i]->{'username'} == $username)
+        if ($userArray[$i]->{'username'} == $username)
         {
-            if($userFileArray[$i]->{'password'} == $password)
+            if($userArray[$i]->{'password'} == $password)
             {
                 $_SESSION['loggedIn'] = $username;
-                $returnValue = $userFileArray[$i]->{'accountType'};
+                $returnValue = $userArray[$i]->{'accountType'};
             }
             else
             {

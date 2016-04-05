@@ -5,17 +5,13 @@ if(!isset($_SESSION))
 }
 
 include_once "functions.php";
-
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-	$salt = '$5$g3t#~34uö@$';
-	$pathString = "../../config/users.json";
+	$salt = getSalt();
 	$username = $_POST['username'];
 	$postPassword = $_POST['password'];
 	$forbiddenProjects = $_POST['forbiddenProjects'];   //as json --> encoded by javascript
 	$accountType = $_POST['accountType'];
-	$oldPassword = $_POST['oldPassword'];
-	$source = $_POST['source'];
 	$newUsername = $_POST['newUsername'];
 
 	$userAlreadyExists = doesUserExist($username);
@@ -23,77 +19,65 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	//admin is allowed to change every password --> no check needed
 	if(isUserAdmin($_SESSION['loggedIn']))
 	{
-		if($source == "account")
+		if (!$userAlreadyExists)
 		{
-			addUser("copyProperties",$pathString,$username,$postPassword,
-				null,null,$userAlreadyExists, $salt, $newUsername);
+			addUser($newUsername, crypt($postPassword,$salt), $forbiddenProjects, $accountType);
 		}
 		else
 		{
-			addUser("", $pathString, $username, $postPassword,
-				$forbiddenProjects, $accountType, $userAlreadyExists, $salt, $newUsername);
+			overrideUserProperties($username,$postPassword,$forbiddenProjects,$accountType,$newUsername);
 		}
 	}
-	else
-	{
-		if(crypt($oldPassword,$salt) == getPassword($username))
-		{
-			addUser("copyProperties",$pathString,$username,$postPassword,
-				null,null,$userAlreadyExists, $salt, $newUsername);
-		}
-	}
+}
 
+function overrideUserProperties($username,$password,$forbiddenProjects,$accountType,$newUsername)
+{
+	global $userArray;
+	include "getUsersFromJSON.php";
+
+	global $path_config_users;
+	include "paths.php";
+
+	for($i=0; $i < sizeof($userArray); $i++)
+	{
+		if($userArray[$i]->{'username'} == $username)
+		{
+			if($username != "admin" && $username != "public")
+			{
+
+				if($username == "New User" && $newUsername != "admin" && $newUsername != "public")
+				{
+					$username = $newUsername;
+				}
+
+				if (isset($newUsername) && $newUsername != "admin" && $newUsername != "public")
+					$username = $newUsername;
+
+
+					$userArray[$i]->{'username'} = $username;
+					$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
+					$userArray[$i]->{'accountType'} = $accountType;
+			}
+			elseif ($username == "public")
+			{
+				$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
+			}
+			if(isset($password) && $password != "" && !is_null($password))
+			$userArray[$i]->{'password'} = $password;
+
+			//saveJSONArray($userArray);
+			saveJSONToPHP($path_config_users,json_encode($userArray));
+			break;
+		}
+	}
 }
 
 
-function addUser ($type,$pathString,$username,$postPassword,
-				  $forbiddenProjects,$accountType,$userAlreadyExists,$salt, $newUsername)
+function addUser ($username,$password, $forbiddenProjects,$accountType)
 {
-
-	
-	if($type == "copyProperties")
-	{
-		global $userArray;	
-		for($i=0; $i < sizeof($userArray); $i++)
-		{
-			if($userArray[$i]->{'username'} == $username)
-			{			
-				$forbiddenProjects = $userArray[$i]->{'forbiddenProjects'};
-				$accountType = $userArray[$i]->{'accountType'};
-				break;
-			}
-		}
-	}
-
-	if($userAlreadyExists)
-	{
-		if($postPassword == "" || $postPassword == null)
-		{
-			$password = deleteUser($username);
-		}
-		else
-		{
-			deleteUser($username);
-			$password = crypt($postPassword,$salt);
-		}
-	}
-	else
-	{
-		$password =  crypt($postPassword,$salt);
-	}
-
-	$fileIsThere = false;
-	if (file_exists($pathString))
-	{
-		$fileIsThere = true;
-		$configFile = file_get_contents($pathString);
-		$array = json_decode($configFile, false);
-	}
 
 	if($username != "admin" && $username != "public")
 	{
-		if(isset($newUsername))
-			$username = $newUsername;
 		$newUserArray = array
 		(
 			"username" => $username,
@@ -101,6 +85,7 @@ function addUser ($type,$pathString,$username,$postPassword,
 			"accountType" => $accountType,
 			"forbiddenProjects" => $forbiddenProjects
 		);
+		saveJSONArray($newUserArray);
 	}
 	else
 	{
@@ -108,23 +93,42 @@ function addUser ($type,$pathString,$username,$postPassword,
 		{
 			$newUserArray = array
 			(
-				"username" => $username,
+				"username" => "admin",
 				"password" => $password,
 				"forbiddenProjects" => "[]",
 				"accountType" => "admin",
 			);
+			saveJSONArray($newUserArray);
 		}
 		elseif($username == "public")
 		{
 			$newUserArray = array
 			(
-				"username" => $username,
+				"username" => "public",
 				"forbiddenProjects" => $forbiddenProjects,
 				"accountType" => "user"
 			);
+			saveJSONArray($newUserArray);
 		}
 
 	}
+
+}
+
+function saveJSONArray($newUserArray)
+{
+	global $path_config_users;
+	include "paths.php";
+
+	$fileIsThere = false;
+	if (file_exists($path_config_users))
+	{
+		$fileIsThere = true;
+		global $jsonString;
+		include $path_config_users;
+		$array = json_decode($jsonString,false);
+	}
+
 	//checks boolean value to see if file is there. If not creates new array
 	if ($fileIsThere)
 		array_push($array, $newUserArray);
@@ -132,7 +136,7 @@ function addUser ($type,$pathString,$username,$postPassword,
 		$array[0] = $newUserArray;
 
 	$fileToSave = json_encode($array);
-	file_put_contents($pathString, $fileToSave);
+	saveJSONToPHP($path_config_users,$fileToSave);
 
 	$sortType = "users";
 	include "sort.php";

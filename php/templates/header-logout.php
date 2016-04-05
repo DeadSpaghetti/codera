@@ -14,9 +14,15 @@ include($path_helper_getGeneralSettings);
 	{
 		echo <<<'ACCOUNT'
 <div class="login">
-		<a href="<?php echo $path_account;?>" id="account-link"> <i class="material-icons">account_circle</i> <span class="login-text">Account</span></a>
+		<a href="
+ACCOUNT;
+		echo $path_account;
+		echo <<<'ACCOUNT'
+" id="account-link"> <i class="material-icons">account_circle</i> <span class="login-text">Account</span></a>
 	</div>
 ACCOUNT;
+
+
 	}
 	?>
 
