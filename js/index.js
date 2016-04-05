@@ -15,6 +15,8 @@ $(document).ready(function()
         form.submit();
     });
 
+    $.cookieCuttr();
+
 });
 
 function makeRequestAndSetBanners(currentCanvas,color,id)
