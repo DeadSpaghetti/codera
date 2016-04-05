@@ -112,7 +112,8 @@ USERNAME;
 
 					<?php
 					if($username != "public")
-					echo <<<'PASSWORD'
+					{
+						echo <<<'PASSWORD'
 <tr class="infos-row">
 						<td class="infos-left">
 							<div class="icon">
@@ -125,7 +126,7 @@ USERNAME;
 					</tr>
 					
 PASSWORD;
-					echo <<<'PASSWORD_CONFIRM'
+						echo <<<'PASSWORD_CONFIRM'
 <tr class="infos-row">
 						<td class="infos-left">
 							<div class="icon">
@@ -138,6 +139,7 @@ PASSWORD;
 					</tr>
 					
 PASSWORD_CONFIRM;
+					}
 					
 
 

@@ -20,10 +20,23 @@ $(document).ready(function()
         var username = $('#new-user').text().trim();
         var password = $('#userSettings-input-userPassword').val();
         var confirmPassword = $('#userSettings-input-userPassword_confirm').val();
-        
-        if(password == confirmPassword && password != null && password != undefined)
+        var forbiddenProjects = getForbiddenProjects();
+
+        if(username == "public")
         {
-            var forbiddenProjects = getForbiddenProjects();
+            $.post("../helper/addUserToJSON.php",
+                {
+                    "username": "public",
+                    "newUsername": "public",
+                    "forbiddenProjects": JSON.stringify(forbiddenProjects)
+                },
+                function (data, error)
+                {
+                    location.href = "admin.php";
+                });
+        }
+        else if(username != "public" && password == confirmPassword && password != null && password != undefined)
+        {
             var accountType = $('#toggle-user-is-admin').is(':checked');
 
             if (accountType)
