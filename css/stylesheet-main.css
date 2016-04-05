@@ -1,5 +1,16 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/roboto-v15-latin-regular.woff2') format('woff2'),
+       url('fonts/roboto-v15-latin-regular.woff') format('woff'),
+       url('fonts/roboto-v15-latin-regular.ttf') format('truetype');
+}
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@font-face {
+  font-family: 'Roboto-bold';
+  src: url('fonts/roboto-v15-latin-500.woff2') format('woff2'),
+       url('fonts/roboto-v15-latin-500.woff') format('woff'),
+       url('fonts/roboto-v15-latin-500.ttf') format('truetype');
+}
 
 body {
 /*background-color: #F1F2F2;*/
