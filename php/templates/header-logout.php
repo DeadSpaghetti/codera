@@ -9,9 +9,17 @@ include($path_helper_getGeneralSettings);
 	<div class="login">
 		<a href="<?php echo $path_logout;?>" id="logout-link"> <i class="material-icons">lock</i> <span class="login-text">Logout</span></a>
 	</div>
-	<div class="login">
+	<?php
+	if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] != "public")
+	{
+		echo <<<'ACCOUNT'
+<div class="login">
 		<a href="<?php echo $path_account;?>" id="account-link"> <i class="material-icons">account_circle</i> <span class="login-text">Account</span></a>
 	</div>
+ACCOUNT;
+	}
+	?>
+
 	<?php
 	include_once realpath(dirname(__FILE__) . '/../helper/functions.php');
 	if(isUserAdmin($_SESSION['loggedIn']))
