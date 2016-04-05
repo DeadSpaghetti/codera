@@ -15,8 +15,6 @@ $(document).ready(function()
         form.submit();
     });
 
-    $.cookieCuttr();
-
 });
 
 function makeRequestAndSetBanners(currentCanvas,color,id)
@@ -66,7 +64,7 @@ function drawBanners(color)
 		var currentLink = links[i];
 		var id = currentLink.id;
 		var currentCanvas = currentLink.childNodes[0].childNodes[1];		
-	
+
         makeRequestAndSetBanners(currentCanvas,color,id);
 	}
 }

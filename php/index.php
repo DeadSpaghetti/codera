@@ -21,8 +21,6 @@ include($path_helper_getGeneralSettings);
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="../js/libs/cookiecuttr/cookiecuttr.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="../js/libs/jquery-cookie/src/jquery.cookie.js"></script>
-		<script src="../js/libs/cookiecuttr/jquery.cookiecuttr.js"></script>
 		<script src="../js/index.js"></script>
 	</head>
 	<body onload="drawBanners('<?php echo $colorScheme;?>');">
