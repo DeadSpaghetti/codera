@@ -38,7 +38,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 		</td>										
 		<td class="infos-right">
 			<div id="color-chooser">							
-					<?php include("printColorOptions.php"); ?>				
+					<?php include("../helper/printColorOptions.php"); ?>				
 			</div>
 		</td>
 	</tr>
