@@ -110,8 +110,22 @@ include('helper/getGeneralSettingsFromJSON.php');
 					</div>
 					<div class="about-line"></div>			
 					<div class="about-headline-small">License</div>	
-					<div class="about-text">
+					<div class="about-text-full">
 						Codera is distributed under the GPL License.
+						<br>
+					</div>
+					<div class="about-line"></div>			
+					<div class="about-headline-small" id="privacy">Privacy Policy</div>	
+					<div class="about-text-full">
+						This website uses cookies to improve the users experience while visiting the website. <br> <br>
+						Cookies are small files saved to the user's computers hard drive that save and store information for later use. This allows the website, through its server to provide the users with a tailored experience within this website.
+						Users are advised that if they wish to deny the use and saving of cookies from this website on to their computers hard drive they should take necessary steps within their web browsers security settings to block all cookies from this website and its external serving vendors.
+						<br> <br>
+						On this website cookies are used to enable php sessions especially for he login feature. <br>
+						This site doesn't collect and store any personal information.
+						<br> <br>
+						For additional information you can visit these websites: <a class="link-visible" href="http://www.allaboutcookies.org/cookies/">www.allaboutcookies.org/cookies/</a><br>
+																					<a class="link-visible" href="https://en.wikipedia.org/wiki/HTTP_cookie">en.wikipedia.org/wiki/HTTP_cookie</a>
 						<br> <br> <br> <br>
 					</div>
 				</div>

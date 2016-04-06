@@ -210,6 +210,16 @@ background-image: linear-gradient(to left, #F2F2F2 0%, #333333 3%, #333333 97%, 
 margin-bottom: 5vmin;
 }
 
+.about-text-full{
+text-align: left;
+width: 60%;
+height: auto;
+margin: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+color: #212121;	
+}
+
 #forbidden{
 margin: auto;
 text-align: center;

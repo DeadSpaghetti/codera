@@ -7,6 +7,8 @@ global $developerName;
 global $colorScheme;
 include('helper/paths.php');
 include('helper/getGeneralSettingsFromJSON.php');	
+
+include('cookie.php');
 ?>
 
 <!DOCTYPE html>

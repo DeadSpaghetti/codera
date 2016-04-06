@@ -16,6 +16,8 @@ include "../helper/getGeneralSettingsFromJSON.php";
 
 $username = $_SESSION['loggedIn'];
 include('../helper/paths.php');
+
+include('../cookie.php');
 ?>
 <html>
 	<head>

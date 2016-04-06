@@ -9,6 +9,8 @@ global $gridSize;
 global $sortOrder;
 include('helper/paths.php');
 include($path_helper_getGeneralSettings);
+
+include('cookie.php');
 ?>
 
 
@@ -21,7 +23,7 @@ include($path_helper_getGeneralSettings);
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href="../js/libs/cookiecuttr/cookiecuttr.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="../js/index.js"></script>
+		<script src="../js/index.js"></script>		
 	</head>
 	<body onload="drawBanners('<?php echo $colorScheme;?>');">
 		<div id="main">

@@ -11,7 +11,9 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 global $developerName;
 global $colorScheme;
 include('../helper/convertHexToRGB.php');
-include('../helper/getGeneralSettingsFromJSON.php');				
+include('../helper/getGeneralSettingsFromJSON.php');
+
+include('../cookie.php');				
 ?>
 
 <html>

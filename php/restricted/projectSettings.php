@@ -94,6 +94,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 global $developerName;
 global $colorScheme;
 include('../helper/getGeneralSettingsFromJSON.php');
+
+include('../cookie.php');
 ?>
 <!DOCTYPE html>
 <html>
