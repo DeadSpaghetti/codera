@@ -10,19 +10,20 @@ global $sortOrder;
 include('helper/paths.php');
 include($path_helper_getGeneralSettings);
 
-include('cookie.php');
+
 ?>
 
 
 <!DOCTYPE html>
 <html>
 	<head>
+		<?php include('cookie.php'); ?>
 		<title><?php echo $developerName ?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="../js/index.js"></script>		
+		<script src="../js/index.js"></script>			
 	</head>
 	<body onload="drawBanners('<?php echo $colorScheme;?>');">
 		<div id="main">

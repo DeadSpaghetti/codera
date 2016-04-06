@@ -20,13 +20,13 @@ if(isset($_SESSION['loggedIn']))
 global $developerName;
 global $colorScheme;
 include('helper/getGeneralSettingsFromJSON.php');
-include('cookie.php');
 ?>
 
 <!DOCTYPE html>
 
 <html>
 	<head>
+		<?php include('cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
