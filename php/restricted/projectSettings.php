@@ -103,7 +103,7 @@ include('../cookie.php');
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href="../../js/libs/chosen/chosen.min.css" rel="stylesheet" type="text/css">
+		<link href="../../js/libs/chosen/chosen.css" rel="stylesheet" type="text/css">
         <link href="../../js/libs/pickadate/lib/compressed/themes/default.css" rel="stylesheet" type="text/css">
         <link href="../../js/libs/pickadate/lib/compressed/themes/default.date.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
@@ -225,6 +225,6 @@ include('../cookie.php');
 				</table>
 			</div>
 		</div>
-		<?php include("../templates/footer.php"); ?>
+		<?php include("../templates/footer.php"); ?>		
 	</body>
 </html>
