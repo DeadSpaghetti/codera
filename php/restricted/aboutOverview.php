@@ -9,6 +9,10 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 	header('Location: ../login.php');
 	exit;
 }
+global $aboutIcon;
+global $aboutText;
+include "../helper/getAboutPageFromJSON.php";
+
 ?>
 
 <table class="infos-small">
@@ -19,7 +23,7 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 			</div>
 		</td>										
 		<td class="infos-right">
-			<textarea id="input-about-text" rows="10"><?php //echo $latestChanges;?></textarea>
+			<textarea id="input-about-text" rows="10"><?php if(isset($aboutText)) echo $aboutText;?></textarea>
 		</td>
 	</tr>
 	<tr class="infos-row">
@@ -33,6 +37,7 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 				<?php
 				$directory = "../../images/icons/";
 				$object = 'icon';
+				if(isset($aboutIcon)) $exclude = $aboutIcon;
 				include "../helper/printAllFilesFromDirectoryAsOption.php"
 				?>
 			</select>

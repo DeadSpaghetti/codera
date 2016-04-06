@@ -1,7 +1,7 @@
 $(document).ready(function ()
 {
 	//selects last opened tab
-	if(localStorage.getItem('tab'))
+	if(localStorage.getItem('tab') != null)
 	{		
 		var lastTab = localStorage.getItem('tab');		
 

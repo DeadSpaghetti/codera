@@ -26,6 +26,7 @@ include('../cookie.php');
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-tabs.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-colorChooser.css"/>
+		<link type="text/css" rel="stylesheet" href="../../js/libs/chosen/chosen.min.css"/>
 		<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/elfinder.min.css">
 		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/theme.css">
@@ -39,6 +40,8 @@ include('../cookie.php');
 		<script src="../../js/mediaOverview.js"></script>
 		<script src="../../js/userOverview.js"></script>
 		<script src="../../js/resetOverview.js"></script>
+		<script src="../../js/libs/chosen/chosen.jquery.min.js"></script>
+		<script src="../../js/aboutOverview.js"></script>
 		<script src="../../js/libs/elFinder/js/elfinder.min.js"></script>	
 		
 	</head>
