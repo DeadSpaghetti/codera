@@ -5,8 +5,7 @@ if(!isset($_SESSION))
 }
 
 //what to reset 'content' || 'settings' || 'everything'
-include_once "functions.php";
-if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
+if($_SERVER['REQUEST_METHOD'] == "POST" && $_SESSION['loggedIn'] == "admin")
 {
     $resetType = $_POST['resetType'];
     if(isset($resetType) && $resetType != null)

@@ -3,12 +3,6 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
-include_once "../helper/functions.php";
-if(!isUserAdmin($_SESSION['loggedIn']))
-{
-    header('Location: ../login.php');
-    exit;
-}
 
 $generalSettingsFilename = "../../config/generalSettings.json";
 //get selected colorScheme from json
