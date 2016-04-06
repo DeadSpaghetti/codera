@@ -128,7 +128,7 @@ include "helper/getAboutPageFromJSON.php";
 					<div class="about-line"></div>			
 					<div class="about-headline-small">License</div>	
 					<div class="about-text-full">
-						Codera is distributed under the GPL License.
+						Codera is distributed under the MIT License.
 						<br>
 					</div>
 					<div class="about-line"></div>			
