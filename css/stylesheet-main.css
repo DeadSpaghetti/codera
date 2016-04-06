@@ -245,25 +245,27 @@ padding-left: 2.2vmin;
 
 #footer {
 width: 100%;
-height: 5vmin;
-background-color: #212121;
 height: auto;
+background-color: #212121;
 margin: auto;
-font-family: Roboto, sans-serif;
-font-size: 2vmin;
 text-align: center;
 color: #FFFFFF;
+padding-top: 0.5vmin;
+padding-bottom: 0.5vmin;
 }
 
 #footer table{
 width: 60%;
 margin: auto;
+font-family: Roboto, sans-serif;
+font-size: 2.3vmin;
 }
 
 #footer table td{
 width: 33%;
 vertical-align: middle;
 color: #FFFFFF;
+text-align: center;
 }
 
 #footer a{
@@ -276,24 +278,16 @@ height: auto;
 margin: auto;
 }
 
-#footer-right i{	
-font-size: 3vmin;
-display: inline;
-vertical-align: middle;	
-color: #FFFFFF;
-}
-
 #footer-right-text{
 width: 15vmin;
 height: auto;
 font-family: Roboto, Sans-Serif;
-font-size: 1.9vmin;
 color: #FFFFFF;
 margin-left: 0.3vmin;
 }
 
 #icon-github{
-width: 2.3vmin;	
+height: 2.2vmin;	
 vertical-align: middle;
 }
 
