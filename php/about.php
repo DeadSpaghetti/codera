@@ -5,16 +5,23 @@ if(!isset($_SESSION))
 }
 
 include('helper/paths.php');
+global $developerName;
+global $colorScheme;
 include('helper/getGeneralSettingsFromJSON.php');	
 
 include('cookie.php');
+
+global $aboutText;
+global $aboutIcon;
+include "helper/getAboutPageFromJSON.php";
+
 ?>
 
 <!DOCTYPE html>
 
 <html>
 	<head>
-		<title><?php echo $developerName;?> on Codera</title>
+		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>
@@ -38,21 +45,14 @@ include('cookie.php');
 				<div id="white">					
 					<div id="about-headline">About</div>					
 					<div class="line"></div>	
-					<div class="about-headline-small"><?php echo $developerName;?></div>	
+					<div class="about-headline-small"><?php if(isset($developerName)) echo $developerName;?></div>
 					<table class="about-table">
 						<tr class="about-row">
 							<td class="about-left">
-								<div id="about-icon" style="background-image: url('<?php echo $path_folder_icons;?>/Bejeweled.png');"></div>
+								<div id="about-icon" style="background-image: url('<?php echo $path_folder_icons . "/" . $aboutIcon;?>');"></div>
 							</td>										
 							<td class="about-right">
-								Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-								<p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
-
-								<p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-
-								<p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
-
+							<?php if(isset($aboutText)) echo $aboutText;?>
 							</td>
 						</tr>						
 					</table>

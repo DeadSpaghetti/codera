@@ -13,6 +13,7 @@ $path_config_generalSettings = realpath(dirname(__FILE__) . '/../../config/gener
 $path_config_projects = realpath(dirname(__FILE__) . '/../../config/projects.json');
 $path_config_users_old = realpath(dirname(__FILE__) . '/../../config/users.json');
 $path_config_users = realpath(dirname(__FILE__) . '/../../config/users.php');
+$path_config_about = realpath(dirname(__FILE__) . '/../../config/about.json');
 $path_helper_getGeneralSettings = realpath(dirname(__FILE__) . '/getGeneralSettingsFromJSON.php');
 $path_header = realpath(dirname(__FILE__) . '/../templates/header.php');
 $path_header_logout = realpath(dirname(__FILE__) . '/../templates/header-logout.php');
