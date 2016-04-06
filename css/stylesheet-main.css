@@ -295,7 +295,8 @@ vertical-align: middle;
 display: none;
 }
 
-.chosen-container {
+.chosen-container{
+width: 80% !important;
 font-size: 2.2vmin !important;
 line-height: 4vmin !important;
 height: 4vmin !important;

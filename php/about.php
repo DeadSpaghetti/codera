@@ -89,37 +89,37 @@ include "helper/getAboutPageFromJSON.php";
 						<table class="link-visible-table">
 							<tr>
 								<td>jQuery</td>
-								<td>v2.2.0</td>
+								<td class="link-version">v2.2.0</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/jquery/jquery">jQuery on Github</a></td>
 							</tr>
 							<tr>
 								<td>jQuery UI</td>
-								<td>v1.11.4</td>
+								<td class="link-version">v1.11.4</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/jquery/jquery-ui">jQuery UI on Github</a></td>
 							</tr>
 							<tr>
 								<td>Chosen</td>
-								<td>v1.5.1</td>
+								<td class="link-version">v1.5.1</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/harvesthq/chosen">Chosen on Github</a></td>
 							</tr>
 							<tr>
 								<td>Lightbox2</td>
-								<td>v2.8.2</td>
+								<td class="link-version">v2.8.2</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/lokesh/lightbox2">LightBox2 on Github</a></td>
 							</tr>
 							<tr>
 								<td>Pickadate</td>
-								<td>v3.5.6</td>
+								<td class="link-version">v3.5.6</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/amsul/pickadate.js/">Pickadate on GitHub</a></td>
 							</tr>
 							<tr>
 								<td>elFinder</td>
-								<td>v2.1.9</td>
+								<td class="link-version">v2.1.9</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/Studio-42/elFinder">elFinder on GitHub</a></td>
 							</tr>
 							<tr>
 								<td>ToggleSwitches</td>
-								<td>v4.0.2</td>
+								<td class="link-version">v4.0.2</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/ghinda/css-toggle-switch">CSS Toggle Switches on Github</a></td>
 							</tr>
 						</table>

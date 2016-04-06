@@ -187,6 +187,10 @@ font-size: 2.2vmin;
 color: #212121;	
 }
 
+.link-version{	
+padding-left: 3vmin;
+}
+
 .link-visible-table{
 text-align: left;
 margin: auto;

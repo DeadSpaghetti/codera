@@ -11,13 +11,10 @@ $(document).ready(function()
         {
             "aboutIcon": aboutIcon,
             "aboutText": aboutText
-
         },
         function (data,error)
         {
             location.reload();
         });
-
-    });
- 
+    }); 
 });
