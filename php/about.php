@@ -89,26 +89,41 @@ include "helper/getAboutPageFromJSON.php";
 						Codera is using the following libraries:<br> <br>								
 						<table class="link-visible-table">
 							<tr>
-								<td>Chosen Selectboxes:</td>
+								<td>jQuery</td>
+								<td>v2.2.0</td>
+								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/jquery/jquery">jQuery on Github</a></td>
+							</tr>
+							<tr>
+								<td>jQuery UI</td>
+								<td>v1.11.4</td>
+								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/jquery/jquery-ui">jQuery UI on Github</a></td>
+							</tr>
+							<tr>
+								<td>Chosen</td>
+								<td>v1.5.1</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/harvesthq/chosen">Chosen on Github</a></td>
 							</tr>
 							<tr>
-								<td>Lightbox2:</td>
-								<td class="link-visible-table-right"><a class="link-visible" href="http://lokeshdhakar.com/projects/lightbox2/">lokeshdhakar.com</a></td>
+								<td>Lightbox2</td>
+								<td>v2.8.2</td>
+								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/lokesh/lightbox2">LightBox2 on Github</a></td>
 							</tr>
 							<tr>
-								<td>Pickadate:</td>
+								<td>Pickadate</td>
+								<td>v3.5.6</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/amsul/pickadate.js/">Pickadate on GitHub</a></td>
 							</tr>
 							<tr>
-								<td>elFinder:</td>
+								<td>elFinder</td>
+								<td>v2.1.9</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/Studio-42/elFinder">elFinder on GitHub</a></td>
 							</tr>
 							<tr>
-								<td>Toggle Switches:</td>
-								<td class="link-visible-table-right"><a class="link-visible" href="https://ghinda.net/css-toggle-switch/index.html">CSS Toggle Switches</a></td>
+								<td>ToggleSwitches</td>
+								<td>v4.0.2</td>
+								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/ghinda/css-toggle-switch">CSS Toggle Switches on Github</a></td>
 							</tr>
-						</table>								
+						</table>
 					</div>
 					<div class="about-line"></div>			
 					<div class="about-headline-small">License</div>	

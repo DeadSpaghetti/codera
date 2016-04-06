@@ -20,7 +20,6 @@ if(isset($_SESSION['loggedIn']))
 global $developerName;
 global $colorScheme;
 include('helper/getGeneralSettingsFromJSON.php');
-
 include('cookie.php');
 ?>
 
