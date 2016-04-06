@@ -20,13 +20,17 @@ $(document).ready(function ()
 
     $('a[name=userOverviewDelete]').click(function()
     {
-        $.post("../helper/deleteUserFromJSON.php",
-            {
-                "username":  this.id.split("_")[1]
-            },function (data,error)
-            {
-                location.reload();
-            });
+        var c = confirm("Do you really want to delete the account of " + this.id.split("_")[1]);
+        if(c)
+        {
+            $.post("../helper/deleteUserFromJSON.php",
+                {
+                    "username": this.id.split("_")[1]
+                }, function (data, error)
+                {
+                    location.reload();
+                });
+        }
 
     });
 });
