@@ -102,6 +102,10 @@ include('helper/getGeneralSettingsFromJSON.php');
 								<td>elFinder:</td>
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/Studio-42/elFinder">elFinder on GitHub</a></td>
 							</tr>
+							<tr>
+								<td>Toggle Switches:</td>
+								<td class="link-visible-table-right"><a class="link-visible" href="https://ghinda.net/css-toggle-switch/index.html">CSS Toggle Switches</a></td>
+							</tr>
 						</table>								
 					</div>
 					<div class="about-line"></div>			
