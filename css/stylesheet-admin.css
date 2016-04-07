@@ -54,7 +54,7 @@ font-family: Roboto, Sans-Serif;
 }
 
 .project{
-width: 75%;
+width: 93%;
 font-size: 2vmin;
 margin-left: 0;
 }
@@ -65,7 +65,7 @@ box-shadow: none;
 }
 
 textarea{	
-width: 75%;
+width: 93%;
 resize: vertical;
 margin-left: 0;
 background-color: #FFFFFF;

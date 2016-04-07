@@ -112,6 +112,10 @@ padding-bottom: 5vmin;
 padding-bottom: 1vmin;
 }
 
+.infos-right-space{
+width: 10%;
+}
+
 #template-download{
 width: 80%;
 }

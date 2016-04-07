@@ -133,7 +133,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 				<div id="white">
 					<table class="infos-small">
 						<tr class="infos-row">
-							<td colspan="2" class="infos-center">							
+							<td colspan="3" class="infos-center">							
 								<div id="new-project"><?php if(isset($projectName)) echo $projectName?>
 									<div class="hidden" id="projectSettingsUUID">
 										<?php if(isset($UUID))
@@ -144,7 +144,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							</td>	
 						</tr>
 						<tr class="infos-row">
-							<td colspan="2" class="infos-center">
+							<td colspan="3" class="infos-center">
 								<div id="toggle-container">							
 									<label class="switch-light switch-candy" onclick="">
 										<input type="checkbox" id="toggle-project-or-url" <?php if(isset($url) && $url != "")echo "checked"?>>
@@ -166,6 +166,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							<td class="infos-right">
 								<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php if(isset($projectName)) echo $projectName;?>" placeholder="MyApp"/>
 							</td>
+							<td class="infos-right-space"></td>
 						</tr>
 						<tr class="infos-row">
 							<td class="infos-left">
@@ -183,6 +184,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 									?>
 								</select>
 							</td>
+							<td class="infos-right-space"></td>
 						</tr>
 						<tr class="infos-row row">
 							<td class="infos-left">
@@ -204,6 +206,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 									<label for="radio-3">Final</label>
 								</div>			
 							</td>
+							<td class="infos-right-space"></td>
 						</tr>	
 							<!--settings for normal project -->					
 							<?php include('projectSettingsNormal.php');?>
@@ -220,6 +223,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 									<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
 								</a>
 							</td>
+							<td class="infos-right-space"></td>
 						</tr>						
 					</table>
 				</div>

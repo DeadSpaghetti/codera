@@ -296,10 +296,12 @@ display: none;
 }
 
 .chosen-container{
-width: 80% !important;
 font-size: 2.2vmin !important;
 line-height: 4vmin !important;
+min-line-height
 height: 4vmin !important;
+display: block !important;
+width: 100% !important;
 }
 
 .chosen-container-single .chosen-single{

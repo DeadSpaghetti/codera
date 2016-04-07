@@ -7,6 +7,7 @@
 	<td class="infos-right">
 		<input class="input project" id="input-versionCode" type="text" maxlength="15" value="<?php echo $versionCode;?>" placeholder="10"/>
 	</td>
+	<td class="infos-right-space"></td>
 </tr>
 <tr class="infos-row row-settingsNormal">
 	<td class="infos-left">
@@ -17,16 +18,18 @@
 	<td class="infos-right">
 		<input class="input project" id="input-versionName" type="text" maxlength="15" value="<?php echo $versionName;?>" placeholder="1.0.0 b"/>
 	</td>
+	<td class="infos-right-space"></td>
 </tr>
 <tr class="infos-row row-settingsNormal">
 	<td class="infos-left">
 		<div class="icon">
 			<i class="material-icons md-light">access_time</i> <span class="icon-text">Last Update:</span>
 		</div>
-	</td>										
+	</td>					
 	<td class="infos-right">
 		<input class="input project" id="input-date" value="<?php if(isset($date)) echo $date;?>" type="date"/>
 	</td>
+	<td class="infos-right-space"></td>
 </tr>
 <tr class="infos-row row-settingsNormal">
 	<td class="infos-left">
@@ -37,6 +40,7 @@
 	<td class="infos-right">
 		<textarea id="input-changes" rows="10"><?php if(isset($latestChanges)) echo $latestChanges;?></textarea>
 	</td>
+	<td class="infos-right-space"></td>
 </tr>
 <tr class="infos-row row-settingsNormal">
 	<td class="infos-left">
@@ -47,6 +51,7 @@
 	<td class="infos-right">
 		<textarea id="input-description" rows="10"><?php echo $description;?></textarea>
 	</td>
+	<td class="infos-right-space"></td>
 </tr>
 <tr class="infos-row row-settingsNormal">
 	<td class="infos-left">
@@ -57,6 +62,7 @@
 	<td class="infos-right">
 		<textarea id="input-requirements" rows="10"><?php echo $requirements;?></textarea>
 	</td>
+	<td class="infos-right-space"></td>
 </tr>
 <tr class="infos-row row-settingsNormal">
 	<td class="infos-left">
@@ -65,14 +71,16 @@
 		</div>
 	</td>										
 	<td class="infos-right">
+		<div class="chosen-multiple-clearfix">
 		<select id="projectSettings-fileSelector" multiple class="chosen-select">
 			<?php
 			$directory = "../../executables/";
 			$exclude = getSelectedOptions("files",$UUID);   //is array
 			include "../helper/printAllFilesFromDirectoryAsOption.php";
-			?>
-		</select>
+			?>		
+		</select>	</div>
 	</td>
+	<td class="infos-right-space"></td>
 </tr>
 <tr class="infos-row row-settingsNormal">
 	<td class="infos-left">
@@ -86,10 +94,11 @@
 			$directory = "../../images/screenshots";
 			$object = 'screenshots';
 			$exclude = getSelectedOptions($object,$UUID);   //array
-			include "../helper/printAllFilesFromDirectoryAsOption.php"
-			?>
+			include "../helper/printAllFilesFromDirectoryAsOption.php"			
+			?>			
 		</select>
 	</td>
+	<td class="infos-right-space"></td>
 </tr>
 <tr class="infos-row row-settingsNormal">
 	<td class="infos-left">
@@ -107,4 +116,5 @@
 			?>
 		</select>
 	</td>
+	<td class="infos-right-space"></td>
 </tr>
