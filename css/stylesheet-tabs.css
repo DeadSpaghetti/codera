@@ -18,15 +18,15 @@ float:left;
 list-style:none;
 border-radius: 1vmin 1vmin 0 0;	
 background-color: rgba(0,0,0,0);
--webkit-box-shadow: 0 5px 0px #FFFFFF,
-					-4px -2px 10px rgba(194,194,194,0.5),
-					4px -2px 10px rgba(194,194,194, 0.5);
--moz-box-shadow:	0 5px 0px #FFFFFF,
-					-4px -2px 10px rgba(194,194,194,0.5),
-					4px -2px 10px rgba(194,194,194, 0.5);
-box-shadow: 		0 5vh 0px #FFFFFF,
-					-4px -2px 10px rgba(194,194,194,0.5),
-					4px -2px 10px rgba(194,194,194, 0.5);
+-webkit-box-shadow: 0 5vh 0 #FFFFFF,
+					-0.3vmin -0.2vmin 1.3vmin rgba(194,194,194, 0.5),					
+					0.3vmin -0.2vmin 1.3vmin rgba(194,194,194, 0.5);
+-moz-box-shadow:	0 5vh 0 #FFFFFF,
+					-0.3vmin -0.2vmin 1.3vmin rgba(194,194,194, 0.5),					
+					0.3vmin -0.2vmin 1.3vmin rgba(194,194,194, 0.5);
+box-shadow: 		0 5vh 0 #FFFFFF,
+					-0.3vmin -0.2vmin 1.3vmin rgba(194,194,194, 0.5),					
+					0.3vmin -0.2vmin 1.3vmin rgba(194,194,194, 0.5);
 font-size: 0;
 }
  
@@ -56,9 +56,9 @@ color: #212121 !important;
 .tab-content {
 padding: 9vmin;
 border-radius: 1vmin;
--webkit-box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
--moz-box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
-box-shadow: 0px 0px 20px 4px rgba(194,194,194,1);
+-webkit-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
+-moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
+box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
 background-color: #FFFFFF; 	
 }
  
