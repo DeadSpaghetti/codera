@@ -3,9 +3,9 @@ width: 50vw;
 height: auto;
 margin: auto;
 background-color: #FFFFFF;
--webkit-box-shadow: 0 0 20px 4px rgba(194,194,194,1);
--moz-box-shadow: 0 0 20px 4px rgba(194,194,194,1);
-box-shadow: 0 0 20px 4px rgba(194,194,194,1);
+-webkit-box-shadow:  0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
+-moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
+box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
 padding: 3vmin 6vmin 3vmin 4vmin;
 margin-top: 5vmin;
 }
