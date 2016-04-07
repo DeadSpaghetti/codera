@@ -81,8 +81,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 					<table class="infos-small">
 						<tr class="infos-row">
 							<td colspan="2" class="infos-center">							
-								<div id="new-user"><?php if(isset($username)) echo $username;?>
-								</div>
+								<div id="new-user"><?php if(isset($username)) echo $username;?></div>
 								<div class="line line-no-space"></div>
 							</td>	
 						</tr>
