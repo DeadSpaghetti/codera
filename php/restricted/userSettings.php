@@ -76,185 +76,186 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 					include($path_header); 
 				}
 			?>
-		<div id="content">	
-			<div id="white">
-				<table class="infos-small">
-					<tr class="infos-row">
-						<td colspan="2" class="infos-center">							
-							<div id="new-user"><?php if(isset($username)) echo $username;?>
-							</div>
-							<div class="line line-no-space"></div>
-						</td>	
-					</tr>
-					<?php
-					if($username != "admin" && $username != "public")
-					{
-						echo <<<'USERNAME'
-					<tr class="infos-row">
-						<td class="infos-left">
-							<div class="icon">
-								<i class="material-icons">mode_edit</i> <span class="icon-text">Name:</span>
-							</div>
-						</td>										
-						<td class="infos-right">
-							<input class="input project" id="userSettings-input-userName" type="text" maxlength="30" value="
+			<div id="content">	
+				<div id="white">
+					<table class="infos-small">
+						<tr class="infos-row">
+							<td colspan="2" class="infos-center">							
+								<div id="new-user"><?php if(isset($username)) echo $username;?>
+								</div>
+								<div class="line line-no-space"></div>
+							</td>	
+						</tr>
+						<?php
+						if($username != "admin" && $username != "public")
+						{
+							echo <<<'USERNAME'
+						<tr class="infos-row">
+							<td class="infos-left">
+								<div class="icon">
+									<i class="material-icons">mode_edit</i> <span class="icon-text">Name:</span>
+								</div>
+							</td>										
+							<td class="infos-right">
+								<input class="input project" id="userSettings-input-userName" type="text" maxlength="30" value="
 USERNAME;
-						if ($_SERVER['REQUEST_METHOD'] == "POST")
-							echo $username;
+							if ($_SERVER['REQUEST_METHOD'] == "POST")
+								echo $username;
 
-						echo <<<'USERNAME'
-" placeholder="User"/></td>
-					</tr>
+							echo <<<'USERNAME'
+	" placeholder="User"/></td>
+						</tr>
 USERNAME;
-					}
-					?>
+						}
+						?>
 
 
-					<?php
-					if($username != "public")
-					{
-						echo <<<'PASSWORD'
-<tr class="infos-row">
-						<td class="infos-left">
-							<div class="icon">
-								<i class="material-icons">lock</i> <span class="icon-text">Password:</span>
-							</div>
-						</td>										
-						<td class="infos-right">
-							<input class="input project" id="userSettings-input-userPassword" type="password" placeholder="*******"/>
-						</td>
-					</tr>
-					
+						<?php
+						if($username != "public")
+						{
+							echo <<<'PASSWORD'
+						<tr class="infos-row">
+							<td class="infos-left">
+								<div class="icon">
+									<i class="material-icons">lock</i> <span class="icon-text">Password:</span>
+								</div>
+							</td>										
+							<td class="infos-right">
+								<input class="input project" id="userSettings-input-userPassword" type="password" placeholder="*******"/>
+							</td>
+						</tr>
+						
 PASSWORD;
-						echo <<<'PASSWORD_CONFIRM'
-<tr class="infos-row">
-						<td class="infos-left">
-							<div class="icon">
-								<i class="material-icons">lock</i> <span class="icon-text">Confirm Password:</span>
-							</div>
-						</td>										
-						<td class="infos-right">
-							<input class="input project" id="userSettings-input-userPassword_confirm" type="password" placeholder="*******"/>
-						</td>
-					</tr>
-					
+							echo <<<'PASSWORD_CONFIRM'
+						<tr class="infos-row">
+							<td class="infos-left">
+								<div class="icon">
+									<i class="material-icons">lock</i> <span class="icon-text">Confirm Password:</span>
+								</div>
+							</td>										
+							<td class="infos-right">
+								<input class="input project" id="userSettings-input-userPassword_confirm" type="password" placeholder="*******"/>
+							</td>
+						</tr>
+						
 PASSWORD_CONFIRM;
-					}
-					
+						}
+						
 
 
-					if($username != "admin" && $username != "public")
-					{
-						echo <<<'ISADMIN'
-					<tr class="infos-row">
-						<td class="infos-left lesspadding">
-							<div class="icon">
-								<i class="material-icons">security</i> <span class="icon-text">Is Admin:</span>
-							</div>
-						</td>					
-						<td class="infos-right lesspadding">
-							<div class="toggle-container-user">							
-								<label class="switch-light switch-candy" onclick="">
-									<input type="checkbox" id="toggle-user-is-admin" 
+						if($username != "admin" && $username != "public")
+						{
+							echo <<<'ISADMIN'
+						<tr class="infos-row">
+							<td class="infos-left lesspadding">
+								<div class="icon">
+									<i class="material-icons">security</i> <span class="icon-text">Is Admin:</span>
+								</div>
+							</td>					
+							<td class="infos-right lesspadding">
+								<div class="toggle-container-user">							
+									<label class="switch-light switch-candy" onclick="">
+										<input type="checkbox" id="toggle-user-is-admin" 
 ISADMIN;
-						if($accountType == "admin") echo "checked";
-						echo <<<'ISADMINREST'
-	>
+							if($accountType == "admin") echo "checked";
+							echo <<<'ISADMINREST'
+								>
 ISADMINREST;
 
 
 
-						echo <<<'SWITCH'
-<span>
-										<span>No</span>
-										<span>Yes</span>
-										<a style="background-color: 
+							echo <<<'SWITCH'
+											<span>
+											<span>No</span>
+											<span>Yes</span>
+											<a style="background-color: 
 SWITCH;
-						if(isset($colorScheme)) echo $colorScheme;
-						echo <<<'REST'
-	"></a>
-									</span>
-								</label>								
-							</div>
-						</td>						
-					</tr>	
-					<tr<tr class="infos-row">
-						<td colspan="2">
-							<div class="user-line"> </div>
-						</td>
-					</tr>
-					
+							if(isset($colorScheme)) echo $colorScheme;
+							echo <<<'REST'
+								"></a>
+										</span>
+									</label>								
+								</div>
+							</td>						
+						</tr>	
+						<tr<tr class="infos-row">
+							<td colspan="2">
+								<div class="user-line"> </div>
+							</td>
+						</tr>
+						
 REST;
-					}
-					if($username != "admin")
-					{
-						echo <<<'PROJECT_ACCESS'
-<tr class="infos-row">
-						<td colspan="2" class="infos-center">
-							<div class="user-headline-container">
-								<div class="user-headline">Project Access Forbidden</div>
-							</div>
-						</td>	
-					</tr>
+						}
+						if($username != "admin")
+						{
+							echo <<<'PROJECT_ACCESS'
+						<tr class="infos-row">
+							<td colspan="2" class="infos-center">
+								<div class="user-headline-container">
+									<div class="user-headline">Project Access Forbidden</div>
+								</div>
+							</td>	
+						</tr>
 PROJECT_ACCESS;
 
-					}
-					if($username != "admin")
-					{
-						global $projectArray;
-						include "../helper/getProjectsFromJSON.php";
-						for ($i = 0; $i < sizeof($projectArray); $i++)
-						{
-							$projectName = $projectArray[$i]->{'name'};
-							$UUID = $projectArray[$i]->{'UUID'};
-							echo '<tr class="infos-row">' .
-								'<td class="infos-left">' .
-								'<div class="user-project-name">' .
-								$projectName .
-								'</div>' .
-								'</td>                                                ' .
-								'<td class="infos-right">' .
-								'	<div class="toggle-container-user">	' .
-								'		<label class="switch-light switch-candy" onclick="">' .
-								'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_' . $UUID . '" ';
-						for ($j = 0; $j < sizeof($forbiddenProjects); $j++)
-						{
-							if ($forbiddenProjects[$j] == $UUID)
-							{
-								echo "checked";
-								break;
-							}
 						}
+						if($username != "admin")
+						{
+							global $projectArray;
+							include "../helper/getProjectsFromJSON.php";
+							for ($i = 0; $i < sizeof($projectArray); $i++)
+							{
+								$projectName = $projectArray[$i]->{'name'};
+								$UUID = $projectArray[$i]->{'UUID'};
+								echo '<tr class="infos-row">' .
+									'<td class="infos-left">' .
+									'<div class="user-project-name">' .
+									$projectName .
+									'</div>' .
+									'</td>                                                ' .
+									'<td class="infos-right">' .
+									'	<div class="toggle-container-user">	' .
+									'		<label class="switch-light switch-candy" onclick="">' .
+									'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_' . $UUID . '" ';
+							for ($j = 0; $j < sizeof($forbiddenProjects); $j++)
+							{
+								if ($forbiddenProjects[$j] == $UUID)
+								{
+									echo "checked";
+									break;
+								}
+							}
 
-						echo '>' .
-							'			<span>' .
-							'				<span>No</span>' .
-							'				<span>Yes</span>' .
-							'				<a style="background-color:';
+							echo '>' .
+								'			<span>' .
+								'				<span>No</span>' .
+								'				<span>Yes</span>' .
+								'				<a style="background-color:';
 
-						echo $colorScheme;
-						echo '"></a>' .
-							'			</span>' .
-							'</label>' .
-							'</div>' .
-							'</td>' .
-							'</tr>';
+							echo $colorScheme;
+							echo '"></a>' .
+								'			</span>' .
+								'</label>' .
+								'</div>' .
+								'</td>' .
+								'</tr>';
+						}
 					}
-				}
-					?>
+						?>
 
-					
-					<tr class="infos-row">															
-						<td colspan="2" class="infos-center">
-							<a class="button save" id="userSettings-button-save" href="javascript:void(null)">									
-								<i class="material-icons">check</i> <span class="button-text">Save</span>
-							</a>
-							<a class="button discard" id="userSettings-button-discard" href="javascript:void(null)">									
-								<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
-							</a>
-						</td>
-					</tr>						
-				</table>
+						
+						<tr class="infos-row">															
+							<td colspan="2" class="infos-center">
+								<a class="button save" id="userSettings-button-save" href="javascript:void(null)">									
+									<i class="material-icons">check</i> <span class="button-text">Save</span>
+								</a>
+								<a class="button discard" id="userSettings-button-discard" href="javascript:void(null)">									
+									<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
+								</a>
+							</td>
+						</tr>						
+					</table>
+				</div>
 			</div>
 		</div>
 		<?php include("../templates/footer.php"); ?>

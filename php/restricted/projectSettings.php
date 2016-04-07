@@ -129,99 +129,100 @@ include('../helper/getGeneralSettingsFromJSON.php');
 					include($path_header); 
 				}
 			?>
-		<div id="content">	
-			<div id="white">
-				<table class="infos-small">
-					<tr class="infos-row">
-						<td colspan="2" class="infos-center">							
-							<div id="new-project"><?php if(isset($projectName)) echo $projectName?>
-								<div class="hidden" id="projectSettingsUUID">
-									<?php if(isset($UUID))
-											echo $UUID;?>
+			<div id="content">	
+				<div id="white">
+					<table class="infos-small">
+						<tr class="infos-row">
+							<td colspan="2" class="infos-center">							
+								<div id="new-project"><?php if(isset($projectName)) echo $projectName?>
+									<div class="hidden" id="projectSettingsUUID">
+										<?php if(isset($UUID))
+												echo $UUID;?>
+									</div>
 								</div>
-							</div>
-							<div class="line line-no-space"></div>
-						</td>	
-					</tr>
-					<tr class="infos-row">
-						<td colspan="2" class="infos-center">
-							<div id="toggle-container">							
-								<label class="switch-light switch-candy" onclick="">
-									<input type="checkbox" id="toggle-project-or-url" <?php if(isset($url) && $url != "")echo "checked"?>>
-									<span>
-										<span>Project</span>
-										<span>URL</span>
-										<a style="background-color: <?php echo $colorScheme;?>"></a>
-									</span>
-								</label>								
-							</div>
-						</td>						
-					</tr>
-					<tr class="infos-row">
-						<td class="infos-left">
-							<div class="icon">
-								<i class="material-icons">mode_edit</i> <span class="icon-text">Name:</span>
-							</div>
-						</td>										
-						<td class="infos-right">
-							<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php if(isset($projectName)) echo $projectName;?>" placeholder="MyApp"/>
-						</td>
-					</tr>
-					<tr class="infos-row">
-						<td class="infos-left">
-							<div class="icon">
-								<i class="material-icons">image</i> <span class="icon-text">Icon:</span>
-							</div>
-						</td>										
-						<td class="infos-right">
-							<select id="projectSettings-iconSelector">
-								<?php
-								$directory = "../../images/icons/";
-								$object = 'icon';
-								$exclude = getSelectedOption($object,$UUID);
-								include "../helper/printAllFilesFromDirectoryAsOption.php"
-								?>
-							</select>
-						</td>
-					</tr>
-					<tr class="infos-row row">
-						<td class="infos-left">
-							<div class="icon">
-								<i class="material-icons">label</i> <span class="icon-text">Status:</span>
-							</div>
-						</td>										
-						<td class="infos-right">
-							<div class="radiogroup" id="radiogroup-1">				
-								<input type="radio" name="projectStatus" id="radio-1" value="Alpha" <?php if($projectStatus == "Alpha"){echo "checked";}?>/>
-								<label for="radio-1">Alpha</label>
-							</div>
-							<div class="radiogroup">				
-								<input type="radio" name="projectStatus" id="radio-2" value="Beta" <?php if($projectStatus == "Beta"){echo "checked";}?>/>
-								<label for="radio-2">Beta</label>
-							</div>
-							<div class="radiogroup">				
-								<input type="radio" name="projectStatus" id="radio-3" value="Final" <?php if($projectStatus == "Final"){echo "checked";}?>/>
-								<label for="radio-3">Final</label>
-							</div>			
-						</td>
-					</tr>	
-						<!--settings for normal project -->					
-						<?php include('projectSettingsNormal.php');?>
-						<!--settings for url project -->	
-						<?php include('projectSettingsURL.php');?>
-						
-					<tr class="infos-row">
-						<td class="infos-left">	</td>										
-						<td class="infos-right">
-							<a class="button save" id="button-save" href="javascript:void(null)">									
-								<i class="material-icons">check</i> <span class="button-text">Save</span>
-							</a>
-							<a class="button discard" id="button-discard" href="javascript:void(null)">									
-								<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
-							</a>
-						</td>
-					</tr>						
-				</table>
+								<div class="line line-no-space"></div>
+							</td>	
+						</tr>
+						<tr class="infos-row">
+							<td colspan="2" class="infos-center">
+								<div id="toggle-container">							
+									<label class="switch-light switch-candy" onclick="">
+										<input type="checkbox" id="toggle-project-or-url" <?php if(isset($url) && $url != "")echo "checked"?>>
+										<span>
+											<span>Project</span>
+											<span>URL</span>
+											<a style="background-color: <?php echo $colorScheme;?>"></a>
+										</span>
+									</label>								
+								</div>
+							</td>						
+						</tr>
+						<tr class="infos-row">
+							<td class="infos-left">
+								<div class="icon">
+									<i class="material-icons">mode_edit</i> <span class="icon-text">Name:</span>
+								</div>
+							</td>										
+							<td class="infos-right">
+								<input class="input project" id="input-appName" type="text" maxlength="30" value="<?php if(isset($projectName)) echo $projectName;?>" placeholder="MyApp"/>
+							</td>
+						</tr>
+						<tr class="infos-row">
+							<td class="infos-left">
+								<div class="icon">
+									<i class="material-icons">image</i> <span class="icon-text">Icon:</span>
+								</div>
+							</td>										
+							<td class="infos-right">
+								<select id="projectSettings-iconSelector">
+									<?php
+									$directory = "../../images/icons/";
+									$object = 'icon';
+									$exclude = getSelectedOption($object,$UUID);
+									include "../helper/printAllFilesFromDirectoryAsOption.php"
+									?>
+								</select>
+							</td>
+						</tr>
+						<tr class="infos-row row">
+							<td class="infos-left">
+								<div class="icon">
+									<i class="material-icons">label</i> <span class="icon-text">Status:</span>
+								</div>
+							</td>										
+							<td class="infos-right">
+								<div class="radiogroup" id="radiogroup-1">				
+									<input type="radio" name="projectStatus" id="radio-1" value="Alpha" <?php if($projectStatus == "Alpha"){echo "checked";}?>/>
+									<label for="radio-1">Alpha</label>
+								</div>
+								<div class="radiogroup">				
+									<input type="radio" name="projectStatus" id="radio-2" value="Beta" <?php if($projectStatus == "Beta"){echo "checked";}?>/>
+									<label for="radio-2">Beta</label>
+								</div>
+								<div class="radiogroup">				
+									<input type="radio" name="projectStatus" id="radio-3" value="Final" <?php if($projectStatus == "Final"){echo "checked";}?>/>
+									<label for="radio-3">Final</label>
+								</div>			
+							</td>
+						</tr>	
+							<!--settings for normal project -->					
+							<?php include('projectSettingsNormal.php');?>
+							<!--settings for url project -->	
+							<?php include('projectSettingsURL.php');?>
+							
+						<tr class="infos-row">
+							<td class="infos-left">	</td>										
+							<td class="infos-right">
+								<a class="button save" id="button-save" href="javascript:void(null)">									
+									<i class="material-icons">check</i> <span class="button-text">Save</span>
+								</a>
+								<a class="button discard" id="button-discard" href="javascript:void(null)">									
+									<i class="material-icons">delete</i> <span class="button-text">Discard</span> 									
+								</a>
+							</td>
+						</tr>						
+					</table>
+				</div>
 			</div>
 		</div>
 		<?php include("../templates/footer.php"); ?>		
