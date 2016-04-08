@@ -34,7 +34,7 @@ if(!function_exists("deleteUser"))
     function deleteUser($username)
     {
         global $path_config_users;
-        //include "paths.php";
+        include "paths.php";
 
         $password = "";
         global $userArray;
@@ -54,7 +54,6 @@ if(!function_exists("deleteUser"))
 
         $sortType = "users";
         include "sort.php";
-
         return $password;
     }
 }
