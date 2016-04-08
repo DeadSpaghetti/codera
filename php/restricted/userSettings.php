@@ -102,7 +102,7 @@ USERNAME;
 								echo $username;
 
 							echo <<<'USERNAME'
-	" placeholder="User"/></td>
+" placeholder="User"/></td>
 						</tr>
 USERNAME;
 						}
@@ -156,7 +156,8 @@ PASSWORD_CONFIRM;
 									<label class="switch-light switch-candy" onclick="">
 										<input type="checkbox" id="toggle-user-is-admin" 
 ISADMIN;
-							if($accountType == "admin") echo "checked";
+							if($accountType == "admin")
+								echo "checked";
 							echo <<<'ISADMINREST'
 								>
 ISADMINREST;

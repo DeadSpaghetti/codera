@@ -139,17 +139,3 @@ if(!function_exists("getSalt"))
         return '$5$g3t#~34uö@$';
     }
 }
-
-if(!function_exists("coderaInfo"))
-{
-    function coderaInfo()
-    {
-        echo "Codera Version: 1.0.0\n";
-        echo "---------------------\n";
-        echo "libs version:\n";
-        echo "chosen: 1.5.1";
-        echo "elFinder: 2.1.9";
-        echo "lightbox2: 2.8.2";
-        echo "pickadate: 3.5.6";
-    }
-}
