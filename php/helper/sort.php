@@ -1,5 +1,6 @@
 <?php
 //sorts the projects in the json file | or users
+global $path_config_users;
 include "paths.php";
 include_once "functions.php";
 
@@ -76,11 +77,14 @@ elseif ($sortOrder == "latestUpdateReversed" && $sortType == "projects")
     });
 }
 
-if($sortType == "projects")
+if(isset($array))
 {
-    file_put_contents($path_config_projects, json_encode($array));
-}
-elseif ($sortType == "users")
-{
-    saveJSONToPHP($path_config_users,json_encode($array));
+    if ($sortType == "projects")
+    {
+        file_put_contents($path_config_projects, json_encode($array));
+    } elseif ($sortType == "users")
+    {
+        saveJSONToPHP($path_config_users, json_encode($array));
+    }
+
 }

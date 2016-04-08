@@ -1,4 +1,5 @@
 <?php
+global $path_config_users;
 include "paths.php";
 if(file_exists($path_config_users))
 {
