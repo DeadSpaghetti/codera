@@ -13,16 +13,14 @@ function getForbiddenProjects()
 
 $(document).ready(function()
 {
-    var loggedInUser = getLoggedInUser();
-
     $('#userSettings-button-save').click(function ()
     {
-
         var newUsername = $('#userSettings-input-userName').val();
         var username = $('#new-user').text().trim();
         var password = $('#userSettings-input-userPassword').val();
         var confirmPassword = $('#userSettings-input-userPassword_confirm').val();
         var forbiddenProjects = getForbiddenProjects();
+        var loggedInUser = getLoggedInUser();
 
         if(username == "public")
         {
