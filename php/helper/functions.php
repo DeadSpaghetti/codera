@@ -51,7 +51,6 @@ if(!function_exists("deleteUser"))
 
         $userArray = array_values($userArray);
         saveJSONToPHP($path_config_users,json_encode($userArray));
-
         $sortType = "users";
         include "sort.php";
         return $password;
@@ -101,9 +100,8 @@ if(!function_exists('saveJSONToPHP'))
     function saveJSONToPHP($saveLocation, $encodedJSONString)
     {
         $phpText = '<?php $jsonString = ';
-        $phpText = $phpText ."'". $encodedJSONString ."';";
+        $phpText = $phpText . "'" . $encodedJSONString . "';";
         file_put_contents($saveLocation, $phpText);
-
     }
 }
 
