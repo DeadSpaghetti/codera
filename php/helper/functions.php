@@ -142,7 +142,7 @@ if(!function_exists("generateSalt"))
         if(isset($randomString))
         {
             $saltToWrite = '$5$rounds=5000$' . $randomString . '$';
-            $phpText = '<? ' . ' $salt = "' . $saltToWrite . '"';
+            $phpText = '<? ' . ' $salt = "' . $saltToWrite . '";';
             file_put_contents("../../config/salt.php",$phpText);
         }
     }
