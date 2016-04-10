@@ -13,6 +13,9 @@ function getForbiddenProjects()
 
 $(document).ready(function()
 {
+    var loggedInUser = getLoggedInUser();
+    console.log(loggedInUser);
+
     $('#userSettings-button-save').click(function ()
     {
 
@@ -58,7 +61,7 @@ $(document).ready(function()
                 },
                 function (data, error)
                 {
-                    if(newUsername != username && username.trim() != "New User")
+                    if(newUsername != username && username.trim() != "New User" && username == loggedInUser)
                     {
                         alert("You're now logged out!");
                         location.href = "../logoutAndRedirectToLogin.php";

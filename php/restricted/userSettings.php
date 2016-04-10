@@ -259,5 +259,9 @@ PROJECT_ACCESS;
 			</div>
 		</div>
 		<?php include("../templates/footer.php"); ?>
+	<script>function getLoggedInUser()
+		{
+			return '<?php echo $_SESSION['loggedIn'];?>';
+		}</script>
 	</body>
 </html>
