@@ -14,7 +14,6 @@ function getForbiddenProjects()
 $(document).ready(function()
 {
     var loggedInUser = getLoggedInUser();
-    console.log(loggedInUser);
 
     $('#userSettings-button-save').click(function ()
     {
