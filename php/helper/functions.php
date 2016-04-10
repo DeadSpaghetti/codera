@@ -100,10 +100,7 @@ if(!function_exists('saveJSONToPHP'))
 {
     function saveJSONToPHP($saveLocation, $encodedJSONString)
     {
-        $phpText = <<<'PHP'
-	<?php
-	$jsonString =
-PHP;
+        $phpText = '<?php $jsonString = ';
         $phpText = $phpText ."'". $encodedJSONString ."';";
         file_put_contents($saveLocation, $phpText);
 
@@ -136,5 +133,19 @@ if(!function_exists("getSalt"))
     function getSalt()
     {
         return '$5$g3t#~34uö@$';
+    }
+}
+
+//UNTESTED
+if(!function_exists("generateSalt"))
+{
+    function generateSalt($randomString)
+    {
+        if(isset($randomString))
+        {
+            $saltToWrite = '$5$rounds=5000$' . $randomString . '$';
+            $phpText = '<? ' . ' $salt = "' . $saltToWrite . '"';
+            file_put_contents("../../config/salt.php",$phpText);
+        }
     }
 }
