@@ -115,16 +115,16 @@ function addUser ($username,$password, $forbiddenProjects,$accountType)
 
 function saveJSONArray($newUserArray)
 {
-	global $path_config_users;
+	$path_config_users = null;
 	include "paths.php";
 
 	$fileIsThere = false;
 	if (file_exists($path_config_users))
 	{
 		$fileIsThere = true;
-		global $jsonString;
+		$userJSON = null;
 		include $path_config_users;
-		$array = json_decode($jsonString,false);
+		$array = json_decode($userJSON,false);
 	}
 
 	//checks boolean value to see if file is there. If not creates new array
@@ -133,10 +133,9 @@ function saveJSONArray($newUserArray)
 	else
 		$array[0] = $newUserArray;
 
-	$fileToSave = json_encode($array);
+	include_once "functions.php";
+	$fileToSave = json_encode(getSortedUserArray($array));
 	saveJSONToPHP($path_config_users,$fileToSave);
 
-	$sortType = "users";
-	include "sort.php";
 }
 

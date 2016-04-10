@@ -37,20 +37,23 @@ if(!function_exists("deleteUser"))
         include "paths.php";
 
         $password = "";
-        $userArray = array();
+        //$userArray = null;
         include "getUsersFromJSON.php";
-        for($i=0; sizeof($userArray); $i++)
+        if(isset($userArray))
         {
-            if($userArray[$i]->{'username'} == $username)
+            for ($i = 0; sizeof($userArray); $i++)
             {
-                $password = $userArray[$i]->{'password'};
-                unset($userArray[$i]);
-                break;
+                if ($userArray[$i]->{'username'} == $username)
+                {
+                    $password = $userArray[$i]->{'password'};
+                    unset($userArray[$i]);
+                    break;
+                }
             }
-        }
 
-        $userArray = array_values($userArray);
-        saveJSONToPHP($path_config_users,json_encode(getSortedUserArray($userArray)));
+            $userArray = array_values($userArray);
+            saveJSONToPHP($path_config_users, json_encode(getSortedUserArray($userArray)));
+        }
     }
 }
 
@@ -58,7 +61,7 @@ if(!function_exists("doesUserExist"))
 {
     function doesUserExist($username)
     {
-        $userArray = array();
+        $userArray = null;
         include "getUsersFromJSON.php";
         if($userArray != null)
         {
@@ -78,7 +81,7 @@ if(!function_exists("getPassword"))
 {
     function getPassword($username)
     {
-        $userArray = array();
+        $userArray = null;
         include "getUsersFromJSON.php";
         if($userArray != null)
         {
@@ -107,7 +110,7 @@ if(!function_exists("changePassword"))
 {
     function changePassword($username, $newPassword)
     {
-        $userArray = array();
+        $userArray = null;
         include "getUsersFromJSON.php";
         for ($i = 0; $i < sizeof($userArray); $i++)
         {
