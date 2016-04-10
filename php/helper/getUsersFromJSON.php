@@ -3,9 +3,9 @@ global $path_config_users;
 include "paths.php";
 if(file_exists($path_config_users))
 {
-    global $jsonString;
+    $userJSON = "";
     include $path_config_users;
-    $userArray = json_decode($jsonString,false);
+    $userArray = json_decode($userJSON,false);
 }
 else
 {

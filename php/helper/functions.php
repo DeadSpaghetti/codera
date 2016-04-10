@@ -3,7 +3,7 @@ if(!function_exists('isUserAdmin'))
 {
     function isUserAdmin($username)
     {
-        global $userArray;
+        $userArray = array();
         include "getUsersFromJSON.php";
         if($userArray != null)
         {
@@ -33,11 +33,11 @@ if(!function_exists("deleteUser"))
 {
     function deleteUser($username)
     {
-        global $path_config_users;
+        $path_config_users = "";
         include "paths.php";
 
         $password = "";
-        global $userArray;
+        $userArray = array();
         include "getUsersFromJSON.php";
         for($i=0; sizeof($userArray); $i++)
         {
@@ -50,10 +50,7 @@ if(!function_exists("deleteUser"))
         }
 
         $userArray = array_values($userArray);
-        saveJSONToPHP($path_config_users,json_encode($userArray));
-        $sortType = "users";
-        include "sort.php";
-        return $password;
+        saveJSONToPHP($path_config_users,json_encode(getSortedUserArray($userArray)));
     }
 }
 
@@ -61,7 +58,7 @@ if(!function_exists("doesUserExist"))
 {
     function doesUserExist($username)
     {
-        global $userArray;
+        $userArray = array();
         include "getUsersFromJSON.php";
         if($userArray != null)
         {
@@ -81,7 +78,7 @@ if(!function_exists("getPassword"))
 {
     function getPassword($username)
     {
-        global $userArray;
+        $userArray = array();
         include "getUsersFromJSON.php";
         if($userArray != null)
         {
@@ -99,7 +96,7 @@ if(!function_exists('saveJSONToPHP'))
 {
     function saveJSONToPHP($saveLocation, $encodedJSONString)
     {
-        $phpText = '<?php $jsonString = ';
+        $phpText = '<?php $userJSON = ';
         $phpText = $phpText . "'" . $encodedJSONString . "';";
         file_put_contents($saveLocation, $phpText);
     }
@@ -110,7 +107,7 @@ if(!function_exists("changePassword"))
 {
     function changePassword($username, $newPassword)
     {
-        global $userArray;
+        $userArray = array();
         include "getUsersFromJSON.php";
         for ($i = 0; $i < sizeof($userArray); $i++)
         {
@@ -147,3 +144,16 @@ if(!function_exists("generateSalt"))
         }
     }
 }
+
+if(!function_exists("getSortedUserArray"))
+{
+    function getSortedUserArray($userArray)
+    {
+        usort($array, function ($a, $b)
+        {
+            return ($a->username < $b->username) ? -1 : 1;
+        });
+        return $userArray;
+    }
+}
+
