@@ -3,13 +3,14 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
-define('USER_FILE_PATH','../../config/users.php');
+$path_config_users = "";
+include "paths.php";
 
 
 function checkLoginData($username,$password)
 {
     $returnValue = 'failure';
-    global $userArray;
+    $userArray = [];
     include "getUsersFromJSON.php";
 
     for($i=0; $i < sizeof($userArray); $i++)
@@ -41,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         $password = crypt($password, '$5$g3t#~34uö@$');
 
-        if (file_exists(USER_FILE_PATH))
+        if (file_exists($path_config_users))
         {
             checkLoginData($username, $password);
         }

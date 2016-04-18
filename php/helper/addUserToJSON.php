@@ -64,7 +64,7 @@ function overrideUserProperties($username,$password,$forbiddenProjects,$accountT
 				$userArray[$i]->{'password'} = crypt($password,getSalt());
 
 			//saveJSONArray($userArray);
-			saveJSONToPHP($path_config_users,json_encode($userArray));
+			file_put_contents($path_config_users,json_encode($userArray,JSON_PRETTY_PRINT));
 			break;
 		}
 	}
@@ -115,27 +115,20 @@ function addUser ($username,$password, $forbiddenProjects,$accountType)
 
 function saveJSONArray($newUserArray)
 {
-	$path_config_users = null;
+	$path_config_users = "";
 	include "paths.php";
-
-	$fileIsThere = false;
-	if (file_exists($path_config_users))
-	{
-		$fileIsThere = true;
-		$userJSON = null;
-		include $path_config_users;
-		$array = json_decode($userJSON,false);
-	}
+	$userArray = [];
+	include "getUsersFromJSON.php";
 
 	//checks boolean value to see if file is there. If not creates new array
-	if ($fileIsThere)
-		array_push($array, $newUserArray);
+	if (!empty($userArray))
+		array_push($userArray, $newUserArray);
 	else
 		$array[0] = $newUserArray;
 
 	include_once "functions.php";
-	$fileToSave = json_encode(getSortedUserArray($array));
-	saveJSONToPHP($path_config_users,$fileToSave);
+	$fileToSave = json_encode(getSortedUserArray($userArray),JSON_PRETTY_PRINT);
+	file_put_contents($path_config_users,$fileToSave);
 
 }
 

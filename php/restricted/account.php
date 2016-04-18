@@ -10,8 +10,8 @@ if(!isset($_SESSION['loggedIn']))
     header('Location: ../login.php');
     exit;	
 }
-global $developerName;
-global $colorScheme;
+$developerName = "";
+$colorScheme = "";
 include "../helper/getGeneralSettingsFromJSON.php";
 
 $username = $_SESSION['loggedIn'];

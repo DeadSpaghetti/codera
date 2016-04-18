@@ -52,7 +52,7 @@ if(!function_exists("deleteUser"))
             }
 
             $userArray = array_values($userArray);
-            saveJSONToPHP($path_config_users, json_encode(getSortedUserArray($userArray)));
+            file_put_contents($path_config_users, json_encode(getSortedUserArray($userArray),JSON_PRETTY_PRINT));
         }
     }
 }
@@ -95,34 +95,28 @@ if(!function_exists("getPassword"))
         }
     }
 }
-if(!function_exists('saveJSONToPHP'))
-{
-    function saveJSONToPHP($saveLocation, $encodedJSONString)
-    {
-        $phpText = '<?php $userJSON = ';
-        $phpText = $phpText . "'" . $encodedJSONString . "';";
-        file_put_contents($saveLocation, $phpText);
-    }
-}
-
 
 if(!function_exists("changePassword"))
 {
     function changePassword($username, $newPassword)
     {
-        $userArray = null;
+        $userArray = [];
         include "getUsersFromJSON.php";
-        for ($i = 0; $i < sizeof($userArray); $i++)
+
+        if(!empty($userArray))
         {
-            if ($userArray[$i]->{'username'} == $username)
+            for ($i = 0; $i < sizeof($userArray); $i++)
             {
-                $userArray[$i]->{'password'} = crypt($newPassword,getSalt());
-                break;
+                if ($userArray[$i]->{'username'} == $username)
+                {
+                    $userArray[$i]->{'password'} = crypt($newPassword, getSalt());
+                    break;
+                }
             }
+            $path_config_users = "";
+            include "paths.php";
+            file_put_contents($path_config_users, json_encode($userArray, JSON_PRETTY_PRINT));
         }
-        global $path_config_users;
-        include "paths.php";
-        saveJSONToPHP($path_config_users, json_encode($userArray));
     }
 }
 
@@ -152,7 +146,7 @@ if(!function_exists("getSortedUserArray"))
 {
     function getSortedUserArray($userArray)
     {
-        usort($array, function ($a, $b)
+        usort($userArray, function ($a, $b)
         {
             return ($a->username < $b->username) ? -1 : 1;
         });

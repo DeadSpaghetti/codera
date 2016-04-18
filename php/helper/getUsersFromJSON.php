@@ -1,11 +1,9 @@
 <?php
-global $path_config_users;
+$path_config_users = "";
 include "paths.php";
 if(file_exists($path_config_users))
 {
-    $userJSON = null;
-    include $path_config_users;
-    $userArray = json_decode($userJSON,false);
+    $userArray = json_decode(file_get_contents($path_config_users),false);
 }
 else
 {

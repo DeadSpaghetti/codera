@@ -41,7 +41,7 @@ include($path_helper_getGeneralSettings);
 				<table id="projects">
 					<?php
 						
-						global $projectArray;
+						$projectArray = [];
 						include('helper/getProjectsFromJSON.php');
 					    include('helper/getGeneralSettingsFromJSON.php');
 
