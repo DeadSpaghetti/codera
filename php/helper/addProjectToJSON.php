@@ -102,9 +102,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         //push new reg id into array
         $fileToSave = json_encode($array);
         file_put_contents($pathString,$fileToSave);
-        /*$file = fopen($pathString, "w");
-        fwrite($file, $fileToSave);
-        fclose($file);*/
 
         global $sortOrder;
         $sortType = "projects";
