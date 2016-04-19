@@ -19,7 +19,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<?php include('../cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>		
-		<link type="text/css" rel="stylesheet" href="../../js/libs/chosen/chosen.min.css"/>
+		<link type="text/css" rel="stylesheet" href="../../js/libs/chosen/chosen.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>

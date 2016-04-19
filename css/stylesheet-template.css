@@ -108,6 +108,14 @@ vertical-align: middle;
 padding-bottom: 5vmin;
 }
 
+.infos-right{
+white-space: nowrap;
+}
+
+.infos-right.wrap{
+white-space: normal;
+}
+
 .infos-right.lesspadding{
 padding-bottom: 1vmin;
 }

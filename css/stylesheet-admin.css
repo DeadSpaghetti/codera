@@ -81,7 +81,7 @@ font-family: Roboto, Sans-Serif;
 }
 
 #input-about-text{
-width: 77%;
+width: 97%;
 }
 
 #input-password{
@@ -193,7 +193,7 @@ margin-left: 4vmin;
 display: block;
 }
 
-#radiogroup-1{
+#radiogroup-1, #radiogroup-2{
 margin: 0;
 }
 
@@ -204,6 +204,8 @@ margin: auto;
 font-family: Roboto, Sans-Serif;
 font-size: 2.2vmin;
 color: #212121;
+word-break: break-all;
+word-wrap: break-word;
 }
 
 .overview-left{
@@ -235,10 +237,10 @@ display: inline-block;
 
 .overview-appname{
 font-family: Roboto, Sans-Serif;
-font-size: 3vmin;	
-display: inline;
+font-size: 3vmin;
 vertical-align: middle;
-margin-left: 4vmin;
+padding-left: 4vmin;
+padding-right: 3vmin;
 }
 
 .user-overview-appname{
@@ -316,8 +318,6 @@ min-height: 80vmin;
 #elfinder{
 height: 80vmin !important;
 }
-
-
 
 @media screen and (max-width: 1100px) {
     #login-white{

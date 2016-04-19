@@ -33,14 +33,14 @@ include "../helper/getAboutPageFromJSON.php";
 			</div>
 		</td>										
 		<td class="infos-right">
-			<select class="abpoutpage-selector" id="aboutpage-iconSelector">
+			<select id="aboutpage-iconSelector">
 				<?php
 				$directory = "../../images/icons/";
 				$object = 'icon';
 				if(isset($aboutIcon)) $exclude = $aboutIcon;
 				include "../helper/printAllFilesFromDirectoryAsOption.php"
 				?>
-			</select>
+			</select>			
 		</td>
 	</tr>
 	<tr class="infos-row">

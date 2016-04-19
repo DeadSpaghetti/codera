@@ -36,7 +36,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 				<i class="material-icons">color_lens</i> <span class="icon-text">Color Scheme:</span>
 			</div>
 		</td>										
-		<td class="infos-right">
+		<td class="infos-right wrap">
 			<div id="color-chooser">							
 					<?php include("../helper/printColorOptions.php"); ?>				
 			</div>
@@ -48,7 +48,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 				<i class="material-icons">grid_on</i> <span class="icon-text">Gridwidth:</span>
 			</div>
 		</td>										
-		<td class="infos-right">
+		<td class="infos-right">			
 			<div class="radiogroup" id="radiogroup-1">				
 				<input type="radio" name="gridwidth" id="radio-1" value="3" <?php if($gridSize == 3){echo "checked";} ?>/>
 				<label for="radio-1">3</label>
@@ -60,7 +60,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 			<div class="radiogroup">				
 				<input type="radio" name="gridwidth" id="radio-3" value="5" <?php if($gridSize == 5){echo "checked";} ?>/>
 				<label for="radio-3">5</label>
-			</div>			
+			</div>				
 		</td>
 	</tr>
 	<tr class="infos-row">
@@ -69,8 +69,8 @@ include("../helper/getGeneralSettingsFromJSON.php");
 				<i class="material-icons">sort_by_alpha</i> <span class="icon-text">Project Sort Order:</span>
 			</div>
 		</td>
-		<td class="infos-right">
-			<div class="radiogroup" id="radiogroup-1">
+		<td class="infos-right">			
+			<div class="radiogroup" id="radiogroup-2">
 				<input type="radio" name="sortOrder" id="radio-sortOrder1" value="a-z" <?php if($sortOrder == "a-z"){echo "checked";} ?>/>
 				<label for="radio-sortOrder1">a-z</label>
 			</div>
@@ -85,7 +85,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 			<div class="radiogroup">
 				<input type="radio" name="sortOrder" id="radio-sortOrder4" value="latestUpdateReversed" <?php if($sortOrder == "latestUpdateReversed"){echo "checked";} ?>/>
 				<label for="radio-sortOrder4">old-new</label>
-			</div>
+			</div>			
 		</td>
 	</tr>
 	<tr class="infos-row">

@@ -5,12 +5,12 @@ if(!isset($_SESSION))
 }
 
 include('helper/paths.php');
-$developerName = "";
-$colorScheme = "";
+global $developerName;
+global $colorScheme;
 include('helper/getGeneralSettingsFromJSON.php');	
 
-$aboutText = "";
-$aboutIcon = "";
+global $aboutText;
+global $aboutIcon;
 include "helper/getAboutPageFromJSON.php";
 
 ?>

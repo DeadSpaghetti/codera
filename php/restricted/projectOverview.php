@@ -16,7 +16,7 @@ include('../helper/paths.php');
 
 <table id="overview">
     <tr class="overview-row">
-        <td colspan="2" class="overview-center">
+        <td colspan="3" class="overview-center">
             <a class="button newProject" id="button-new-project" href="projectSettings.php" style="background-color: <?php echo $colorScheme;?>;">
                 <i class="material-icons">add</i> <span class="button-text">New</span>
             </a>
@@ -34,14 +34,10 @@ if($projectArray != null)
 		$name = $projectArray[$i]->{'name'};
 		echo
 			'<tr id='; echo $projectArray[$i]->{'UUID'}; echo ' class="overview-row">'.
-			'<td class="overview-left">'.
-				'<table>'.
-					'<tr>'.
-						'<td class="overview-icon" style="background-image: url('.$path_folder_icons.'/'.$icon.');"> </td>'.
-						'<td class="overview-appname">'.$name.'</td>'.
-					'</tr>'.
-				'</table>'.
-			'</td>		'.
+						
+			'<td class="overview-icon" style="background-image: url('.$path_folder_icons.'/'.$icon.');"> </td>'.
+			'<td class="overview-appname">'.$name.'</td>'.				
+			
 			'<td class="overview-right">'.
 				'<a class="button edit" name="projectOverviewEdit" href="javascript:void(null)">'.
 					'<i class="material-icons">mode_edit</i>'.
@@ -52,7 +48,7 @@ if($projectArray != null)
 			'</td>'.
 		'</tr>'.
 		'<tr class="overview-row">'.
-			'<td colspan="2">'.
+			'<td colspan="3">'.
 				'<div class="overview-line"> </div>'.
 			'</td>'.
 		'</tr>';

@@ -39,7 +39,7 @@ font-size: 2vmin;
 font-weight: bold;
 color: #212121;
 transition: all linear 0.15s;	
-text-decoration: none;				
+text-decoration: none;			
 }
 
 .tab-links a:hover {

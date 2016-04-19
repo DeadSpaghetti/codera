@@ -2,9 +2,9 @@
 //$options can be 'option' || 'image' || null
 if(isset($property) && $property != null && isset($UUID) && $UUID != null)
 {
-    $projectArray = [];
+    global $projectArray;
     include "getProjectsFromJSON.php";
-    if(!empty($projectArray))
+    if($projectArray != null)
     {
         for ($i = 0; $i < sizeof($projectArray); $i++)
         {
@@ -20,8 +20,7 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
                         {
                             echo "<option>" . $allowedFilesArray[$j] . "</option>";
                         }
-                    }
-                    elseif ($options == "image")
+                    } elseif ($options == "image")
                     {
                         $directory = "../images/screenshots/";
                         $width = '100px';
