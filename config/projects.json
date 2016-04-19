@@ -29,7 +29,8 @@
         "versionCode": "15",
         "projectStatus": "Final",
         "url": "",
-        "UUID": "FC3D0A58-D80D-5AA3-80CF-35BFC014C926"
+        "UUID": "FC3D0A58-D80D-5AA3-80CF-35BFC014C926",
+        "totalDownloads": 2
     },
     {
         "name": "Codera Github",
@@ -142,21 +143,5 @@
         "projectStatus": "Final",
         "url": "",
         "UUID": "6972071D-8A65-FC59-DDDA-13B0476F25A5"
-    },
-    {
-        "name": "Whatever",
-        "icon": "crop.gif",
-        "versionName": "1",
-        "date": "02.04.2016",
-        "latestChanges": "Whatever",
-        "description": "This and that",
-        "requirements": "Nothing",
-        "files": "[\"Untitled html.html\",\"flux.desktop\"]",
-        "screenshots": "[\"schreenshot-test.jpg\"]",
-        "license": "APACHE-2.0.txt",
-        "versionCode": "11",
-        "projectStatus": "Beta",
-        "url": "",
-        "UUID": "D6DC9947-230B-9078-F8C9-E7F452EAC171"
     }
 ]
