@@ -18,8 +18,7 @@ include('cookie.php');
 		<title><?php echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
-		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>
-		<link type="text/css" rel="stylesheet" href="../css/stylesheet-template.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>	
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link href="../js/libs/chosen/chosen.css" rel="stylesheet" type="text/css"/>
         <link href="../js/libs/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" type="text/css"/>

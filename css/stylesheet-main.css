@@ -292,6 +292,252 @@ height: 2.2vmin;
 vertical-align: middle;
 }
 
+#white{
+width: 50vw;
+height: auto;
+margin: auto;
+background-color: #FFFFFF;
+-webkit-box-shadow:  0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
+-moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
+box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
+padding: 3vmin 6vmin 3vmin 4vmin;
+margin-top: 5vmin;
+}
+
+#app{
+width: auto;
+margin: auto;
+}
+
+#app-icon{
+width: 14vmin;
+height: 14vmin;
+margin: auto;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: contain;
+opacity: 1.0;
+}
+
+#app-name{	
+font-family: Roboto, Sans-Serif;
+font-size: 5vmin;
+margin: auto;
+text-align: center;
+color: #212121;
+padding-left: 10vmin;
+}
+
+#new-project{	
+font-family: Roboto, Sans-Serif;
+font-size: 5vmin;
+margin: auto;
+text-align: center;
+color: #212121;
+}
+
+#new-user{
+font-family: Roboto, Sans-Serif;
+font-size: 5vmin;
+margin: auto;
+text-align: center;
+color: #212121;
+}
+
+.line{
+width: 100%;
+height: 0.3vmin;
+margin: auto;
+margin-top: 2vmin;
+background-image: linear-gradient(to left, #F2F2F2 0%, #333333 3%, #333333 97%, #F2F2F2 100%);
+margin-bottom: 5vmin;
+}
+
+.line-no-space{
+margin-bottom: 0;
+}
+
+.infos{
+width: 95%;
+height: auto;
+margin: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+color: #212121;
+}
+
+.infos-small{
+width: 80%;
+height: auto;
+margin: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+color: #212121;
+}
+
+.infos-left{
+width: 30vmin;
+padding-right: 5vmin;
+font-weight: bold;
+vertical-align: top;	
+}
+
+.infos-left.lesspadding{
+padding-bottom: 1vmin;
+}
+
+.infos-left-small{
+width: 15vmin;
+padding-right: 5vmin;
+font-weight: bold;
+vertical-align: top;	
+}
+
+.infos-center{
+text-align: center;
+vertical-align: middle;
+}
+
+.infos-row > td{
+padding-bottom: 5vmin;
+}
+
+.infos-right{
+white-space: nowrap;
+}
+
+.infos-right.wrap{
+white-space: normal;
+}
+
+.infos-right.lesspadding{
+padding-bottom: 1vmin;
+}
+
+.infos-right-space{
+width: 10%;
+}
+
+#template-download{
+width: 80%;
+}
+
+#template-fileSelector{
+width: 100% !important;
+}
+
+#template-download-right{
+width: 14vmin;
+}
+
+/*** about page ***/
+
+#about-headline{
+font-family: Roboto, Sans-Serif;
+font-size: 5vmin;
+margin: auto;
+text-align: center;
+color: #212121;
+}
+
+.about-headline-small{
+font-family: Roboto, Sans-Serif;
+font-size: 3.5vmin;
+margin: auto;
+text-align: center;
+color: #212121;
+text-decoration: underline;
+margin-bottom: 5vmin;
+}
+
+.about-table{
+width: 80%;
+height: auto;
+margin: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+color: #212121;	
+}
+
+.about-left{
+width: 25vmin;
+padding-right: 5vmin;
+font-weight: bold;
+vertical-align: top;
+}
+
+#about-icon{
+margin: auto;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: contain;
+opacity: 1.0;
+width: 20vmin;
+height: 20vmin;
+display: inline-block;	
+border: 0.5vmin solid #212121;
+border-radius: 1vmin;	
+}
+
+.about-right{
+vertical-align: top;
+}
+
+.about-text{
+text-align: center;
+width: 60%;
+height: auto;
+margin: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+color: #212121;	
+}
+
+.link-version{	
+padding-left: 3vmin;
+}
+
+.link-visible-table{
+text-align: left;
+margin: auto;
+}
+
+.link-visible:link, .link-visible:hover, .link-visible:active,  .link-visible:visited{
+text-decoration: underline;
+color: #4a98d3;
+}
+
+.link-visible-table-right{
+padding-left: 3vmin;
+}
+
+.about-line{
+width: 100%;
+height: 0.3vmin;
+margin: auto;
+margin-top: 5vmin;
+background-image: linear-gradient(to left, #F2F2F2 0%, #333333 3%, #333333 97%, #F2F2F2 100%);
+margin-bottom: 5vmin;
+}
+
+.about-text-full{
+text-align: left;
+width: 60%;
+height: auto;
+margin: auto;
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+color: #212121;	
+}
+
+#forbidden{
+margin: auto;
+text-align: center;
+font-family: Roboto, Sans-Serif;
+font-size: 4vmin;
+margin-top: 10vmin;
+}
+
 .hidden{
 display: none;
 }
@@ -312,4 +558,14 @@ height: 4vmin !important;
 
 .lb-outerContainer{
 background-color: transparent !important;
+}
+
+@media screen and (max-width: 1000px) {
+    #white{
+		width: 80vw;
+	}	
+	
+	#infos-small{
+		width: 95%;
+	}
 }
