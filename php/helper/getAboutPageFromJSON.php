@@ -1,5 +1,5 @@
 <?php
-global $path_config_about;
+$path_config_about = "";
 include "paths.php";
 
 if(file_exists($path_config_about))
