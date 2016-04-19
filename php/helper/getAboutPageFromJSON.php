@@ -1,6 +1,4 @@
 <?php
-if(!isset($_SESSION['loggedIn']))
-    session_start();
 global $path_config_about;
 include "paths.php";
 
