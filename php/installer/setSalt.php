@@ -1,10 +1,20 @@
 <?php
+function generateSalt($randomString)
+{
+    if(isset($randomString))
+    {
+        $path_config_salt = "";
+        include "../helper/paths.php";
+        $saltToWrite = '$5$rounds=5000$' . $randomString . '$';
+        file_put_contents($path_config_salt,$saltToWrite);
+    }
+}
+
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $inputString = $_POST['inputString'];
     if(isset($inputString))
     {
-        include_once "../helper/functions.php";
         generateSalt($inputString);
     }
 }

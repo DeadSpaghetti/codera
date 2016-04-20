@@ -130,18 +130,6 @@ if(!function_exists("getSalt"))
     }
 }
 
-//UNTESTED
-if(!function_exists("generateSalt"))
-{
-    function generateSalt($randomString)
-    {
-        if(isset($randomString))
-        {
-            $saltToWrite = '$5$rounds=5000$' . $randomString . '$';
-            file_put_contents("../../config/salt.txt",$saltToWrite);
-        }
-    }
-}
 
 if(!function_exists("getSortedUserArray"))
 {
