@@ -3,11 +3,11 @@
     "color": "red",
     "hexCode": "#e57373"
   },
-   {
+  {
     "color": "orange",
     "hexCode": "#ffb74f"
   },
-   {
+  {
     "color": "amber",
     "hexCode": "#ffd54f"
   },
@@ -19,7 +19,7 @@
     "color": "lime",
     "hexCode": "#dce775"
   },
-   {
+  {
     "color": "light-green",
     "hexCode": "#aed581"
   },

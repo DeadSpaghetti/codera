@@ -36,6 +36,6 @@ function reset(type)
             "resetType": type
         },function (data,error)
         {
-			window.document.location.href = "../logout.php"; 
+            location.href = "../helper/createInstaller.php";
         });
 }

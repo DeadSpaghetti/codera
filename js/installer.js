@@ -55,13 +55,11 @@ $(document).ready(function()
         {
             changeStep(5);
         });
-
-
     });
 
     $('#installer-button-finish').click(function()
     {
-        window.document.location.href = "./index.php";
+        location.href = "../login.php";
     });
 
 });

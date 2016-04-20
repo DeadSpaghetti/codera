@@ -60,7 +60,7 @@ function resetSettings()
     $files = glob('../../config/*'); // get all file names
     foreach($files as $file)
     {
-        if(is_file($file) && $file != "version.txt" && $file != "colors.json" && $file != "projects.json")
+        if(is_file($file) && $file != "../../config/version.txt" && $file != "../../config/colors.json" && $file != "../../config/projects.json")
             unlink($file); // delete file
     }
 }

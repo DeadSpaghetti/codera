@@ -3,10 +3,9 @@ function generateSalt($randomString)
 {
     if(isset($randomString))
     {
-        $path_config_salt = "";
-        include "../helper/paths.php";
+        $path_config_salt = "../../config/salt.txt";
         $saltToWrite = '$5$rounds=5000$' . $randomString . '$';
-        file_put_contents($path_config_salt,$saltToWrite);
+        file_put_contents($path_config_salt, $saltToWrite);
     }
 }
 

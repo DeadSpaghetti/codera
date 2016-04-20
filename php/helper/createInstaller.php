@@ -1,3 +1,12 @@
+<?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
+if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] != "admin")
+    exit;
+
+$installerString = <<<'INSTALLER'
 <!DOCTYPE html>
 
 <?php
@@ -225,3 +234,65 @@ else
 		</div>		     
 	</body>
 </html>
+
+INSTALLER;
+
+$createAdmin = <<<'CREATE_ADMIN'
+<?php
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    include_once "../helper/functions.php";
+    $password = $_POST['password'];
+    $adminUser = array
+    (
+        "username" => "admin",
+        "password" => crypt($password, getSalt()),
+        "accountType" => "admin"
+    );
+
+    $publicUser = array
+    (
+        "username" => "public",
+        "accountType" => "user",
+        "forbiddenProjects" => "[]"
+    );
+
+    $path_config_users = "../../config/users.json";
+    //checks boolean value to see if file is there. If not creates new array
+    $userArray[0] = $adminUser;
+    $userArray[1] = $publicUser;
+
+    $fileToSave = json_encode($userArray, JSON_PRETTY_PRINT);
+    file_put_contents($path_config_users, $fileToSave);
+}
+CREATE_ADMIN;
+
+$setSalt = <<<'SET_SALT'
+<?php
+function generateSalt($randomString)
+{
+    if(isset($randomString))
+    {
+        $path_config_salt = "../../config/salt.txt";
+        $saltToWrite = '$5$rounds=5000$' . $randomString . '$';
+        file_put_contents($path_config_salt, $saltToWrite);
+    }
+}
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    $inputString = $_POST['inputString'];
+    if(isset($inputString))
+    {
+        generateSalt($inputString);
+    }
+}
+SET_SALT;
+mkdir("../installer");
+file_put_contents("../installer/installer.php",$installerString);
+file_put_contents("../installer/setSalt.php",$setSalt);
+file_put_contents("../installer/createAdmin.php",$createAdmin);
+
+
+

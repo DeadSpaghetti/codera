@@ -40,7 +40,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
     if (isset($username) && isset($password) && $username != "" && $password != "")
     {
-        $password = crypt($password, '$5$g3t#~34uö@$');
+        include_once "functions.php";
+        $password = crypt($password, getSalt());
 
         if (file_exists($path_config_users))
         {

@@ -2,11 +2,12 @@
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
+    include_once "../helper/functions.php";
     $password = $_POST['password'];
     $adminUser = array
     (
         "username" => "admin",
-        "password" => $password,
+        "password" => crypt($password, getSalt()),
         "accountType" => "admin"
     );
 
@@ -14,12 +15,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     (
         "username" => "public",
         "accountType" => "user",
-        "forbiddenProjects" => []
+        "forbiddenProjects" => "[]"
     );
 
-    $path_config_users = "";
-    include "../helper/paths.php";
-
+    $path_config_users = "../../config/users.json";
     //checks boolean value to see if file is there. If not creates new array
     $userArray[0] = $adminUser;
     $userArray[1] = $publicUser;

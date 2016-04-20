@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 
 function generateGuid($include_braces = false)
 {
@@ -34,7 +37,8 @@ function generateGuid($include_braces = false)
     }
 }
 
-if($_SERVER['REQUEST_METHOD'] == "POST")
+include_once "functions.php";
+if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
 {
     $date = $_POST['date'];
     $name = $_POST['name'];
