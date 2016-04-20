@@ -291,7 +291,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 SET_SALT;
 
 $deleteInstaller = <<<'DELETE_INSTALLER'
-
+<?php
+unlink("createAdmin.php");
+unlink("deleteInstaller.php");
+unlink("installer.php");
+unlink("setSalt.php");
+rmdir(getcwd());
+header("Location: ../login.php");
 DELETE_INSTALLER;
 
 
@@ -301,6 +307,7 @@ mkdir("../installer");
 file_put_contents("../installer/installer.php",$installerString);
 file_put_contents("../installer/setSalt.php",$setSalt);
 file_put_contents("../installer/createAdmin.php",$createAdmin);
+file_put_contents("../installer/deleteInstaller.php",$deleteInstaller);
 header("Location: ../installer/installer.php");
 
 
