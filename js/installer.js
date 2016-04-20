@@ -44,9 +44,19 @@ $(document).ready(function()
             });
     });
 
+    //admin password is typed in
     $('#button-continue-step4').click(function ()
     {
-        changeStep(5);
+        $.post("createAdmin.php",
+        {
+           "password" : $('#installer-input-password').val()
+        
+        },function (data, error)
+        {
+            changeStep(5);
+        });
+
+
     });
 
     $('#installer-button-finish').click(function()

@@ -49,7 +49,8 @@
         "versionCode": "",
         "projectStatus": "Final",
         "url": "https:\/\/github.com\/spaghettic0der\/codera",
-        "UUID": "BD9E1E87-4795-6754-48E1-34ED3FE2EF9A"
+        "UUID": "BD9E1E87-4795-6754-48E1-34ED3FE2EF9A",
+        "totalViews": 1
     },
     {
         "name": "Golem",
@@ -66,7 +67,7 @@
         "projectStatus": "Alpha",
         "url": "http:\/\/www.golem.de",
         "UUID": "469E5136-416B-5E5D-F4AC-4B4A39B2C9AC",
-        "totalViews": 1
+        "totalViews": 2
     },
     {
         "name": "Lampe",

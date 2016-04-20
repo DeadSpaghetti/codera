@@ -3,9 +3,9 @@ if(!function_exists('isUserAdmin'))
 {
     function isUserAdmin($username)
     {
-        $userArray = array();
+        $userArray = [];
         include "getUsersFromJSON.php";
-        if($userArray != null)
+        if(!empty($userArray))
         {
             for ($i = 0; $i < sizeof($userArray); $i++)
             {
