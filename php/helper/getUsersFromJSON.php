@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $path_config_users = "";
 include "paths.php";
 if(file_exists($path_config_users))

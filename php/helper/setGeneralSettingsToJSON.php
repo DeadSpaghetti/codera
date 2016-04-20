@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         "sortOrder" => $sortOrder
     );
 
-    $jsonString = json_encode($array,JSON_PRETTY_PRINT);
+    $jsonString = json_encode($array, JSON_PRETTY_PRINT);
 
     file_put_contents($generalSettingsFilename,$jsonString);
     $sortType = "projects";

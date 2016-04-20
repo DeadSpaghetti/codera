@@ -1,6 +1,8 @@
 <?php
-if(!isset($_SESSION['loggedIn']))
+if(!isset($_SESSION))
+{
     session_start();
+}
 
 include_once "../helper/functions.php";
 if(!isUserAdmin($_SESSION['loggedIn']))
@@ -21,6 +23,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
       "aboutText" => $aboutText
     );
 
-    file_put_contents($aboutFileLocation,json_encode($array));
+    file_put_contents($aboutFileLocation,json_encode($array, JSON_PRETTY_PRINT));
 
 }

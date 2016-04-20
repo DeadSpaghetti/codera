@@ -1,6 +1,6 @@
 <?php
 //sorts the projects in the json file | or users
-global $path_config_users;
+$path_config_users = "";
 include "paths.php";
 include_once "functions.php";
 

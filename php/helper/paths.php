@@ -1,6 +1,9 @@
 <?php
 //This file is in "codera/php/helper/"
-
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $path_index = realpath(dirname(__FILE__) . '/../index.php');
 $path_index = substr($path_index,strlen($_SERVER['DOCUMENT_ROOT'])); 
 $path_index = str_replace('\\', '/', $path_index);

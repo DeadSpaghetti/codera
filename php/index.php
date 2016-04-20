@@ -3,10 +3,10 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
-global $colorScheme;
-global $developerName;
-global $gridSize;
-global $sortOrder;
+$colorScheme = "";
+$developerName = "";
+$gridSize = "";
+$sortOrder = "";
 include('helper/paths.php');
 include($path_helper_getGeneralSettings);
 

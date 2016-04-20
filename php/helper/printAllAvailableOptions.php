@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
 //$options can be 'option' || 'image' || null
 if(isset($property) && $property != null && isset($UUID) && $UUID != null)
 {

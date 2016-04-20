@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
 //the excluded object is the one that is selected already --> there can be multiple selected options
 //this just prints out the files in the directory
 if(isset($directory) && $directory != null)
