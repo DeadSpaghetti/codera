@@ -28,7 +28,14 @@ $(document).ready(function()
 
     $('#button-continue-step2').click(function ()
     {
-        changeStep(3);
+        $.post("chmodCodera.php",
+            {
+                
+            },function (data,error)
+            {
+                changeStep(3);
+            });
+
     });
 
     //user types in the salt to use for encryption
