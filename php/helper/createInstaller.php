@@ -289,6 +289,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     }
 }
 SET_SALT;
+
+$deleteInstaller = <<<'DELETE_INSTALLER'
+
+DELETE_INSTALLER;
+
+
+
+
 mkdir("../installer");
 file_put_contents("../installer/installer.php",$installerString);
 file_put_contents("../installer/setSalt.php",$setSalt);
