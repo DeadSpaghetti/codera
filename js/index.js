@@ -1,5 +1,19 @@
 $(document).ready(function()
 {
+    function addViewToProject(UUID)
+    {
+        $.post
+        ("helper/addViewToProject.php",
+            {
+                "UUID": UUID
+            },function (data,error)
+            {
+                //nothing to do
+            }
+        );
+    }
+
+
     $('a').click(function()
     {
         var form = document.createElement('form');
@@ -10,6 +24,7 @@ $(document).ready(function()
         input.name = "UUID";
         input.value = this.id;
 
+        addViewToProject(this.id);
         form.appendChild(input);
         document.body.appendChild(form);
         form.submit();

@@ -90,7 +90,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             "versionCode" => $versionCode,
             "projectStatus" => $projectStatus,
             "url" => $url,
-            "UUID" => $projectUUID
+            "UUID" => $projectUUID,
+            "totalViews" => 0,
+            "totalDownloads" => 0
         );
 
         //checks boolean value to see if file is there. If not generates it
@@ -103,7 +105,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         $fileToSave = json_encode($array);
         file_put_contents($pathString,$fileToSave);
 
-        global $sortOrder;
+        $sortOrder = "";
         $sortType = "projects";
         include "getGeneralSettingsFromJSON.php";
         include "sort.php";
@@ -112,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     }
     catch (Exception $e)
     {
-        var_dump($e);   //TODO remove this from production code sometime
+       
     }
 }
 

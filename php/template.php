@@ -3,8 +3,8 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
-global $developerName;
-global $colorScheme;
+$developerName = "";
+$colorScheme = "";
 include('helper/paths.php');
 include('helper/getGeneralSettingsFromJSON.php');	
 
@@ -15,7 +15,7 @@ include('cookie.php');
 
 <html>
 	<head>
-		<title><?php echo $developerName;?> on Codera</title>
+		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>	
@@ -41,9 +41,9 @@ include('cookie.php');
 			$UUID = $_GET['UUID'];
 
 			//check if user is allowed to see this
-			global $forbiddenProjects;
+			$forbiddenProjects = [];
 			include "helper/getForbiddenProjects.php";
-			if($forbiddenProjects != null)
+			if(!empty($forbiddenProjects))
 			{
 				for ($i = 0; $i < sizeof($forbiddenProjects); $i++)
 				{
@@ -56,9 +56,9 @@ include('cookie.php');
 				}
 			}
 
-			global $projectArray;
+			$projectArray = [];
 			include "helper/getProjectsFromJSON.php";
-			if($projectArray != null)
+			if(!empty($projectArray))
 			{
 				for ($i = 0; $i < sizeof($projectArray); $i++)
 				{
@@ -101,7 +101,7 @@ include('cookie.php');
 					<table id="app">
 						<tr>
 							<td id="app-icon" style="background-image: url('../images/icons/<?php echo $icon ?>');">	</td>
-							<td id="app-name"><?php echo $projectName?></td>
+							<td id="app-name"><?php if(isset($projectName)) echo $projectName?></td>
 
 						</tr>
 					</table>
