@@ -293,6 +293,6 @@ mkdir("../installer");
 file_put_contents("../installer/installer.php",$installerString);
 file_put_contents("../installer/setSalt.php",$setSalt);
 file_put_contents("../installer/createAdmin.php",$createAdmin);
-
+header("Location: ../installer/installer.php");
 
 

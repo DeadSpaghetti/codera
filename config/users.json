@@ -1,0 +1,12 @@
+[
+    {
+        "username": "admin",
+        "password": "$5$rounds=5000$$Owen3NVCaQEoztGSs5z\/vuFhiFdz0z4ddeMXlqMxiIB",
+        "accountType": "admin"
+    },
+    {
+        "username": "public",
+        "accountType": "user",
+        "forbiddenProjects": "[]"
+    }
+]

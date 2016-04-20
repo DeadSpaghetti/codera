@@ -59,7 +59,7 @@ $(document).ready(function()
 
     $('#installer-button-finish').click(function()
     {
-        location.href = "../login.php";
+        location.href = "deleteInstaller.php";
     });
 
 });
