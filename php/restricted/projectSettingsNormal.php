@@ -70,15 +70,14 @@
 			<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
 		</div>
 	</td>										
-	<td class="infos-right">
-		<div class="chosen-multiple-clearfix">
+	<td class="infos-right">		
 		<select id="projectSettings-fileSelector" multiple class="chosen-select">
 			<?php
 			$directory = "../../executables/";
 			$exclude = getSelectedOptions("files",$UUID);   //is array
 			include "../helper/printAllFilesFromDirectoryAsOption.php";
 			?>		
-		</select>	</div>
+		</select>
 	</td>
 	<td class="infos-right-space"></td>
 </tr>
