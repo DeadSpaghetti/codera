@@ -24,10 +24,10 @@ else
 	<head>
 		<title>Codera installation</title>
 		<meta charset="UTF_8"/>
-		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>		
-		<link type="text/css" rel="stylesheet" href="../css/stylesheet-installer.css"/>	
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>		
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-installer.css"/>	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>     
-		<script src="../js/installer.js"></script>
+		<script src="../../js/installer.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>      
        
     </head>
@@ -145,7 +145,7 @@ else
 							'<br> <br> <br>'.
 							'Enter your combination here (at least 5 characters):'.
 							'<br>'.
-							'<input id="installer-input-salt" "type="text"/>'.
+							'<input id="installer-input-salt" type="text"/>'.
 							'<br> <br>'.							
 							'<a class="button" id="button-continue-step3" href="javascript:void(null)">'.
 								'<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.

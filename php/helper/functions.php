@@ -124,7 +124,9 @@ if(!function_exists("getSalt"))
 {
     function getSalt()
     {
-        return '$5$g3t#~34uö@$';
+        $path_config_salt = "";
+        include "paths.php";
+        return file_get_contents($path_config_salt);
     }
 }
 
@@ -136,8 +138,7 @@ if(!function_exists("generateSalt"))
         if(isset($randomString))
         {
             $saltToWrite = '$5$rounds=5000$' . $randomString . '$';
-            $phpText = '<? ' . ' $salt = "' . $saltToWrite . '";';
-            file_put_contents("../../config/salt.php",$phpText);
+            file_put_contents("../../config/salt.txt",$saltToWrite);
         }
     }
 }

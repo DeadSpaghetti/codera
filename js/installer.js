@@ -31,9 +31,17 @@ $(document).ready(function()
         changeStep(3);
     });
 
+    //user types in the salt to use for encryption
     $('#button-continue-step3').click(function ()
     {
-        changeStep(4);
+        $.post("setSalt.php",
+            {
+                "inputString": $('#installer-input-salt').val()
+            },function (data,error)
+            {
+                console.log(data);
+                changeStep(4);
+            });
     });
 
     $('#button-continue-step4').click(function ()
