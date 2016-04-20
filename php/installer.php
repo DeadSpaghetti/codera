@@ -100,7 +100,7 @@ else
 						{
 							echo '<span class="installer-sub-headline">Step 2: Read and Write Access</span>'.
 							'<br> <br>'.
-							'To ensure a proper functionality of codera you have to grant<br> read and write access'.
+							'To ensure a proper functionality of codera you have to grant<br> read and write access '.
 							'to all files and folders in the codera folder.'.
 							'<br> <br>'.
 							'You can use this command:'.
