@@ -6,14 +6,17 @@
 if($_GET)
 {	
 	$step = $_GET['step'];
-	if($step < 1 || $step > 5)
+	if(isset($step))
 	{
-		$step = 0;	
+		if ($step < 1 || $step > 5)
+		{
+			$step = 0;
+		}
 	}
 }
 else
 {
-	$step = 0;	
+	$step = 0;
 }
 ?>
 
@@ -51,7 +54,7 @@ else
 							'<br> <br>'.
 							'Just hit the continue button and we will start.'.
 							'<br> <br>'.
-							'<a class="button" id="button-continue" href="javascript:void(null)">'.
+							'<a class="button" id="button-continue-step0" href="javascript:void(null)">'.
 								'<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
 							'</a>'.
 							'</div>'.
@@ -75,7 +78,7 @@ else
 								'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.'.
 							'</div>'.
 							'<br> <br>'.							
-							'<a class="button" id="button-continue" href="javascript:void(null)">'.
+							'<a class="button" id="button-continue-step1" href="javascript:void(null)">'.
 								'<span class="button-text">Agree</span><i class="material-icons">navigate_next</i>'.
 							'</a>'.
 							'</div>';								
@@ -109,7 +112,7 @@ else
 							'<br> <br>'.
 							'<code>sudo chmod -R 777</code>'.
 							'<br> <br>'.							
-							'<a class="button" id="button-continue" href="javascript:void(null)">'.
+							'<a class="button" id="button-continue-step2" href="javascript:void(null)">'.
 								'<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
 							'</a>'.
 							'</div>';		
@@ -144,7 +147,7 @@ else
 							'<br>'.
 							'<input id="installer-input-salt" "type="text"/>'.
 							'<br> <br>'.							
-							'<a class="button" id="button-continue" href="javascript:void(null)">'.
+							'<a class="button" id="button-continue-step3" href="javascript:void(null)">'.
 								'<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
 							'</a>'.
 							'</div>';		
@@ -177,7 +180,7 @@ else
 							'<br>'.
 							'<input id="installer-input-password" "type="text"/>'.
 							'<br> <br>'.							
-							'<a class="button" id="button-continue" href="javascript:void(null)">'.
+							'<a class="button" id="button-continue-step4" href="javascript:void(null)">'.
 								'<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
 							'</a>'.
 							'</div>';		
