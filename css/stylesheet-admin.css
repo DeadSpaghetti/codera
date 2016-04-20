@@ -204,7 +204,7 @@ margin: auto;
 font-family: Roboto, Sans-Serif;
 font-size: 2.2vmin;
 color: #212121;
-word-break: break-all;
+word-break: normal;
 word-wrap: break-word;
 }
 
@@ -224,6 +224,19 @@ padding-bottom: 5vmin;
 /*padding-bottom: 3vmin;*/
 }
 
+.overview-download-counter{
+font-family: Roboto, Sans-Serif;
+font-size: 2.2vmin;
+text-align: center;
+vertical-align: middle;
+}
+
+.overview-download-counter div{
+font-size: 1.5vmin;
+margin-bottom: 1vmin;
+display: inline-block;
+}
+
 .overview-icon{
 margin: auto;
 background-position: center center;
@@ -232,14 +245,13 @@ background-size: contain;
 opacity: 1.0;
 width: 10vmin;
 height: 10vmin;
-display: inline-block;
 }
 
 .overview-appname{
 font-family: Roboto, Sans-Serif;
 font-size: 3vmin;
 vertical-align: middle;
-padding-left: 4vmin;
+padding-left: 2vmin;
 padding-right: 3vmin;
 }
 
