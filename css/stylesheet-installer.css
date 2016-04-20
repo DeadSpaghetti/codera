@@ -111,3 +111,19 @@ vertical-align: middle;
 .installer-text-block{
 text-align: left;
 }
+
+input{
+width: 50%;
+margin: auto;
+background-color: #FFFFFF;
+border-radius: 0.5vmin;
+font-size: 2vmin;
+border: 0.2vmin solid #919191;
+-webkit-box-shadow: inset 0 0 0.4vmin 0 rgba(0,0,0,0.3);
+-moz-box-shadow: inset 0 0 0.4vmin 0 rgba(0,0,0,0.3);
+box-shadow: inset 0 0 0.4vmin 0 rgba(0,0,0,0.3);
+padding: 1vmin;
+display: block;
+font-family: Roboto, Sans-Serif;
+margin-top: 2vmin;
+}

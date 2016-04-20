@@ -6,7 +6,7 @@
 if($_GET)
 {	
 	$step = $_GET['step'];
-	if($step < 1 || $step > 4)
+	if($step < 1 || $step > 5)
 	{
 		$step = 0;	
 	}
@@ -22,7 +22,9 @@ else
 		<title>Codera installation</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>		
-		<link type="text/css" rel="stylesheet" href="../css/stylesheet-installer.css"/>			
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet-installer.css"/>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>     
+		<script src="../js/installer.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>      
        
     </head>
@@ -130,9 +132,89 @@ else
 									'</div>'.
 								'</div>';							
 						}
-						// TODO Step 3, Step 4, Successpage, Errorpage
-							
-						
+						else if($step == 3)
+						{
+							echo '<span class="installer-sub-headline">Step 3: Create Random Salt</span>'.
+							'<br> <br>'.
+							'For a powerful, unique and secure encryption of your user passwords <br> you have to enter a random combination of alphanumeric characters.'.
+							'<br> <br>'.
+							"(You don't have to remember this combination. You will never be asked for it.)".
+							'<br> <br> <br>'.
+							'Enter your combination here (at least 5 characters):'.
+							'<br>'.
+							'<input id="installer-input-salt" "type="text"/>'.
+							'<br> <br>'.							
+							'<a class="button" id="button-continue" href="javascript:void(null)">'.
+								'<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
+							'</a>'.
+							'</div>';		
+
+							echo '<div class="installer-progress-container">'.
+									'<div class="installer-progress">'.
+										'<div class="circle done">✔</div>'.
+										'<div class="progress-line-container">'.
+											'<div class="progress-line done"></div>'.
+										'</div>'.
+										'<div class="circle done">✔</div>'.
+										'<div class="progress-line-container">'.
+											'<div class="progress-line done"></div>'.
+										'</div>'.
+										'<div class="circle active">3</div>'.
+										'<div class="progress-line-container">'.
+											'<div class="progress-line"></div>'.
+										'</div>'.
+										'<div class="circle">4</div>'.
+									'</div>'.
+								'</div>';							
+						}
+						else if($step == 4)
+						{
+							echo '<span class="installer-sub-headline">Step 4: Change Default Password</span>'.
+							'<br> <br>'.						
+							"The last thing you have to do ist to change your superadmin password.".
+							'<br> <br> <br>'.
+							'Enter your new password here:'.
+							'<br>'.
+							'<input id="installer-input-password" "type="text"/>'.
+							'<br> <br>'.							
+							'<a class="button" id="button-continue" href="javascript:void(null)">'.
+								'<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
+							'</a>'.
+							'</div>';		
+
+							echo '<div class="installer-progress-container">'.
+									'<div class="installer-progress">'.
+										'<div class="circle done">✔</div>'.
+										'<div class="progress-line-container">'.
+											'<div class="progress-line done"></div>'.
+										'</div>'.
+										'<div class="circle done">✔</div>'.
+										'<div class="progress-line-container">'.
+											'<div class="progress-line done"></div>'.
+										'</div>'.
+										'<div class="circle done">✔</div>'.
+										'<div class="progress-line-container">'.
+											'<div class="progress-line done"></div>'.
+										'</div>'.
+										'<div class="circle active">4</div>'.
+									'</div>'.
+								'</div>';							
+						}
+						if($step == 5)
+						{
+							echo '<span class="installer-sub-headline">Codeare successfully installed!</span>'.
+							'<br> <br>'.
+							'Congratulations.<br>'.
+							'You have successfully installed codera on your system.'.
+							'<br> <br> <br>'.
+							'For additonal information or help visit the official <a class="link-visible" href="https://github.com/spaghettic0der/codera">Codera Githubpage</a>.'.
+							'<br> <br>'.							
+							'<a class="button" id="installer-button-finish" href="javascript:void(null)">'.
+								'<span class="button-text">Finish</span><i class="material-icons">done</i>'.
+							'</a>'.
+							'</div>'.
+							'<br>';												
+						}					
 						?>
 					</div>
 				</div>		
