@@ -206,7 +206,7 @@ include('cookie.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php if(isset($license)) echo'<a id="licenseLink" href="../licenses/'.$license.'">'.$license.'</a>';?>
+								<?php if(isset($license)) echo'<a class="link-visible" id="licenseLink" href="../licenses/'.$license.'">'.$license.'</a>';?>
 							</td>
 						</tr>						
 					</table>		
