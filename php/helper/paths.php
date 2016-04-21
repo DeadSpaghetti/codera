@@ -41,4 +41,3 @@ $path_account = str_replace('\\', '/', $path_account);
 $path_about = realpath(dirname(__FILE__) . '/../about.php');
 $path_about = substr($path_about,strlen($_SERVER['DOCUMENT_ROOT'])); 
 $path_about = str_replace('\\', '/', $path_about);
-?>

@@ -4,17 +4,16 @@ function chmod_r($Path)
     $dp = opendir($Path);
     while($File = readdir($dp))
     {
-        if($File != "." AND $File != "..")
+        if($File != "." && $File != "..")
         {
             if(is_dir($File))
             {
-                file_put_contents("test.txt",$File);
-                chmod($File, 0750);
+                chmod($File, 0700);
                 chmod_r($Path."/".$File);
             }
             else
             {
-                chmod($Path."/".$File, 0644);
+                chmod($Path."/".$File, 0700);
             }
         }
     }
@@ -23,5 +22,6 @@ function chmod_r($Path)
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
-    chmod_r("../../.");
+    $path = realpath(dirname(__FILE__) . '/../../../codera');
+    chmod_r($path);
 }
