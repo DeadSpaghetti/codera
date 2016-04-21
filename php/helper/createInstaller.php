@@ -296,40 +296,9 @@ unlink("createAdmin.php");
 unlink("deleteInstaller.php");
 unlink("installer.php");
 unlink("setSalt.php");
-unlink("chmodCodera.php");
 rmdir(getcwd());
 header("Location: ../login.php");
 DELETE_INSTALLER;
-
-$chmodCodera = <<<'CHMOD_CODERA'
-<?php
-function chmod_r($Path)
-{
-    $dp = opendir($Path);
-    while($File = readdir($dp))
-    {
-        if($File != "." && $File != "..")
-        {
-            if(is_dir($File))
-            {
-                chmod($File, 0700);
-                chmod_r($Path."/".$File);
-            }
-            else
-            {
-                chmod($Path."/".$File, 0700);
-            }
-        }
-    }
-    closedir($dp);
-}
-
-if($_SERVER['REQUEST_METHOD'] == "POST")
-{
-    $path = realpath(dirname(__FILE__) . '/../../../codera');
-    chmod_r($path);
-}
-CHMOD_CODERA;
 
 
 mkdir("../installer");
@@ -337,7 +306,6 @@ file_put_contents("../installer/installer.php",$installerString);
 file_put_contents("../installer/setSalt.php",$setSalt);
 file_put_contents("../installer/createAdmin.php",$createAdmin);
 file_put_contents("../installer/deleteInstaller.php",$deleteInstaller);
-file_put_contents("../installer/chmodCodera.php",$chmodCodera);
 header("Location: ../installer/installer.php");
 
 
