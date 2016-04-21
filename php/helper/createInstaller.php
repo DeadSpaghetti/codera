@@ -113,12 +113,16 @@ else
                 else if($step == 2)
                 {
                     echo '<span class="installer-sub-headline">Step 2: Read and Write Access</span>'.
-                        '<br> <br>'.
-                        'To ensure a proper functionality of codera we will now grant<br> read, write and execute access permissions '.
-                        'to all files and folders in the codera folder.'.
-                        '<br> <br>'.
-                        '<a class="button" id="button-continue-step2" href="javascript:void(null)">'.
-                        '<span class="button-text">Accept</span><i class="material-icons">navigate_next</i>'.
+						'<br> <br>'.
+						'To ensure a proper functionality of codera you have to grant<br> read and write access '.
+						'to all files and folders in the codera folder.'.
+						'<br> <br>'.
+						'You can use this command:'.
+						'<br> <br>'.
+						'<code>sudo chmod -R 700</code>'.
+						'<br> <br>'.							
+						'<a class="button" id="button-continue-step2" href="javascript:void(null)">'.
+                        '<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
                         '</a>'.
                         '</div>';
 
