@@ -110,7 +110,7 @@ else
 						'<br> <br>'.
 						'You can use this command:'.
 						'<br> <br>'.
-						'<code>sudo chmod -R 700</code>'.
+						'<code>sudo chmod -R 777 codera/</code>'.
 						'<br> <br>'.							
 						'<a class="button" id="button-continue-step2" href="javascript:void(null)">'.
                         '<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
