@@ -114,7 +114,7 @@ include('cookie.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php echo $versionName ?>
+								<?php if(isset($versionName)) echo $versionName;?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -124,7 +124,7 @@ include('cookie.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php echo $date?>
+								<?php if(isset($date))echo $date;?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -134,7 +134,7 @@ include('cookie.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php echo $latestChanges?>
+								<?php if(isset($latestChanges)) echo $latestChanges;?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -144,7 +144,7 @@ include('cookie.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php echo $description?>
+								<?php if(isset($description)) echo $description;?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -154,7 +154,7 @@ include('cookie.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php echo $requirements ?>
+								<?php if(isset($requirements)) echo $requirements;?>
 							</td>
 						</tr>
 						<tr class="infos-row">
@@ -206,15 +206,15 @@ include('cookie.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php echo $license?>
+								<?php if(isset($license)) echo'<a id="licenseLink" href="../licenses/'.$license.'">'.$license.'</a>';?>
 							</td>
 						</tr>						
 					</table>		
 				</div>		
 			</div>
-			 <div id="templateUUID" class="hidden"><?php echo $UUID?></div>
+			 <div id="templateUUID" class="hidden"><?php if(isset($UUID)) echo $UUID;?></div>
 			<script src="../js/libs/lightbox2/dist/js/lightbox.min.js"></script>
 		</div>      
-		<?php include("templates/footer.php"); ?>        
+		<?php include("templates/footer.php");?>
 	</body>
 </html>
