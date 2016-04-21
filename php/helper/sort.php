@@ -81,7 +81,7 @@ if(isset($array))
 {
     if ($sortType == "projects")
     {
-        file_put_contents($path_config_projects, json_encode($array));
+        file_put_contents($path_config_projects, json_encode($array,JSON_PRETTY_PRINT));
     }
 
 }
