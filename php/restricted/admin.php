@@ -8,8 +8,8 @@ if(!isUserAdmin($_SESSION['loggedIn']))
     header('Location: ../login.php');
     exit;
 }
-global $developerName;
-global $colorScheme;
+$developerName = "";
+$colorScheme = "";
 include('../helper/convertHexToRGB.php');
 include('../helper/getGeneralSettingsFromJSON.php');				
 ?>

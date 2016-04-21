@@ -11,13 +11,13 @@ if(!isset($sortType))
 
 if($sortType == "projects")
 {
-    global $projectArray;
+    $projectArray = [];
     include "getProjectsFromJSON.php";
     $array = $projectArray;
 }
 elseif($sortType = "users")
 {
-    global $userArray;
+    $userArray = "";
     include "getUsersFromJSON.php";
     $array = $userArray;
 }

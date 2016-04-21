@@ -17,13 +17,13 @@ include('../helper/paths.php');
 <table id="overview">
     <tr class="overview-row">
         <td colspan="4" class="overview-center">
-            <a class="button newProject" id="button-new-project" href="projectSettings.php" style="background-color: <?php echo $colorScheme;?>;">
+            <a class="button newProject" id="button-new-project" href="projectSettings.php" style="background-color: <?php if(isset($colorScheme)) echo $colorScheme;?>;">
                 <i class="material-icons">add</i> <span class="button-text">New</span>
             </a>
         </td>
     </tr>
 <?php
-global $projectArray;
+$projectArray = [];
 include "../helper/getProjectsFromJSON.php";
 
 if($projectArray != null)

@@ -19,7 +19,7 @@ include('../helper/paths.php');
 ?>
 <html>
 	<head>
-		<?php include('../cookie.php'); ?>
+		<?php include('../cookie.php');?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>

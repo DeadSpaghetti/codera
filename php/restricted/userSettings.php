@@ -13,10 +13,10 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 
 $username = "New User";
 $accountType = "user";
-$forbiddenProjects = array();
+$forbiddenProjects = [];
 
-global $developerName;
-global $colorScheme;
+$developerName = "";
+$colorScheme = "";
 include('../helper/getGeneralSettingsFromJSON.php');
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -28,10 +28,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 		header("Location: admin.php");
 		exit;
 	}
-	global $userArray;
+	$userArray = [];
 	include "../helper/getUsersFromJSON.php";
 
-	if($userArray != null)
+	if(!empty($userArray))
 	{
 		for ($i = 0; $i < sizeof($userArray); $i++)
 		{

@@ -16,7 +16,7 @@ include('../helper/paths.php');
 <table id="overview">
     <tr class="overview-row">
         <td colspan="2" class="overview-center">
-            <a class="button newProject" id="button-new-user" href="userSettings.php" style="background-color: <?php echo $colorScheme;?>">
+            <a class="button newProject" id="button-new-user" href="userSettings.php" style="background-color: <?php if(isset($colorScheme)) echo $colorScheme;?>">
                 <i class="material-icons">add</i> <span class="button-text">New</span>
             </a>
         </td>
@@ -78,7 +78,7 @@ EDIT_ADMIN;
 		</td>
 	</tr>
 <?php
-global $userArray;
+$userArray = [];
 include "../helper/getUsersFromJSON.php";
 
 if($userArray != null)

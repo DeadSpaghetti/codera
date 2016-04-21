@@ -17,8 +17,8 @@ if(isset($_SESSION['loggedIn']))
 
 	exit;
 }
-global $developerName;
-global $colorScheme;
+$developerName = "";
+$colorScheme = "";
 include('helper/getGeneralSettingsFromJSON.php');
 ?>
 

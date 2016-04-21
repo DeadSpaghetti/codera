@@ -9,8 +9,8 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 	header('Location: ../login.php');
 	exit;
 }
-global $aboutIcon;
-global $aboutText;
+$aboutIcon = "";
+$aboutText = "";
 include "../helper/getAboutPageFromJSON.php";
 
 ?>

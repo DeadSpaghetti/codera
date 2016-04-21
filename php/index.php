@@ -18,14 +18,14 @@ include($path_helper_getGeneralSettings);
 <html>
 	<head>
 		<?php include('cookie.php'); ?>
-		<title><?php echo $developerName ?> on Codera</title>
+		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../js/index.js"></script>			
 	</head>
-	<body onload="drawBanners('<?php echo $colorScheme;?>');">
+	<body onload="drawBanners('<?php if(isset($colorScheme)) echo $colorScheme;?>');">
 		<div id="main">
 			<?php
 				if(isset($_SESSION['loggedIn']))
@@ -47,14 +47,14 @@ include($path_helper_getGeneralSettings);
 
 						if(!isset($_SESSION['loggedIn']))
 							$username = "public";
-						global $forbiddenProjects;
+					    $forbiddenProjects = [];
 						include "helper/getForbiddenProjects.php";
 
 						//remove everything from projectArray which is forbidden
 
-					if($projectArray != null)
+					if(!empty($projectArray))
 					{
-						if($forbiddenProjects != null)
+						if(!empty($forbiddenProjects))
 						{
 							for ($x = 0; $x < sizeof($projectArray); $x++)
 							{
@@ -68,7 +68,7 @@ include($path_helper_getGeneralSettings);
 								}
 							}
 						}
-						if($projectArray != null)
+						if(!empty($projectArray))
 						{
 							for ($i = 0; $i < sizeof($projectArray); $i++)
 							{

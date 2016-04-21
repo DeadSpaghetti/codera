@@ -10,10 +10,10 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 	exit;
 }
 
-global $developerName;
-global $colorScheme;
-global $gridSize;
-global $sortOrder;
+$developerName = "";
+$colorScheme = "";
+$gridSize = "";
+$sortOrder = "";
 
 //script just changes the global variables
 include("../helper/getGeneralSettingsFromJSON.php");

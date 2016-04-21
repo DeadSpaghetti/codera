@@ -49,7 +49,7 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<textarea id="input-description" rows="10"><?php echo $description;?></textarea>
+		<textarea id="input-description" rows="10"><?php if(isset($description)) echo $description;?></textarea>
 	</td>
 	<td class="infos-right-space"></td>
 </tr>
@@ -60,7 +60,7 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<textarea id="input-requirements" rows="10"><?php echo $requirements;?></textarea>
+		<textarea id="input-requirements" rows="10"><?php if(isset($requirements)) echo $requirements;?></textarea>
 	</td>
 	<td class="infos-right-space"></td>
 </tr>
