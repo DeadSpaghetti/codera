@@ -19,6 +19,7 @@
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 bfg-1.12.8.jar
+/codera.iml
 # JIRA plugin
 atlassian-ide-plugin.xml
 
