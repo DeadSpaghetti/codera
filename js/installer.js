@@ -56,6 +56,11 @@ $(document).ready(function()
             changeStep(5);
         });
     });
+	
+	 $('#button-continue-step5').click(function ()
+    {       
+       changeStep(6);
+   });
 
     $('#installer-button-finish').click(function()
     {

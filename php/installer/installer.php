@@ -8,7 +8,7 @@ if($_GET)
     $step = $_GET['step'];
     if(isset($step))
     {
-        if ($step < 1 || $step > 5)
+        if ($step < 1 || $step > 6)
         {
             $step = 0;
         }
@@ -98,6 +98,10 @@ else
                         '<div class="progress-line"></div>'.
                         '</div>'.
                         '<div class="circle">4</div>'.
+                        '<div class="progress-line-container">'.
+                        '<div class="progress-line"></div>'.
+                        '</div>'.
+						'<div class="circle">5</div>'.                      
                         '</div>'.
                         '</div>';
                 }
@@ -132,6 +136,10 @@ else
                         '<div class="progress-line"></div>'.
                         '</div>'.
                         '<div class="circle">4</div>'.
+                        '<div class="progress-line-container">'.
+                        '<div class="progress-line"></div>'.
+                        '</div>'.
+						'<div class="circle">5</div>'.                      
                         '</div>'.
                         '</div>';
                 }
@@ -165,8 +173,12 @@ else
                         '<div class="circle active">3</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line"></div>'.
-                        '</div>'.
+                        '</div>'.                     
                         '<div class="circle">4</div>'.
+                        '<div class="progress-line-container">'.
+                        '<div class="progress-line"></div>'.
+                        '</div>'.
+						'<div class="circle">5</div>'.                      
                         '</div>'.
                         '</div>';
                 }
@@ -174,7 +186,7 @@ else
                 {
                     echo '<span class="installer-sub-headline">Step 4: Change Default Password</span>'.
                         '<br> <br>'.
-                        "The last thing you have to do ist to change your superadmin password.".
+                        "The next thing you have to do is to change your superadmin password.".
                         '<br> <br> <br>'.
                         'Enter your new password here:'.
                         '<br>'.
@@ -199,11 +211,79 @@ else
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
-                        '<div class="circle active">4</div>'.
+                       '<div class="circle active">4</div>'.
+                        '<div class="progress-line-container">'.
+                        '<div class="progress-line"></div>'.
+                        '</div>'.
+						'<div class="circle">5</div>'.                      
+                        '</div>'.
+                        '</div>';
+                }				
+				else if($step == 5)
+                {
+                    echo '<span class="installer-sub-headline">Step 5: Restrict Access</span>'.
+                        '<br> <br>'.
+                        'The last thing you have to do is to restrict the access<br>to the config and executables folder in your webserver settings.'.
+                        '<br> <br>'.
+                        'It depends on the webserver you are using how you do this.'.
+                        '<br> <br> <br>'.
+						'<div class="installer-text-block">'.
+						'<span class="installer-bold">Apache:</span>'.
+						'<br> <br>'.
+						'Add the following code to your apache config'.
+						'<br> <br>'.
+						'<code>&lt;Directory /path/to/codera/config/&gt;<br>'.
+						   'Order Deny,allow<br>'.
+						   'Deny from all<br>'.
+						'&lt;/Directory&gt;<br>'.
+						'</code>'.
+						'<br>'.
+						'<code>&lt;Directory /path/to/codera/executables/&gt;<br>'.
+						   'Order Deny,allow<br>'.
+						   'Deny from all<br>'.
+						'&lt;/Directory&gt;<br>'.
+						'</code>'.
+						'<br> <br>'.
+						
+						'<span class="installer-bold">Nginx:</span>'.
+						'<br> <br>'.
+						'Open your nginx config file and insert the following code to your server block'.
+						'<br> <br>'.
+						'<code>location /{codera/config|codera/executables} {<br>'.							
+						  'deny all;<br>'.
+						  'return 403;<br>'.
+						'}</code>'.					
+						'</div>'.
+                      
+                        '<br> <br>'.
+                        '<a class="button" id="button-continue-step5" href="javascript:void(null)">'.
+                        '<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
+                        '</a>'.
+                        '</div>';
+
+                    echo '<div class="installer-progress-container">'.
+                        '<div class="installer-progress">'.
+                        '<div class="circle done">✔</div>'.
+                        '<div class="progress-line-container">'.
+                        '<div class="progress-line done"></div>'.
+                        '</div>'.
+                        '<div class="circle done">✔</div>'.
+                        '<div class="progress-line-container">'.
+                        '<div class="progress-line done"></div>'.
+                        '</div>'.
+                        '<div class="circle done">✔</div>'.
+                        '<div class="progress-line-container">'.
+                        '<div class="progress-line done"></div>'.
+                        '</div>'.
+						'<div class="circle done">✔</div>'.
+                        '<div class="progress-line-container">'.
+                        '<div class="progress-line done"></div>'.
+                        '</div>'.
+						'<div class="circle active">5</div>'.                      
                         '</div>'.
                         '</div>';
                 }
-                if($step == 5)
+                if($step == 6)
                 {
                     echo '<span class="installer-sub-headline">Codeare successfully installed!</span>'.
                         '<br> <br>'.
