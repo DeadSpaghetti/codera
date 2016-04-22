@@ -1,0 +1,19 @@
+[CHANGELOG]
+===========
+
+Codera
+==========
+
+>>> start-date: 16.12.15
+>>> status-date: 22.04.16
+____________________________________________________
+
+Alpha
+======
+
+-basic implementation
+
+>>> end-work: <Work in Progress>
+____________________________________________________
+
+[/CHANGELOG]
