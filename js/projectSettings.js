@@ -1,44 +1,97 @@
-function saveProject()
-{
-    var name = $('#input-appName').val();
-    var icon = $('#projectSettings-iconSelector').find(":selected").text();
-    var versionCode = $('#input-versionCode').val();
-    var versionName = $('#input-versionName').val();
-    var date = $('#input-date').val();
-    var latestChanges = $('#input-changes').val();
-    var description = $('#input-description').val();
-    var requirements = $('#input-requirements').val();
-    var license = $('#projectSettings-licenseSelector').find(":selected").text();
-    var projectStatus = $('input[name=projectStatus]:checked').val();
-    var files = [];
-    var screenshots = [];
-    var url = $('#input-url').val();
 
-	 
+function getName()
+{
+    return $('#input-appName').val().trim();
+}
+
+function getIcon()
+{
+    return $('#projectSettings-iconSelector').find(":selected").text();
+}
+
+function getVersionCode()
+{
+    return $('#input-versionCode').val().trim();
+}
+
+function getVersionName()
+{
+    return $('#input-versionName').val().trim();
+}
+
+function getDate()
+{
+    return $('#input-date').val();
+}
+
+function getLatestChanges()
+{
+    return $('#input-changes').val().trim();
+}
+
+function getDescription()
+{
+    return $('#input-description').val().trim();
+}
+
+function getRequirements()
+{
+    return $('#input-requirements').val().trim();
+}
+
+function getLicense()
+{
+    return $('#projectSettings-licenseSelector').find(":selected").text();
+}
+
+function getProjectStatus()
+{
+    return $('input[name=projectStatus]:checked').val();
+}
+
+
+function getURL()
+{
+    return $('#input-url').val();
+}
+
+function getFiles()
+{
+    var files = [];
     $('#projectSettings-fileSelector :selected').each(function(i,selected)
     {
         files.push($(selected).text());
     });
+    return files;
+}
+
+function getScreenshots()
+{
+    var screenshots = [];
     $('#projectSettings-screenshotSelector :selected').each(function(j,selected)
     {
         screenshots.push($(selected).text());
     });
+    return screenshots;
+}
 
+function saveProject()
+{
     $.post("../helper/addProjectToJSON.php",
         {
-            "name": name.trim(),
-            "icon": icon,
-            "versionName": versionName.trim(),
-            "date": date,
-            "latestChanges": latestChanges.trim(),
-            "description":description.trim(),
-            "requirements":requirements.trim(),
-            "files": JSON.stringify(files),
-            "screenshots": JSON.stringify(screenshots),
-            "license": license,
-            "versionCode": versionCode.trim(),
-            "projectStatus": projectStatus,
-            "url": url
+            "name": getName(),
+            "icon": getIcon(),
+            "versionName": getVersionName(),
+            "date": getDate(),
+            "latestChanges": getLatestChanges(),
+            "description": getDescription(),
+            "requirements": getRequirements(),
+            "files": JSON.stringify(getFiles()),
+            "screenshots": JSON.stringify(getScreenshots()),
+            "license": getLicense(),
+            "versionCode": getVersionCode(),
+            "projectStatus": getProjectStatus(),
+            "url": getURL()
         },
         function (data, status)
         {
@@ -46,9 +99,29 @@ function saveProject()
         });
 }
 
-function updateProject()
+function updateProject(UUID)
 {
-    
+    $.post("../helper/updateProject.php",
+        {
+            "name": getName(),
+            "icon": getIcon(),
+            "versionName": getVersionName(),
+            "date": getDate(),
+            "latestChanges": getLatestChanges(),
+            "description": getDescription(),
+            "requirements": getRequirements(),
+            "files": JSON.stringify(getFiles()),
+            "screenshots": JSON.stringify(getScreenshots()),
+            "license": getLicense(),
+            "versionCode": getVersionCode(),
+            "projectStatus": getProjectStatus(),
+            "url": getURL(),
+            "UUID": UUID.toString().trim()
+        },
+        function (data, status)
+        {
+            location.href = "admin.php";
+        });
 }
 
 $(document).ready(function()
@@ -75,8 +148,8 @@ $(document).ready(function()
 
     $('#button-save').click(function()
     {
-        var UUID = $('#projectSettingsUUID').text();
-        if(UUID != null && UUID != "")
+        var UUID = $('#projectSettingsUUID').text().trim();
+        if(UUID != null && UUID != "" && UUID != undefined)
         {
             updateProject(UUID);
         }

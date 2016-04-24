@@ -52,14 +52,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
     $screenshots = $_POST['screenshots'];
     $license = $_POST['license'];
     $versionCode = $_POST['versionCode'];
-    $projectUUID = $_POST['UUID'];
     $projectStatus = $_POST['projectStatus'];
     $url = $_POST['url'];
 
 
-    if ($projectUUID == null)
-        $projectUUID = generateGuid();
 
+    $projectUUID = generateGuid();
     $pathString = "../../config/projects.json";
 
     $isFileThere = false;
@@ -106,7 +104,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
             $array[0] = $newProjectArray;
 
         //push new reg id into array
-        $fileToSave = json_encode($array);
+        $fileToSave = json_encode($array, JSON_PRETTY_PRINT);
         file_put_contents($pathString,$fileToSave);
 
         $sortOrder = "";
@@ -118,7 +116,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
     }
     catch (Exception $e)
     {
-       
+
     }
 }
 

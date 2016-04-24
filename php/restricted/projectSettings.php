@@ -64,11 +64,11 @@ function getSelectedOptions($object,$UUID)
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    global $projectArray;
+	$projectArray = [];
     $UUID = $_POST['UUID'];
     include "../helper/getProjectsFromJSON.php";
 
-	if($projectArray != null)
+	if(!empty($projectArray))
 	{
 		for ($i = 0; $i < sizeof($projectArray); $i++)
 		{
@@ -136,8 +136,10 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							<td colspan="3" class="infos-center">							
 								<div id="new-project"><?php if(isset($projectName)) echo $projectName?>
 									<div class="hidden" id="projectSettingsUUID">
-										<?php if(isset($UUID))
-												echo $UUID;?>
+										<?php
+										if(isset($UUID))
+											echo $UUID;
+										?>
 									</div>
 								</div>
 								<div class="line line-no-space"></div>
