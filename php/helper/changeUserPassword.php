@@ -16,5 +16,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         include_once "functions.php";
         changePassword($username,$password);
     }
+    else
+    {
+        echo "denied";
+    }
 
 }

@@ -16,7 +16,15 @@ $(document).ready(function()
                     },
                     function (data, error)
                     {
-                        location.href = "../logoutAndRedirectToLogin.php";
+                        if(data == "denied")
+                        {
+                           alert("No permission or oldPassword doesn't match!");
+                        }
+                        else
+                        {
+                            alert("Password changed!");
+                            location.href = "../logoutAndRedirectToLogin.php";
+                        }
                     });
         }
         else
