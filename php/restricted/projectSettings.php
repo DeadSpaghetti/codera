@@ -91,8 +91,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		}
 	}
 }
-global $developerName;
-global $colorScheme;
+$developerName = "";
+$colorScheme = "";
 include('../helper/getGeneralSettingsFromJSON.php');
 ?>
 <!DOCTYPE html>

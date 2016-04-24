@@ -5,7 +5,7 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<input class="input project" id="input-versionCode" type="text" maxlength="15" value="<?php echo $versionCode;?>" placeholder="10"/>
+		<input class="input project" id="input-versionCode" type="text" maxlength="15" value="<?php if(isset($versionCode)) echo $versionCode;?>" placeholder="10"/>
 	</td>
 	<td class="infos-right-space"></td>
 </tr>
@@ -16,7 +16,7 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<input class="input project" id="input-versionName" type="text" maxlength="15" value="<?php echo $versionName;?>" placeholder="1.0.0 b"/>
+		<input class="input project" id="input-versionName" type="text" maxlength="15" value="<?php if(isset($versionName)) echo $versionName;?>" placeholder="1.0.0 b"/>
 	</td>
 	<td class="infos-right-space"></td>
 </tr>
