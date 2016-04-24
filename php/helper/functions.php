@@ -36,8 +36,7 @@ if(!function_exists("deleteUser"))
         $path_config_users = "";
         include "paths.php";
 
-        $password = "";
-        //$userArray = null;
+        $userArray = [];
         include "getUsersFromJSON.php";
         if(isset($userArray))
         {
@@ -45,7 +44,6 @@ if(!function_exists("deleteUser"))
             {
                 if ($userArray[$i]->{'username'} == $username)
                 {
-                    $password = $userArray[$i]->{'password'};
                     unset($userArray[$i]);
                     break;
                 }
