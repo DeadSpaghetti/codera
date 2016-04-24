@@ -31,10 +31,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 function overrideUserProperties($username,$password,$forbiddenProjects,$accountType,$newUsername)
 {
-	global $userArray;
+	$userArray = [];
 	include "getUsersFromJSON.php";
 
-	global $path_config_users;
+	$path_config_users = "";
 	include "paths.php";
 
 	for($i=0; $i < sizeof($userArray); $i++)
@@ -52,14 +52,22 @@ function overrideUserProperties($username,$password,$forbiddenProjects,$accountT
 					$username = $newUsername;
 
 
-					$userArray[$i]->{'username'} = $username;
-					$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
-					$userArray[$i]->{'accountType'} = $accountType;
+				$userArray[$i]->{'username'} = $username;
+				$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
+				$userArray[$i]->{'accountType'} = $accountType;
 			}
 			elseif ($username == "public")
 			{
 				$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
+				$userArray[$i]->{'accountType'} = "user";
 			}
+			elseif ($username == "admin")
+			{
+				$userArray[$i]->{'username'} = "admin";
+				$userArray[$i]->{'accountType'} = "admin";
+				$userArray[$i]->{'forbiddenProjects'} = "[]";
+			}
+
 			if(isset($password) && $password != "" && !is_null($password) && $username != "public")
 				$userArray[$i]->{'password'} = crypt($password,getSalt());
 

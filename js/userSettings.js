@@ -35,6 +35,20 @@ $(document).ready(function()
                     location.href = "admin.php";
                 });
         }
+        else if(username == "admin")
+        {
+            $.post("../helper/addUserToJSON.php",
+                {
+                    "username": "admin",
+                    "newUsername": "admin",
+                    "password": password,
+                    "forbiddenProjects": JSON.stringify([])
+                },
+                function (data, error)
+                {
+                    location.href = "admin.php";
+                });
+        }
         else if(username != "public" && password == confirmPassword && password != null && password != undefined)
         {
             var accountType = $('#toggle-user-is-admin').is(':checked');
