@@ -25,15 +25,15 @@
         "latestChanges": "Whatever",
         "description": "It works",
         "requirements": "Windoof",
-        "files": "[\"Taschenrechner.jar\",\"Untitled html.html\",\"flux.desktop\",\"login.timekeep\"]",
-        "screenshots": "[\"schreenshot-test.jpg\"]",
+        "files": "[\"Taschenrechner.jar\",\"Untitled html.html\",\"flux.desktop\"]",
+        "screenshots": "[\"Screenshot from 2016-04-20 20-49-45.png\",\"Screenshot from 2016-04-24 11-29-36.png\",\"schreenshot-test.jpg\"]",
         "license": "APACHE-2.0.txt",
         "versionCode": "15",
         "projectStatus": "Final",
         "url": "",
         "UUID": "FC3D0A58-D80D-5AA3-80CF-35BFC014C926",
-        "totalDownloads": 2,
-        "totalViews": 2
+        "totalViews": 1,
+        "totalDownloads": 0
     },
     {
         "name": "Codera Github",

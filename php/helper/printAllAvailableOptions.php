@@ -22,7 +22,7 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
                     {
                         for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
                         {
-                            echo "<option>" . $allowedFilesArray[$j] . "</option>";
+                            echo "<option>" . rawurlencode($allowedFilesArray[$j]) . "</option>";
                         }
                     }
                     elseif ($options == "image")
@@ -32,8 +32,8 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
                         $height = '100px';
                         for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
                         {
-                            echo "<a href=" . $directory . $allowedFilesArray[$j] . " data-lightbox=" . $directory . $allowedFilesArray[$j] . ">
-                    <img width=$width height=$height src=" . $directory . $allowedFilesArray[$j] . ">" .
+                            echo "<a href=" . $directory . $allowedFilesArray[$j] . " data-lightbox=" . $directory . rawurlencode($allowedFilesArray[$j]) . ">
+                    <img width=$width height=$height src=" . $directory . rawurlencode($allowedFilesArray[$j]) . ">" .
                                 "</a>";
                         }
                     }
