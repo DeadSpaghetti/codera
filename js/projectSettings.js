@@ -1,4 +1,4 @@
-function saveProject(UUID)
+function saveProject()
 {
     var name = $('#input-appName').val();
     var icon = $('#projectSettings-iconSelector').find(":selected").text();
@@ -37,7 +37,6 @@ function saveProject(UUID)
             "screenshots": JSON.stringify(screenshots),
             "license": license,
             "versionCode": versionCode.trim(),
-            "UUID": UUID.toString().trim(),
             "projectStatus": projectStatus,
             "url": url
         },
@@ -45,6 +44,11 @@ function saveProject(UUID)
         {
             location.href = "admin.php";
         });
+}
+
+function updateProject()
+{
+    
 }
 
 $(document).ready(function()
@@ -74,17 +78,11 @@ $(document).ready(function()
         var UUID = $('#projectSettingsUUID').text();
         if(UUID != null && UUID != "")
         {
-            $.post("../helper/removeProjectFromJSON.php",
-            {
-                "UUID" : UUID.toString().trim()
-            },function(data,error)
-            {
-                saveProject(UUID);
-            });
+            updateProject(UUID);
         }
         else
         {
-            saveProject(null);
+            saveProject();
         }
     });
 
