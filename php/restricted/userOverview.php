@@ -81,7 +81,7 @@ EDIT_ADMIN;
 $userArray = [];
 include "../helper/getUsersFromJSON.php";
 
-if($userArray != null)
+if(!empty($userArray))
 {
 	for($i=0; $i < sizeof($userArray); $i++)
 	{
@@ -153,6 +153,5 @@ if($userArray != null)
 		}
 	}
 }
-//echo '<div id="usernameDiv" class="hidden">'.$_SESSION['loggedIn'].'</div>';
 ?>
 </table>
