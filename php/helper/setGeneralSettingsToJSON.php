@@ -15,7 +15,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $colorScheme = $_POST['colorScheme'];
     $gridSize = $_POST['gridSize'];
     $sortOrder = $_POST['sortOrder'];
-//codera version is read only --> is only set by updater
 
     $generalSettingsFilename = "../../config/generalSettings.json";
 
@@ -27,8 +26,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     );
 
     $jsonString = json_encode($array, JSON_PRETTY_PRINT);
+    file_put_contents($generalSettingsFilename, $jsonString);
 
-    file_put_contents($generalSettingsFilename,$jsonString);
-    $sortType = "projects";
-    include "sort.php";
+    $projectArray = [];
+    include "getProjectsFromJSON.php";
+    $path_config_projects = "";
+    include "paths.php";
+    file_put_contents($path_config_projects, json_encode(getSortedProjectArray($projectArray, $sortOrder), JSON_PRETTY_PRINT));
 }

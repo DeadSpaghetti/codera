@@ -141,3 +141,45 @@ if(!function_exists("getSortedUserArray"))
     }
 }
 
+if(!function_exists("getSortedProjectArray"))
+{
+
+    function getSortedProjectArray($projectArray, $sortOrder)
+    {
+        if($sortOrder == "a-z")
+        {
+            usort($projectArray, function ($a, $b)
+            {
+                return (strtoupper($a->name) < strtoupper($b->name)) ? -1 : 1;
+            });
+        }
+        elseif($sortOrder == "z-a")
+        {
+            usort($projectArray, function ($a, $b)
+            {
+                return (strtoupper($a->name) > strtoupper($b->name)) ? -1 : 1;
+            });
+        }
+        elseif($sortOrder == "latestUpdate")
+        {
+            usort($projectArray, function ($a, $b)
+            {
+                return (strtotime($a->date) > strtotime($b->date)) ? -1 : 1;
+            });
+
+        }
+        elseif ($sortOrder == "latestUpdateReversed")
+        {
+            usort($projectArray, function ($a, $b)
+            {
+                return (strtotime($a->date) < strtotime($b->date)) ? -1 : 1;
+            });
+        }
+
+        file_put_contents("test.txt", json_encode($projectArray),JSON_PRETTY_PRINT);
+        return $projectArray;
+
+
+    }
+
+}

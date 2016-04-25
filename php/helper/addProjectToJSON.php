@@ -103,15 +103,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
         else
             $array[0] = $newProjectArray;
 
-        //push new reg id into array
+        $sortOrder = "";
+        include "getGeneralSettingsFromJSON.php";
         $fileToSave = json_encode($array, JSON_PRETTY_PRINT);
         file_put_contents($pathString,$fileToSave);
 
-        $sortOrder = "";
-        $sortType = "projects";
-        include "getGeneralSettingsFromJSON.php";
-        include "sort.php";
-
+        $projectArray = [];
+        include "getProjectsFromJSON.php";
+        $path_config_projects = "";
+        include "paths.php";
+        file_put_contents($path_config_projects, json_encode(getSortedProjectArray($projectArray, $sortOrder), JSON_PRETTY_PRINT));
 
     }
     catch (Exception $e)
