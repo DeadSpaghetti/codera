@@ -1,6 +1,6 @@
 <?php
-global $developerName;
-global $colorScheme;
+$developerName = "";
+$colorScheme = "";
 include(realpath(dirname(__FILE__) . '/../helper/paths.php'));
 include($path_helper_getGeneralSettings);
 ?>
@@ -39,7 +39,7 @@ ACCOUNT;
 
 </div>
 <div id="name" style="background-color: <?php echo $colorScheme;?>;">
-	<div class="name-text" id="name-text-<?php if(strlen($developerName) <= 10){echo "short";} else if(strlen($developerName) <= 20) {echo "middle";} else{ echo "long";} ?>">
-		<a href="<?php echo $path_index;?>"><?php echo $developerName; ?></a>
+	<div class="name-text" id="name-text-<?php if(strlen($developerName) <= 10){echo "short";} else if(strlen($developerName) <= 20) {echo "middle";} else{ echo "long";}?>">
+		<a href="<?php echo $path_index;?>"><?php if(isset($developerName)) echo $developerName;?></a>
 	</div>			
 </div>

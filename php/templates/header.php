@@ -1,6 +1,6 @@
 <?php
-global $developerName;
-global $colorScheme;
+$developerName = "";
+$colorScheme = "";
 include('helper/getGeneralSettingsFromJSON.php');
 ?>
 
@@ -10,8 +10,8 @@ include('helper/getGeneralSettingsFromJSON.php');
 	</div>	
 	<div style="clear: both;"></div>					
 </div>
-<div id="name" style="background-color: <?php echo $colorScheme;?>;">
+<div id="name" style="background-color: <?php if(isset($colorScheme)) echo $colorScheme;?>;">
 	<div class="name-text" id="name-text-<?php if(strlen($developerName) <= 10){echo "short";} else if(strlen($developerName) <= 20) {echo "middle";} else{ echo "long";} ?>">
-		<a href="index.php"><?php echo $developerName; ?></a>
+		<a href="index.php"><?php if(isset($developerName)) echo $developerName; ?></a>
 	</div>			
 </div>
