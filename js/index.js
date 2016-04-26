@@ -20,7 +20,7 @@ $(document).ready(function()
         form.method = "GET";
         form.action = "template.php";
         var input = document.createElement('input');
-        input.type = "text";
+        input.type = "hidden";
         input.name = "UUID";
         input.value = this.id;
 
