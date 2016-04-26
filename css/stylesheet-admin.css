@@ -134,6 +134,25 @@ font-weight: normal;
 display: inline-block;
 }
 
+#icon-warn3{
+text-align: center;
+padding-right: 2vmin;
+color: #CC0000;
+vertical-align: middle;
+padding-bottom: 3vmin;
+}
+
+#icon-warn3 i{
+color: #CC0000;	
+font-size: 2.8vmin;
+}
+
+#icon-war3 span{
+padding-left: 0;
+font-weight: normal;
+display: inline-block;
+}
+
 #icon-success{
 text-align: left;
 padding-right: 2vmin;

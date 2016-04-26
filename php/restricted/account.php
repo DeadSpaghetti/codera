@@ -95,6 +95,13 @@ NEW_PASSWORD;
 CONFIRM_PASSWORD;
 				
 						?>					
+						<!-- only show when error START -->
+						<td colspan="2" class="infos-center" id="account-message">
+							<div class="icon" id="icon-warn3">
+								<i class="material-icons">warning</i> <span class="icon-text" id="account-message-text">Wrong Credentials!</span>
+							</div>
+						</td>
+							<!-- END -->
 						<tr class="infos-row">															
 							<td colspan="2" class="infos-center">
 								<a class="button save" id="account-button-save" href="javascript:void(null)">									
