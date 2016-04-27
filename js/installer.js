@@ -46,14 +46,22 @@ $(document).ready(function()
     //admin password is typed in
     $('#button-continue-step4').click(function ()
     {
-        $.post("createAdmin.php",
+        var password = $('#installer-input-password').val();
+        if(password != null && password != "" && password != undefined)
         {
-           "password" : $('#installer-input-password').val()
-        
-        },function (data, error)
+            $.post("createAdmin.php",
+                {
+                    "password": password
+
+                }, function (data, error)
+                {
+                    changeStep(5);
+                });
+        }
+        else
         {
-            changeStep(5);
-        });
+            //gedöns
+        }
     });
 	
 	 $('#button-continue-step5').click(function ()
