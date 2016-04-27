@@ -54,35 +54,34 @@ include('../helper/getGeneralSettingsFromJSON.php');
 						<li id="tabUsers-list-element"><a href="#tabUsers" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Users</a></li>
 						<li id="tabAbout-list-element"><a href="#tabAbout" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Aboutpage</a></li>
 					<?php if($_SESSION['loggedIn'] == "admin"){ echo '<li id="tabReset-list-element"><a href="#tabReset" style="background-color: rgba('; echo convertHexToRGB($colorScheme).', 0.7);">Reset</a></li>';}?>
-					</ul>
-					<div style="clear: both;"> </div> 		
-						<div class="tab-content">
-							<div id="tabGeneralSettings" class="tab active">
-								<?php include("generalSettings.php"); ?>
-							</div>					 
-							<div id="tabProjectOverview" class="tab">
-								<?php include("projectOverview.php"); ?>
-							</div> 							
-							<div id="tabMedia" class="tab">
-								<div id="elfinder"></div>
-							</div> 
-							<div id="tabUsers" class="tab">
-								<?php include("userOverview.php"); ?>	
-							</div> 
-							<div id="tabAbout" class="tab">
-								<?php include("aboutOverview.php"); ?>	
-							</div>
-							<?php
-							if($_SESSION['loggedIn'] == "admin")
-							{
-								echo '<div id="tabReset" class="tab">';
-								include("resetOverview.php");
-								echo '</div>';
-							}
-							?>
+					</ul>							
+					<div class="tab-content">
+						<div id="tabGeneralSettings" class="tab active">
+							<?php include("generalSettings.php"); ?>
+						</div>		 
+						<div id="tabProjectOverview" class="tab">
+							<?php include("projectOverview.php"); ?>
+						</div> 							
+						<div id="tabMedia" class="tab">
+							<div id="elfinder"></div>
 						</div>
-					</div>					
-				</div>				
+						<div id="tabUsers" class="tab">
+							<?php include("userOverview.php"); ?>	
+						</div> 
+						<div id="tabAbout" class="tab">
+							<?php include("aboutOverview.php"); ?>	
+						</div>
+						<?php
+						if($_SESSION['loggedIn'] == "admin")
+						{
+							echo '<div id="tabReset" class="tab">';
+							include("resetOverview.php");
+							echo '</div>';
+						}
+						?>
+					</div>
+				</div>					
+			</div>				
 		</div>
 		<?php include("../templates/footer.php"); ?>
 	</body>

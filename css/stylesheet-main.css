@@ -564,12 +564,12 @@ select{
 background-color: transparent !important;
 }
 
-@media screen and (max-width: 1000px) {
+@media (max-aspect-ratio: 9/6) {
     #white{
 		width: 80vw;
-	}	
+	}
 	
 	#infos-small{
 		width: 95%;
 	}
-}
+}*/

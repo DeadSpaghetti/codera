@@ -1,5 +1,5 @@
 .tabs {	
-width: 65%;   	
+width: 65%;
 margin: auto;
 margin-top: 5vmin;
 font-family: Roboto-bold, Sans-Serif;
@@ -8,14 +8,15 @@ font-family: Roboto-bold, Sans-Serif;
 .tab-links{	
 padding: 0;
 padding-left: 2vmin;
-clear: both;
+list-style: none;
+margin: 0;
+/*white-space:nowrap;*/
 }
 
-.tab-links li {
+.tab-links li {	
 margin-left: 0.5vmin;
 margin-right: 0.5vmin;
-float:left;
-list-style:none;
+display: inline;
 border-radius: 1vmin 1vmin 0 0;	
 background-color: rgba(0,0,0,0);
 -webkit-box-shadow: 0 5vh 0 #FFFFFF,
@@ -39,7 +40,7 @@ font-size: 2vmin;
 font-weight: bold;
 color: #212121;
 transition: all linear 0.15s;	
-text-decoration: none;			
+text-decoration: none;		
 }
 
 .tab-links a:hover {
@@ -54,23 +55,26 @@ color: #212121 !important;
  
 /* Tab-Content */
 .tab-content {
+width: 100%;
+margin: auto;
 padding: 9vmin;
 border-radius: 1vmin;
 -webkit-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
 -moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
 box-shadow: 0 0 2.5vmin 0.5vmin rgba(194,194,194,1);
-background-color: #FFFFFF; 	
+background-color: #FFFFFF;
+box-sizing: border-box;
 }
  
 .tab {
-display:none;				
+display: none;				
 }
 
 .tab.active {
-display:block;
+display: block;
 }
 
-@media screen and (max-width: 1000px) {
+@media (max-aspect-ratio: 9/6) {
     .tabs{
 		width: 95%;
 	}	
