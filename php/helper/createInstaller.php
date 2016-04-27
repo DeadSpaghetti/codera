@@ -351,6 +351,24 @@ CREATE_ADMIN;
 
 $setSalt = <<<'SET_SALT'
 <?php
+function createDirectories()
+{
+    if(!file_exists("../../images"))
+        mkdir("../../images");
+
+    if(!file_exists("../../images/icons/"))
+        mkdir("../../images/icons");
+
+    if(!file_exists("../../images/screenshots/"))
+        mkdir("../../images/screenshots");
+
+    if(!file_exists("../../executables"))
+        mkdir("../../executables");
+
+    if(!file_exists("../../licenses"))
+        mkdir("../../licenses");
+
+}
 function generateSalt($randomString)
 {
     if(isset($randomString))
@@ -366,6 +384,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $inputString = $_POST['inputString'];
     if(isset($inputString))
     {
+        createDirectories();
         generateSalt($inputString);
     }
 }
@@ -381,8 +400,9 @@ rmdir(getcwd());
 header("Location: ../login.php");
 DELETE_INSTALLER;
 
+if(!file_exists("../installer"))
+    mkdir("../installer");
 
-mkdir("../installer");
 file_put_contents("../installer/installer.php",$installerString);
 file_put_contents("../installer/setSalt.php",$setSalt);
 file_put_contents("../installer/createAdmin.php",$createAdmin);

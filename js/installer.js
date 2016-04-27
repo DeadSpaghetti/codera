@@ -39,7 +39,6 @@ $(document).ready(function()
                 "inputString": $('#installer-input-salt').val()
             },function (data,error)
             {
-                console.log(data);
                 changeStep(4);
             });
     });
