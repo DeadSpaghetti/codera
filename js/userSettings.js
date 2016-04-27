@@ -11,6 +11,42 @@ function getForbiddenProjects()
     return forbiddenProjects;
 }
 
+function saveUser(newUsername, username, password)
+{
+    var accountType = $('#toggle-user-is-admin').is(':checked');
+    var loggedInUser = getLoggedInUser();
+
+    if (accountType)
+    {
+        accountType = "admin"
+    }
+    else
+    {
+        accountType = "user"
+    }
+
+    $.post("../helper/addUserToJSON.php",
+        {
+            "newUsername": newUsername.toString().trim(),
+            "username": username.toString().trim(),
+            "password": password,
+            "forbiddenProjects": JSON.stringify(getForbiddenProjects()),
+            "accountType": accountType
+        },
+        function (data, error)
+        {
+            if (newUsername != username.trim() && username.trim() != "New User" && username == loggedInUser)
+            {
+                alert("You're now logged out!");
+                location.href = "../logoutAndRedirectToLogin.php";
+            }
+            else
+            {
+                location.href = "admin.php";
+            }
+        });
+}
+
 $(document).ready(function()
 {
 	document.getElementById('userSettings-message').style.display='none';		
@@ -21,8 +57,6 @@ $(document).ready(function()
         var username = $('#new-user').text().trim();
         var password = $('#userSettings-input-userPassword').val();
         var confirmPassword = $('#userSettings-input-userPassword_confirm').val();
-        var forbiddenProjects = getForbiddenProjects();
-        var loggedInUser = getLoggedInUser();
 
         if(newUsername != "" && newUsername != undefined && newUsername != null)
         {
@@ -32,37 +66,7 @@ $(document).ready(function()
                 {
                     if (password == confirmPassword)
                     {
-                        var accountType = $('#toggle-user-is-admin').is(':checked');
-
-                        if (accountType)
-                        {
-                            accountType = "admin"
-                        }
-                        else
-                        {
-                            accountType = "user"
-                        }
-
-                        $.post("../helper/addUserToJSON.php",
-						{
-							"newUsername": newUsername.toString().trim(),
-							"username": username.toString().trim(),
-							"password": password,
-							"forbiddenProjects": JSON.stringify(forbiddenProjects),
-							"accountType": accountType
-						},
-						function (data, error)
-						{
-							if (newUsername != username && username.trim() != "New User" && username == loggedInUser)
-							{
-								alert("You're now logged out!");
-								location.href = "../logoutAndRedirectToLogin.php";
-							}
-							else
-							{
-								location.href = "admin.php";
-							}
-						});						
+                        saveUser(newUsername, username, password);
                     }
                     else
                     {
@@ -81,7 +85,7 @@ $(document).ready(function()
                 //bestehender Nutzer
                if (password == confirmPassword)
                {
-					
+                   saveUser(newUsername, username, password);
                }
                else
                {
