@@ -320,7 +320,6 @@ INSTALLER;
 
 $createAdmin = <<<'CREATE_ADMIN'
 <?php
-
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     include_once "../helper/functions.php";
@@ -329,6 +328,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     (
         "username" => "admin",
         "password" => crypt($password, getSalt()),
+        "forbiddenProject" => "[]",
         "accountType" => "admin"
     );
 
