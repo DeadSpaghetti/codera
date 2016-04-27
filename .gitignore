@@ -32,7 +32,6 @@ fabric.properties
 /config/users.json
 /config/projects.json
 #elFinder tempfiles
-/images/icons/
 /images/screenshots/
 /executables/
 /licenses/
