@@ -37,43 +37,47 @@ function overrideUserProperties($username,$password,$forbiddenProjects,$accountT
 	$path_config_users = "";
 	include "paths.php";
 
-	for($i=0; $i < sizeof($userArray); $i++)
+	if(!empty($userArray))
 	{
-		if($userArray[$i]->{'username'} == $username)
+		for ($i = 0; $i < sizeof($userArray); $i++)
 		{
-			if($username != "admin" && $username != "public")
+			if ($userArray[$i]->{'username'} == $username)
 			{
-				if($username == "New User" && $newUsername != "admin" && $newUsername != "public")
+				if ($username != "admin" && $username != "public")
 				{
-					$username = $newUsername;
+					if ($username == "New User" && $newUsername != "admin" && $newUsername != "public")
+					{
+						$username = $newUsername;
+					}
+
+					if (isset($newUsername) && $newUsername != "admin" && $newUsername != "public")
+						$username = $newUsername;
+
+
+					$userArray[$i]->{'username'} = $username;
+					$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
+					$userArray[$i]->{'accountType'} = $accountType;
+				}
+				elseif ($username == "public")
+				{
+					$userArray[$i]->{'username'} = "public";
+					$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
+					$userArray[$i]->{'accountType'} = "user";
+				}
+				elseif ($username == "admin")
+				{
+					$userArray[$i]->{'username'} = "admin";
+					$userArray[$i]->{'accountType'} = "admin";
+					$userArray[$i]->{'forbiddenProjects'} = "[]";
 				}
 
-				if (isset($newUsername) && $newUsername != "admin" && $newUsername != "public")
-					$username = $newUsername;
+				if (isset($password) && $password != "" && !is_null($password) && $username != "public")
+					$userArray[$i]->{'password'} = crypt($password, getSalt());
 
-
-				$userArray[$i]->{'username'} = $username;
-				$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
-				$userArray[$i]->{'accountType'} = $accountType;
+				include_once "functions.php";
+				file_put_contents($path_config_users, json_encode(getSortedUserArray($userArray), JSON_PRETTY_PRINT));
+				break;
 			}
-			elseif ($username == "public")
-			{
-				$userArray[$i]->{'forbiddenProjects'} = $forbiddenProjects;
-				$userArray[$i]->{'accountType'} = "user";
-			}
-			elseif ($username == "admin")
-			{
-				$userArray[$i]->{'username'} = "admin";
-				$userArray[$i]->{'accountType'} = "admin";
-				$userArray[$i]->{'forbiddenProjects'} = "[]";
-			}
-
-			if(isset($password) && $password != "" && !is_null($password) && $username != "public")
-				$userArray[$i]->{'password'} = crypt($password,getSalt());
-
-			include_once "functions.php";
-			file_put_contents($path_config_users,json_encode(getSortedUserArray($userArray),JSON_PRETTY_PRINT));
-			break;
 		}
 	}
 }
@@ -81,7 +85,6 @@ function overrideUserProperties($username,$password,$forbiddenProjects,$accountT
 
 function addUser ($username,$password, $forbiddenProjects,$accountType)
 {
-
 	if($username != "admin" && $username != "public")
 	{
 		$newUserArray = array
@@ -93,32 +96,6 @@ function addUser ($username,$password, $forbiddenProjects,$accountType)
 		);
 		saveJSONArray($newUserArray);
 	}
-	else
-	{
-		if($username == "admin")
-		{
-			$newUserArray = array
-			(
-				"username" => "admin",
-				"password" => $password,
-				"forbiddenProjects" => "[]",
-				"accountType" => "admin",
-			);
-			saveJSONArray($newUserArray);
-		}
-		elseif($username == "public")
-		{
-			$newUserArray = array
-			(
-				"username" => "public",
-				"forbiddenProjects" => $forbiddenProjects,
-				"accountType" => "user"
-			);
-			saveJSONArray($newUserArray);
-		}
-
-	}
-
 }
 
 function saveJSONArray($newUserArray)

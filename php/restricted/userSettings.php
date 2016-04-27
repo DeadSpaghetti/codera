@@ -105,10 +105,7 @@ USERNAME;
 						</tr>
 USERNAME;
 						}
-						?>
 
-
-						<?php
 						if($username != "public")
 						{
 							echo <<<'PASSWORD'
@@ -205,16 +202,15 @@ REST;
 						</tr>
 PROJECT_ACCESS;
 
-						}
-						if($username != "admin")
-						{
-							global $projectArray;
+							$projectArray = [];
 							include "../helper/getProjectsFromJSON.php";
-							for ($i = 0; $i < sizeof($projectArray); $i++)
+							if(!empty($projectArray))
 							{
-								$projectName = $projectArray[$i]->{'name'};
-								$UUID = $projectArray[$i]->{'UUID'};
-								echo '<tr class="infos-row">' .
+								for ($i = 0; $i < sizeof($projectArray); $i++)
+								{
+									$projectName = $projectArray[$i]->{'name'};
+									$UUID = $projectArray[$i]->{'UUID'};
+									echo '<tr class="infos-row">' .
 									'<td class="infos-left">' .
 									'<div class="user-project-name">' .
 									$projectName .
@@ -224,6 +220,10 @@ PROJECT_ACCESS;
 									'	<div class="toggle-container-user">	' .
 									'		<label class="switch-light switch-candy" onclick="">' .
 									'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_' . $UUID . '" ';
+							}
+
+						if(!empty($forbiddenProjects) && !empty($UUID))
+						{
 							for ($j = 0; $j < sizeof($forbiddenProjects); $j++)
 							{
 								if ($forbiddenProjects[$j] == $UUID)
@@ -232,14 +232,14 @@ PROJECT_ACCESS;
 									break;
 								}
 							}
-
+						}
 							echo '>' .
 								'			<span>' .
 								'				<span>No</span>' .
 								'				<span>Yes</span>' .
 								'				<a style="background-color:';
 
-							echo $colorScheme;
+							if(isset($colorScheme)) echo $colorScheme;
 							echo '"></a>' .
 								'			</span>' .
 								'</label>' .
