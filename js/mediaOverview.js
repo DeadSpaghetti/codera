@@ -15,7 +15,7 @@ $(document).ready(function() {
 				['quicklook'],
 				['copy', 'cut', 'paste'],
 				['rm'],
-				['duplicate', 'rename', 'edit', 'resize'],
+				['duplicate', 'rename'],
 				['extract', 'archive'],
 				['search'],
 				['view'],
@@ -52,7 +52,7 @@ $(document).ready(function() {
 			// current directory file menu
 			files  : [
 				'getfile', '|','open', 'quicklook', '|', 'download', '|', 'copy', 'cut', 'paste', 'duplicate', '|',
-				'rm', '|', 'edit', 'rename', 'resize', '|', 'archive', 'extract', '|', 'info'
+				'rm', '| rename |', 'archive', 'extract', '|', 'info'
 			]
 		},
 		// , lang: 'de'                    // language (OPTIONAL)
