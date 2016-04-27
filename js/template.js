@@ -10,11 +10,11 @@ $(document).ready(function()
         form.method = "POST";
         form.action = "helper/download.php";
         var filenameInput = document.createElement('input');
-        filenameInput.type = "text";
+        filenameInput.type = "hidden";
         filenameInput.name = "filename";
         filenameInput.value = filename;
         var UUIDInput = document.createElement('input');
-        UUIDInput.type = "text";
+        UUIDInput.type = "hidden";
         UUIDInput.name = "UUID";
         UUIDInput.value = $('#templateUUID').text().trim();
 

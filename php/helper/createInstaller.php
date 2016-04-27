@@ -300,7 +300,9 @@ else
                         'You have successfully installed codera on your system.'.
                         '<br> <br> <br>'.
                         'For additonal information or help visit the official <a class="link-visible" href="https://github.com/spaghettic0der/codera">Codera Githubpage</a>.'.
-                        '<br> <br>'.
+                        '<br> <br> <br>'.
+						'<span class="installer-sub-headline">Username for login: admin</span>'.
+						'<br> <br>'.
                         '<a class="button" id="installer-button-finish" href="javascript:void(null)">'.
                         '<span class="button-text">Finish</span><i class="material-icons">done</i>'.
                         '</a>'.
