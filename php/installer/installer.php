@@ -123,7 +123,7 @@ else
 
                     echo '<div class="installer-progress-container">'.
                         '<div class="installer-progress">'.
-                        '<div class="circle done">✔</div>'.
+                        '<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
@@ -162,11 +162,11 @@ else
 
                     echo '<div class="installer-progress-container">'.
                         '<div class="installer-progress">'.
-                        '<div class="circle done">✔</div>'.
+                        '<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
-                        '<div class="circle done">✔</div>'.
+                        '<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
@@ -199,15 +199,15 @@ else
 
                     echo '<div class="installer-progress-container">'.
                         '<div class="installer-progress">'.
-                        '<div class="circle done">✔</div>'.
+                        '<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
-                        '<div class="circle done">✔</div>'.
+                        '<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
-                        '<div class="circle done">✔</div>'.
+                        '<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
@@ -263,19 +263,19 @@ else
 
                     echo '<div class="installer-progress-container">'.
                         '<div class="installer-progress">'.
-                        '<div class="circle done">✔</div>'.
+                        '<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
-                        '<div class="circle done">✔</div>'.
+                        '<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
-                        '<div class="circle done">✔</div>'.
+                        '<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
-						'<div class="circle done">✔</div>'.
+						'<div class="circle done">&#10004;</div>'.
                         '<div class="progress-line-container">'.
                         '<div class="progress-line done"></div>'.
                         '</div>'.
@@ -305,3 +305,4 @@ else
 </div>
 </body>
 </html>
+
