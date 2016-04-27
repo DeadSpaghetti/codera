@@ -9,7 +9,7 @@
 *.iws
 .quarantine
 .tmb
-/config/admin.json
+/notes/
 
 ## Plugin-specific files:
 
