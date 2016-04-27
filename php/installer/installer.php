@@ -190,7 +190,7 @@ else
                         '<br> <br> <br>'.
                         'Enter your new password here:'.
                         '<br>'.
-                        '<input id="installer-input-password" "type="password"/>'.
+                        '<input id="installer-input-password" type="password"/>'.
                         '<br> <br>'.
                         '<a class="button" id="button-continue-step4" href="javascript:void(null)">'.
                         '<span class="button-text">Continue</span><i class="material-icons">navigate_next</i>'.
