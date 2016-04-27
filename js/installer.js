@@ -33,20 +33,28 @@ $(document).ready(function()
 
     //user types in the salt to use for encryption
     $('#button-continue-step3').click(function ()
-    {
-        $.post("setSalt.php",
+    {		
+		var salt = $('#installer-input-salt').val();
+        if(salt != null && salt != "" && salt != undefined && salt.length >= 5)
+        {
+			$.post("setSalt.php",
             {
-                "inputString": $('#installer-input-salt').val()
+                "inputString": salt
             },function (data,error)
             {
                 changeStep(4);
-            });
+            });         
+        }
+        else
+        {
+            alert('Please enter at least 5 characters.');
+        }      
     });
 
     //admin password is typed in
     $('#button-continue-step4').click(function ()
     {
-        var password = $('#installer-input-password').val();
+        var password = $('#installer-input-password').val().trim();
         if(password != null && password != "" && password != undefined)
         {
             $.post("createAdmin.php",
@@ -60,7 +68,7 @@ $(document).ready(function()
         }
         else
         {
-            //gedöns
+            alert('Password field shouldn\'t be empty.');
         }
     });
 	
