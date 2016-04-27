@@ -88,6 +88,8 @@ include('cookie.php');
 						$requirements = $currentProject->{'requirements'};
 						$description = $currentProject->{'description'};
 						$license = $currentProject->{'license'};
+						$screenshots = json_decode($currentProject->{'screenshots'});
+						$executables = json_decode($currentProject->{'executables'});
 					}
 				}
 				else
@@ -100,80 +102,126 @@ include('cookie.php');
 				<div id="white">
 					<table id="app">
 						<tr>
-							<td id="app-icon" style="background-image: url('../images/icons/<?php echo $icon ?>');">	</td>
-							<td id="app-name"><?php if(isset($projectName)) echo $projectName?></td>
-
+							<td id="app-icon" style="background-image: url('../images/icons/<?php if(isset($icon)) echo $icon ?>');">	</td>
+							<td id="app-name"><?php if(isset($projectName)) echo $projectName;?></td>
 						</tr>
 					</table>
 					<div class="line"></div>			
 					<table class="infos">
-						<tr class="infos-row">
+						<?php
+						if(isset($versionName) && $versionName != "")
+						{
+							echo <<<'VERSION_NAME'
+<tr class="infos-row">
 							<td class="infos-left">
 								<div class="icon">
 									<i class="material-icons">update</i> <span class="icon-text">Version:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php if(isset($versionName)) echo $versionName;?>
-							</td>
+VERSION_NAME;
+						echo $versionName;
+						echo <<<'VERSION_NAME'
+		</td>
 						</tr>
-						<tr class="infos-row">
+VERSION_NAME;
+						}
+						if(isset($date) && $date != "")
+						{
+							echo <<<'DATE'
+							<tr class="infos-row">
 							<td class="infos-left">
 								<div class="icon">
 									<i class="material-icons md-light">access_time</i> <span class="icon-text">Last Update:</span>
 								</div>
-							</td>										
-							<td class="infos-right">
-								<?php if(isset($date))echo $date;?>
 							</td>
+							<td class="infos-right">
+DATE;
+							echo $date;
+
+							echo <<<'DATE'
+</td>
 						</tr>
-						<tr class="infos-row">
+DATE;
+						}
+
+						if(isset($latestChanges) && $latestChanges != "")
+						{
+							echo <<<'LATEST_CHANGES'
+<tr class="infos-row">
 							<td class="infos-left">
 								<div class="icon">
 									<i class="material-icons">code</i> <span class="icon-text">Latest Changes:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php if(isset($latestChanges)) echo $latestChanges;?>
+LATEST_CHANGES;
+							echo $latestChanges;
+							echo <<<'LATEST_CHANGES'
 							</td>
 						</tr>
-						<tr class="infos-row">
+LATEST_CHANGES;
+						}
+
+						if(isset($description) && $description != "")
+						{
+							echo <<<'DESCRIPTION'
+<tr class="infos-row">
 							<td class="infos-left">
 								<div class="icon">
 									<i class="material-icons">description</i> <span class="icon-text">Description:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php if(isset($description)) echo $description;?>
-							</td>
+DESCRIPTION;
+							echo $description;
+							echo <<<'DESCRIPTION'
+</td>
 						</tr>
-						<tr class="infos-row">
+DESCRIPTION;
+						}
+
+						if(isset($requirements) && $requirements != "")
+						{
+							echo <<<'REQUIREMENTS'
+<tr class="infos-row">
 							<td class="infos-left">
 								<div class="icon">
 									<i class="material-icons">list</i> <span class="icon-text">Requirements:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php if(isset($requirements)) echo $requirements;?>
-							</td>
+REQUIREMENTS;
+							echo $requirements;
+							echo <<<'REQUIREMENTS'
+</td>
 						</tr>
-						<tr class="infos-row">
+REQUIREMENTS;
+						}
+
+						include_once "helper/functions.php";
+						if(isset($executables) && !empty($executables))
+						{
+							echo <<<'FILE'
+<tr class="infos-row">
 							<td class="infos-left">
 								<div class="icon">
 									<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
 								</div>
-							</td>										
-							<td class="infos-right">	
+							</td>
+							<td class="infos-right">
 								<table id="template-download">
 									<tr>
 										<td>
 											<select id="template-fileSelector" class="chosen-select">
-                                                <?php
-                                                    $property = "files";
-                                                    $options = "option";
-                                                    include 'helper/printAllAvailableOptions.php';
-												?>
-											</select>
+FILE;
+							$property = "files";
+							$options = "option";
+							include 'helper/printAllAvailableOptions.php';
+
+
+							echo <<<'FILE'
+	</select>
 										</td>
 										<td id="template-download-right">										
 											<a class="button download" id="button-download" href="javascript:void(null)">									
@@ -184,7 +232,13 @@ include('cookie.php');
 								</table>
 							</td>
 						</tr>
-						<tr class="infos-row">
+FILE;
+						}
+						if(isset($screenshots) && !empty($screenshots))
+						{
+
+							echo <<<'SCREENSHOTS'
+<tr class="infos-row">
 							<td class="infos-left">
 								<div class="icon">
 									<i class="material-icons">photo_camera</i> <span class="icon-text">Screenshots:</span>
@@ -192,23 +246,40 @@ include('cookie.php');
 							</td>										
 							<td class="infos-right.wrap">
 								<!-- Tabelle Previews -->
-                                <?php
-                                    $property = "screenshots";
-                                    $options = "image";
-                                    include "helper/printAllAvailableOptions.php";
-                                ?>
+SCREENSHOTS;
+
+							$property = "screenshots";
+							$options = "image";
+							include "helper/printAllAvailableOptions.php";
+
+							echo <<<'SCREENSHOTS'
 							</td>
 						</tr>
-						<tr class="infos-row">
+SCREENSHOTS;
+						}
+
+						if(isset($license) && $license != "")
+						{
+							echo <<<'LICENSE'
+<tr class="infos-row">
 							<td class="infos-left">
 								<div class="icon">
 									<i class="material-icons md-light">assignment</i> <span class="icon-text">License:</span>
 								</div>
 							</td>										
 							<td class="infos-right">
-								<?php if(isset($license)) echo'<a class="link-visible" id="licenseLink" href="../licenses/'.$license.'">'.$license.'</a>';?>
+LICENSE;
+							echo '<a class="link-visible" id="licenseLink" href="../licenses/' . $license . '">' . $license . '</a>';
+
+							echo <<<'LICENSE'
+
 							</td>
-						</tr>						
+						</tr>	
+LICENSE;
+						}
+
+						?>
+
 					</table>		
 				</div>		
 			</div>
