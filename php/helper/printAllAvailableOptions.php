@@ -27,13 +27,11 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
                     }
                     elseif ($options == "image")
                     {
-                        $directory = "../images/screenshots/";
-                        $width = '100px';
-                        $height = '100px';
+                        $directory = "../images/screenshots/";                       
                         for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
                         {
-                            echo "<a href=" . $directory . $allowedFilesArray[$j] . " data-lightbox=" . $directory . rawurlencode($allowedFilesArray[$j]) . ">
-                    <img width=$width height=$height src=" . $directory . rawurlencode($allowedFilesArray[$j]) . ">" .
+                            echo "<a href=" . $directory . $allowedFilesArray[$j] . " data-lightbox=" . $directory . rawurlencode($allowedFilesArray[$j]) . " class=\"screenshot-preview\">
+                    <img src=" . $directory . rawurlencode($allowedFilesArray[$j]) . ">" .
                                 "</a>";
                         }
                     }

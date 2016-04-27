@@ -564,6 +564,13 @@ select{
 background-color: transparent !important;
 }
 
+.screenshot-preview img{
+width: 15vmin;
+height: 15vmin;
+}
+
+
+
 @media (max-aspect-ratio: 9/6) {
     #white{
 		width: 80vw;

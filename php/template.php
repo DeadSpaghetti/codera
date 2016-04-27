@@ -190,7 +190,7 @@ include('cookie.php');
 									<i class="material-icons">photo_camera</i> <span class="icon-text">Screenshots:</span>
 								</div>
 							</td>										
-							<td class="infos-right">
+							<td class="infos-right.wrap">
 								<!-- Tabelle Previews -->
                                 <?php
                                     $property = "screenshots";
