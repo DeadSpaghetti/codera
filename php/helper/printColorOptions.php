@@ -13,7 +13,7 @@ if(file_exists($generalSettingsFilename))
 }
 else
 {
-    $selectedColor = "#bdbdbd";
+    $selectedColor = "#4a98d3";
 }
 
 
