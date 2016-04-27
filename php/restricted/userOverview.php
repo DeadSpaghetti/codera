@@ -30,7 +30,7 @@ include('../helper/paths.php');
 							<i class="material-icons">star</i>
 						</div>				
 					</td>
-					<td class="user-overview-appname">Admin</td>
+					<td class="user-overview-appname">admin</td>
 				</tr>
 			</table>
 		</td>
@@ -62,7 +62,7 @@ EDIT_ADMIN;
 							<i class="material-icons">public</i>
 						</div>				
 					</td>
-					<td class="user-overview-appname">Public</td>
+					<td class="user-overview-appname">public</td>
 				</tr>
 			</table>
 		</td>
