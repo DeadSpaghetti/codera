@@ -141,6 +141,10 @@ PASSWORD;
 						
 PASSWORD_CONFIRM;
 						}
+						else
+						{
+							echo '<div id="userSettings-message"></div>';
+						}
 						
 
 
