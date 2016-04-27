@@ -28,16 +28,15 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-
+/config/salt.txt
+/config/users.json
+/config/projects.json
 #elFinder tempfiles
-/images/icons/.quarantine
-/images/icons/.tmb
-/images/screenshots/.quarantine
-/images/screenshots/.tmb
-/executables/.quarantine
-/executables/.tmb
-/licenses/.quarantine
-/licenses/.tmb
+/images/icons/
+/images/screenshots/
+/executables/
+/licenses/
+
 
 #Design
 /Banner/
