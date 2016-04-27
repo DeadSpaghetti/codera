@@ -57,49 +57,65 @@ $(document).ready(function()
         var username = $('#new-user').text().trim();
         var password = $('#userSettings-input-userPassword').val();
         var confirmPassword = $('#userSettings-input-userPassword_confirm').val();
-
-        if(newUsername != "" && newUsername != undefined && newUsername != null)
-        {
-            if (username == "New User")
-            {
-                if(password != null && password != "" && password != undefined)
-                {
-                    if (password == confirmPassword)
-                    {
-                        saveUser(newUsername, username, password);
-                    }
-                    else
-                    {
+		
+				
+        if(username != "admin")
+		{			
+			if(newUsername != "" && newUsername != undefined && newUsername != null)
+			{
+				if (username == "New User")
+				{
+					if(password != null && password != "" && password != undefined)
+					{
+						if (password == confirmPassword)
+						{
+							saveUser(newUsername, username, password);
+						}
+						else
+						{
+							document.getElementById('userSettings-message').style.display = '';
+							document.getElementById('userSettings-message-text').innerHTML = "The confirmation doesn't match your new password.";
+						}
+					}
+					else
+					{
+						document.getElementById('userSettings-message').style.display = '';
+						document.getElementById('userSettings-message-text').innerHTML = "The password fields shouldn't be empty.";
+					}
+				}
+				else
+				{
+				   //bestehender Nutzer
+				   if (password == confirmPassword)
+				   {
+					   saveUser(newUsername, username, password);
+				   }
+				   else
+				   {
 						document.getElementById('userSettings-message').style.display = '';
 						document.getElementById('userSettings-message-text').innerHTML = "The confirmation doesn't match your new password.";
-                    }
-                }
-                else
-                {
+				   }
+				}
+			}
+			else
+			{		 
 					document.getElementById('userSettings-message').style.display = '';
-					document.getElementById('userSettings-message-text').innerHTML = "The password fields shouldn't be empty.";
-                }
-            }
-            else
-            {
-                //bestehender Nutzer
-               if (password == confirmPassword)
-               {
-                   saveUser(newUsername, username, password);
-               }
-               else
-               {
-					document.getElementById('userSettings-message').style.display = '';
-					document.getElementById('userSettings-message-text').innerHTML = "The confirmation doesn't match your new password.";
-               }
-            }
-        }
-        else
-        {
-			document.getElementById('userSettings-message').style.display = '';
-			document.getElementById('userSettings-message-text').innerHTML = "Username shouldn't be empty.";
-        }
-
+					document.getElementById('userSettings-message-text').innerHTML = "Username shouldn't be empty.";				
+			}
+		}
+		else
+		{
+			//Superadmin tries to change his password						
+			if (password == confirmPassword)
+			{
+				saveUser(username, username, password);
+			}
+			else
+			{
+				document.getElementById('userSettings-message').style.display = '';
+				document.getElementById('userSettings-message-text').innerHTML = "The confirmation doesn't match your new password.";
+			}					
+		}
     });
 	
 	$('#userSettings-button-discard').click(function()

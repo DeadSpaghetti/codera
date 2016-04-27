@@ -39,7 +39,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 			{
 				$accountType = $userArray[$i]->{'accountType'};
 				$forbiddenProjects = json_decode($userArray[$i]->{'forbiddenProjects'});
-
 			}
 		}
 	}
@@ -132,6 +131,13 @@ PASSWORD;
 								<input class="input project" id="userSettings-input-userPassword_confirm" type="password" placeholder="*******"/>
 							</td>
 						</tr>
+						<tr class="infos-row">	
+							<td colspan="2" class="infos-center lesspadding" id="userSettings-message">
+								<div class="icon" id="icon-warn3">
+									<i class="material-icons">warning</i> <span class="icon-text" id="userSettings-message-text"></span>
+								</div>
+							</td>
+						</tr>
 						
 PASSWORD_CONFIRM;
 						}
@@ -173,14 +179,7 @@ SWITCH;
 									</label>								
 								</div>
 							</td>						
-						</tr>	
-						<tr class="infos-row">	
-							<td colspan="2" class="infos-center lesspadding" id="userSettings-message">
-								<div class="icon" id="icon-warn3">
-									<i class="material-icons">warning</i> <span class="icon-text" id="userSettings-message-text"></span>
-								</div>
-							</td>
-						</tr>
+						</tr>							
 						<tr class="infos-row">
 							<td colspan="2">
 								<div class="user-line"> </div>
