@@ -28,9 +28,9 @@ function getSelectedOption($object,$UUID)
 {
     if(isset($UUID))
     {
-        global $projectArray;
+		$projectArray = [];
         include "../helper/getProjectsFromJSON.php";
-		if($projectArray != null)
+		if(!empty($projectArray))
 		{
 			for ($i = 0; $i < sizeof($projectArray); $i++)
 			{
@@ -47,9 +47,9 @@ function getSelectedOptions($object,$UUID)
 {
     if(isset($UUID))
     {
-        global $projectArray;
+		$projectArray = [];
         include "../helper/getProjectsFromJSON.php";
-		if($projectArray != null)
+		if(!empty($projectArray))
 		{
 			for ($i = 0; $i < sizeof($projectArray); $i++)
 			{
