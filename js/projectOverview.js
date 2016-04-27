@@ -7,7 +7,7 @@ $(document).ready(function()
         form.action = '../restricted/projectSettings.php';
 
         var input = document.createElement('input');
-        input.type = 'text';
+        input.type = 'hidden';
         input.name = 'UUID';
         input.value = this.parentNode.parentNode.id;
 

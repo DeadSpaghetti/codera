@@ -7,7 +7,7 @@ $(document).ready(function ()
         form.method = "POST";
         form.action = "userSettings.php";
         var input = document.createElement('input');
-        input.type = "text";
+        input.type = "hidden";
         input.name = "username";
         input.value = username;
         form.appendChild(input);
