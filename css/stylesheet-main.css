@@ -545,7 +545,6 @@ display: none;
 .chosen-container{
 font-size: 2.2vmin !important;
 line-height: 4vmin !important;
-min-line-height
 height: 4vmin !important;
 display: block !important;
 width: 100% !important;
@@ -570,7 +569,6 @@ height: 15vmin;
 }
 
 
-
 @media (max-aspect-ratio: 9/6) {
     #white{
 		width: 80vw;
@@ -579,4 +577,4 @@ height: 15vmin;
 	#infos-small{
 		width: 95%;
 	}
-}*/
+}
