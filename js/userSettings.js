@@ -13,6 +13,8 @@ function getForbiddenProjects()
 
 $(document).ready(function()
 {
+	document.getElementById('userSettings-message').style.display='none';		
+	
     $('#userSettings-button-save').click(function ()
     {
         var newUsername = $('#userSettings-input-userName').val();
@@ -42,55 +44,56 @@ $(document).ready(function()
                         }
 
                         $.post("../helper/addUserToJSON.php",
-                            {
-                                "newUsername": newUsername.toString().trim(),
-                                "username": username.toString().trim(),
-                                "password": password,
-                                "forbiddenProjects": JSON.stringify(forbiddenProjects),
-                                "accountType": accountType
-                            },
-                            function (data, error)
-                            {
-                                if (newUsername != username && username.trim() != "New User" && username == loggedInUser)
-                                {
-                                    alert("You're now logged out!");
-                                    location.href = "../logoutAndRedirectToLogin.php";
-                                }
-                                else
-                                {
-                                    location.href = "admin.php";
-                                }
-
-                            });
+						{
+							"newUsername": newUsername.toString().trim(),
+							"username": username.toString().trim(),
+							"password": password,
+							"forbiddenProjects": JSON.stringify(forbiddenProjects),
+							"accountType": accountType
+						},
+						function (data, error)
+						{
+							if (newUsername != username && username.trim() != "New User" && username == loggedInUser)
+							{
+								alert("You're now logged out!");
+								location.href = "../logoutAndRedirectToLogin.php";
+							}
+							else
+							{
+								location.href = "admin.php";
+							}
+						});						
                     }
                     else
                     {
-                        //password stimmt nicht überein
+						document.getElementById('userSettings-message').style.display = '';
+						document.getElementById('userSettings-message-text').innerHTML = "The confirmation doesn't match your new password.";
                     }
                 }
                 else
                 {
-                    //passwort ist leer
+					document.getElementById('userSettings-message').style.display = '';
+					document.getElementById('userSettings-message-text').innerHTML = "The password fields shouldn't be empty.";
                 }
-
             }
             else
             {
                 //bestehender Nutzer
                if (password == confirmPassword)
                {
-
+					
                }
                else
                {
-                   //passwort stimmt nicht überein
+					document.getElementById('userSettings-message').style.display = '';
+					document.getElementById('userSettings-message-text').innerHTML = "The confirmation doesn't match your new password.";
                }
-
             }
         }
         else
         {
-           //username empty
+			document.getElementById('userSettings-message').style.display = '';
+			document.getElementById('userSettings-message-text').innerHTML = "Username shouldn't be empty.";
         }
 
     });

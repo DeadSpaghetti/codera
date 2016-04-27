@@ -145,12 +145,12 @@ PASSWORD_CONFIRM;
 						{
 							echo <<<'ISADMIN'
 						<tr class="infos-row">
-							<td class="infos-left lesspadding">
+							<td class="infos-left">
 								<div class="icon">
 									<i class="material-icons">security</i> <span class="icon-text">Is Admin:</span>
 								</div>
 							</td>					
-							<td class="infos-right lesspadding">
+							<td class="infos-right">
 								<div class="toggle-container-user">							
 									<label class="switch-light switch-candy" onclick="">
 										<input type="checkbox" id="toggle-user-is-admin" 
@@ -177,13 +177,21 @@ SWITCH;
 								</div>
 							</td>						
 						</tr>	
-						<tr<tr class="infos-row">
+						<tr class="infos-row">	
+							<td colspan="2" class="infos-center lesspadding" id="userSettings-message">
+								<div class="icon" id="icon-warn3">
+									<i class="material-icons">warning</i> <span class="icon-text" id="userSettings-message-text"></span>
+								</div>
+							</td>
+						</tr>
+						<tr class="infos-row">
 							<td colspan="2">
 								<div class="user-line"> </div>
 							</td>
 						</tr>
 						
 REST;
+										
 						}
 						if($username != "admin")
 						{
