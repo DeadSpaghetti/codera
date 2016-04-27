@@ -106,8 +106,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
         <link href="../../js/libs/pickadate/lib/compressed/themes/default.css" rel="stylesheet" type="text/css">
         <link href="../../js/libs/pickadate/lib/compressed/themes/default.date.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>		
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-template.css"/>
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-toggle-buttons.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
