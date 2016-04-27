@@ -22,72 +22,77 @@ $(document).ready(function()
         var forbiddenProjects = getForbiddenProjects();
         var loggedInUser = getLoggedInUser();
 
-        if(username == "public")
+        if(newUsername != "" && newUsername != undefined && newUsername != null)
         {
-            $.post("../helper/addUserToJSON.php",
-                {
-                    "username": "public",
-                    "newUsername": "public",
-                    "forbiddenProjects": JSON.stringify(forbiddenProjects)
-                },
-                function (data, error)
-                {
-                    location.href = "admin.php";
-                });
-        }
-        else if(username == "admin")
-        {
-            $.post("../helper/addUserToJSON.php",
-                {
-                    "username": "admin",
-                    "newUsername": "admin",
-                    "password": password,
-                    "forbiddenProjects": JSON.stringify([])
-                },
-                function (data, error)
-                {
-                    location.href = "admin.php";
-                });
-        }
-        else if(username != "public" && password == confirmPassword && password != null && password != undefined)
-        {
-            var accountType = $('#toggle-user-is-admin').is(':checked');
-
-            if (accountType)
+            if (username == "New User")
             {
-                accountType = "admin"
-            }
-            else
-            {
-                accountType = "user"
-            }
-
-            $.post("../helper/addUserToJSON.php",
+                if(password != null && password != "" && password != undefined)
                 {
-                    "newUsername": newUsername.toString().trim(),
-                    "username": username.toString().trim(),
-                    "password": password,
-                    "forbiddenProjects": JSON.stringify(forbiddenProjects),
-                    "accountType": accountType
-                },
-                function (data, error)
-                {
-                    if(newUsername != username && username.trim() != "New User" && username == loggedInUser)
+                    if (password == confirmPassword)
                     {
-                        alert("You're now logged out!");
-                        location.href = "../logoutAndRedirectToLogin.php";
+                        var accountType = $('#toggle-user-is-admin').is(':checked');
+
+                        if (accountType)
+                        {
+                            accountType = "admin"
+                        }
+                        else
+                        {
+                            accountType = "user"
+                        }
+
+                        $.post("../helper/addUserToJSON.php",
+                            {
+                                "newUsername": newUsername.toString().trim(),
+                                "username": username.toString().trim(),
+                                "password": password,
+                                "forbiddenProjects": JSON.stringify(forbiddenProjects),
+                                "accountType": accountType
+                            },
+                            function (data, error)
+                            {
+                                if (newUsername != username && username.trim() != "New User" && username == loggedInUser)
+                                {
+                                    alert("You're now logged out!");
+                                    location.href = "../logoutAndRedirectToLogin.php";
+                                }
+                                else
+                                {
+                                    location.href = "admin.php";
+                                }
+
+                            });
                     }
                     else
                     {
-                        location.href = "admin.php";
+                        //password stimmt nicht überein
                     }
+                }
+                else
+                {
+                    //passwort ist leer
+                }
 
-                });
+            }
+            else
+            {
+                //bestehender Nutzer
+               if (password == confirmPassword)
+               {
+
+               }
+               else
+               {
+                   //passwort stimmt nicht überein
+               }
+
+            }
         }
         else
         {
-            alert("Check your password!");
+           //username empty
         }
+
     });
 	
 	$('#userSettings-button-discard').click(function()

@@ -21,7 +21,7 @@ $(document).ready(function()
         var password = $('#input-password').val();
 
         if(username != "" && username != undefined && password != "" && password != undefined)
-        {		
+        {
             $.post('../php/helper/checkLogin.php',
                 {
                     "username": username,
