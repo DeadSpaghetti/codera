@@ -17,11 +17,17 @@ if(!isset($username))
 }
     $userArray = [];
     include "getUsersFromJSON.php";
-    for ($i = 0; $i < sizeof($userArray); $i++)
+    if(!empty($userArray))
     {
-        if ($userArray[$i]->{'username'} == $username)
+        for ($i = 0; $i < sizeof($userArray); $i++)
         {
-            $forbiddenProjects = json_decode($userArray[$i]->{'forbiddenProjects'});
-            break;
+            if ($userArray[$i]->{'username'} == $username)
+            {
+                $forbiddenProjectsJSON = $userArray[$i]->{'forbiddenProjects'};
+                if(!empty($forbiddenProjectsJSON))
+                    $forbiddenProjects = json_decode($forbiddenProjectsJSON);
+
+                break;
+            }
         }
     }
