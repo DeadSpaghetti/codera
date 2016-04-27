@@ -16,7 +16,7 @@ function saveUser(newUsername, username, password)
     var accountType = $('#toggle-user-is-admin').is(':checked');
     var loggedInUser = getLoggedInUser();
 
-    if (accountType)
+    if (!accountType)
     {
         accountType = "admin"
     }

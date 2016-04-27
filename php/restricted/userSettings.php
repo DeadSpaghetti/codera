@@ -162,7 +162,7 @@ PASSWORD_CONFIRM;
 									<label class="switch-light switch-candy" onclick="">
 										<input type="checkbox" id="toggle-user-is-admin" 
 ISADMIN;
-							if($accountType == "admin")
+							if($accountType != "admin")
 								echo "checked";
 							echo <<<'ISADMINREST'
 								>
@@ -172,8 +172,8 @@ ISADMINREST;
 
 							echo <<<'SWITCH'
 											<span>
-											<span>No</span>
 											<span>Yes</span>
+											<span>No</span>
 											<a style="background-color: 
 SWITCH;
 							if(isset($colorScheme)) echo $colorScheme;
@@ -199,7 +199,7 @@ REST;
 						<tr class="infos-row">
 							<td colspan="2" class="infos-center">
 								<div class="user-headline-container">
-									<div class="user-headline">Project Access Forbidden</div>
+									<div class="user-headline">Project Access</div>
 								</div>
 							</td>	
 						</tr>
@@ -238,8 +238,8 @@ PROJECT_ACCESS;
 						}
 							echo '>' .
 								'			<span>' .
-								'				<span>No</span>' .
 								'				<span>Yes</span>' .
+								'				<span>No</span>' .
 								'				<a style="background-color:';
 
 							if(isset($colorScheme)) echo $colorScheme;
