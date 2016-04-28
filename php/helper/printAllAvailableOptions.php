@@ -22,7 +22,7 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
                     {
                         for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
                         {
-                            echo "<option>" . rawurlencode($allowedFilesArray[$j]) . "</option>";
+                            echo "<option>" . $allowedFilesArray[$j] . "</option>";
                         }
                     }
                     elseif ($options == "image")
@@ -35,7 +35,7 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
                                 echo "<a href=" . $directory . rawurlencode($allowedFilesArray[$j]) . " data-lightbox=" . $directory . rawurlencode($allowedFilesArray[$j]) . " class=\"screenshot-preview\">
                     <img src=" . $directory . rawurlencode($allowedFilesArray[$j]) . ">" .
                                     "</a>";
-                            }
+                            } 
                         }
                     }
                 }
