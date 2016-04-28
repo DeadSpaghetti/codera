@@ -89,7 +89,7 @@ include('cookie.php');
 						$description = $currentProject->{'description'};
 						$license = $currentProject->{'license'};
 						$screenshots = json_decode($currentProject->{'screenshots'});
-						$executables = json_decode($currentProject->{'executables'});
+						$executables = json_decode($currentProject->{'files'});
 					}
 				}
 				else
