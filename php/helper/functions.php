@@ -175,8 +175,6 @@ if(!function_exists("getSortedProjectArray"))
                 return (strtotime($a->date) < strtotime($b->date)) ? -1 : 1;
             });
         }
-
-        file_put_contents("test.txt", json_encode($projectArray),JSON_PRETTY_PRINT);
         return $projectArray;
 
 

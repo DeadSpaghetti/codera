@@ -23,10 +23,10 @@ if(!isset($username))
         {
             if ($userArray[$i]->{'username'} == $username)
             {
-                $forbiddenProjectsJSON = $userArray[$i]->{'forbiddenProjects'};
-                if(!empty($forbiddenProjectsJSON))
-                    $forbiddenProjects = json_decode($forbiddenProjectsJSON);
-
+                if(!empty($userArray[$i]->{'forbiddenProjects'}))
+                {
+                    $forbiddenProjects = json_decode($userArray[$i]->{'forbiddenProjects'});
+                }
                 break;
             }
         }
