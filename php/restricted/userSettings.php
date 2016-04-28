@@ -143,7 +143,7 @@ PASSWORD_CONFIRM;
 						}
 						else
 						{
-							echo '<div id="userSettings-message"></div>';
+							echo '<div id="userSettings-message"><span class="icon-text" id="userSettings-message-text"></span></div>';
 						}
 
 						$projectArray = [];
