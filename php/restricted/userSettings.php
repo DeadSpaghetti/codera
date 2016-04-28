@@ -145,7 +145,9 @@ PASSWORD_CONFIRM;
 						{
 							echo '<div id="userSettings-message"></div>';
 						}
-						
+
+						$projectArray = [];
+						include "../helper/getProjectsFromJSON.php";
 
 
 						if($username != "admin" && $username != "public")
@@ -193,7 +195,7 @@ SWITCH;
 REST;
 										
 						}
-						if($username != "admin")
+						if($username != "admin" && !empty($projectArray))
 						{
 							echo <<<'PROJECT_ACCESS'
 						<tr class="infos-row">
@@ -204,11 +206,6 @@ REST;
 							</td>	
 						</tr>
 PROJECT_ACCESS;
-
-							$projectArray = [];
-							include "../helper/getProjectsFromJSON.php";
-							if(!empty($projectArray))
-							{
 								for ($i = 0; $i < sizeof($projectArray); $i++)
 								{
 									$projectName = $projectArray[$i]->{'name'};
@@ -249,7 +246,7 @@ PROJECT_ACCESS;
 								'</div>' .
 								'</td>' .
 								'</tr>';
-						}
+
 					}
 						?>
 
