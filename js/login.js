@@ -45,8 +45,24 @@ $(document).ready(function()
                     else
                     {
                         document.getElementById('login-message').style.display = '';
+						fadeIn();						
                     }
                 });
         }
+	}
+	
+	function fadeIn()
+	{
+		document.getElementById('icon-warn').style.opacity = 0;		
+		var op = 0;
+		var timer = setInterval(function ()
+		{
+			if (op >= 0.9){
+				clearInterval(timer);								
+				document.getElementById('icon-warn').style.opacity = 1.0;
+			}
+			document.getElementById('icon-warn').style.opacity = op;							
+			op += 0.1;
+		}, 50);	
 	}
 });
