@@ -38,7 +38,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<script src="../../js/mediaOverview.js"></script>
 		<script src="../../js/userOverview.js"></script>
 		<script src="../../js/resetOverview.js"></script>
-		<script src="../../js/libs/chosen/chosen.jquery.min.js"></script>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
 		<script src="../../js/aboutOverview.js"></script>
 		<script src="../../js/libs/elFinder/js/elfinder.min.js"></script>			
 	</head>
