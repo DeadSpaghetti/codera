@@ -126,10 +126,10 @@ function updateProject(UUID)
 
 $(document).ready(function()
 {
-    $('#projectSettings-iconSelector').chosen();
-    $('#projectSettings-licenseSelector').chosen();
-    $('#projectSettings-fileSelector').chosen();
-    $('#projectSettings-screenshotSelector').chosen();
+    $('#projectSettings-iconSelector').select2();
+    $('#projectSettings-licenseSelector').select2();
+    $('#projectSettings-fileSelector').select2();
+    $('#projectSettings-screenshotSelector').select2();
     $('#input-date').pickadate({
         format: 'dd.mm.yyyy',
         formatSubmit: 'dd.mm.yyyy'

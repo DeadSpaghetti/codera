@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    $('#template-fileSelector').chosen();
+    $('#template-fileSelector').select2();
 
     $('#button-download').click(function()
     {

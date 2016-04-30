@@ -111,7 +111,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-toggle-buttons.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../../js/projectSettings.js"></script>
-        <script src="../../js/libs/chosen/chosen.jquery.min.js"></script>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
         <script src="../../js/libs/pickadate/lib/compressed/picker.js"></script>
         <script src="../../js/libs/pickadate/lib/compressed/picker.date.js"></script>
 
