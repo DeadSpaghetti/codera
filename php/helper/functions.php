@@ -181,3 +181,11 @@ if(!function_exists("getSortedProjectArray"))
     }
 
 }
+
+if(!function_exists("debugToBrowserConsole"))
+{
+    function debugToBrowserConsole($data)
+    {
+        echo '<script>console.log("'.$data.'");</script>';
+    }
+}
