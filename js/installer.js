@@ -11,6 +11,7 @@ $(document).ready(function()
         input.value = step;
 
         form.appendChild(input);
+		form.style.display = "none";	
         document.body.appendChild(form);
         form.submit();
     }

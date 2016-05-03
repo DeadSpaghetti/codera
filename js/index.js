@@ -26,6 +26,7 @@ $(document).ready(function()
 
         addViewToProject(this.id);
         form.appendChild(input);
+		form.style.display = "none";	
         document.body.appendChild(form);
         form.submit();
     });

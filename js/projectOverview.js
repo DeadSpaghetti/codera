@@ -13,6 +13,7 @@ $(document).ready(function()
 
 
         form.appendChild(input);
+		form.style.display = "none";	
         document.body.appendChild(form);
         form.submit();
 

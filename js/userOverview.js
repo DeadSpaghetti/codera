@@ -11,6 +11,7 @@ $(document).ready(function ()
         input.name = "username";
         input.value = username;
         form.appendChild(input);
+		form.style.display = "none";	
         document.body.appendChild(form);
         form.submit();
 

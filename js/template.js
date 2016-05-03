@@ -20,6 +20,7 @@ $(document).ready(function()
 
         form.appendChild(filenameInput);
         form.appendChild(UUIDInput);
+		form.style.display = "none";	
         document.body.appendChild(form);
         form.submit();
         
