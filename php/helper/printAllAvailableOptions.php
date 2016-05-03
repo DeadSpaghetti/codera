@@ -32,9 +32,14 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
                         {
                             if(file_exists($directory . $allowedFilesArray[$j]))
                             {
-                                echo "<a href=" . $directory . rawurlencode($allowedFilesArray[$j]) . " data-lightbox=" . $directory . rawurlencode($allowedFilesArray[$j]) . " class=\"screenshot-preview\">
-                    <img src=" . $directory . rawurlencode($allowedFilesArray[$j]) . ">" .
-                                    "</a>";
+                               // echo "<a href=" . $directory . rawurlencode($allowedFilesArray[$j]) . " data-lightbox=" . $directory . rawurlencode($allowedFilesArray[$j]) . " class=\"screenshot-preview\">
+                    //<img src=" . $directory . rawurlencode($allowedFilesArray[$j]) . ">" .
+                      //              "</a>";
+								   echo '<a href="' . $directory . rawurlencode($allowedFilesArray[$j]) . '" data-lightbox="' . $directory . rawurlencode($allowedFilesArray[$j]) . '">'.
+											'<div class="entry-icon medium container space">'.
+												'<div class="entry-icon" style="background-image: url('.$directory . rawurlencode($allowedFilesArray[$j]).');"> </div>	'.
+											'</div>'.
+										'</a>';
                             }
                         }
                     }
