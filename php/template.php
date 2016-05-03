@@ -19,12 +19,12 @@ include('cookie.php');
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>	
+		<link type="text/css" rel="stylesheet" href="../js/libs/select2/css/select2.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link href="../js/libs/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" type="text/css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>				
         <script src="../js/template.js"></script>
+		<script src="../js/libs/select2/js/select2.min.js"></script>
     </head>
 	<body>
 		<div id="main">
@@ -213,7 +213,7 @@ REQUIREMENTS;
 								<table id="template-download">
 									<tr>
 										<td>
-											<select id="template-fileSelector" class="chosen-select">
+											<select id="template-fileSelector" class="chosen-select" style="width: 96%;">
 FILE;
 							$property = "files";
 							$options = "option";

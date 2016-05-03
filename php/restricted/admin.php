@@ -28,6 +28,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/elfinder.min.css">
 		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/theme.css">
+		<link type="text/css" rel="stylesheet" href="../../js/libs/select2/css/select2.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>     
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>		
@@ -37,9 +38,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<script src="../../js/projectOverview.js"></script>
 		<script src="../../js/mediaOverview.js"></script>
 		<script src="../../js/userOverview.js"></script>
-		<script src="../../js/resetOverview.js"></script>
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+		<script src="../../js/resetOverview.js"></script>	
+		<script src="../../js/libs/select2/js/select2.min.js"></script>	
 		<script src="../../js/aboutOverview.js"></script>
 		<script src="../../js/libs/elFinder/js/elfinder.min.js"></script>			
 	</head>

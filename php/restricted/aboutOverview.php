@@ -33,7 +33,7 @@ include "../helper/getAboutPageFromJSON.php";
 			</div>
 		</td>										
 		<td class="infos-right">
-			<select id="aboutpage-iconSelector">
+			<select id="aboutpage-iconSelector" style="width: 100%;">
 				<?php
 				$directory = "../../images/icons/";
 				$object = 'icon';
