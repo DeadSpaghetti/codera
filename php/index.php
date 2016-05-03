@@ -9,8 +9,6 @@ $gridSize = "";
 $sortOrder = "";
 include('helper/paths.php');
 include($path_helper_getGeneralSettings);
-
-
 ?>
 
 

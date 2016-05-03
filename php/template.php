@@ -6,15 +6,14 @@ if(!isset($_SESSION))
 $developerName = "";
 $colorScheme = "";
 include('helper/paths.php');
-include('helper/getGeneralSettingsFromJSON.php');	
-
-include('cookie.php');
+include('helper/getGeneralSettingsFromJSON.php');
 ?>
 
 <!DOCTYPE html>
 
 <html>
 	<head>
+		<?php include('cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF_8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
