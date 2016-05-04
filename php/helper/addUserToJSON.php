@@ -109,7 +109,7 @@ function saveJSONArray($newUserArray)
 	if (!empty($userArray))
 		array_push($userArray, $newUserArray);
 	else
-		$array[0] = $newUserArray;
+		$userArray[0] = $newUserArray;
 
 	include_once "functions.php";
 	$fileToSave = json_encode(getSortedUserArray($userArray),JSON_PRETTY_PRINT);
