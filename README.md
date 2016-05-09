@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/spaghettic0der/codera/a9bef4c3d7ecb8eb54624ced978f1ec9de3ff81e/images/icons/Codera-Logo-transparent.png?token=APkZHmb0gDIdrSgMIkXJ5CGJKI0wyI1Hks5XK6aOwA%3D%3D" alt="alt text" width="200" height="200">
+<img src="https://cloud.githubusercontent.com/assets/16324894/15114285/7c2dced6-15f9-11e6-8f23-08f694326c32.png" alt="alt text" width="200" height="200">
 
 Codera just entered the closed beta!
 
