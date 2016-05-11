@@ -71,7 +71,7 @@
 		</div>
 	</td>										
 	<td class="infos-right">		
-		<select id="projectSettings-fileSelector" multiple class="chosen-select" style="width: 96%;">
+		<select data-placeholder="Select an option" id="projectSettings-fileSelector" multiple class="chosen-select" style="width: 96%;">
 			<?php
 			$directory = "../../executables/";
 			$exclude = getSelectedOptions("files",$UUID);   //is array
@@ -88,7 +88,7 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<select id="projectSettings-screenshotSelector" multiple class="chosen-select" style="width: 96%;">
+		<select data-placeholder="Select an option" id="projectSettings-screenshotSelector" multiple class="chosen-select" style="width: 96%;">
 			<?php
 			$directory = "../../images/screenshots";
 			$object = 'screenshots';
@@ -106,12 +106,12 @@
 		</div>
 	</td>										
 	<td class="infos-right">
-		<select id="projectSettings-licenseSelector" style="width: 96%;">
+		<select data-placeholder="Select an option" id="projectSettings-licenseSelector" style="width: 96%;">
 			<?php
 			$directory = "../../licenses/";
 			$object = 'license';
 			$exclude = getSelectedOption($object,$UUID);
-			include "../helper/printAllFilesFromDirectoryAsOption.php"
+			include "../helper/printAllFilesFromDirectoryAsOption.php";
 			?>
 		</select>
 	</td>

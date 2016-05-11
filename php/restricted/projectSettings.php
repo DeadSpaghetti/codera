@@ -177,12 +177,12 @@ include('../helper/getGeneralSettingsFromJSON.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<select id="projectSettings-iconSelector" style="width: 98%;">
+								<select data-placeholder="Select an option" id="projectSettings-iconSelector" style="width: 98%;">
 									<?php
 									$directory = "../../images/icons/";
 									$object = 'icon';
 									$exclude = getSelectedOption($object,$UUID);
-									include "../helper/printAllFilesFromDirectoryAsOption.php"
+									include "../helper/printAllFilesFromDirectoryAsOption.php";
 									?>
 								</select>
 							</td>

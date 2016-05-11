@@ -35,7 +35,8 @@ if(isset($directory) && $directory != null)
                 if (isset($exclude) && $exclude == $files[$i])  //exclude is a single file
                 {
                     echo "<option id=" . $directory . $files[$i] . " selected>$files[$i]</option>";
-                } else
+                }
+                else
                 {
                     echo "<option id=" . $directory . $files[$i] . ">$files[$i]</option>";
                 }
