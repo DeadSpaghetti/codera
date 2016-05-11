@@ -1,7 +1,3 @@
-function urldecode(urlToDecode) {
-  return decodeURIComponent(urlToDecode.replace(/\+/g, '%20'));
-}
-
 function getFile()
 {
 	return $('#template-fileSelector').find(":selected").attr('id');
@@ -9,7 +5,7 @@ function getFile()
 
 $(document).ready(function()
 {
-    $('#template-fileSelector').select2();
+    //$('#template-fileSelector').select2();
 
     $('#button-download').click(function()
     {

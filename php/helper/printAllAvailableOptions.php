@@ -28,8 +28,8 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
 							{					
 								$currentFile = substr($allowedFilesArray[$j],0, 20) . "..." . substr($allowedFilesArray[$j], $length - 9, $length);										
 							}		
-							
-                            echo '<option id="'.urlencode($allowedFilesArray[$j]).'">' . $currentFile . "</option>";
+							//that's weird, but it works!
+                            echo '<option id="'.rawurldecode($allowedFilesArray[$j]).'">' . $currentFile . "</option>";
                         }
                     }
                     elseif ($options == "image")
