@@ -107,7 +107,7 @@
 	</td>										
 	<td class="infos-right">
 		<select id="projectSettings-licenseSelector" style="width: 96%;">
-			<option id="Select an Option"selected>Select an Option</option>	
+			<option id="Select an Option" selected>Select an Option</option>
 			<?php
 			$directory = "../../licenses/";
 			$object = 'license';
