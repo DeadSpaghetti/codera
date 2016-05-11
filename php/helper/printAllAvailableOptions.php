@@ -22,7 +22,14 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
                     {
                         for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
                         {
-                            echo "<option>" . $allowedFilesArray[$j] . "</option>";
+							$currentFile = $allowedFilesArray[$j];
+							$length = strlen($currentFile);
+							if($length > 30)
+							{					
+								$currentFile = substr($allowedFilesArray[$j],0, 20) . "..." . substr($allowedFilesArray[$j], $length - 9, $length);										
+							}		
+							
+                            echo '<option id="'.urlencode($allowedFilesArray[$j]).'">' . $currentFile . "</option>";
                         }
                     }
                     elseif ($options == "image")

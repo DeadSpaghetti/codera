@@ -204,7 +204,10 @@
     float: left;
     margin-right: 1vmin;
     margin-top: 0.5vmin;
-    padding: 0 0.5vmin; }
+    padding: 0 0.5vmin;
+	white-space: normal;
+	word-break: break-all;
+	}
   .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     color: #999;
     cursor: pointer;

@@ -1,3 +1,6 @@
+function urldecode(urlToDecode) {
+  return decodeURIComponent(urlToDecode.replace(/\+/g, ' '));
+}
 
 function getName()
 {
@@ -5,8 +8,8 @@ function getName()
 }
 
 function getIcon()
-{
-    return $('#projectSettings-iconSelector').find(":selected").text();
+{	
+	return urldecode($('#projectSettings-iconSelector').find(":selected").attr('id'));
 }
 
 function getVersionCode()
@@ -41,14 +44,13 @@ function getRequirements()
 
 function getLicense()
 {
-    return $('#projectSettings-licenseSelector').find(":selected").text();
+	return urldecode($('#projectSettings-licenseSelector').find(":selected").attr('id'));
 }
 
 function getProjectStatus()
 {
     return $('input[name=projectStatus]:checked').val();
 }
-
 
 function getURL()
 {
@@ -100,9 +102,9 @@ function saveProject()
 }
 
 function updateProject(UUID)
-{
+{	
     $.post("../helper/updateProject.php",
-        {
+        {			
             "name": getName(),
             "icon": getIcon(),
             "versionName": getVersionName(),

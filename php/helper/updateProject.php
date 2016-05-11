@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
             if($projectArray[$i]->{'UUID'} == $UUID)
             {
                 $projectArray[$i]->{'name'} = $name;
-                $projectArray[$i]->{'icon'} = urlencode($icon);
+                $projectArray[$i]->{'icon'} = $icon;
                 $projectArray[$i]->{'versionName'} = $versionName;
                 $projectArray[$i]->{'date'} = $date;
                 $projectArray[$i]->{'latestChanges'} = $latestChanges;

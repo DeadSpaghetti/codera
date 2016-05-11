@@ -40,10 +40,15 @@ function generateGuid($include_braces = false)
 include_once "functions.php";
 if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
 {
+   $stringNoOptionSelected = "Select an Option";
+	
     $date = $_POST['date'];
     $name = $_POST['name'];
-    $name = $_POST['name'];
     $icon = $_POST['icon']; //path to icon
+	if(strcmp($icon, $stringNoOptionSelected) == 0)
+	{
+		$icon = "";
+	}	
     $versionName = $_POST['versionName'];
     $latestChanges = $_POST['latestChanges'];
     $description = $_POST['description'];
@@ -51,11 +56,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
     $files = $_POST['files'];
     $screenshots = $_POST['screenshots'];
     $license = $_POST['license'];
+	if(strcmp($license, $stringNoOptionSelected) == 0)
+	{
+		$license = "";
+	}
     $versionCode = $_POST['versionCode'];
     $projectStatus = $_POST['projectStatus'];
     $url = $_POST['url'];
-
-
 
     $projectUUID = generateGuid();
     $pathString = "../../config/projects.json";
@@ -80,7 +87,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
         $newProjectArray = array
         (
             "name" => $name,
-            "icon" => urlencode($icon),
+            "icon" => $icon,
             "versionName" => $versionName,
             "date" => $date,
             "latestChanges" => $latestChanges,
