@@ -121,7 +121,9 @@ include($path_helper_getGeneralSettings);
 									echo '<td class="entry small">' .
 										'<a name="icon-link" id="' . $UUID . '">' .
 										'<div class="entry-icon small container">' .
-										'<div class="entry-icon" style="background-image: url(' . "'" . $path_folder_icons . '/' . $icon . "'" . ');"> </div>' .
+										$url = $path_folder_icons . '/' . $icon;
+										
+									echo '<div class="entry-icon" style="background-image: url(' . "'" . $url . "'" . ');"> </div>' .
 										'<canvas width="300" height="300"></canvas>' .
 										'</div>' .
 										'<div class="icon-name">' . $name . '</div>' .

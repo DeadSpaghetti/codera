@@ -5,7 +5,7 @@ function getFile()
 
 $(document).ready(function()
 {
-    //$('#template-fileSelector').select2();
+    $('#template-fileSelector').select2();
 
     $('#button-download').click(function()
     {
