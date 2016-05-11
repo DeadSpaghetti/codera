@@ -87,9 +87,14 @@ include($path_helper_getGeneralSettings);
 								{
 									echo '<td class="entry large">' .
 										'<a name="icon-link" id="' . $UUID . '">' .
-										'<div class="entry-icon large container">' .
-										'<div class="entry-icon" style="background-image: url(' . "'" . $path_folder_icons . '/' . $icon . "'" . ');"> </div>' .
-										'<canvas width="300" height="300"></canvas>' .
+										'<div class="entry-icon large container">';
+									$iconURL = $path_folder_icons . '/' . $icon;
+										if(file_exists($iconURL))
+											echo '<div class="entry-icon" style="background-image: url(' . "'" . $iconURL . "'" . ');"> </div>';
+										else
+											echo '<div class="entry-icon"> </div>';
+
+									 echo 	'<canvas width="300" height="300"></canvas>' .
 										'</div>' .
 										'<div class="icon-name">' . $name . '</div>' .
 										'</a>' .
@@ -99,13 +104,19 @@ include($path_helper_getGeneralSettings);
 									{
 										echo '</tr>';
 									}
-								} else if ($gridSize == 4)
+								}
+								else if ($gridSize == 4)
 								{
 									echo '<td class="entry medium">' .
 										'<a name="icon-link" id="' . $UUID . '">' .
-										'<div class="entry-icon medium container">' .
-										'<div class="entry-icon" style="background-image: url(' . "'" . $path_folder_icons . '/' . $icon . "'" . ');"> </div>' .
-										'<canvas width="300" height="300"></canvas>' .
+										'<div class="entry-icon medium container">';
+										$iconURL = $path_folder_icons . '/' . $icon;
+									if(file_exists($iconURL))
+										echo '<div class="entry-icon" style="background-image: url(' . "'" . $iconURL . "'" . ');"> </div>';
+									else
+										echo '<div class="entry-icon"> </div>';
+
+										 echo '<canvas width="300" height="300"></canvas>' .
 										'</div>' .
 										'<div class="icon-name">' . $name . '</div>' .
 										'</a>' .
@@ -120,11 +131,14 @@ include($path_helper_getGeneralSettings);
 								{
 									echo '<td class="entry small">' .
 										'<a name="icon-link" id="' . $UUID . '">' .
-										'<div class="entry-icon small container">' .
-										$url = $path_folder_icons . '/' . $icon;
-										
-									echo '<div class="entry-icon" style="background-image: url(' . "'" . $url . "'" . ');"> </div>' .
-										'<canvas width="300" height="300"></canvas>' .
+										'<div class="entry-icon small container">';
+									$iconURL = $path_folder_icons . '/' . $icon;
+									if(file_exists($iconURL))
+										echo '<div class="entry-icon" style="background-image: url(' . "'" . $iconURL . "'" . ');"> </div>';
+									else
+										echo '<div class="entry-icon"> </div>';
+
+									echo '<canvas width="300" height="300"></canvas>' .
 										'</div>' .
 										'<div class="icon-name">' . $name . '</div>' .
 										'</a>' .
