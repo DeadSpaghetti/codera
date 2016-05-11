@@ -177,7 +177,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<select data-placeholder="Select an option" id="projectSettings-iconSelector" style="width: 98%;">
+								<select id="projectSettings-iconSelector" style="width: 98%;">
+									<option selected>Select an Option</option>									
 									<?php
 									$directory = "../../images/icons/";
 									$object = 'icon';

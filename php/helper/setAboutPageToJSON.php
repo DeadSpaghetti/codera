@@ -14,7 +14,14 @@ if(!isUserAdmin($_SESSION['loggedIn']))
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
+	$stringNoOptionSelected = "Select an Option";
+	
     $aboutIcon = $_POST['aboutIcon'];
+	if(strcmp($aboutIcon, $stringNoOptionSelected) == 0)
+	{
+		$aboutIcon = "";
+	}	
+		
     $aboutText = $_POST['aboutText'];
     $aboutFileLocation = "../../config/about.json";
 

@@ -41,7 +41,7 @@ if(isset($directory) && $directory != null)
                     echo "<option id=" . $directory . $files[$i] . ">$files[$i]</option>";
                 }
             }
-        }
+        }		
     }
 }
 else

@@ -34,6 +34,7 @@ include "../helper/getAboutPageFromJSON.php";
 		</td>										
 		<td class="infos-right">
 			<select id="aboutpage-iconSelector" style="width: 100%;">
+				<option selected>Select an Option</option>
 				<?php
 				$directory = "../../images/icons/";
 				$object = 'icon';
