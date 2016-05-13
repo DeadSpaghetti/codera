@@ -105,13 +105,14 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<link href="../../js/libs/chosen/chosen.css" rel="stylesheet" type="text/css">
         <link href="../../js/libs/pickadate/lib/compressed/themes/default.css" rel="stylesheet" type="text/css">
         <link href="../../js/libs/pickadate/lib/compressed/themes/default.date.css" rel="stylesheet" type="text/css">
+		<link type="text/css" rel="stylesheet" href="../../js/libs/select2/css/select2.css"/>
         <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
 		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-toggle-buttons.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../../js/projectSettings.js"></script>
-        <script src="../../js/libs/chosen/chosen.jquery.min.js"></script>
+		<script src="../../js/libs/select2/js/select2.min.js"></script>	
         <script src="../../js/libs/pickadate/lib/compressed/picker.js"></script>
         <script src="../../js/libs/pickadate/lib/compressed/picker.date.js"></script>
 
@@ -176,12 +177,13 @@ include('../helper/getGeneralSettingsFromJSON.php');
 								</div>
 							</td>										
 							<td class="infos-right">
-								<select id="projectSettings-iconSelector">
+								<select id="projectSettings-iconSelector" style="width: 96%;">
+									<option id="Select an Option" selected>Select an Option</option>
 									<?php
 									$directory = "../../images/icons/";
 									$object = 'icon';
 									$exclude = getSelectedOption($object,$UUID);
-									include "../helper/printAllFilesFromDirectoryAsOption.php"
+									include "../helper/printAllFilesFromDirectoryAsOption.php";
 									?>
 								</select>
 							</td>

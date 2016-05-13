@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    $('#aboutpage-iconSelector').chosen();
+    $('#aboutpage-iconSelector').select2();
 
     $('#button-save-about').click(function()
     {

@@ -38,7 +38,7 @@ if($projectArray != null)
 		echo
 		'<tr id='; echo $projectArray[$i]->{'UUID'}; echo ' class="overview-row">'.			
 				
-				'<td class="overview-icon" style="background-image: url('.$path_folder_icons.'/'.$icon.');"> </td>';
+				'<td class="overview-icon" style="background-image: url('.$path_folder_icons.'/'.str_replace(" ", "%20",$icon) .');"> </td>';
 								
 				if(empty($url))
 				{					

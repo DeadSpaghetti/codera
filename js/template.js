@@ -1,10 +1,16 @@
+function getFile()
+{
+	return $('#template-fileSelector').find(":selected").attr('id');
+}
+
 $(document).ready(function()
 {
-    $('#template-fileSelector').chosen();
+    $('#template-fileSelector').select2();
 
     $('#button-download').click(function()
     {
-        var filename = $('#template-fileSelector').val();
+        var filename = getFile();			
+		
 
         var form = document.createElement('form');
         form.method = "POST";

@@ -1,3 +1,6 @@
+function urldecode(urlToDecode) {
+  return decodeURIComponent(urlToDecode.replace(/\+/g, ' '));
+}
 
 function getName()
 {
@@ -5,8 +8,8 @@ function getName()
 }
 
 function getIcon()
-{
-    return $('#projectSettings-iconSelector').find(":selected").text();
+{	
+	return urldecode($('#projectSettings-iconSelector').find(":selected").attr('id'));
 }
 
 function getVersionCode()
@@ -41,14 +44,13 @@ function getRequirements()
 
 function getLicense()
 {
-    return $('#projectSettings-licenseSelector').find(":selected").text();
+	return urldecode($('#projectSettings-licenseSelector').find(":selected").attr('id'));
 }
 
 function getProjectStatus()
 {
     return $('input[name=projectStatus]:checked').val();
 }
-
 
 function getURL()
 {
@@ -100,9 +102,9 @@ function saveProject()
 }
 
 function updateProject(UUID)
-{
+{	
     $.post("../helper/updateProject.php",
-        {
+        {			
             "name": getName(),
             "icon": getIcon(),
             "versionName": getVersionName(),
@@ -126,10 +128,10 @@ function updateProject(UUID)
 
 $(document).ready(function()
 {
-    $('#projectSettings-iconSelector').chosen();
-    $('#projectSettings-licenseSelector').chosen();
-    $('#projectSettings-fileSelector').chosen();
-    $('#projectSettings-screenshotSelector').chosen();
+    $('#projectSettings-iconSelector').select2();
+    $('#projectSettings-licenseSelector').select2();
+    $('#projectSettings-fileSelector').select2();
+    $('#projectSettings-screenshotSelector').select2();
     $('#input-date').pickadate({
         format: 'dd.mm.yyyy',
         formatSubmit: 'dd.mm.yyyy'

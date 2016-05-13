@@ -7,10 +7,15 @@ if(!isset($_SESSION))
 include_once "functions.php";
 if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
 {
+	$stringNoOptionSelected = "Select an Option";
+	
     $date = $_POST['date'];
     $name = $_POST['name'];
-    $name = $_POST['name'];
     $icon = $_POST['icon']; //path to icon
+	if(strcmp($icon, $stringNoOptionSelected) == 0)
+	{
+		$icon = "";
+	}	
     $versionName = $_POST['versionName'];
     $latestChanges = $_POST['latestChanges'];
     $description = $_POST['description'];
@@ -18,6 +23,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
     $files = $_POST['files'];
     $screenshots = $_POST['screenshots'];
     $license = $_POST['license'];
+	if(strcmp($license, $stringNoOptionSelected) == 0)
+	{
+		$license = "";
+	}
     $versionCode = $_POST['versionCode'];
     $projectStatus = $_POST['projectStatus'];
     $url = $_POST['url'];
@@ -32,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
             if($projectArray[$i]->{'UUID'} == $UUID)
             {
                 $projectArray[$i]->{'name'} = $name;
-                $projectArray[$i]->{'icon'} = urlencode($icon);
+                $projectArray[$i]->{'icon'} = $icon;
                 $projectArray[$i]->{'versionName'} = $versionName;
                 $projectArray[$i]->{'date'} = $date;
                 $projectArray[$i]->{'latestChanges'} = $latestChanges;
