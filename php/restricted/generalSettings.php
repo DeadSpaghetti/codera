@@ -98,7 +98,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 			<table>
 				<tr>
 					<td id="codera-version-left">installed version:</td>
-					<td id="codera-version-right-onDisk" colspan="2"><?php include "../helper/getCurrentVersion.php"; echo $currentVersion[0]?></td>
+					<td id="codera-version-right-onDisk" colspan="2"><?php include "../helper/getCurrentVersion.php"; echo $currentVersion[0];?></td>
 				</tr>
 				<tr>
 					<td id="codera-version-left">latest version:</td>
