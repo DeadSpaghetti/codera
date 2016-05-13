@@ -28,10 +28,6 @@ $(document).ready(function()
             }
         );		
     });
-
-    $('#updateButton').click(function () {
-        location.href = "update.php";
-    });
 	
 	$('#button-discard').click(function()
     {		

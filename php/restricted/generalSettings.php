@@ -98,14 +98,15 @@ include("../helper/getGeneralSettingsFromJSON.php");
 			<table>
 				<tr>
 					<td id="codera-version-left">installed version:</td>
-					<td id="codera-version-right-onDisk" colspan="2"><?php include "../helper/getCurrentVersion.php"; echo $currentVersion[0];?></td>
+					<td id="codera-version-right-onDisk" colspan="2"><?php include "../helper/getCurrentVersion.php";
+						echo $currentVersion[0] ?></td>
 				</tr>
 				<tr>
 					<td id="codera-version-left">latest version:</td>
 					<td id="codera-version-right-onLine"><?php include "../helper/getLatestVersion.php"; echo $version[0];?></td>
 					<td id="codera-version-link"><?php if ($version[1] > $currentVersion[1])
 						{
-							echo '<a id="updateButton" href="javascript:void(0);">Update</a>';
+							echo '<a href="https://github.com/spaghettic0der/codera">Update</a>';
 						} ?></td>
 				</tr>				
 			</table>
