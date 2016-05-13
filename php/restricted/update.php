@@ -15,6 +15,7 @@ $copyLocation = "../../../";
 extractZip($downloadLocation, $copyLocation);
 deleteOldVersion();
 copyNewFiles($copyLocation . "codera-master/");
+header("Location: ../php/index.php");
 
 function downloadZip($url)
 {
