@@ -10,19 +10,21 @@ if (!isUserAdmin($_SESSION['loggedIn']))
     exit;
 }
 $url = "http://max-spaghettic0der.rhcloud.com/codera-master.zip";
-$downloadLocation = downloadZip($url);
 $copyLocation = "../../../";
+$downloadLocation = "../../../codera-master.zip";
+downloadZip($url, $downloadLocation);
 extractZip($downloadLocation, $copyLocation);
 deleteOldVersion();
 copyNewFiles($copyLocation . "codera-master/");
-header("Location: ../php/index.php");
+$downloadLocation = "../../../";
+cleanupTempFiles($downloadLocation);
+header("Location: ../index.php");
 
-function downloadZip($url)
+
+function downloadZip($url, $downloadLocation)
 {
     $file = file_get_contents($url);
-    $downloadLocation = "../../../codera-master.zip";
     file_put_contents($downloadLocation, $file);
-    return $downloadLocation;
 }
 
 function extractZip($downloadLocation, $copyLocation)
@@ -173,4 +175,10 @@ function copyNewFiles($copyLocation)
     xcopy($jsSource, $coderaFolder . "js");
     xcopy($phpSource, $coderaFolder . "php");
     xcopy($configFile, $coderaFolder . "config/version.txt");
+}
+
+function cleanupTempFiles($downloadLocation)
+{
+    rmdirr($downloadLocation . "codera-master.zip");
+    rmdirr($downloadLocation . "codera-master");
 }
