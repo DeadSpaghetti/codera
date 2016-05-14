@@ -32,7 +32,7 @@ $(document).ready(function()
     $('#updateButton').click(function () {
         var con = confirm("Do you want to really update codera?");
         if (con)
-            location.href = "updateCodera.php";
+            location.href = "updater.php";
     });
 	
 	$('#button-discard').click(function()
