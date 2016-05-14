@@ -30,7 +30,9 @@ $(document).ready(function()
     });
 
     $('#updateButton').click(function () {
-        location.href = "update.php";
+        var con = confirm("Do you want to really update codera?");
+        if (con)
+            location.href = "updateCodera.php";
     });
 	
 	$('#button-discard').click(function()

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-
-<?php
-
-?>
-
+<?php include "../helper/updateCodera.php" ?>
 <html>
 <head>
     <title>Update</title>
