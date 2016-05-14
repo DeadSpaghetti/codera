@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php include "../helper/updateCodera.php" ?>
 <html>
 <head>
     <title>Update</title>
@@ -7,7 +6,6 @@
     <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
     <link type="text/css" rel="stylesheet" href="../../css/stylesheet-installer.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="../../js/installer.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
 </head>
@@ -32,3 +30,8 @@
 		</div>
 	</body>
 </html>
+<script>
+	$(document).ready(function () {
+		location.href = "../helper/updateCodera.php";
+	});
+</script>
