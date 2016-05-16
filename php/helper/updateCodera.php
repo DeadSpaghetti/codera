@@ -111,7 +111,7 @@ function deleteOldVersion()
     rmdirr($php);
 
     $versionTxtFile = "../../config/version.txt";
-    unlink($versionTxtFile);
+    rmdirr($versionTxtFile);
 }
 
 /**
