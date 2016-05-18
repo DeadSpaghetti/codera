@@ -102,7 +102,12 @@ include('helper/getGeneralSettingsFromJSON.php');
 				<div id="white">
 					<table id="app">
 						<tr>
-							<td id="app-icon" style="background-image: url('../images/icons/<?php if(isset($icon)) echo $icon ?>');">	</td>
+							<?php
+							if (!empty($icon))
+							{
+								echo '<td id="app-icon" style="background-image: url(' . "'../images/icons/" . $icon . '");">	</td>';
+							}
+							?>
 							<td id="app-name"><?php if(isset($projectName)) echo $projectName;?></td>
 						</tr>
 					</table>
