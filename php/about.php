@@ -47,7 +47,15 @@ include "helper/getAboutPageFromJSON.php";
 					<table class="about-table">
 						<tr class="about-row">
 							<td class="about-left">
-								<div id="about-icon" style="background-image: url('<?php echo $path_folder_icons . "/" . $aboutIcon;?>');"></div>
+								<?php
+								if (!empty($aboutIcon) && file_exists("../images/icons/" . $aboutIcon))
+									echo '<div id="about-icon" style="background-image: url(' . "'" . $path_folder_icons . "/" . $aboutIcon . "')" . '"' . ";></div>";
+								else
+								{
+									echo '<div id="about-icon"></div>';
+								}
+								?>
+
 							</td>										
 							<td class="about-right">
 								<?php if (isset($aboutText)) echo nl2br($aboutText); ?>
