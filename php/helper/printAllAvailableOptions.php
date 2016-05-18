@@ -3,6 +3,7 @@ if(!isset($_SESSION))
 {
     session_start();
 }
+clearstatcache();
 //$options can be 'option' || 'image' || null
 if(isset($property) && $property != null && isset($UUID) && $UUID != null)
 {
@@ -26,10 +27,11 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
 							$length = strlen($currentFile);
 							if($length > 30)
 							{					
-								$currentFile = substr($allowedFilesArray[$j],0, 20) . "..." . substr($allowedFilesArray[$j], $length - 9, $length);										
-							}		
-							//that's weird, but it works!
-                            echo '<option id="'.rawurldecode($allowedFilesArray[$j]).'">' . $currentFile . "</option>";
+								$currentFile = substr($allowedFilesArray[$j],0, 20) . "..." . substr($allowedFilesArray[$j], $length - 9, $length);
+                            }
+
+                            if (file_exists("../executables/" . $allowedFilesArray[$j]))
+                                echo '<option id="' . rawurldecode($allowedFilesArray[$j]) . '">' . $currentFile . "</option>";
                         }
                     }
                     elseif ($options == "image")
@@ -39,9 +41,6 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
                         {
                             if(file_exists($directory . $allowedFilesArray[$j]))
                             {
-                               // echo "<a href=" . $directory . rawurlencode($allowedFilesArray[$j]) . " data-lightbox=" . $directory . rawurlencode($allowedFilesArray[$j]) . " class=\"screenshot-preview\">
-                    //<img src=" . $directory . rawurlencode($allowedFilesArray[$j]) . ">" .
-                      //              "</a>";
 								   echo '<a href="' . $directory . rawurlencode($allowedFilesArray[$j]) . '" data-lightbox="' . $directory . rawurlencode($allowedFilesArray[$j]) . '">'.
 											'<div class="entry-icon medium container space">'.
 												'<div class="entry-icon" style="background-image: url('.$directory . rawurlencode($allowedFilesArray[$j]).');"> </div>	'.

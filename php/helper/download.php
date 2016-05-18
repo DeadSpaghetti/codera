@@ -48,11 +48,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 header('Content-type: application/bin');
                 header('Content-Disposition: attachment; filename=' . $filename);
                 increaseDownloadCounter($UUID);
-                ob_clean();
-                ob_end_flush();
-                flush();
-
-                if(file_exists("../../executables/" . $filename))
+                clearstatcache();
+                if (file_exists(realpath("../../executables/" . $filename)))
                     readfile("../../executables/" . $filename);
 
                 break;

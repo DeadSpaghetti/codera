@@ -5,6 +5,7 @@ if(!isset($_SESSION))
 }
 $developerName = "";
 $colorScheme = "";
+clearstatcache();
 include('helper/paths.php');
 include('helper/getGeneralSettingsFromJSON.php');	
 ?>
