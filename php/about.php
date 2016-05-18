@@ -50,7 +50,7 @@ include "helper/getAboutPageFromJSON.php";
 								<div id="about-icon" style="background-image: url('<?php echo $path_folder_icons . "/" . $aboutIcon;?>');"></div>
 							</td>										
 							<td class="about-right">
-							<?php if(isset($aboutText)) echo $aboutText;?>
+								<?php if (isset($aboutText)) echo nl2br($aboutText); ?>
 							</td>
 						</tr>						
 					</table>

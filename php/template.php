@@ -155,7 +155,7 @@ DATE;
 							</td>										
 							<td class="infos-right">
 LATEST_CHANGES;
-							echo $latestChanges;
+							echo nl2br($latestChanges);
 							echo <<<'LATEST_CHANGES'
 							</td>
 						</tr>
@@ -173,7 +173,7 @@ LATEST_CHANGES;
 							</td>										
 							<td class="infos-right">
 DESCRIPTION;
-							echo $description;
+							echo nl2br($description);
 							echo <<<'DESCRIPTION'
 </td>
 						</tr>
@@ -191,7 +191,7 @@ DESCRIPTION;
 							</td>										
 							<td class="infos-right">
 REQUIREMENTS;
-							echo $requirements;
+							echo nl2br($requirements);
 							echo <<<'REQUIREMENTS'
 </td>
 						</tr>
