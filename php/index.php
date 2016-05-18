@@ -7,6 +7,7 @@ $colorScheme = "";
 $developerName = "";
 $gridSize = "";
 $sortOrder = "";
+clearstatcache();
 include('helper/paths.php');
 include($path_helper_getGeneralSettings);
 ?>
@@ -87,7 +88,7 @@ include($path_helper_getGeneralSettings);
 										'<a name="icon-link" id="' . $UUID . '">' .
 										'<div class="entry-icon large container">';
 									$iconURL = $path_folder_icons . '/' . $icon;
-										if(file_exists("../images/icons/" . $icon))
+									if (!empty($icon) && file_exists("../images/icons/" . $icon))
 											echo '<div class="entry-icon" style="background-image: url(' . "'" . $iconURL . "'" . ');"> </div>';
 										else
 											echo '<div class="entry-icon"> </div>';
@@ -109,7 +110,7 @@ include($path_helper_getGeneralSettings);
 										'<a name="icon-link" id="' . $UUID . '">' .
 										'<div class="entry-icon medium container">';
 										$iconURL = $path_folder_icons . '/' . $icon;
-									if(file_exists("../images/icons/" . $icon))
+									if (!empty($icon) && file_exists("../images/icons/" . $icon))
 										echo '<div class="entry-icon" style="background-image: url(' . "'" . $iconURL . "'" . ');"> </div>';
 									else
 										echo '<div class="entry-icon"> </div>';
@@ -131,7 +132,7 @@ include($path_helper_getGeneralSettings);
 										'<a name="icon-link" id="' . $UUID . '">' .
 										'<div class="entry-icon small container">';
 									$iconURL = $path_folder_icons . '/' . $icon;
-									if(file_exists("../images/icons/" . $icon))
+									if (!empty($icon) && file_exists("../images/icons/" . $icon))
 										echo '<div class="entry-icon" style="background-image: url(' . "'" . $iconURL . "'" . ');"> </div>';
 									else
 										echo '<div class="entry-icon"> </div>';
