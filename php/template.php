@@ -103,7 +103,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 					<table id="app">
 						<tr>
 							<?php
-							if (!empty($icon))
+							if (!empty($icon) && file_exists('../images/icons/' . $icon))
 							{
 								echo '<td id="app-icon" style="background-image: url(' . "'../images/icons/" . $icon . '");">	</td>';
 							}

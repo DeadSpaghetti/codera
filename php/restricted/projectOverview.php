@@ -36,10 +36,14 @@ if($projectArray != null)
 		
 		
 		echo
-		'<tr id='; echo $projectArray[$i]->{'UUID'}; echo ' class="overview-row">'.			
-				
-				'<td class="overview-icon" style="background-image: url('.$path_folder_icons.'/'.str_replace(" ", "%20",$icon) .');"> </td>';
-								
+		'<tr id=';
+		echo $projectArray[$i]->{'UUID'};
+		echo ' class="overview-row">';
+		
+		if (!empty($icon) && file_exists("../../images/icons/" . $icon))
+			echo '<td class="overview-icon" style="background-image: url(' . $path_folder_icons . '/' . str_replace(" ", "%20", $icon) . ');"> </td>';
+		else
+			echo '<td class="overview-icon"> </td>';
 				if(empty($url))
 				{					
 					if(isset($projectArray[$i]->{'totalDownloads'}))
