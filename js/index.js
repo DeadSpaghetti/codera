@@ -57,13 +57,23 @@ function makeRequestAndSetBanners(canvasObjectArray, color) {
                         if (status == "Alpha") {
                             ctx.fillStyle = color;
                             ctx.fillRect(0.3 * width, 0.75 * height, 0.7 * width, 0.25 * height);
-                            ctx.fillStyle = "#FFFFFF";
+                            if (color.toLowerCase() == "#fff176") {
+                                ctx.fillStyle = "#212121";
+                            }
+                            else {
+                                ctx.fillStyle = "#FFFFFF";
+                            }
                             ctx.fillText(status.toString().toUpperCase(), 0.36 * width, 0.94 * height);
                         }
                         else if (status == "Beta") {
                             ctx.fillStyle = color;
                             ctx.fillRect(0.3 * width, 0.75 * height, 0.7 * width, 0.25 * height);
-                            ctx.fillStyle = "#FFFFFF";
+                            if (color.toLowerCase() == "#fff176") {
+                                ctx.fillStyle = "#212121";
+                            }
+                            else {
+                                ctx.fillStyle = "#FFFFFF";
+                            }
                             ctx.fillText(status.toString().toUpperCase(), 0.43 * width, 0.94 * height);
                         }
                     }
@@ -89,5 +99,6 @@ function drawBanners(color)
         };
         canvasObjectArray.push(currentCanvasObject);
     }
-    makeRequestAndSetBanners(canvasObjectArray, color);
+    if (canvasObjectArray.length > 0)
+        makeRequestAndSetBanners(canvasObjectArray, color);
 }
