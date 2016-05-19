@@ -71,11 +71,15 @@ include "helper/getAboutPageFromJSON.php";
 							</td>										
 							<td class="about-right">
 								Codera is a free and open-source multi-user content management system for developers.<br> <br>
-								It was founded by spaghettic0der and Deadlocker in 2016.<br> <br>
-								Main purpose is to offer a solution for developers to deploy their software on their own server.
-								The multi user system allows you to restrict certain projects from public access and only allow a few people to se them.
-								In addition you have the opportunity to create additional admins that can maintain your website.
-								Codera allows you to deploy executables or to link webservices/websites you have created.<br> <br>
+								It was created by spaghettic0der and Deadlocker in 2016.<br> <br>
+								It's main purpose is to offer a solution for developers to deploy their software on
+								their own servers.
+								The multi user system allows you to restrict certain projects from public access and
+								only allow a few people to access them.
+								In addition you are able to create additional administrators, that can maintain your
+								website.
+								Codera allows you to deploy executables or to link to a web service/websites you have
+								created.<br> <br>
 								<table>
 									<tr>
 										<td>Download:</td>
