@@ -3,11 +3,15 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
+clearstatcache();
+if (!file_exists("../config/users.json"))
+	header("Location: installer/installer.php");
+	
 $colorScheme = "";
 $developerName = "";
 $gridSize = "";
 $sortOrder = "";
-clearstatcache();
+
 include('helper/paths.php');
 include($path_helper_getGeneralSettings);
 ?>
