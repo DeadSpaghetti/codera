@@ -159,7 +159,7 @@ DATE;
 									<i class="material-icons">code</i> <span class="icon-text">Latest Changes:</span>
 								</div>
 							</td>										
-							<td class="infos-right">
+							<td class="infos-right wrap">
 LATEST_CHANGES;
 							echo nl2br($latestChanges);
 							echo <<<'LATEST_CHANGES'
@@ -177,7 +177,7 @@ LATEST_CHANGES;
 									<i class="material-icons">description</i> <span class="icon-text">Description:</span>
 								</div>
 							</td>										
-							<td class="infos-right">
+							<td class="infos-right wrap">
 DESCRIPTION;
 							echo nl2br($description);
 							echo <<<'DESCRIPTION'
@@ -195,7 +195,7 @@ DESCRIPTION;
 									<i class="material-icons">list</i> <span class="icon-text">Requirements:</span>
 								</div>
 							</td>										
-							<td class="infos-right">
+							<td class="infos-right wrap">
 REQUIREMENTS;
 							echo nl2br($requirements);
 							echo <<<'REQUIREMENTS'
