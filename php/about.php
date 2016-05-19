@@ -75,7 +75,7 @@ include "helper/getAboutPageFromJSON.php";
 								It's main purpose is to offer a solution for developers to deploy their software on
 								their own servers.
 								The multi user system allows you to restrict certain projects from public access and
-								only allow a few people to access them.
+								only allows a few people to access them.
 								In addition you are able to create additional administrators, that can maintain your
 								website.
 								Codera allows you to deploy executables or to link to a web service/websites you have
