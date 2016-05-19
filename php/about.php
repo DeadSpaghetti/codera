@@ -78,7 +78,7 @@ include "helper/getAboutPageFromJSON.php";
 								only allows a few people to access them.
 								In addition you are able to create additional administrators, that can maintain your
 								website.
-								Codera allows you to deploy executables or to link to a web service/websites you have
+								Codera allows you to deploy executables or to link to a web services/websites you have
 								created.<br> <br>
 								<table>
 									<tr>
