@@ -1,22 +1,27 @@
 <?php
-if(!isset($_SESSION))
+if (!isset($_SESSION))
 {
     session_start();
 }
-if($_SERVER['REQUEST_METHOD'] == "POST")
+if ($_SERVER['REQUEST_METHOD'] == "POST")
 {
-    $UUID = $_POST['UUID'];
+    $canvasObjectArray = json_decode($_POST['canvasObjectArray']);
+
     $projectArray = [];
     include "getProjectsFromJSON.php";
-    if(!empty($projectArray) && isset($UUID))
+    if (!empty($projectArray) && isset($canvasObjectArray))
     {
-        for ($i = 0; $i < sizeof($projectArray); $i++)
+        for ($j = 0; $j < sizeof($canvasObjectArray); $j++)
         {
-            if ($projectArray[$i]->{'UUID'} == $UUID)
+            for ($i = 0; $i < sizeof($projectArray); $i++)
             {
-                echo $projectArray[$i]->{'projectStatus'};
-                break;
+                if ($projectArray[$i]->{'UUID'} == $canvasObjectArray[$j]->{'id'})
+                {
+                    $canvasObjectArray[$j]->{'status'} = $projectArray[$i]->{'projectStatus'};
+                }
             }
         }
+        echo json_encode($canvasObjectArray);
     }
+
 }
