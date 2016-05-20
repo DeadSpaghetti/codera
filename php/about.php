@@ -83,11 +83,15 @@ include "helper/getAboutPageFromJSON.php";
 								<table>
 									<tr>
 										<td>Download:</td>
-										<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/spaghettic0der/codera">Codera on Github</a></td>
+										<td class="link-visible-table-right"><a class="link-visible"
+																				href="https://github.com/DeadSpaghetti/codera">Codera
+												on Github</a></td>
 									</tr>
 									<tr>
 										<td>Wiki & Documentation:</td>
-										<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/spaghettic0der/codera/wiki">Codera Wiki</a></td>
+										<td class="link-visible-table-right"><a class="link-visible"
+																				href="https://github.com/DeadSpaghetti/codera/wiki">Codera
+												Wiki</a></td>
 									</tr>
 								</table>								
 							</td>
