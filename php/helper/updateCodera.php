@@ -9,7 +9,7 @@ if ($_SESSION['loggedIn'] != "admin")
     header('Location: ../login.php');
     exit;
 }
-$url = "https://github.com/DeadSpaghetti/codera/archive/1.0.0.zip";
+$url = "https://github.com/DeadSpaghetti/codera/archive/master.zip";
 $copyLocation = "../../../";
 $downloadLocation = "../../../codera-master.zip";
 downloadZip($url, $downloadLocation);
