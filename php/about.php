@@ -113,9 +113,9 @@ include "helper/getAboutPageFromJSON.php";
 								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/jquery/jquery-ui">jQuery UI on Github</a></td>
 							</tr>
 							<tr>
-								<td>Chosen</td>
-								<td class="link-version">v1.5.1</td>
-								<td class="link-visible-table-right"><a class="link-visible" href="https://github.com/harvesthq/chosen">Chosen on Github</a></td>
+								<td>Select2</td>
+								<td class="link-version">v4.0.2</td>
+								<td class="link-visible-table-right"><a class="link-visible" href="https://select2.github.io/">Select on Github</a></td>
 							</tr>
 							<tr>
 								<td>Lightbox2</td>
@@ -161,7 +161,7 @@ include "helper/getAboutPageFromJSON.php";
 						Cookies are small files saved to the user's computers hard drive that save and store information for later use. This allows the website, through its server to provide the users with a tailored experience within this website.
 						Users are advised that if they wish to deny the use and saving of cookies from this website on to their computers hard drive they should take necessary steps within their web browsers security settings to block all cookies from this website and its external serving vendors.
 						<br> <br>
-						On this website cookies are used to enable php sessions especially for he login feature. <br>
+						On this website cookies are used to enable php sessions especially for the login feature. <br>
 						This site doesn't collect and store any personal information.
 						<br> <br>
 						For additional information you can visit these websites: <a class="link-visible" href="http://www.allaboutcookies.org/cookies/">www.allaboutcookies.org/cookies/</a><br>
