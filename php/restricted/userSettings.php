@@ -219,34 +219,35 @@ PROJECT_ACCESS;
 									'	<div class="toggle-container-user">	' .
 									'		<label class="switch-light switch-candy" onclick="">' .
 									'			<input name="userSettingsProjectCheckBoxes" type="checkbox" id="userSettings_' . $UUID . '" ';
-							}
+							
 
-						if(!empty($forbiddenProjects) && !empty($UUID))
-						{
-							for ($j = 0; $j < sizeof($forbiddenProjects); $j++)
-							{
-								if ($forbiddenProjects[$j] == $UUID)
+								if(!empty($forbiddenProjects) && !empty($UUID))
 								{
-									echo "checked";
-									break;
+									for ($j = 0; $j < sizeof($forbiddenProjects); $j++)
+									{
+										if ($forbiddenProjects[$j] == $UUID)
+										{
+											echo "checked";
+											break;
+										}
+									}
 								}
+									echo '>' .
+										'			<span>' .
+										'				<span>Yes</span>' .
+										'				<span>No</span>' .
+										'				<a style="background-color:';
+
+									if(isset($colorScheme)) echo $colorScheme;
+									echo '"></a>' .
+										'			</span>' .
+										'</label>' .
+										'</div>' .
+										'</td>' .
+										'</tr>';
+
 							}
 						}
-							echo '>' .
-								'			<span>' .
-								'				<span>Yes</span>' .
-								'				<span>No</span>' .
-								'				<a style="background-color:';
-
-							if(isset($colorScheme)) echo $colorScheme;
-							echo '"></a>' .
-								'			</span>' .
-								'</label>' .
-								'</div>' .
-								'</td>' .
-								'</tr>';
-
-					}
 						?>
 
 						
