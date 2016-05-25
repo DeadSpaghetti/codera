@@ -14,6 +14,7 @@ $developerName = "";
 $colorScheme = "";
 $gridSize = "";
 $sortOrder = "";
+$inDev = false;
 
 //script just changes the global variables
 include("../helper/getGeneralSettingsFromJSON.php");
@@ -104,7 +105,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 				<tr>
 					<td id="codera-version-left">latest version:</td>
 					<td id="codera-version-right-onLine"><?php include "../helper/getLatestVersion.php"; echo $version[0];?></td>
-					<td id="codera-version-link"><?php if ($version[1] > $currentVersion[1] && $_SESSION['loggedIn'] == "admin")
+					<td id="codera-version-link"><?php if (($version[1] > $currentVersion[1] || $inDev == true) && $_SESSION['loggedIn'] == "admin")
 						{
 							echo '<a id="updateButton" href="javascript:void(0);">Update</a>';
 						} ?></td>

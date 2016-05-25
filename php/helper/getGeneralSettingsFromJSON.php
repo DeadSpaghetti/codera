@@ -10,6 +10,7 @@ if(file_exists($filename))
     $colorScheme = $settings->{'colorScheme'};
     $gridSize = $settings->{'gridSize'};
     $sortOrder = $settings->{'sortOrder'};
+    $inDev = $settings->{'inDev'};
 }
 else
 {
@@ -17,4 +18,5 @@ else
     $colorScheme = "#4a98d3";
     $gridSize = "3";
     $sortOrder = "a-z";
+    $inDev = false;
 }
