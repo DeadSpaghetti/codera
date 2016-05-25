@@ -8,7 +8,7 @@ Main purpose is to offer a solution for developers to deploy their software on t
 
 
 ### For help or installation instructions visit the [Wiki](https://github.com/DeadSpaghetti/codera/wiki)
-![screenshot from 2016-05-20 22-20-37](https://cloud.githubusercontent.com/assets/6639323/15543010/68c17b62-2293-11e6-9827-b1c10fb15b80.png)
+![screenshot from 2016-05-25 16-27-56](https://cloud.githubusercontent.com/assets/6639323/15543565/ac2b9a5c-2295-11e6-88ff-4f5c46dd06d3.png)
 ![screenshot from 2016-05-25 16-26-30](https://cloud.githubusercontent.com/assets/6639323/15543535/8a80acda-2295-11e6-8936-921bc2e51301.png)
 ![screenshot from 2016-05-20 22-20-43](https://cloud.githubusercontent.com/assets/6639323/15543012/68db6c52-2293-11e6-964d-d173c465b3cb.png)
 ![screenshot from 2016-05-20 22-20-45](https://cloud.githubusercontent.com/assets/6639323/15543011/68da51e6-2293-11e6-864a-f6b4e4a53e01.png)
