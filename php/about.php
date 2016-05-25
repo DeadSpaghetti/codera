@@ -116,7 +116,9 @@ include "helper/getAboutPageFromJSON.php";
 							<tr>
 								<td>Select2</td>
 								<td class="link-version">v4.0.2</td>
-								<td class="link-visible-table-right"><a class="link-visible" href="https://select2.github.io/">Select on Github</a></td>
+								<td class="link-visible-table-right"><a class="link-visible"
+																		href="https://select2.github.io/">Select2 on
+										Github</a></td>
 							</tr>
 							<tr>
 								<td>Lightbox2</td>
