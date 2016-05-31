@@ -9,7 +9,7 @@ if (!$inDev)
 }
 else
 {
-    $url = 'https://github.com/DeadSpaghetti/codera/blob/indev/config/version.txt';
+    $url = 'https://raw.githubusercontent.com/DeadSpaghetti/codera/indev/config/version.txt';
     $version = file_get_contents($url);
     $version = explode("\n", $version);
 }
