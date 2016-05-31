@@ -23,7 +23,7 @@ else
 <html>
 <head>
     <title>Codera installation</title>
-    <meta charset="UTF_8"/>
+    <meta charset="UTF-8"/>
     <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
     <link type="text/css" rel="stylesheet" href="../../css/stylesheet-installer.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

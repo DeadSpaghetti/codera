@@ -16,7 +16,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 	<head>
 		<?php include('cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
-		<meta charset="UTF_8"/>
+		<meta charset="UTF-8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>	
 		<link type="text/css" rel="stylesheet" href="../js/libs/select2/css/select2.css"/>
@@ -105,7 +105,7 @@ include('helper/getGeneralSettingsFromJSON.php');
 							<?php
 							if (!empty($icon) && file_exists('../images/icons/' . $icon))
 							{
-								echo '<td id="app-icon" style="background-image: url(' . "'../images/icons/" . $icon . '");">	</td>';
+								echo '<td id="app-icon" style="background-image: url(' . "'../images/icons/" . $icon . "'" . ');">	</td>';
 							}
 							?>
 							<td id="app-name"><?php if(isset($projectName)) echo $projectName;?></td>

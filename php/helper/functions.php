@@ -189,3 +189,18 @@ if(!function_exists("debugToBrowserConsole"))
         echo '<script>console.log("'.$data.'");</script>';
     }
 }
+
+if (!function_exists("isUrl"))
+{
+    function isUrl($filename)
+    {
+        if (!filter_var($filename, FILTER_VALIDATE_URL) === false)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}

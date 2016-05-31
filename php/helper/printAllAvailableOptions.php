@@ -29,8 +29,8 @@ if(isset($property) && $property != null && isset($UUID) && $UUID != null)
 							{					
 								$currentFile = substr($allowedFilesArray[$j],0, 20) . "..." . substr($allowedFilesArray[$j], $length - 9, $length);
                             }
-
-                            if (file_exists("../executables/" . $allowedFilesArray[$j]))
+                            include_once "functions.php";
+                            if (file_exists("../executables/" . $allowedFilesArray[$j]) || isUrl($allowedFilesArray[$j]))
                                 echo '<option id="' . rawurldecode($allowedFilesArray[$j]) . '">' . $currentFile . "</option>";
                         }
                     }

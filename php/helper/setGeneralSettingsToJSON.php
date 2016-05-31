@@ -22,7 +22,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         "developerName" => $developerName,
         "colorScheme" => $colorScheme,
         "gridSize" => $gridSize,
-        "sortOrder" => $sortOrder
+        "sortOrder" => $sortOrder,
+        "inDev" => false
     );
 
     $jsonString = json_encode($array, JSON_PRETTY_PRINT);

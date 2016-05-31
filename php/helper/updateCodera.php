@@ -9,18 +9,35 @@ if ($_SESSION['loggedIn'] != "admin")
     header('Location: ../login.php');
     exit;
 }
-$url = "https://github.com/DeadSpaghetti/codera/archive/master.zip";
-$copyLocation = "../../../";
-$downloadLocation = "../../../codera-master.zip";
-downloadZip($url, $downloadLocation);
-extractZip($downloadLocation, $copyLocation);
-deleteOldVersion();
-copyNewFiles($copyLocation . "codera-master/");
-$downloadLocation = "../../../";
-cleanupTempFiles($downloadLocation);
-header("Location: ../index.php");
+$inDev = false;
+include "getGeneralSettingsFromJSON.php";
+if (!$inDev)
+{
+    $url = "https://github.com/DeadSpaghetti/codera/archive/master.zip";
+    $copyLocation = "../../../";
+    $downloadLocation = "../../../codera-master.zip";
+    downloadZip($url, $downloadLocation);
+    extractZip($downloadLocation, $copyLocation);
+    deleteOldVersion();
+    copyNewFiles($copyLocation . "codera-master/");
+    $downloadLocation = "../../../";
+    cleanupTempFiles($downloadLocation, $inDev);
+    header("Location: ../index.php");
 
-
+}
+else
+{
+    $url = "https://github.com/DeadSpaghetti/codera/archive/indev.zip";
+    $copyLocation = "../../../";
+    $downloadLocation = "../../../codera-indev.zip";
+    downloadZip($url, $downloadLocation);
+    extractZip($downloadLocation, $copyLocation);
+    deleteOldVersion();
+    copyNewFiles($copyLocation . "codera-indev/");
+    $downloadLocation = "../../../";
+    cleanupTempFiles($downloadLocation, $inDev);
+    header("Location: ../index.php");
+}
 function downloadZip($url, $downloadLocation)
 {
     $file = file_get_contents($url);
@@ -177,8 +194,16 @@ function copyNewFiles($copyLocation)
     xcopy($configFile, $coderaFolder . "config/version.txt");
 }
 
-function cleanupTempFiles($downloadLocation)
+function cleanupTempFiles($downloadLocation, $inDev)
 {
-    rmdirr($downloadLocation . "codera-master.zip");
-    rmdirr($downloadLocation . "codera-master");
+    if (!$inDev)
+    {
+        rmdirr($downloadLocation . "codera-master.zip");
+        rmdirr($downloadLocation . "codera-master");
+    }
+    else
+    {
+        rmdirr($downloadLocation . "codera-indev.zip");
+        rmdirr($downloadLocation . "codera-indev");
+    }
 }

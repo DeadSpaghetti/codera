@@ -21,12 +21,13 @@ include "helper/getAboutPageFromJSON.php";
 	<head>
 		<?php include('cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
-		<meta charset="UTF_8"/>
+		<meta charset="UTF-8"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
 		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>		
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>     
-    </head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script src="../js/about.js"></script>
+	</head>
 	<body>
 		<div id="main">
 			<?php 				
@@ -115,7 +116,9 @@ include "helper/getAboutPageFromJSON.php";
 							<tr>
 								<td>Select2</td>
 								<td class="link-version">v4.0.2</td>
-								<td class="link-visible-table-right"><a class="link-visible" href="https://select2.github.io/">Select on Github</a></td>
+								<td class="link-visible-table-right"><a class="link-visible"
+																		href="https://select2.github.io/">Select2 on
+										Github</a></td>
 							</tr>
 							<tr>
 								<td>Lightbox2</td>
