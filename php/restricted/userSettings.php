@@ -56,6 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../../js/userSettings.js"></script>
+		<script src="../../js/darkTheme.js"></script>
 
 	</head>
 	<body>

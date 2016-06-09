@@ -6,6 +6,9 @@ include(realpath(dirname(__FILE__) . '/../helper/convertHexToRGB.php'));
 ?>
 
 <div id="header">	
+	<div class="login left">
+		<a href="javascript:void(null)" id="toggle-dark-theme"> <i class="material-icons">brightness_medium</i> <span class="login-text">Toggle Dark Mode</span></a>
+	</div>
 	<div class="login">
 		<a href="<?php echo $path_logout;?>" id="logout-link"> <i class="material-icons">lock</i> <span class="login-text">Logout</span></a>
 	</div>		

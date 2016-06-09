@@ -111,7 +111,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<script src="../../js/libs/select2/js/select2.min.js"></script>	
         <script src="../../js/libs/pickadate/lib/compressed/picker.js"></script>
         <script src="../../js/libs/pickadate/lib/compressed/picker.date.js"></script>
-
+		<script src="../../js/darkTheme.js"></script>
 	</head>
 	<body>
 		<div id="main">

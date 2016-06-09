@@ -26,6 +26,7 @@ include "helper/getAboutPageFromJSON.php";
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../js/about.js"></script>
+		<script src="../js/darkTheme.js"></script>	
 	</head>
 	<body>
 		<div id="main">

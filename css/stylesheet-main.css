@@ -79,6 +79,17 @@ color: #FFFFFF;
 text-decoration: none;
 }
 
+.login.left{
+float: left;
+width: auto;
+margin-left: 2vmin;
+font-size: 2vmin;
+}
+
+.login.left i{
+font-size: 3vmin;
+}
+
 #name{
 width: 100%;
 height: 15vmin;
@@ -1175,7 +1186,7 @@ height: 0.5vmin;
 background-color: #81c784;
 }
 
-.button{
+.installer-content .button{
 display: inline-block;	
 width: 11vmin;
 font-family: Roboto, Sans-Serif;
@@ -1190,11 +1201,11 @@ border-radius: 0.3vmin;
 margin-top: 5vmin;
 }
 
-.button:hover{
+.installer-content  .button:hover{
 opacity: 0.7;
 }
 
-.button i{	
+.installer-content  .button i{	
 font-size: 2.6vmin;
 display: inline;
 color: #212121;
@@ -1202,7 +1213,7 @@ vertical-align: middle;
 margin-left: 0.5vmin;
 }
 
-.button-text{
+.installer-content  .button-text{
 display: inline;
 vertical-align: middle;	
 }
@@ -1580,4 +1591,63 @@ cursor: pointer;  }
 	.tabs{
 		width: 95%;
 	}	
+}
+
+/** dark theme **/
+.dark-1{
+background-color: #424242 !important;
+}
+
+.dark-2{
+background-color: #303030 !important;
+}
+
+.dark-3{
+background-color: #212121 !important;
+}
+
+.dark-4{
+background-color: #000000 !important;
+}
+
+.dark-line{
+background-image: linear-gradient(to left, #333333 0%, #FFFFFF 3%, #FFFFFF 97%, #333333 100%);
+}
+
+.dark-shadow{
+-webkit-box-shadow:  0 0 2.5vmin 0.5vmin rgba(33,33,33,1) !important;
+-moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(33,33,33,1) !important;
+box-shadow: 0 0 2.5vmin 0.5vmin rgba(33,33,33,1) !important;
+}
+
+.white-text{
+color: white !important;
+}
+
+.white-text i{
+color: white !important;
+}
+
+.normal-text{
+color: #212121 !important;
+}
+
+.normal-text i{
+color: #212121 !important;
+}
+
+.dark-border-bottom{
+border-bottom: 0.3vmin solid white;
+}
+
+.dark-ink:hover{
+border: 0.5vmin solid #FFFFFF !important;
+}
+
+.dark-selected{
+border: 0.5vmin solid #FFFFFF !important;
+}
+
+.dark-tab-header a{
+color: white !important;
 }

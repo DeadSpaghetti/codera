@@ -24,6 +24,7 @@ include('helper/getGeneralSettingsFromJSON.php');
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>				
         <script src="../js/template.js"></script>
 		<script src="../js/libs/select2/js/select2.min.js"></script>
+		<script src="../js/darkTheme.js"></script>
     </head>
 	<body>
 		<div id="main">

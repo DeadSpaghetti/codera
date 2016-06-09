@@ -14,21 +14,24 @@ $(document).ready(function ()
     }
 
 
-    $('a').click(function ()
-    {
-        var form = document.createElement('form');
-        form.method = "GET";
-        form.action = "template.php";
-        var input = document.createElement('input');
-        input.type = "hidden";
-        input.name = "UUID";
-        input.value = this.id;
+    $('a').click(function(event)
+    {		
+		if(this.id != "toggle-dark-theme")
+		{
+			var form = document.createElement('form');
+			form.method = "GET";
+			form.action = "template.php";
+			var input = document.createElement('input');
+			input.type = "hidden";
+			input.name = "UUID";
+			input.value = this.id;
 
-        addViewToProject(this.id);
-        form.appendChild(input);
-        form.style.display = "none";
-        document.body.appendChild(form);
-        form.submit();
+			addViewToProject(this.id);
+			form.appendChild(input);
+			form.style.display = "none";
+			document.body.appendChild(form);
+			form.submit();
+		}
     });
 
 });

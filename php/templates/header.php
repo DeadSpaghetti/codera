@@ -5,6 +5,9 @@ include('helper/getGeneralSettingsFromJSON.php');
 ?>
 
 <div id="header">
+	<div class="login left">
+		<a href="javascript:void(null)" id="toggle-dark-theme"> <i class="material-icons">brightness_medium</i> <span class="login-text">Toggle Dark Mode</span></a>
+	</div>
 	<div class="login">
 		<a href="login.php"> <i class="material-icons">exit_to_app</i> <span class="login-text">Login</span></a>
 	</div>	
