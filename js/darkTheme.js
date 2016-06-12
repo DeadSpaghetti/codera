@@ -29,6 +29,16 @@ $(document).ready(function ()
 
 	function activateDarkTheme()
 	{
+		let name = document.getElementById('name');	
+		if(name != null)
+		{
+			let colorScheme = name.style.backgroundColor;		
+			let newBGColor = colorScheme.substring(colorScheme.indexOf("("),colorScheme.indexOf(")"));
+			
+			newBGColor = "rgba" + newBGColor + ", 0.8)";
+			name.style.backgroundColor = newBGColor;		
+		}		
+	
 		let header = document.getElementById('header');
 		addClass(header, "dark-4");
 
@@ -235,11 +245,21 @@ $(document).ready(function ()
 		for (let i = 0; i < buttonsReset.length; i++)
 		{
 			addClass(buttonsReset[i], "white-text");					
-		}	
+		}		
 	}
 	
 	function deactivateDarkTheme()
 	{
+		let name = document.getElementById('name');	
+		if(name != null)
+		{
+			let colorScheme = name.style.backgroundColor;			
+			let newBGColor = colorScheme.substring(0,colorScheme.indexOf(".")-3);			
+			
+			newBGColor = newBGColor + ", 1.0)";
+			name.style.backgroundColor = newBGColor;		
+		}	
+		
 		let header = document.getElementById('header');
 		removeClass(header, "dark-4");
 
