@@ -61,11 +61,11 @@ $(document).ready(function ()
 		let buttonDownload = document.getElementById('button-download');
 		addClass(buttonDownload, "normal-text");
 
-		let newUser = document.getElementById('new-project');
+		let newUser = document.getElementById('new-user');
 		addClass(newUser, "white-text");
 
-		let newProject = document.getElementById('new-user');
-		addClass(newUser, "white-text");
+		let newProject = document.getElementById('new-project');
+		addClass(newProject, "white-text");
 
 		let buttonSave = document.getElementById('button-save');
 		addClass(buttonSave, "normal-text");
@@ -78,6 +78,12 @@ $(document).ready(function ()
 
 		let buttonDiscardAbout = document.getElementById('button-discard-about');
 		addClass(buttonDiscardAbout, "normal-text");
+		
+		let buttonSaveAccount = document.getElementById('account-button-save');
+		addClass(buttonSaveAccount, "normal-text");
+
+		let buttonDiscardAccount = document.getElementById('account-button-discard');
+		addClass(buttonDiscardAccount, "normal-text");
 
 		let userSettingsButtonSave = document.getElementById('userSettings-button-save');
 		addClass(userSettingsButtonSave, "normal-text");
@@ -266,10 +272,10 @@ $(document).ready(function ()
 		let buttonDownload = document.getElementById('button-download');
 		removeClass(buttonDownload, "normal-text");
 
-		let newUser = document.getElementById('new-project');
+		let newUser = document.getElementById('new-user');
 		removeClass(newUser, "white-text");
 
-		let newProject = document.getElementById('new-user');
+		let newProject = document.getElementById('new-project');
 		removeClass(newProject, "white-text");
 
 		let buttonSave = document.getElementById('button-save');
@@ -283,6 +289,12 @@ $(document).ready(function ()
 
 		let buttonDiscardAbout = document.getElementById('button-discard-about');
 		removeClass(buttonDiscardAbout, "normal-text");
+		
+		let buttonSaveAccount = document.getElementById('account-button-save');
+		removeClass(buttonSaveAccount, "normal-text");
+
+		let buttonDiscardAccount = document.getElementById('account-button-discard');
+		removeClass(buttonDiscardAccount, "normal-text");
 
 		let userSettingsButtonSave = document.getElementById('userSettings-button-save');
 		removeClass(userSettingsButtonSave, "normal-text");
