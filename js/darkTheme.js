@@ -195,8 +195,9 @@ $(document).ready(function ()
 
 		let inksSelected = document.getElementsByClassName('ink selected');
 		for (let i = 0; i < inksSelected.length; i++)
-		{
-			addClass(inksSelected[i], "dark-selected");					
+		{			
+			addClass(inksSelected[i], "dark-selected");	
+			removeClass(inksSelected[i], "selected");
 		}
 
 		let overviewDownloadCounter = document.getElementsByClassName('overview-download-counter');
@@ -414,10 +415,11 @@ $(document).ready(function ()
 			removeClass(inks[i], "dark-ink");					
 		}
 
-		let inksSelected = document.getElementsByClassName('ink selected');
+		let inksSelected = document.getElementsByClassName('dark-selected');
 		for (let i = 0; i < inksSelected.length; i++)
 		{
-			removeClass(inksSelected[i], "dark-selected");					
+			addClass(inksSelected[i], "selected");	
+			removeClass(inksSelected[i], "dark-selected");			
 		}
 
 		let overviewDownloadCounter = document.getElementsByClassName('overview-download-counter');

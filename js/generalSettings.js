@@ -7,12 +7,34 @@ $(document).ready(function()
             $('#color-chooser div').removeClass('selected');
             event.target.className = "ink selected";
         }
+		
+		if(event.target.className == "ink dark-ink")
+        {
+            $('#color-chooser div').removeClass('dark-selected');
+            event.target.className = "ink dark-selected";
+        }
     });
 
     $('#button-save').click(function()
     {
         var developerName = $('#input-websiteName').val();
-        var colorScheme = $('#color-chooser div.selected').css('background-color');
+		
+		if(localStorage.getItem("darkThemeOn") != null)
+		{
+			if(localStorage.getItem("darkThemeOn") == "true")
+			{
+				var colorScheme = $('#color-chooser div.dark-selected').css('background-color');
+			}
+			else
+			{
+				var colorScheme = $('#color-chooser div.selected').css('background-color');
+			}
+		}
+		else
+		{
+			var colorScheme = $('#color-chooser div.selected').css('background-color');
+		}	
+      
         var gridSize = $('input[name=gridwidth]:checked').val();
         var sortOrder = $('input[name=sortOrder]:checked').val();
 
