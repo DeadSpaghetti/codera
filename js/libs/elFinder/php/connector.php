@@ -62,7 +62,7 @@ $opts = array(
 			//'URL'           => dirname($_SERVER['PHP_SELF']) . '/../files/', // URL to files (REQUIRED)
 			'URL'           => dirname($_SERVER['PHP_SELF']) . '/../../../../images/icons', // URL to files (REQUIRED)
 			'uploadDeny'    => array('all'),                // All Mimetypes not allowed to upload
-			'uploadAllow' => array('image', 'image/svg'),// Mimetype `image` and `text/plain` allowed to upload
+			'uploadAllow' => array('image'),// Mimetype `image` and `text/plain` allowed to upload
 			'uploadOrder'   => array('deny', 'allow'),      // allowed Mimetype `image` and `text/plain` only
 			'accessControl' => 'access'                     // disable and hide dot starting files (OPTIONAL)
 		),
@@ -82,7 +82,7 @@ $opts = array(
 			//'URL'           => dirname($_SERVER['PHP_SELF']) . '/../files/', // URL to files (REQUIRED)
 			'URL'           => dirname($_SERVER['PHP_SELF']) . '/../../../../images/screenshots', // URL to files (REQUIRED)
 			'uploadDeny'    => array('all'),                // All Mimetypes not allowed to upload
-			'uploadAllow' => array('image', 'image/svg'),
+			'uploadAllow' => array('image'),
 			'uploadOrder'   => array('deny', 'allow'),      
 			'accessControl' => 'access'                     // disable and hide dot starting files (OPTIONAL)
 		)
