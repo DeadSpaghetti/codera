@@ -5,7 +5,17 @@ if(!isset($_SESSION))
 }
 clearstatcache();
 if (!file_exists("../config/users.json"))
-	header("Location: installer/installer.php");
+{
+	$_SESSION['loggedIn'] = "admin";
+	header("Location: helper/createInstaller.php");
+}
+else
+{
+	if (file_exists("installer/deleteInstaller.php"))
+	{
+		header("Location: installer/deleteInstaller.php?redirect_to_index=true");
+	}
+}
 	
 $colorScheme = "";
 $developerName = "";

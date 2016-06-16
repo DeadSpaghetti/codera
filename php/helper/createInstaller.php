@@ -393,12 +393,31 @@ SET_SALT;
 
 $deleteInstaller = <<<'DELETE_INSTALLER'
 <?php
+$redirect_to_index = $_GET['redirect_to_index'];
+if (!isset($redirect_to_index))
+{
+    $redirect_to_index = "false";
+}
 unlink("createAdmin.php");
 unlink("deleteInstaller.php");
 unlink("installer.php");
 unlink("setSalt.php");
 rmdir(getcwd());
-header("Location: ../login.php");
+
+session_start();
+setcookie(session_name(), '', 100);
+session_unset();
+session_destroy();
+$_SESSION = array();
+
+if($redirect_to_index == "false")
+{
+    header("Location: ../login.php");
+}
+else
+{
+    header("Location: ../index.php");
+}
 DELETE_INSTALLER;
 
 if(!file_exists("../installer"))
@@ -409,5 +428,3 @@ file_put_contents("../installer/setSalt.php",$setSalt);
 file_put_contents("../installer/createAdmin.php",$createAdmin);
 file_put_contents("../installer/deleteInstaller.php",$deleteInstaller);
 header("Location: ../installer/installer.php");
-
-
