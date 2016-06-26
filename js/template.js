@@ -20,9 +20,7 @@ $(document).ready(function()
 
     $('#button-download').click(function()
     {
-        var filename = getFile();			
-		
-
+        var filename = getFile();
         var form = document.createElement('form');
         form.method = "POST";
         form.action = "helper/download.php";
