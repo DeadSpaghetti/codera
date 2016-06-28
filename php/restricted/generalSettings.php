@@ -86,7 +86,7 @@ include("../helper/getGeneralSettingsFromJSON.php");
 			<div class="radiogroup">
 				<input type="radio" name="sortOrder" id="radio-sortOrder4" value="latestUpdateReversed" <?php if($sortOrder == "latestUpdateReversed"){echo "checked";} ?>/>
 				<label for="radio-sortOrder4">old-new</label>
-			</div>			
+			</div>
 		</td>
 	</tr>
 	<tr class="infos-row">
