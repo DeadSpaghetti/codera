@@ -18,8 +18,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 	<head>
 		<?php include('../cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
-		<meta charset="UTF-8"/>		
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>					
+		<meta charset="UTF-8"/>
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main-minified.css"/>
 		<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/elfinder.min.css">
 		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/theme.css">
