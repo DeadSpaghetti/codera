@@ -33,7 +33,7 @@ include($path_helper_getGeneralSettings);
 		<?php include('cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF-8"/>
-		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main-minified.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../js/index.js"></script>

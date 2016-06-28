@@ -219,7 +219,7 @@ position:relative;
 z-index:20;							
 }
 
-.entry:hover{
+.entry a:hover{
 cursor: pointer;
 opacity: 0.65;
 }
@@ -856,10 +856,14 @@ color: #4a98d3;
 }
 
 .radiogroup {
+width: 15%;
 display: inline-block;
 text-align: center;
 margin-left: 4vmin;
+
 }
+
+
 
 .radiogroup label {
 display: block;
@@ -1248,7 +1252,7 @@ margin-top: 2vmin;
 .switch-light span span {
   display: none;
 cursor: pointer;  }
-  
+
 	@media only screen {
   .switch-light {
     position: relative;
@@ -1270,7 +1274,7 @@ cursor: pointer;  }
       -moz-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
     .switch-light label,
-    .switch-light > span {     
+    .switch-light > span {
       line-height: 2em;
       vertical-align: middle; }
     .switch-light input:focus ~ span a,
@@ -1469,8 +1473,8 @@ cursor: pointer;  }
     background-color: #38a3d4; }
   .switch-candy-yellow a {
     background-color: #f5e560; }
-  
- 
+
+
   /* ripple
  */
   .switch-light.switch-material > span:before,
