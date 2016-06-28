@@ -219,7 +219,7 @@ position:relative;
 z-index:20;							
 }
 
-.entry:hover{
+.entry a:hover{
 cursor: pointer;
 opacity: 0.65;
 }
