@@ -76,6 +76,7 @@
 			$directory = "../../executables/";
 			$exclude = getSelectedOptions("files",$UUID);   //is array
 			include "../helper/printAllFilesFromDirectoryAsOption.php";
+			include "../helper/printAllUrlsFromJSONAsOption.php";
 			?>		
 		</select>
 	</td>
