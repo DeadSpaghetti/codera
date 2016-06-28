@@ -83,7 +83,7 @@ $opts = array(
 			'URL'           => dirname($_SERVER['PHP_SELF']) . '/../../../../images/screenshots', // URL to files (REQUIRED)
 			'uploadDeny'    => array('all'),                // All Mimetypes not allowed to upload
 			'uploadAllow' => array('image'),
-			'uploadOrder'   => array('deny', 'allow'),      
+			'uploadOrder' => array('deny', 'allow'),
 			'accessControl' => 'access'                     // disable and hide dot starting files (OPTIONAL)
 		)
 	)
@@ -92,4 +92,3 @@ $opts = array(
 // run elFinder
 $connector = new elFinderConnector(new elFinder($opts));
 $connector->run();
-
