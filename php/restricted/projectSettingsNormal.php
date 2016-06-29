@@ -72,7 +72,7 @@
 	</td>										
 	<td class="infos-right normal-text">		
 		<select data-placeholder="Select an Option" id="projectSettings-fileSelector" multiple class="chosen-select" style="width: 96%;">
-			<?php 
+			<?php
 			$directory = "../../executables/";
 			$exclude = getSelectedOptions("files",$UUID);   //is array
 			include "../helper/printAllFilesFromDirectoryAsOption.php";
