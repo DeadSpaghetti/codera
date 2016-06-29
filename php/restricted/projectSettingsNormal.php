@@ -70,12 +70,13 @@
 			<i class="material-icons">file_download</i> <span class="icon-text">Files:</span>
 		</div>
 	</td>										
-	<td class="infos-right">		
+	<td class="infos-right normal-text">		
 		<select data-placeholder="Select an Option" id="projectSettings-fileSelector" multiple class="chosen-select" style="width: 96%;">
 			<?php
 			$directory = "../../executables/";
 			$exclude = getSelectedOptions("files",$UUID);   //is array
 			include "../helper/printAllFilesFromDirectoryAsOption.php";
+			include "../helper/printAllUrlsFromJSONAsOption.php";
 			?>		
 		</select>
 	</td>
@@ -87,7 +88,7 @@
 			<i class="material-icons">photo_camera</i> <span class="icon-text">Screenshots:</span>
 		</div>
 	</td>										
-	<td class="infos-right">
+	<td class="infos-right normal-text">
 		<select data-placeholder="Select an Option" id="projectSettings-screenshotSelector" multiple class="chosen-select" style="width: 96%;">
 			<?php
 			$directory = "../../images/screenshots";
@@ -105,7 +106,7 @@
 			<i class="material-icons md-light">assignment</i> <span class="icon-text">License:</span>
 		</div>
 	</td>										
-	<td class="infos-right">
+	<td class="infos-right normal-text">
 		<select id="projectSettings-licenseSelector" style="width: 96%;">
 			<option id="Select an Option" selected>Select an Option</option>
 			<?php

@@ -32,25 +32,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $filename = $_POST['filename'];
     $UUID = $_POST['UUID'];
-
 //check if file is permitted to be downloaded
     $property = "files";
     $options = null;
     $allowedFilesArray = [];
     include "printAllAvailableOptions.php";
-
+    include_once "functions.php";
     if (!empty($allowedFilesArray))
     {
-        for ($i = 0; $i < sizeof($allowedFilesArray); $i++)
+        for ($j = 0; $j < sizeof($allowedFilesArray); $j++)
         {
-            if ($filename == $allowedFilesArray[$i])
+            if ($filename == $allowedFilesArray[$j])
             {
                 increaseDownloadCounter($UUID);
                 clearstatcache();
-                include_once "functions.php";
+
                 if (isUrl($filename))
                 {
-                    debugToBrowserConsole($filename);
                     header("Location: " . $filename);
                 }
                 else
@@ -60,8 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
                     if (file_exists(realpath("../../executables/" . $filename)))
                         readfile("../../executables/" . $filename);
                 }
+                break;
             }
-            break;
+
         }
     }
 }

@@ -130,7 +130,10 @@ $(document).ready(function()
 {
     $('#projectSettings-iconSelector').select2();
     $('#projectSettings-licenseSelector').select2();
-    $('#projectSettings-fileSelector').select2();
+    $('#projectSettings-fileSelector').select2({
+        tags: true,
+        tokenSeparators: [',', ' ']
+    });
     $('#projectSettings-screenshotSelector').select2();
     $('#input-date').pickadate({
         format: 'dd.mm.yyyy',

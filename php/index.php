@@ -5,7 +5,17 @@ if(!isset($_SESSION))
 }
 clearstatcache();
 if (!file_exists("../config/users.json"))
-	header("Location: installer/installer.php");
+{
+	$_SESSION['loggedIn'] = "admin";
+	header("Location: helper/createInstaller.php");
+}
+else
+{
+	if (file_exists("installer/deleteInstaller.php"))
+	{
+		header("Location: installer/deleteInstaller.php?redirect_to_index=true");
+	}
+}
 	
 $colorScheme = "";
 $developerName = "";
@@ -23,10 +33,11 @@ include($path_helper_getGeneralSettings);
 		<?php include('cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF-8"/>
-		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main-minified.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<script src="../js/index.js"></script>			
+		<script src="../js/index.js"></script>
+		<script src="../js/darkTheme.js"></script>			
 	</head>
 	<body onload="drawBanners('<?php if(isset($colorScheme)) echo $colorScheme;?>');">
 		<div id="main">

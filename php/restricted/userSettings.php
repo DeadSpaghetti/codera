@@ -53,12 +53,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="../../js/libs/pickadate/lib/compressed/themes/default.css" rel="stylesheet" type="text/css">
         <link href="../../js/libs/pickadate/lib/compressed/themes/default.date.css" rel="stylesheet" type="text/css">
-        <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>				
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-toggle-buttons.css"/>
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main-minified.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="../../js/userSettings.js"></script>
+		<script src="../../js/darkTheme.js"></script>
 
 	</head>
 	<body>

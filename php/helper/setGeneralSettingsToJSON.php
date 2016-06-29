@@ -15,15 +15,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     $colorScheme = $_POST['colorScheme'];
     $gridSize = $_POST['gridSize'];
     $sortOrder = $_POST['sortOrder'];
+    $inDev = false;
 
     $generalSettingsFilename = "../../config/generalSettings.json";
+
+    //gets inDev status
+    if (file_exists($generalSettingsFilename))
+    {
+        $inDevBool = json_decode(file_get_contents($generalSettingsFilename))->{'inDev'};
+        if ($inDevBool != null)
+            $inDev = $inDevBool;
+    }
 
     $array = array(
         "developerName" => $developerName,
         "colorScheme" => $colorScheme,
         "gridSize" => $gridSize,
         "sortOrder" => $sortOrder,
-        "inDev" => false
+        "inDev" => $inDev
     );
 
     $jsonString = json_encode($array, JSON_PRETTY_PRINT);

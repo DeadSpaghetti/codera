@@ -19,12 +19,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<?php include('../cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF-8"/>
-		<link type="text/css" rel="stylesheet" href="../../js/libs/chosen/chosen.css"/>
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-buttons.css"/>		
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-admin.css"/>
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-tabs.css"/>
-		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-colorChooser.css"/>		
+		<link type="text/css" rel="stylesheet" href="../../css/stylesheet-main-minified.css"/>
 		<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/elfinder.min.css">
 		<link rel="stylesheet" type="text/css" href="../../js/libs/elFinder/css/theme.css">
@@ -41,7 +36,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 		<script src="../../js/resetOverview.js"></script>	
 		<script src="../../js/libs/select2/js/select2.min.js"></script>	
 		<script src="../../js/aboutOverview.js"></script>
-		<script src="../../js/libs/elFinder/js/elfinder.min.js"></script>			
+		<script src="../../js/libs/elFinder/js/elfinder.min.js"></script>	
+		<script src="../../js/darkTheme.js"></script>			
 	</head>
 	<body>
 		<div id="main">						
@@ -49,12 +45,12 @@ include('../helper/getGeneralSettingsFromJSON.php');
 			<div id="content">	
 				<div class="tabs">
 					<ul class="tab-links">						
-						<li id="tabGeneralSettings-list-element" class="active"><a href="#tabGeneralSettings" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">General Settings</a></li>
-						<li id="tabProjectOverview-list-element"><a href="#tabProjectOverview" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Projects</a></li>					
-						<li id="tabMedia-list-element"><a href="#tabMedia" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Media</a></li>
-						<li id="tabUsers-list-element"><a href="#tabUsers" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Users</a></li>
-						<li id="tabAbout-list-element"><a href="#tabAbout" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Aboutpage</a></li>
-					<?php if($_SESSION['loggedIn'] == "admin"){ echo '<li id="tabReset-list-element"><a href="#tabReset" style="background-color: rgba('; echo convertHexToRGB($colorScheme).', 0.7);">Reset</a></li>';}?>
+						<li class="tab-links-header" id="tabGeneralSettings-list-element" class="active"><a href="#tabGeneralSettings" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">General Settings</a></li>
+						<li class="tab-links-header" id="tabProjectOverview-list-element"><a href="#tabProjectOverview" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Projects</a></li>					
+						<li class="tab-links-header" id="tabMedia-list-element"><a href="#tabMedia" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Media</a></li>
+						<li class="tab-links-header" id="tabUsers-list-element"><a href="#tabUsers" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Users</a></li>
+						<li class="tab-links-header" id="tabAbout-list-element"><a href="#tabAbout" style="background-color: rgba(<?php convertHexToRGB($colorScheme);?>, 0.7);">Aboutpage</a></li>
+					<?php if($_SESSION['loggedIn'] == "admin"){ echo '<li class="tab-links-header" id="tabReset-list-element"><a href="#tabReset" style="background-color: rgba('; echo convertHexToRGB($colorScheme).', 0.7);">Reset</a></li>';}?>
 					</ul>							
 					<div class="tab-content">
 						<div id="tabGeneralSettings" class="tab active">

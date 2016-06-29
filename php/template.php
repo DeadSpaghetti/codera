@@ -17,14 +17,14 @@ include('helper/getGeneralSettingsFromJSON.php');
 		<?php include('cookie.php'); ?>
 		<title><?php if(isset($developerName)) echo $developerName;?> on Codera</title>
 		<meta charset="UTF-8"/>
-		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main.css"/>
-		<link type="text/css" rel="stylesheet" href="../css/stylesheet-buttons.css"/>	
+		<link type="text/css" rel="stylesheet" href="../css/stylesheet-main-minified.css"/>
 		<link type="text/css" rel="stylesheet" href="../js/libs/select2/css/select2.css"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link href="../js/libs/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>				
         <script src="../js/template.js"></script>
 		<script src="../js/libs/select2/js/select2.min.js"></script>
+		<script src="../js/darkTheme.js"></script>
     </head>
 	<body>
 		<div id="main">

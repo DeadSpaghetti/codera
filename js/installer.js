@@ -80,7 +80,7 @@ $(document).ready(function()
 
     $('#installer-button-finish').click(function()
     {
-        location.href = "deleteInstaller.php";
+        location.href = "deleteInstaller.php?redirect_to_index=false";
     });
 
 });
