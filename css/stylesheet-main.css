@@ -1,0 +1,1789 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-v15-latin-regular.woff2') format('woff2'),
+    url('fonts/roboto-v15-latin-regular.woff') format('woff'),
+    url('fonts/roboto-v15-latin-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-bold';
+    src: url('fonts/roboto-v15-latin-500.woff2') format('woff2'),
+    url('fonts/roboto-v15-latin-500.woff') format('woff'),
+    url('fonts/roboto-v15-latin-500.ttf') format('truetype');
+}
+
+body {
+    background-color: #EEEEEE;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+a:link {
+    text-decoration: none;
+    color: #212121;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #212121;
+}
+
+a:active {
+    text-decoration: none;
+    color: #212121;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #212121;
+}
+
+#main {
+    width: 100%;
+    height: auto;
+    flex: 1 0 auto;
+}
+
+#header {
+    width: 100%;
+    height: auto;
+    background-color: #212121;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.login {
+    width: 15vmin;
+    height: auto;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.5vmin;
+    color: #FFFFFF;
+    float: right;
+}
+
+.login i {
+    font-size: 3vmin;
+    display: inline;
+    vertical-align: middle;
+}
+
+.login-text {
+    display: inline;
+    vertical-align: middle;
+}
+
+.login a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.login.left {
+    float: left;
+    width: auto;
+    margin-left: 2vmin;
+    font-size: 2vmin;
+}
+
+.login.left i {
+    font-size: 3vmin;
+}
+
+#name {
+    width: 100%;
+    height: 15vmin;
+    background-color: #bdbdbd;
+    display: table;
+    border-bottom: 0.4vmin solid #B3B3B3;
+}
+
+.name-text {
+    width: 50%;
+    margin: auto;
+    font-family: Roboto, Sans-Serif;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#name-text-short {
+    font-size: 8vmin;
+}
+
+#name-text-middle {
+    font-size: 6.5vmin;
+}
+
+#name-text-long {
+    font-size: 5vmin;
+}
+
+.name-text a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#content {
+    width: 100%;
+    height: auto;
+    background-color: #EEEEEE;
+    padding-bottom: 5vmin;
+}
+
+#projects {
+    width: 70vw;
+    height: auto;
+    margin: auto;
+    margin-top: 10vmin;
+    text-align: center;
+}
+
+.row > td {
+    padding-bottom: 10vmin;
+}
+
+.entry.large {
+    width: 28%;
+    height: auto;
+    margin: auto;
+}
+
+.entry.medium {
+    width: 22%;
+    height: auto;
+    margin: auto;
+}
+
+.entry.small {
+    width: 18%;
+    height: auto;
+    margin: auto;
+}
+
+.entry a {
+    text-align: center;
+}
+
+.entry-icon {
+    margin: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1.0;
+}
+
+.entry-icon.large.container {
+    display: inline-block;
+    width: 16vmin;
+    height: 16vmin;
+    margin: 0 auto;
+    background: transparent;
+    position: relative;
+}
+
+.entry-icon.medium.container {
+    display: inline-block;
+    width: 15vmin;
+    height: 15vmin;
+    margin: 0 auto;
+    background: transparent;
+    position: relative;
+}
+
+.entry-icon.small.container {
+    display: inline-block;
+    width: 13vmin;
+    height: 13vmin;
+    margin: 0 auto;
+    background: transparent;
+    position: relative;
+}
+
+.entry-icon {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.entry-icon.medium.container.space {
+    margin-right: 1vmin;
+    border: 0.2vmin solid #212121;
+    border-radius: 0.5vmin;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 20;
+}
+
+.entry a:hover {
+    cursor: pointer;
+    opacity: 0.65;
+}
+
+.entry.large.placeholder {
+    cursor: default;
+    opacity: 1.0;
+}
+
+.icon-name {
+    font-family: Roboto, Sans-Serif;
+    font-size: 3.2vmin;
+    margin: auto;
+    text-align: center;
+    margin-top: 2vmin;
+    color: #212121;
+}
+
+/* Default Icon with Text */
+.icon {
+    line-height: 4.3vmin;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.2vmin;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.icon i {
+    font-size: 3.2vmin;
+    display: inline;
+    color: #212121;
+    vertical-align: middle;
+}
+
+.icon-text {
+    display: inline;
+    vertical-align: middle;
+    padding-left: 2.2vmin;
+}
+
+#footer {
+    width: 100%;
+    height: auto;
+    background-color: #212121;
+    margin: auto;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 0.5vmin;
+    padding-bottom: 0.5vmin;
+}
+
+#footer table {
+    width: 60%;
+    margin: auto;
+    font-family: Roboto, sans-serif;
+    font-size: 2.3vmin;
+}
+
+#footer table td {
+    width: 33%;
+    vertical-align: middle;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#footer a {
+    color: #FFFFFF;
+}
+
+#footer-right {
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+#footer-right-text {
+    width: 15vmin;
+    height: auto;
+    font-family: Roboto, Sans-Serif;
+    color: #FFFFFF;
+    margin-left: 0.3vmin;
+}
+
+#icon-github {
+    height: 2.2vmin;
+    vertical-align: middle;
+}
+
+#white {
+    width: 50vw;
+    height: auto;
+    margin: auto;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    -moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    padding: 3vmin 6vmin 3vmin 4vmin;
+    margin-top: 5vmin;
+}
+
+#app {
+    width: 90%;
+    margin: auto;
+}
+
+#app-icon {
+    width: 14vmin;
+    height: 14vmin;
+    margin: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1.0;
+}
+
+#app-name {
+    font-family: Roboto, Sans-Serif;
+    font-size: 5vmin;
+    margin: auto;
+    text-align: center;
+    color: #212121;
+}
+
+#new-project {
+    font-family: Roboto, Sans-Serif;
+    font-size: 5vmin;
+    margin: auto;
+    text-align: center;
+    color: #212121;
+}
+
+#new-user {
+    font-family: Roboto, Sans-Serif;
+    font-size: 5vmin;
+    margin: auto;
+    text-align: center;
+    color: #212121;
+}
+
+.line {
+    width: 100%;
+    height: 0.3vmin;
+    margin: auto;
+    margin-top: 2vmin;
+    background-image: linear-gradient(to left, #F2F2F2 0%, #333333 3%, #333333 97%, #F2F2F2 100%);
+    margin-bottom: 5vmin;
+}
+
+.line-no-space {
+    margin-bottom: 0;
+}
+
+.infos {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.2vmin;
+    color: #212121;
+}
+
+.infos-small {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.2vmin;
+    color: #212121;
+}
+
+.infos-left {
+    width: 30vmin;
+    padding-right: 5vmin;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.infos-left.lesspadding {
+    padding-bottom: 1vmin;
+}
+
+.infos-left-small {
+    width: 15vmin;
+    padding-right: 5vmin;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.infos-center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.infos-row > td {
+    padding-bottom: 5vmin;
+}
+
+.infos-right {
+    white-space: nowrap;
+}
+
+.infos-right.wrap {
+    white-space: normal;
+}
+
+.infos-right.lesspadding {
+    padding-bottom: 1vmin;
+}
+
+.infos-right-space {
+    width: 10%;
+}
+
+#template-download {
+    width: 80%;
+}
+
+#template-download-right {
+    width: 14vmin;
+}
+
+/*** about page ***/
+
+#about-headline {
+    font-family: Roboto, Sans-Serif;
+    font-size: 5vmin;
+    margin: auto;
+    text-align: center;
+    color: #212121;
+}
+
+.about-headline-small {
+    font-family: Roboto, Sans-Serif;
+    font-size: 3.5vmin;
+    margin: auto;
+    text-align: center;
+    color: #212121;
+    text-decoration: underline;
+    margin-bottom: 5vmin;
+}
+
+.about-table {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.2vmin;
+    color: #212121;
+}
+
+.about-left {
+    width: 25vmin;
+    padding-right: 5vmin;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+#about-icon {
+    margin: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1.0;
+    width: 20vmin;
+    height: 20vmin;
+    display: inline-block;
+}
+
+.about-right {
+    vertical-align: top;
+}
+
+.about-text {
+    text-align: center;
+    width: 60%;
+    height: auto;
+    margin: auto;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.2vmin;
+    color: #212121;
+}
+
+.link-version {
+    padding-left: 3vmin;
+}
+
+.link-visible-table {
+    text-align: left;
+    margin: auto;
+}
+
+.link-visible:link, .link-visible:hover, .link-visible:active, .link-visible:visited {
+    text-decoration: underline;
+    color: #4a98d3;
+}
+
+.link-visible-table-right {
+    padding-left: 3vmin;
+}
+
+.about-line {
+    width: 100%;
+    height: 0.3vmin;
+    margin: auto;
+    margin-top: 5vmin;
+    background-image: linear-gradient(to left, #F2F2F2 0%, #333333 3%, #333333 97%, #F2F2F2 100%);
+    margin-bottom: 5vmin;
+}
+
+.about-text-full {
+    text-align: left;
+    width: 60%;
+    height: auto;
+    margin: auto;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.2vmin;
+    color: #212121;
+}
+
+#forbidden {
+    margin: auto;
+    text-align: center;
+    font-family: Roboto, Sans-Serif;
+    font-size: 4vmin;
+    margin-top: 10vmin;
+}
+
+.hidden {
+    display: none;
+}
+
+.chosen-container {
+    font-size: 2.2vmin !important;
+    line-height: 4vmin !important;
+    height: 4vmin !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.chosen-container-single .chosen-single {
+    line-height: 4vmin !important;
+    height: 4vmin !important;
+}
+
+select {
+    width: 100%
+}
+
+.lb-outerContainer {
+    background-color: transparent !important;
+}
+
+/* Default Button */
+.button {
+    display: inline-block;
+    margin-right: 3vmin;
+    width: 11vmin;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.1vmin;
+    padding: 0.5vmin;
+    background-color: #bdbdbd;
+    text-align: center;
+    -webkit-box-shadow: 0 0 0.3vmin 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0.3vmin 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 0.3vmin 0 rgba(0, 0, 0, 0.75);
+    border-radius: 0.3vmin;
+}
+
+.button:hover {
+    opacity: 0.7;
+}
+
+.button i {
+    font-size: 2.6vmin;
+    display: inline;
+    color: #212121;
+    vertical-align: middle;
+}
+
+.button-text {
+    display: inline;
+    vertical-align: middle;
+}
+
+.button.save {
+    background-color: #81c784;
+    width: 11vmin;
+}
+
+.button.discard {
+    background-color: #e57373;
+    width: 11vmin;
+}
+
+.button.login {
+    background-color: #4a98d3;
+    width: 10vmin;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.button.newProject {
+    width: 11vmin;
+    font-size: 2.7vmin;
+}
+
+.button.edit {
+    width: 3.1vmin;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    margin-right: 2vmin;
+}
+
+.button.edit i {
+    font-size: 3.1vmin;
+}
+
+.button.download {
+    width: 14vmin;
+    margin-right: 0;
+    margin-left: 3vmin;
+}
+
+.button.reset {
+    width: 20vmin;
+    background-color: #e57373;
+}
+
+/** admin **/
+
+#app-title {
+    font-family: Roboto, Sans-Serif;
+    font-size: 5vmin;
+    margin: auto;
+    text-align: center;
+    color: #212121;
+}
+
+#login-white {
+    width: 25vw;
+    height: auto;
+    margin: auto;
+    background-color: #FFFFFF;
+    font-family: Roboto, Sans-Serif;
+    -webkit-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    -moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    padding: 3vmin 6vmin 6vmin 4vmin;
+    margin-top: 10%;
+}
+
+#login-container {
+    width: 85%;
+    margin: auto;
+}
+
+#login-table {
+    width: 95%;
+    margin: auto;
+    margin-top: 3vmin;
+}
+
+#login-title {
+    font-size: 4vmin;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2vmin;
+    margin-bottom: 5vmin;
+}
+
+.input {
+    width: 90%;
+    margin: auto;
+    background-color: #FFFFFF;
+    border-radius: 0.5vmin;
+    font-size: 2.2vmin;
+    border: 0.2vmin solid #d9d9d9;
+    -webkit-box-shadow: inset 0 0 0.4vmin 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 0 0.4vmin 0 rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 0.4vmin 0 rgba(0, 0, 0, 0.3);
+    padding: 1vmin;
+    display: block;
+    font-family: Roboto, Sans-Serif;
+}
+
+.project {
+    width: 93%;
+    font-size: 2vmin;
+    margin-left: 0;
+}
+
+.input-simple {
+    border: none;
+    box-shadow: none;
+}
+
+textarea {
+    width: 93%;
+    resize: vertical;
+    margin-left: 0;
+    background-color: #FFFFFF;
+    border-radius: 0.5vmin;
+    font-size: 2.2vmin;
+    border: 0.2vmin solid #d9d9d9;
+    -webkit-box-shadow: inset 0 0 0.4vmin 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 0 0.4vmin 0 rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 0.4vmin 0 rgba(0, 0, 0, 0.3);
+    padding: 1vmin;
+    display: block;
+    font-family: Roboto, Sans-Serif;
+}
+
+#input-about-text {
+    width: 97%;
+}
+
+#input-password {
+    margin-top: 2vmin;
+}
+
+#login-message {
+    font-size: 2.2vmin;
+    color: #CC0000;
+}
+
+#login-button-container {
+    text-align: right;
+    vertical-align: middle;
+    padding: 0;
+}
+
+#icon-warn {
+    text-align: left;
+    padding-right: 2vmin;
+    color: #CC0000;
+}
+
+#icon-warn i {
+    color: #CC0000;
+    font-size: 2.8vmin;
+}
+
+#icon-warn span {
+    padding-left: 0;
+    font-weight: normal;
+    display: inline-block;
+}
+
+#icon-warn2 {
+    text-align: center;
+    padding-right: 2vmin;
+    color: #CC0000;
+    vertical-align: middle;
+}
+
+#icon-warn2 i {
+    color: #CC0000;
+    font-size: 2.8vmin;
+}
+
+#icon-war2 span {
+    padding-left: 0;
+    font-weight: normal;
+    display: inline-block;
+}
+
+#icon-warn3 {
+    text-align: center;
+    padding-right: 2vmin;
+    color: #CC0000;
+    vertical-align: middle;
+    padding-bottom: 3vmin;
+}
+
+#icon-warn3 i {
+    color: #CC0000;
+    font-size: 2.8vmin;
+}
+
+#icon-war3 span {
+    padding-left: 0;
+    font-weight: normal;
+    display: inline-block;
+}
+
+#icon-success {
+    text-align: left;
+    padding-right: 2vmin;
+    color: #247A2D;
+}
+
+#icon-success i {
+    color: #247A2D;
+    font-size: 2.8vmin;
+}
+
+#icon-success span {
+    padding-left: 0;
+    font-weight: normal;
+    display: inline-block;
+}
+
+#settings-white {
+    width: 80vw;
+    height: auto;
+    margin: auto;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    -moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    padding: 3vmin 6vmin 3vmin 4vmin;
+    margin-top: 5vmin;
+}
+
+#codera-version-left {
+    font-weight: bold;
+}
+
+#codera-version-right-onDisk {
+    padding-left: 2vmin;
+}
+
+#codera-version-right-onLine {
+    padding-left: 2vmin;
+}
+
+#codera-version-link {
+    padding-left: 2vmin;
+}
+
+#codera-version-link a {
+    color: #4a98d3;
+}
+
+.radiogroup {
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+    margin-left: 4vmin;
+
+}
+
+.radiogroup label {
+    display: block;
+}
+
+#radiogroup-1, #radiogroup-2 {
+    margin: 0;
+}
+
+#overview {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.2vmin;
+    color: #212121;
+    word-break: normal;
+    word-wrap: break-word;
+}
+
+.overview-left {
+    padding-right: 5vmin;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.overview-center {
+    text-align: center;
+    vertical-align: middle;
+    padding-bottom: 5vmin;
+}
+
+.overview-row > td {
+    /*padding-bottom: 3vmin;*/
+}
+
+.overview-download-counter {
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.2vmin;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.overview-download-counter div {
+    font-size: 1.5vmin;
+    margin-bottom: 1vmin;
+    display: inline-block;
+}
+
+.overview-icon {
+    margin: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1.0;
+    width: 10vmin;
+    height: 10vmin;
+}
+
+.overview-appname {
+    font-family: Roboto, Sans-Serif;
+    font-size: 3vmin;
+    vertical-align: middle;
+    padding-left: 2vmin;
+    padding-right: 3vmin;
+}
+
+.user-overview-appname {
+    font-family: Roboto, Sans-Serif;
+    font-size: 3vmin;
+    vertical-align: middle;
+    padding-left: 4vmin;
+}
+
+.overview-line {
+    width: 100%;
+    border-bottom: 0.3vmin solid black;
+    margin-top: 2vmin;
+    margin-bottom: 2vmin;
+}
+
+.overview-right {
+    width: 11vmin;
+    white-space: nowrap;
+}
+
+.user-line {
+    width: 100%;
+    border-bottom: 0.3vmin solid black;
+    margin-top: 2vmin;
+    margin-bottom: 3vmin;
+}
+
+#back-link {
+    width: 13vmin;
+}
+
+#toggle-container {
+    width: 25%;
+    margin: auto;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2vmin;
+}
+
+.toggle-container-user {
+    width: 40%;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2vmin;
+}
+
+.hint {
+    font-size: 2vmin;
+    margin-top: 2vmin;
+}
+
+.hint-italic {
+    font-size: 2vmin;
+    font-style: italic;
+}
+
+.user-headline {
+    width: 50%;
+    margin: auto;
+    font-family: Roboto, Sans-Serif;
+    font-size: 3vmin;
+    font-weight: bold;
+    border-bottom: 0.3vmin solid black;
+}
+
+.user-project-name {
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.5vmin;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#tabMedia {
+    min-height: 80vmin;
+}
+
+#elfinder {
+    height: 80vmin !important;
+}
+
+/** tabs **/
+
+.tabs {
+    width: 65%;
+    margin: auto;
+    margin-top: 5vmin;
+    font-family: Roboto-bold, Sans-Serif;
+}
+
+.tab-links {
+    padding: 0;
+    padding-left: 2vmin;
+    list-style: none;
+    margin: 0;
+    /*white-space:nowrap;*/
+}
+
+.tab-links li {
+    margin-left: 0.5vmin;
+    margin-right: 0.5vmin;
+    display: inline;
+    border-radius: 1vmin 1vmin 0 0;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: 0 5vh 0 #FFFFFF,
+    -0.3vmin -0.2vmin 1.3vmin rgba(194, 194, 194, 0.5),
+    0.3vmin -0.2vmin 1.3vmin rgba(194, 194, 194, 0.5);
+    -moz-box-shadow: 0 5vh 0 #FFFFFF,
+    -0.3vmin -0.2vmin 1.3vmin rgba(194, 194, 194, 0.5),
+    0.3vmin -0.2vmin 1.3vmin rgba(194, 194, 194, 0.5);
+    box-shadow: 0 5vh 0 #FFFFFF,
+    -0.3vmin -0.2vmin 1.3vmin rgba(194, 194, 194, 0.5),
+    0.3vmin -0.2vmin 1.3vmin rgba(194, 194, 194, 0.5);
+    font-size: 0;
+}
+
+.tab-links a {
+    padding: 1.5vmin 2.5vmin;
+    display: inline-block;
+    border-radius: 1vmin 1vmin 0 0;
+    background-color: #7FB5DA;
+    font-size: 2vmin;
+    font-weight: bold;
+    color: #212121;
+    transition: all linear 0.15s;
+    text-decoration: none;
+}
+
+.tab-links a:hover {
+    background: #a7cce5;
+    text-decoration: none;
+}
+
+li.active a, li.active a:hover {
+    background: #FFFFFF !important;
+    color: #212121 !important;
+}
+
+/* Tab-Content */
+.tab-content {
+    width: 100%;
+    margin: auto;
+    padding: 9vmin;
+    border-radius: 1vmin;
+    -webkit-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    -moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    box-shadow: 0 0 2.5vmin 0.5vmin rgba(194, 194, 194, 1);
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+/** color chooser **/
+#color-chooser {
+    width: 80%;
+}
+
+.ink {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 0.7vmin;
+    background-color: red;
+    display: inline-block;
+    margin-left: 0.8vmin;
+    margin-top: 0.8vmin;
+    border: 0.5vmin solid transparent;
+}
+
+.ink:hover {
+    border: 0.5vmin solid #333333;
+    transition: .2s ease;
+}
+
+.ink.selected {
+    border: 0.5vmin solid #333333;
+}
+
+/** installer **/
+#white {
+    padding: 5vmin 8vmin 3vmin 8vmin;
+}
+
+.installer-head {
+    font-family: Roboto, Sans-Serif;
+    font-size: 4vmin;
+    margin: auto;
+    text-align: center;
+    color: #212121;
+}
+
+.installer-content {
+    font-family: Roboto, Sans-Serif;
+    font-size: 2vmin;
+    margin: auto;
+    text-align: center;
+    color: #212121;
+}
+
+.installer-sub-headline {
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.5vmin;
+    margin: auto;
+    font-weight: bold;
+    text-align: center;
+    color: #212121;
+}
+
+.installer-progress-container {
+    margin-top: 10vmin;
+    margin-bottom: 3vmin;
+    width: 100%;
+}
+
+.installer-progress {
+    margin: auto;
+    text-align: center;
+    display: table;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #212121;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.2vmin;
+    font-weight: bold;
+    color: #FFFFFF;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.circle.active {
+    background-color: #AAAAAA;
+    color: #000000;
+}
+
+.circle.done {
+    background-color: #81c784;
+}
+
+.progress-line-container {
+    width: 10vmin;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.progress-line {
+    background-color: #212121;
+    height: 0.5vmin;
+}
+
+.progress-line.done {
+    background-color: #81c784;
+}
+
+.installer-content .button {
+    display: inline-block;
+    width: 11vmin;
+    font-family: Roboto, Sans-Serif;
+    font-size: 2.1vmin;
+    padding: 0.5vmin 0.7vmin 0.5vmin 1vmin;
+    background-color: #81c784;
+    text-align: center;
+    -webkit-box-shadow: 0 0 0.3vmin 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0.3vmin 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 0.3vmin 0 rgba(0, 0, 0, 0.75);
+    border-radius: 0.3vmin;
+    margin-top: 5vmin;
+}
+
+.installer-content .button:hover {
+    opacity: 0.7;
+}
+
+.installer-content .button i {
+    font-size: 2.6vmin;
+    display: inline;
+    color: #212121;
+    vertical-align: middle;
+    margin-left: 0.5vmin;
+}
+
+.installer-content .button-text {
+    display: inline;
+    vertical-align: middle;
+}
+
+.installer-text-block {
+    text-align: left;
+}
+
+input {
+    width: 50%;
+    margin: auto;
+    background-color: #FFFFFF;
+    border-radius: 0.5vmin;
+    font-size: 2vmin;
+    border: 0.2vmin solid #919191;
+    -webkit-box-shadow: inset 0 0 0.4vmin 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 0 0.4vmin 0 rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 0.4vmin 0 rgba(0, 0, 0, 0.3);
+    padding: 1vmin;
+    display: block;
+    font-family: Roboto, Sans-Serif;
+    margin-top: 2vmin;
+}
+
+/* CSS TOGGLE SWITCH
+*
+* Ionuț Colceriu - ghinda.net
+* https://github.com/ghinda/css-toggle-switch*
+*/
+
+.switch-toggle a,
+.switch-light span span {
+    display: none;
+    cursor: pointer;
+}
+
+@media only screen {
+    .switch-light {
+        position: relative;
+        display: block;
+        /* simulate default browser focus outlines on the switch,
+       * when the inputs are focused.
+       */
+    }
+
+    .switch-light::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    .switch-light *,
+    .switch-light *:before,
+    .switch-light *:after {
+        box-sizing: border-box;
+    }
+
+    .switch-light a {
+        display: block;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
+    .switch-light label,
+    .switch-light > span {
+        line-height: 2em;
+        vertical-align: middle;
+    }
+
+    .switch-light input:focus ~ span a,
+    .switch-light input:focus + label {
+        outline: 0;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 0) {
+    .switch-light input:focus ~ span a,
+    .switch-light input:focus + label {
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+    }
+}
+
+@media only screen {
+    /* don't hide the input from screen-readers and keyboard access
+   */
+    .switch-light input {
+        position: absolute;
+        opacity: 0;
+        z-index: 3;
+    }
+
+    .switch-light input:checked ~ span a {
+        right: 0%;
+    }
+
+    /* inherit from label
+   */
+    .switch-light strong {
+        font-weight: inherit;
+    }
+
+    .switch-light > span {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        min-height: 2em;
+        /* overwrite 3rd party classes padding
+       * eg. bootstrap .well
+       */
+        padding: 0;
+        text-align: left;
+    }
+
+    .switch-light span span {
+        position: relative;
+        z-index: 2;
+        display: block;
+        float: left;
+        width: 50%;
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .switch-light a {
+        position: absolute;
+        right: 50%;
+        top: 0;
+        z-index: 1;
+        display: block;
+        width: 50%;
+        height: 100%;
+        padding: 0;
+    }
+
+    /* Radio Switch
+   */
+    .switch-toggle {
+        position: relative;
+        display: block;
+        /* simulate default browser focus outlines on the switch,
+       * when the inputs are focused.
+       */
+        /* For callout panels in foundation
+      */
+        padding: 0 !important;
+    }
+
+    .switch-toggle::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    .switch-toggle *,
+    .switch-toggle *:before,
+    .switch-toggle *:after {
+        box-sizing: border-box;
+    }
+
+    .switch-toggle a {
+        display: block;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
+
+    .switch-toggle label,
+    .switch-toggle > span {
+        /* breathing room for bootstrap/foundation classes.
+       */
+        line-height: 2em;
+        vertical-align: middle;
+    }
+
+    .switch-toggle input:focus ~ span a,
+    .switch-toggle input:focus + label {
+        outline-width: 2px;
+        outline-style: solid;
+        outline-color: Highlight;
+        /* Chrome/Opera gets its native focus styles.
+       */
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 0) {
+    .switch-toggle input:focus ~ span a,
+    .switch-toggle input:focus + label {
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+    }
+}
+
+@media only screen {
+    .switch-toggle input {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+    }
+
+    .switch-toggle input + label {
+        position: relative;
+        z-index: 2;
+        display: block;
+        float: left;
+        padding: 0 0.5em;
+        margin: 0;
+        text-align: center;
+    }
+
+    .switch-toggle a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        z-index: 1;
+        width: 10px;
+        height: 100%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(4),
+    .switch-toggle label:nth-child(2):nth-last-child(4) ~ label,
+    .switch-toggle label:nth-child(2):nth-last-child(4) ~ a {
+        width: 50%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(4) ~ input:checked:nth-child(3) + label ~ a {
+        left: 50%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(6),
+    .switch-toggle label:nth-child(2):nth-last-child(6) ~ label,
+    .switch-toggle label:nth-child(2):nth-last-child(6) ~ a {
+        width: 33.33%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(6) ~ input:checked:nth-child(3) + label ~ a {
+        left: 33.33%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(6) ~ input:checked:nth-child(5) + label ~ a {
+        left: 66.66%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(8),
+    .switch-toggle label:nth-child(2):nth-last-child(8) ~ label,
+    .switch-toggle label:nth-child(2):nth-last-child(8) ~ a {
+        width: 25%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(3) + label ~ a {
+        left: 25%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(5) + label ~ a {
+        left: 50%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(7) + label ~ a {
+        left: 75%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(10),
+    .switch-toggle label:nth-child(2):nth-last-child(10) ~ label,
+    .switch-toggle label:nth-child(2):nth-last-child(10) ~ a {
+        width: 20%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(3) + label ~ a {
+        left: 20%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(5) + label ~ a {
+        left: 40%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(7) + label ~ a {
+        left: 60%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(10) ~ input:checked:nth-child(9) + label ~ a {
+        left: 80%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(12),
+    .switch-toggle label:nth-child(2):nth-last-child(12) ~ label,
+    .switch-toggle label:nth-child(2):nth-last-child(12) ~ a {
+        width: 16.6%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(3) + label ~ a {
+        left: 16.6%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(5) + label ~ a {
+        left: 33.2%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(7) + label ~ a {
+        left: 49.8%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(9) + label ~ a {
+        left: 66.4%;
+    }
+
+    .switch-toggle label:nth-child(2):nth-last-child(12) ~ input:checked:nth-child(11) + label ~ a {
+        left: 83%;
+    }
+
+    /* Candy Theme */
+    .switch-toggle.switch-candy,
+    .switch-light.switch-candy > span {
+        background-color: #2d3035;
+        border-radius: 0.4vmin;
+        box-shadow: inset 0 0.2vmin 0.2vmin rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .switch-light.switch-candy span span,
+    .switch-light.switch-candy input:checked ~ span span:first-child,
+    .switch-toggle.switch-candy label {
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 0.2vmin 0.2vmin 0.2vmin #191b1e;
+    }
+
+    .switch-light.switch-candy input ~ span span:first-child,
+    .switch-light.switch-candy input:checked ~ span span:nth-child(2),
+    .switch-candy input:checked + label {
+        color: #333;
+        text-shadow: 0 0.1vmin 0 rgba(255, 255, 255, 0.5);
+    }
+
+    .switch-candy a {
+        border: 0.2vmin solid #333;
+        border-radius: 0.4vmin;
+        box-shadow: 0 0.2vmin 0.2vmin rgba(0, 0, 0, 0.2), inset 0 0.2vmin 0.2vmin rgba(255, 255, 255, 0.45);
+        background-color: #70c66b;
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2), transparent);
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+    }
+
+    .switch-candy-blue a {
+        background-color: #38a3d4;
+    }
+
+    .switch-candy-yellow a {
+        background-color: #f5e560;
+    }
+
+    /* ripple
+   */
+    .switch-light.switch-material > span:before,
+    .switch-light.switch-material > span:after,
+    .switch-toggle.switch-material label:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        display: block;
+        width: 4em;
+        height: 4em;
+        border-radius: 100%;
+        background: #3f51b5;
+        opacity: .4;
+        margin-left: -1.25em;
+        margin-top: -1.25em;
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition: opacity 0.4s ease-in;
+        -moz-transition: opacity 0.4s ease-in;
+        transition: opacity 0.4s ease-in;
+    }
+
+    .switch-light.switch-material > span:after {
+        left: auto;
+        right: 0;
+        margin-left: 0;
+        margin-right: -1.25em;
+    }
+
+    .switch-toggle.switch-material label:after {
+        width: 3.25em;
+        height: 3.25em;
+        margin-top: -0.75em;
+    }
+
+    @-webkit-keyframes materialRipple {
+        0% {
+            -webkit-transform: scale(0);
+        }
+        20% {
+            -webkit-transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            -webkit-transform: scale(1);
+        }
+    }
+    @-moz-keyframes materialRipple {
+        0% {
+            -moz-transform: scale(0);
+        }
+        20% {
+            -moz-transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            -moz-transform: scale(1);
+        }
+    }
+    @keyframes materialRipple {
+        0% {
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform: scale(0);
+        }
+        20% {
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+    .switch-material.switch-light input:not(:checked) ~ span:after,
+    .switch-material.switch-light input:checked ~ span:before,
+    .switch-toggle.switch-material input:checked + label:after {
+        -webkit-animation: materialRipple 0.4s ease-in;
+        -moz-animation: materialRipple 0.4s ease-in;
+        animation: materialRipple 0.4s ease-in;
+    }
+
+    /* trick to prevent the default checked ripple animation from showing
+   * when the page loads.
+   * the ripples are hidden by default, and shown only when the input is focused.
+   */
+    .switch-light.switch-material.switch-light input ~ span:before,
+    .switch-light.switch-material.switch-light input ~ span:after,
+    .switch-material.switch-toggle input + label:after {
+        visibility: hidden;
+    }
+
+    .switch-light.switch-material.switch-light input:focus:checked ~ span:before,
+    .switch-light.switch-material.switch-light input:focus:not(:checked) ~ span:after,
+    .switch-material.switch-toggle input:focus:checked + label:after {
+        visibility: visible;
+    }
+}
+
+/* Bugfix for older Webkit, including mobile Webkit. Adapted from
+ * http://css-tricks.com/webkit-sibling-bug/
+ */
+@media only screen and (-webkit-max-device-pixel-ratio: 2) and (max-device-width: 80em) {
+    .switch-light,
+    .switch-toggle {
+        -webkit-animation: webkitSiblingBugfix infinite 1s;
+    }
+}
+
+@-webkit-keyframes webkitSiblingBugfix {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+}
+
+input[type="radio"] {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+@media (max-aspect-ratio: 9/6) {
+    #login-white {
+        width: 45vw;
+    }
+
+    #white {
+        width: 80vw;
+    }
+
+    #infos-small {
+        width: 95%;
+    }
+
+    .tabs {
+        width: 95%;
+    }
+}
+
+/** dark theme **/
+.dark-1 {
+    background-color: #424242 !important;
+}
+
+.dark-2 {
+    background-color: #303030 !important;
+}
+
+.dark-3 {
+    background-color: #212121 !important;
+}
+
+.dark-4 {
+    background-color: #000000 !important;
+}
+
+.dark-line {
+    background-image: linear-gradient(to left, #333333 0%, #FFFFFF 3%, #FFFFFF 97%, #333333 100%);
+}
+
+.dark-shadow {
+    -webkit-box-shadow: 0 0 2.5vmin 0.5vmin rgba(33, 33, 33, 1) !important;
+    -moz-box-shadow: 0 0 2.5vmin 0.5vmin rgba(33, 33, 33, 1) !important;
+    box-shadow: 0 0 2.5vmin 0.5vmin rgba(33, 33, 33, 1) !important;
+}
+
+.white-text {
+    color: white !important;
+}
+
+.white-text i {
+    color: white !important;
+}
+
+.normal-text {
+    color: #212121 !important;
+}
+
+.normal-text i {
+    color: #212121 !important;
+}
+
+.dark-border-bottom {
+    border-bottom: 0.3vmin solid white;
+}
+
+.dark-ink:hover {
+    border: 0.5vmin solid #FFFFFF !important;
+}
+
+.dark-selected {
+    border: 0.5vmin solid #FFFFFF !important;
+}
+
+.dark-tab-header a {
+    color: white !important;
+}
