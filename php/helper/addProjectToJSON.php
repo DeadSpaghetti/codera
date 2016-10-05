@@ -101,7 +101,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
             "url" => $url,
             "UUID" => $projectUUID,
             "totalViews" => 0,
-            "totalDownloads" => 0
+            "totalDownloads" => 0,
+            "starred" => false
         );
 
         //checks boolean value to see if file is there. If not generates it
