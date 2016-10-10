@@ -170,6 +170,12 @@ $(document).ready(function()
         }
     });
 
+
+	$('.starred').click(function()
+	{
+		toggleStar();
+	});
+
     function toggleURL()
     {
         //URL selected
@@ -220,4 +226,17 @@ $(document).ready(function()
     {		
         window.document.location.href = "../restricted/admin.php";       
     });
+
+	function toggleStar()
+	{
+		var star = document.getElementById("star");
+		if(star.innerHTML == "star")
+		{
+			star.innerHTML = "star_border";
+		}
+		else
+		{
+			star.innerHTML = "star";
+		}
+	}
 });

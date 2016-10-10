@@ -75,7 +75,7 @@ $(document).ready(function ()
 		addClass(newUser, "white-text");
 
 		let newProject = document.getElementById('new-project');
-		addClass(newProject, "white-text");
+		addClass(newProject, "white-text-star");
 
 		let buttonSave = document.getElementById('button-save');
 		addClass(buttonSave, "normal-text");
@@ -297,7 +297,7 @@ $(document).ready(function ()
 		removeClass(newUser, "white-text");
 
 		let newProject = document.getElementById('new-project');
-		removeClass(newProject, "white-text");
+		removeClass(newProject, "white-text-star");
 
 		let buttonSave = document.getElementById('button-save');
 		removeClass(buttonSave, "normal-text");

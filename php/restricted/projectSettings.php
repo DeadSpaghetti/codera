@@ -130,7 +130,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 					<table class="infos-small">
 						<tr class="infos-row">
 							<td colspan="3" class="infos-center">
-								<div id="new-project"><?php if (isset($projectName)) echo $projectName; ?>
+								<div id="new-project"><div class="starred"><i id="star" class="material-icons">star</i></div><?php if (isset($projectName)) echo $projectName; ?>
 									<div class="hidden" id="projectSettingsUUID">
 										<?php
 										if(isset($UUID))
