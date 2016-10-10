@@ -132,7 +132,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 						<tr class="infos-row">
 							<td colspan="3" class="infos-center">
                                 <div id="new-project">
-                                    <div class="starred"><i id="star" class="material-icons"><?php var_dump($starred);
+                                    <div class="starred"><i id="star" class="material-icons"><?php
                                             if ($starred == true || $starred == "true")
                                             {
                                                 echo "star";
