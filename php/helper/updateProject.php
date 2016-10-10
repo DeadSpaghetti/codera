@@ -30,6 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
     $versionCode = $_POST['versionCode'];
     $projectStatus = $_POST['projectStatus'];
     $url = $_POST['url'];
+    $starred = $_POST['starred'];
     $UUID = $_POST['UUID'];
 
     $projectArray = [];
@@ -53,6 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
                 $projectArray[$i]->{'versionCode'} = $versionCode;
                 $projectArray[$i]->{'projectStatus'} = $projectStatus;
                 $projectArray[$i]->{'url'} = $url;
+                $projectArray[$i]->{'starred'} = $starred;
 
                 $path_config_projects = "";
                 include "paths.php";

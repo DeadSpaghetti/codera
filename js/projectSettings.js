@@ -77,6 +77,11 @@ function getScreenshots()
     return screenshots;
 }
 
+function getStarred()
+{
+    return false;
+}
+
 function saveProject()
 {
     $.post("../helper/addProjectToJSON.php",
@@ -118,7 +123,8 @@ function updateProject(UUID)
             "versionCode": getVersionCode(),
             "projectStatus": getProjectStatus(),
             "url": getURL(),
-            "UUID": UUID.toString().trim()
+            "UUID": UUID.toString().trim(),
+            "starred": getStarred()
         },
         function (data, status)
         {

@@ -33,7 +33,7 @@ else
 <head>
     <title>Codera installation</title>
     <meta charset="UTF-8"/>
-    <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main.css"/>    
+    <link type="text/css" rel="stylesheet" href="../../css/stylesheet-main-minified.css"/>    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="../../js/installer.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>

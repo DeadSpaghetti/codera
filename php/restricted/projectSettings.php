@@ -85,7 +85,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 				$description = $selectedProject->{'description'};
 				$projectStatus = $selectedProject->{'projectStatus'};
 				$url = $selectedProject->{'url'};
-
+				$starred = $selectedProject->{'starred'};
 				break;
 			}
 		}
@@ -129,8 +129,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 				<div id="white">
 					<table class="infos-small">
 						<tr class="infos-row">
-							<td colspan="3" class="infos-center">							
-								<div id="new-project"><?php if(isset($projectName)) echo $projectName?>
+							<td colspan="3" class="infos-center">
+								<div id="new-project"><?php if (isset($projectName)) echo $projectName; ?>
 									<div class="hidden" id="projectSettingsUUID">
 										<?php
 										if(isset($UUID))
@@ -145,7 +145,8 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							<td colspan="3" class="infos-center">
 								<div id="toggle-container">							
 									<label class="switch-light switch-candy" onclick="">
-										<input type="checkbox" id="toggle-project-or-url" <?php if(isset($url) && $url != "")echo "checked"?>>
+										<input type="checkbox"
+											   id="toggle-project-or-url" <?php if (isset($url) && $url != "") echo "checked"; ?>>
 										<span>
 											<span>Project</span>
 											<span>URL</span>
@@ -211,7 +212,7 @@ include('../helper/getGeneralSettingsFromJSON.php');
 							<?php include('projectSettingsNormal.php');?>
 							<!--settings for url project -->	
 							<?php include('projectSettingsURL.php');?>
-							
+
 						<tr class="infos-row">
 							<td class="infos-left">	</td>										
 							<td class="infos-right">

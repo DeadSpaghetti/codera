@@ -141,28 +141,51 @@ if(!function_exists("getSortedUserArray"))
     }
 }
 
-if(!function_exists("getSortedProjectArray"))
+if (!function_exists("getStarredProjectArray"))
 {
-
-    function getSortedProjectArray($projectArray, $sortOrder)
+    function getStarredProjectArray($projectArray, $sortOrder)
     {
-        if($sortOrder == "a-z")
+        $starredProjectArray = array();
+        $newProjectArray = array();
+        for ($i = 0; $i < sizeof($projectArray); $i++)
         {
-            usort($projectArray, function ($a, $b)
+            if ($projectArray[$i]->starred)
+            {
+                array_push($starredProjectArray, $projectArray[$i]);
+            }
+            else
+            {
+                array_push($newProjectArray, $projectArray[$i]);
+            }
+        }
+
+        $starredProjectArray = sortArray($starredProjectArray, $sortOrder);
+        $projectArray = array_merge($starredProjectArray, $newProjectArray);
+        return $projectArray;
+    }
+}
+
+if (!function_exists("sortArray"))
+{
+    function sortArray($array, $sortOrder)
+    {
+        if ($sortOrder == "a-z")
+        {
+            usort($array, function ($a, $b)
             {
                 return (strtoupper($a->name) < strtoupper($b->name)) ? -1 : 1;
             });
         }
-        elseif($sortOrder == "z-a")
+        elseif ($sortOrder == "z-a")
         {
-            usort($projectArray, function ($a, $b)
+            usort($array, function ($a, $b)
             {
                 return (strtoupper($a->name) > strtoupper($b->name)) ? -1 : 1;
             });
         }
-        elseif($sortOrder == "latestUpdate")
+        elseif ($sortOrder == "latestUpdate")
         {
-            usort($projectArray, function ($a, $b)
+            usort($array, function ($a, $b)
             {
                 return (strtotime($a->date) > strtotime($b->date)) ? -1 : 1;
             });
@@ -170,14 +193,23 @@ if(!function_exists("getSortedProjectArray"))
         }
         elseif ($sortOrder == "latestUpdateReversed")
         {
-            usort($projectArray, function ($a, $b)
+            usort($array, function ($a, $b)
             {
                 return (strtotime($a->date) < strtotime($b->date)) ? -1 : 1;
             });
         }
+
+        return $array;
+    }
+}
+
+if(!function_exists("getSortedProjectArray"))
+{
+
+    function getSortedProjectArray($projectArray, $sortOrder)
+    {
+        $projectArray = getStarredProjectArray(sortArray($projectArray, $sortOrder), $sortOrder);
         return $projectArray;
-
-
     }
 
 }
