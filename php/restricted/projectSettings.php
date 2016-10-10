@@ -22,6 +22,7 @@ $latestChanges = "";
 $description = "";
 $projectStatus = "Final";
 $url = "";
+$starred = "false";
 $UUID = null;
 
 function getSelectedOption($object,$UUID)
@@ -130,7 +131,16 @@ include('../helper/getGeneralSettingsFromJSON.php');
 					<table class="infos-small">
 						<tr class="infos-row">
 							<td colspan="3" class="infos-center">
-								<div id="new-project"><div class="starred"><i id="star" class="material-icons">star</i></div><?php if (isset($projectName)) echo $projectName; ?>
+                                <div id="new-project">
+                                    <div class="starred"><i id="star" class="material-icons"><?php var_dump($starred);
+                                            if ($starred == true || $starred == "true")
+                                            {
+                                                echo "star";
+                                            }
+                                            else
+                                            {
+                                                echo "star_border";
+                                            } ?></i></div><?php if (isset($projectName)) echo $projectName; ?>
 									<div class="hidden" id="projectSettingsUUID">
 										<?php
 										if(isset($UUID))

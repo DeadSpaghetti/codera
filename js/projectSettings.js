@@ -98,7 +98,8 @@ function saveProject()
             "license": getLicense(),
             "versionCode": getVersionCode(),
             "projectStatus": getProjectStatus(),
-            "url": getURL()
+            "url": getURL(),
+            "starred": getStarred()
         },
         function (data, status)
         {
