@@ -77,6 +77,15 @@ function getScreenshots()
     return screenshots;
 }
 
+function getStarred()
+{
+    var starred = $('#star').text();
+    if (starred == "star")
+        return "true";
+    else
+        return "false";
+}
+
 function saveProject()
 {
     $.post("../helper/addProjectToJSON.php",
@@ -93,7 +102,8 @@ function saveProject()
             "license": getLicense(),
             "versionCode": getVersionCode(),
             "projectStatus": getProjectStatus(),
-            "url": getURL()
+            "url": getURL(),
+            "starred": getStarred()
         },
         function (data, status)
         {
@@ -118,7 +128,8 @@ function updateProject(UUID)
             "versionCode": getVersionCode(),
             "projectStatus": getProjectStatus(),
             "url": getURL(),
-            "UUID": UUID.toString().trim()
+            "UUID": UUID.toString().trim(),
+            "starred": getStarred()
         },
         function (data, status)
         {
@@ -163,6 +174,12 @@ $(document).ready(function()
             saveProject();
         }
     });
+
+
+	$('.starred').click(function()
+	{
+		toggleStar();
+	});
 
     function toggleURL()
     {
@@ -214,4 +231,17 @@ $(document).ready(function()
     {		
         window.document.location.href = "../restricted/admin.php";       
     });
+
+	function toggleStar()
+	{
+		var star = document.getElementById("star");
+		if(star.innerHTML == "star")
+		{
+			star.innerHTML = "star_border";
+		}
+		else
+		{
+			star.innerHTML = "star";
+		}
+	}
 });

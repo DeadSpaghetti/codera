@@ -1711,6 +1711,18 @@ input[type="radio"] {
     box-shadow: none;
 }
 
+.starred{
+	display: inline;
+	margin-right: 2vmin;
+}
+
+.starred i{
+	color: #FFA500;
+	font-size: 5vmin;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
 @media (max-aspect-ratio: 9/6) {
     #login-white {
         width: 45vw;
@@ -1762,6 +1774,14 @@ input[type="radio"] {
 
 .white-text i {
     color: white !important;
+}
+
+.white-text-star{
+	color: white !important;
+}
+
+.white-text-star i{
+	color: #FFA500 !important;
 }
 
 .normal-text {
