@@ -79,7 +79,11 @@ function getScreenshots()
 
 function getStarred()
 {
-    return false;
+    var starred = $('#star').text();
+    if (starred == "star")
+        return "true";
+    else
+        return "false";
 }
 
 function saveProject()

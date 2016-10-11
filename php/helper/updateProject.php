@@ -34,6 +34,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
     $UUID = $_POST['UUID'];
 
     $projectArray = [];
+    $sortOrder = "";
+    include_once "getGeneralSettingsFromJSON.php";
     include "getProjectsFromJSON.php";
     if(!empty($projectArray))
     {
@@ -58,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isUserAdmin($_SESSION['loggedIn']))
 
                 $path_config_projects = "";
                 include "paths.php";
-                file_put_contents($path_config_projects,json_encode($projectArray,JSON_PRETTY_PRINT));
+                file_put_contents($path_config_projects, json_encode(getSortedProjectArray($projectArray, $sortOrder), JSON_PRETTY_PRINT));
                 break;
             }
         }

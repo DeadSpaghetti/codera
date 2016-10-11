@@ -149,7 +149,7 @@ if (!function_exists("getStarredProjectArray"))
         $newProjectArray = array();
         for ($i = 0; $i < sizeof($projectArray); $i++)
         {
-            if ($projectArray[$i]->starred)
+            if ($projectArray[$i]->starred == "true")
             {
                 array_push($starredProjectArray, $projectArray[$i]);
             }
